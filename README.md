@@ -9,3 +9,7 @@
 <img src="./mern_logo.png"/>
 
 <h1 align="center">THE WHOLE APP IS CUSTOM!</h1>
+<hr/>
+
+The repo includes the "<i>back-end</i>" and the "<i>front-end</i>" of the app.
+<hr/>
