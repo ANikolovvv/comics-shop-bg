@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 const api = require("../services/orderServices");
+const server = require("../services/comicsServices");
 const userServices = require("../services/userServices");
 const preload = require('../middlewares/preload');
 const { isAuth } = require("../middlewares/isGuard");
@@ -13,12 +14,16 @@ router.post(
       const item={
         title:req.body.title,
         author:req.body.author,
-        year:req.body.year,
-        image:req.body.image,
-        price:(Math.random() * 10).toFixed(2),
+        email:req.body.email,
+        address:req.body.address,
+        courier:req.body.courier,
+        number:req.body.number,
+        payment:req.body.payment,
+        price:(Math.random() * 10).toFixed(2) * req.body.number,
         _ownerId:req.user._id
       }
-       
+
+       console.log(req.body,'paaaaa')
     try {
    
       console.log(req.body);
@@ -32,14 +37,11 @@ router.post(
     }
   }
 );
-router.get("/details/:id", preload(api), async (req, res) => {
+router.get("/details/:id", preload(server), async (req, res) => {
   console.log('dataaaaaaaa')
   res.json(res.locals.item);
 });
-router.get("/rent/:id", async (req, res) => {
-  await api.shareData(req.params.id, req.user._id);
-  res.redirect(`/data/details/${req.params.id}`);
-});
+
 
 // router.get("/search", async (req, res) => {});
 // router.post("/search", async (req, res) => {
