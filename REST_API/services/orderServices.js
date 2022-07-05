@@ -11,9 +11,7 @@ exports.createData = async (order) => {
   return newOrder;
 };
 
-exports.getData = async (id) => {
-  return await Order.findById(id);
-};
+
 
 exports.shareData = async (id, user) => {
   let order = await Comic.findById(id);
@@ -24,7 +22,9 @@ exports.shareData = async (id, user) => {
 exports.getAll = async () => {
   return await Comic.find({}).lean();
 };
-
+exports.getData = async (id) => {
+  return await Order.findById(id);
+};
 exports.updateData = async (existing, item) => {
   existing.title = item.title;
   existing.author = item.author;
