@@ -1,7 +1,8 @@
 module.exports = (api) => async (req, res, next) => {
   const id = req.params.id;
 
-  const item = await api.getData(id);
+  const item = await api.getById(id);
+  console.log(item,'erererer details')
   if (item) {
     res.locals.item = item;
     next();
