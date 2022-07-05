@@ -12,11 +12,9 @@ router.get("/register", (req, res) => {
 router.post("/register", async (req, res) => {
   console.log("usertgrrt", req.body);
   try {
-    const { errors } = validationResult(req);
-    if (errors.length > 0) {
-      let message = errors.map((x) => x.msg).join("\n");
-      throw new Error(message);
-    }
+      if(req.body.password!==req.body.rePass){
+        throw new Error('Password dont match!')
+      }
     const { email, password } = req.body;
     const result = await authServices.register(email, password);
     console.log("Token hasbeen created", result);
