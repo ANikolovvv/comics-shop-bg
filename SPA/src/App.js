@@ -9,6 +9,9 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import { Footer } from "./components/Footer/Footer";
+import { MyOrder } from "./components/MyOrder/MyOrder";
+import { NotFound } from "./components/404/404";
+import { Edit } from "./components/Edit/Edit";
 
 
 function App() {
@@ -18,10 +21,11 @@ function App() {
   useEffect(()=>{
 
   },[])
+ // value={[user,setUser]}
   return (
-    <AuthContexts.Provider value={[user,setUser]}>
+    <AuthContexts.Provider value={[user,setUser]} >
     <div className="App">
-      <Header user={user}></Header>
+      <Header ></Header>
       <main className="main">
         <Routes>
           <Route path="/"  element={<Home/>}></Route>
@@ -29,7 +33,10 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/catalog/*" element={<Catalog />}></Route>
           <Route path="/create" element={<Create />}></Route>
+          <Route path="/my-orders" element={<MyOrder/>}></Route>
           <Route path="/details/:id" element={<Details />}></Route>
+          <Route path="/edit/:id" element={<Edit />}></Route>
+          <Route path="*" element={<NotFound/>}></Route>
         </Routes>
       </main>
          <Footer/>
