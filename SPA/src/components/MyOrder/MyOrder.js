@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import * as requests from "../../services/server";
 
 import { MyCard } from "../MyCard/MyCard";
+import { Spinner } from "../Spinner/Spinner";
 
 import styles from "./MyOrder.module.css";
 
@@ -50,17 +52,23 @@ export const MyOrder = () => {
   return (
     <>
       <h1 className={styles["art"]}>My orders</h1>
-
-      {currentItems.length > 0 ? (
+      {currentItems === undefined && <Spinner />}
+      {currentItems.length > 0 &&
+        currentItems !== undefined &&
         currentItems.map((x) => (
-          <MyCard key={x._id} data={x} onClick={() => deleteHandller(x)}>
-            {" "}
-          </MyCard>
-        ))
-      ) : (
-        <Link to={"/create"} className={styles["link"]}>
-          Make your first order, click here!
-        </Link>
+          <MyCard
+            key={x._id}
+            data={x}
+            onClick={() => deleteHandller(x)}
+          ></MyCard>
+        ))}
+      {currentItems !== undefined && currentItems.length === 0 && (
+        <div className={styles["link"]}>
+          <h1>Make your first order</h1>
+          <Link to={"/create"} className={styles["click"]}>
+            Click here!
+          </Link>
+        </div>
       )}
     </>
   );
