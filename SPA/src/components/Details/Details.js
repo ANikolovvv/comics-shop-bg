@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as requests from "../../services/server";
-import "./Details.css";
+import styles from "./Details.module.css";
 
 const Details = () => {
   const [comic, setComic] = useState({});
@@ -18,34 +18,37 @@ const Details = () => {
   }, [id]);
   return (
     <>
-      <div id="container">
-        <div className="product-details">
+    <article className={styles["art"]}>
+        <h1>More details</h1>
+      </article>
+      <div className={styles["container"]}>
+        <div className={styles["product-details"]}>
           <h1>{comic.title}</h1>
 
-          <span className="hint-star star">
-            <i className="fa fa-star" aria-hidden="true"></i>
-            <i className="fa fa-star" aria-hidden="true"></i>
-            <i className="fa fa-star" aria-hidden="true"></i>
-            <i className="fa fa-star-half-o" aria-hidden="true"></i>
-            <i className="fa fa-star-o" aria-hidden="true"></i>
+          <span className={styles["hint-star star"]}>
+            <i className={styles["fa fa-star"]} aria-hidden="true"></i>
+            <i className={styles["fa fa-star"]} aria-hidden="true"></i>
+            <i className={styles["fa fa-star"]} aria-hidden="true"></i>
+            <i className={styles["fa fa-star-half-o"]} aria-hidden="true"></i>
+            <i className={styles["fa fa-star-o"]} aria-hidden="true"></i>
           </span>
 
-          <p className="information">{comic.description}</p>
-          <div className="like">
-            <button className="btn">Like</button>
+          <p className={styles["information"]}>{comic.description}</p>
+          <div className={styles["like"]}>
+            <button className={styles["btn"]}>Like</button>
           </div>
 
-          <div className="control">
-            <button className="btn">Buy</button>
-            <button className="btn">Edit</button>
-            <button className="btn">Delete</button>
+          <div className={styles["control"]}>
+            <button className={styles["btn"]}>Buy</button>
+            <button className={styles["btn"]}>Edit</button>
+            <button className={styles["btn"]}>Delete</button>
           </div>
         </div>
 
-        <div className="product-image">
-          <img src={comic.imageUrl} alt={comic.title} />
+        <div className={styles["product-image"]}>
+          <img src={comic.imageUrl} className={styles['container img']} alt={comic.title} />
 
-          <div className="info">
+          <div className={styles["info"]}>
             <h2>The Description</h2>
             <ul>
               <li key={1}>
