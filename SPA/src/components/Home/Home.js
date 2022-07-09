@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import * as requests from "../../services/server";
-import "../Home/Home.css";
+import styles from "../Home/Home.module.css";
 import { Spinner } from "../Spinner/Spinner";
 import { Top } from "./TopFive";
 //import { Top } from "./TopFive";
@@ -10,14 +10,8 @@ function Home() {
   const [comics, setGames] = useState([]);
   const [count, setCount] = useState(0);
 
-  //let monthRaiting=top.slice(0,5);
-
   console.log(comics, " top reiting");
 
-  // let id = "62b82a5505e28156da0e2270";
-  //   requests.getData(id).then((res)=>{
-  //     console.log(res,'dataaaaaa')
-  //  });//get data work
 
   useEffect(() => {
     requests.getAll().then((result) => {
@@ -40,7 +34,7 @@ function Home() {
 
   return (
     <>
-      <article className="art">
+      <article className={styles["art"]}>
         <h1>Welcome to comics-shop.bg</h1>
         <p>Best Comics of 2022 </p>
       </article>
