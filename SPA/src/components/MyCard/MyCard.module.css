@@ -31,6 +31,8 @@
     color: rgb(207, 100, 39);
 }
 .btn{
+
+    
     text-decoration: none;
     text-align: center;
     color: aliceblue;
@@ -41,6 +43,8 @@
 	border-radius: 2px;
   }
 .btn-delete{
+    border-style: solid;
+    border: 20px;
     font-size: 15px;
     color: aliceblue;
     background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
