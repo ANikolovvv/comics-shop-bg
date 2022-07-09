@@ -1,6 +1,6 @@
-import './Footer.css'
+import styles from './Footer.module.css'
 export const Footer=()=>{
     return (
-        <footer className="footer"> &copy; Comics-Shop 2022</footer>
+        <footer className={styles["footer"]}> &copy; Comics-Shop 2022</footer>
     )
 }
