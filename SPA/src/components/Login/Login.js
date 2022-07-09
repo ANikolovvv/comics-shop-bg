@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { onLogin } from "../../services/server";
 import AuthContexts from "../../contexts/authContext";
 import { useContext } from "react";
-import "./Login.css";
+import styles from "../Login/Login.module.css";
 
 const Login = () => {
   const [user, setContext] = useContext(AuthContexts);
@@ -20,28 +20,29 @@ const Login = () => {
       try {
         await onLogin(ctx);
         setContext(ctx);
-          navigation("/catalog");
+        navigation("/catalog");
       } catch (err) {
         console.log(err);
         console.log(err.message, "err");
         navigation("/login");
       }
     }
-
-   
   };
   return (
     <>
-    <article className="art">
+      <article className={styles["art"]}>
         <h1>Sing In</h1>
       </article>
-      
-      <div className="signupSection">
-        <div className="info-form">
+
+      <div className={styles["signupSection"]}>
+        <div className={styles["info-form"]}>
           <h2>Sign In Form.</h2>
-          <i className="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+          <i
+            className={styles["icon ion-ios-ionic-outline"]}
+            aria-hidden="true"
+          ></i>
           <img
-            className="icon"
+            className={styles["icon"]}
             src="https://3.bp.blogspot.com/-EYhzbgX3eqA/WNPf3EX0AlI/AAAAAAAAQR4/818HP3L1tYoq0f_pl3foqoqdhX5qHdcswCLcB/s1600/spider-read.jpg"
             alt="..."
           ></img>
@@ -49,49 +50,53 @@ const Login = () => {
         <form
           action="#"
           method="POST"
-          className="signupForm"
+          className={styles["signupForm"]}
           onSubmit={formHandler}
         >
-          <ul className="noBullet">
-            
+          <ul className={styles["noBullet"]}>
             <li>
               <label htmlFor="email"></label>
               <input
                 type="email"
-                className="inputFields"
+                className={styles["inputFields"]}
                 id="email"
                 name="email"
                 placeholder="Email: batman@red.gmail"
                 defaultValue=""
-                 
               />
             </li>
             <li>
               <label htmlFor="password"></label>
               <input
                 type="password"
-                className="inputFields"
+                className={styles["inputFields"]}
                 id="password"
                 name="password"
                 placeholder="Password"
                 defaultValue=""
-                 
               />
             </li>
             <li id="center-btn">
               <button
                 type="submit"
-                id="join-btn"
+                className={styles["join-btn"]}
                 name="join"
                 alt=""
                 defaultValue=""
-              > Login</button>
+              >
+                {" "}
+                Login
+              </button>
             </li>
-            <Link className="link-form"  to="/register">
-            Create account!
-            </Link>
+            <li>
+              <h1 className={styles["click"]}>For registration - 
+              <Link className={styles["link-form"]} to="/register">
+              click here!
+              </Link>
+              </h1>
+             
+            </li>
           </ul>
-          
         </form>
       </div>
     </>

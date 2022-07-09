@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+* {
+  font-family: "Open Sans", sans-serif;
+}
+.art h1 {
+  background-size: 10% auto;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+  letter-spacing: 10px;
+  text-align: center;
+  
+}
+.art p {
+  font-weight: 700;
+
+  background-size: 10% auto;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  font-family: "Luckiest Guy", cursive;
+  font-size: 15px;
+  letter-spacing: 10px;
+  text-align: center;
+  display: block;
+}
+
+.signupSection {
+  margin: 20px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  text-align: center;
+  display: flex;
+  color: white;
+  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0);
+}
+
+.info-form {
+  width: 55%;
+  background: rgba(255, 180, 82, 0.8);
+  padding: 20px 0;
+  border-right: 5px solid rgba(30, 30, 30, 0.8);
+}
+.info-form h2 {
+  color: rgb(239, 248, 248);
+}
+.icon {
+  width: 90%;
+  height: 70%;
+  object-fit: cover;
+  font-size: 8em;
+  padding: 20px 0;
+  color: rgba(10, 180, 180, 1);
+}
+
+.signupForm {
+  width: 55%;
+  padding: 0px 0;
+  background: rgba(255, 180, 82, 0.8);
+  transition: 0.2s;
+}
+
+.inputFields {
+  margin: 16px 0;
+  font-size: 16px;
+  padding: 7px 1;
+  width: 240px;
+  border: 10px solid rgb(241, 243, 243);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-image: linear-gradient(
+    45deg,
+    #f1e4ae 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  color: white;
+  outline: none;
+}
+
+.noBullet {
+  list-style-type: none;
+  padding: 17px;
+}
+
+.join-btn {
+  border: 5px solid rgb(246, 250, 250);
+  background: rgba(20, 20, 20, 0.6);
+  font-size: 18px;
+  color: white;
+  margin-top: 8px;
+  padding: 10px 40px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.link-form {
+  text-decoration-color: aliceblue;
+  color: orangered;
+}
+.click {
+  font-size: 15px;
+}
+::placeholder {
+  color: black;
+}
