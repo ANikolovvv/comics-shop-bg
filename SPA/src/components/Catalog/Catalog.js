@@ -3,21 +3,21 @@ import { useState, useEffect } from "react";
 import * as requests from "../../services/server";
 import Paginate from "../Pagination/Paginate";
 import { Spinner } from "../Spinner/Spinner";
+import styles from "./Catalog.module.css"
+
 
 const Catalog = () => {
   const [currentItems, setCurrentItems] = useState([]);
-   console.log('1')
+
   useEffect(() => {
     (async () => {
       try {
         let data = await requests.getAll();
         if (data !== undefined) {
           setCurrentItems(data);
-          console.log('reqds2',)
+          console.log("reqds2");
         }
-      } catch (error) {
-         
-      }
+      } catch (error) {}
     })();
   }, []);
 
@@ -25,11 +25,11 @@ const Catalog = () => {
 
   return (
     <>
-      <article className="art">
+      <article className={styles["art"]}>
         <h1>Catalog</h1>
       </article>
       {top.length > 0 ? (
-        <section className="catalog">
+        <section className=''>
           <Paginate data={top}></Paginate>
         </section>
       ) : (
