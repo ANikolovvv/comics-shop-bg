@@ -17,7 +17,14 @@
 }
 
 
-
+.icon {
+  width: 90%;
+  height: 70%;
+  object-fit: cover;
+  font-size: 8em;
+  padding: 20px 0;
+  color: rgba(10, 180, 180, 1);
+}
 .signupSection {
   margin: 30px;
   background-repeat: no-repeat;
@@ -73,6 +80,7 @@
 }
 
 .noBullet {
+  list-style: none;
   list-style-type: none;
   padding: 17px;
 }
@@ -101,6 +109,7 @@
   z-index: 1;
   transition: all 0.3s ease 0.1s;
 }
+
 .payment{
   border-radius: 7px;
   margin: 2px 0;
@@ -115,4 +124,7 @@
   color: white;
   outline: none;
  
+}
+li{
+  list-style: none;
 }

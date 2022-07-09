@@ -20,25 +20,17 @@ const Create = () => {
     const number = Number(formData.get("number"));
     const payment = formData.get("payment").trim();
     const ctx = { title, author, email, address, courier, number, payment };
-    //let id = "62b82a5505e28156da0e2270";
-    //let result=requests.updateOrder(ctx,id,token) //edit order
-    // requests.deleteOrder(id, token); //edit order
-    // requests.createOrder(ctx, token).then((result) => {
-    //   console.log(result, "create dadaadad");
 
-    // });
-  
     try {
-      let token = JSON.parse(localStorage.getItem("user"))
+      let token = JSON.parse(localStorage.getItem("user"));
       await requests.createOrder(ctx, token.accessToken);
       navigation("/my-orders");
     } catch (err) {
       console.log(err.message);
     }
     console.log(ctx);
-   
   };
- 
+
   return (
     <>
       <article className={styles["art"]}>
@@ -52,7 +44,7 @@ const Create = () => {
             aria-hidden="true"
           ></i>
           <img
-            className="icon"
+            className={styles["icon"]}
             src="https://www.comicbasics.com/wp-content/uploads/2019/05/Best-DC-Stories.jpg"
             alt="..."
           ></img>
