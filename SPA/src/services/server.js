@@ -19,6 +19,7 @@ export async function regUsers(option) {
   return res;
 }
 export async function resLogout(token) {
+  console.log(token ,'reslogaiuiuiu')
   const res = await fetch(`http://localhost:3030/api/auth/logout`, {
     method: "get",
     headers: {
