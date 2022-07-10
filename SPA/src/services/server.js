@@ -129,3 +129,11 @@ export async function deleteOrder(id, token) {
 
   return await response.json();
 }
+export async function searchData(data){
+  const response = await fetch(`http://localhost:3030/api/data/search`, {
+    method: "post",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return response.json()
+}
