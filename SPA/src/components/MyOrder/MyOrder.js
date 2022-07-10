@@ -3,13 +3,14 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import * as requests from "../../services/server";
 
-import { MyCard } from "../MyCard/MyCard";
+import { MyCard } from "./MyCard/MyCard";
 import { Spinner } from "../Spinner/Spinner";
 
 import styles from "./MyOrder.module.css";
 
 export const MyOrder = () => {
   const [currentItems, setCurrentItems] = useState([]);
+  const [currentdata,setCurrentData] =useState(false)
 
   console.log(...currentItems, "fdfdgdfdcurrrr");
   let token = JSON.parse(localStorage.getItem("user")).accessToken;
@@ -20,8 +21,9 @@ export const MyOrder = () => {
       try {
         let token = JSON.parse(localStorage.getItem("user"));
         let data = await requests.getMyData(token._id);
-
+         
         if (data !== undefined) {
+          setCurrentData(true)
           if (data.history) {
             setCurrentItems(data.history);
           } else {
@@ -52,9 +54,8 @@ export const MyOrder = () => {
   return (
     <>
       <h1 className={styles["art"]}>My orders</h1>
-      {currentItems === undefined && <Spinner />}
-      {currentItems.length > 0 &&
-        currentItems !== undefined &&
+      {currentdata === false && <Spinner />}
+      {currentItems.length > 0 && currentdata===true&&
         currentItems.map((x) => (
           <MyCard
             key={x._id}
@@ -62,7 +63,7 @@ export const MyOrder = () => {
             onClick={() => deleteHandller(x)}
           ></MyCard>
         ))}
-      {currentItems !== undefined && currentItems.length === 0 && (
+      { currentItems.length === 0 && currentdata===true&& (
         <div className={styles["link"]}>
           <h1>Make your first order</h1>
           <Link to={"/create"} className={styles["click"]}>
@@ -70,6 +71,7 @@ export const MyOrder = () => {
           </Link>
         </div>
       )}
+
     </>
   );
 };
