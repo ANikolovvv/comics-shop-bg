@@ -1,22 +1,29 @@
 import { Link, useNavigate } from "react-router-dom";
 import { onLogin } from "../../services/server";
 import AuthContexts from "../../contexts/authContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styles from "../Login/Login.module.css";
 
 const Login = () => {
   const [user, setContext] = useContext(AuthContexts);
+  const [value, setValue] = useState({
+    email: "",
+    password: "",
+  });
   console.log(user);
+  const changeHendler = (e) => {
+    setValue((state) => ({
+      ...state,
+      [e.target.name]: e.target.value,
+    }));
+  };
   const navigation = useNavigate();
   const formHandler = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    console.log(formData);
-    const email = formData.get("email").trim();
-    const password = formData.get("password").trim();
+     const{email,password}=value;
     const ctx = { email, password };
-    err(ctx);
-    async function err(ctx) {
+    login(ctx);
+    async function login(ctx) {
       try {
         await onLogin(ctx);
         setContext(ctx);
@@ -62,7 +69,8 @@ const Login = () => {
                 id="email"
                 name="email"
                 placeholder="Email: batman@red.gmail"
-                defaultValue=""
+                value={value.email}
+                onChange={changeHendler}
               />
             </li>
             <li>
@@ -73,7 +81,8 @@ const Login = () => {
                 id="password"
                 name="password"
                 placeholder="Password"
-                defaultValue=""
+                value={value.password}
+                onChange={changeHendler}
               />
             </li>
             <li id="center-btn">
@@ -82,19 +91,18 @@ const Login = () => {
                 className={styles["join-btn"]}
                 name="join"
                 alt=""
-                defaultValue=""
               >
                 {" "}
                 Login
               </button>
             </li>
             <li>
-              <h1 className={styles["click"]}>For registration - 
-              <Link className={styles["link-form"]} to="/register">
-              click here!
-              </Link>
+              <h1 className={styles["click"]}>
+                For registration -
+                <Link className={styles["link-form"]} to="/register">
+                  click here!
+                </Link>
               </h1>
-             
             </li>
           </ul>
         </form>
