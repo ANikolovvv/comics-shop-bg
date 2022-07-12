@@ -7,22 +7,30 @@ import styles from "./Register.module.css";
 const Register = () => {
   const navigation = useNavigate();
   const [user, setContext] = useContext(AuthContexts);
-  const [err, setError] = useState([]);
+  const [errors, setError] = useState([]);
+  const [names,setNames]=useState({
+    email:'',
+    password:'',
+    rePass:''
+  })
+  console.log(user,'user')
+  console.log(errors,'errr')
+  const changeHendler=(e)=>{
+      setNames(state=>({
+        ...state,
+        [e.target.name]:e.target.value
+      }))
+  }
 
-  console.log(user);
+
 
   const formHandler = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    //console.log(formData);
-    const email = formData.get("email").trim();
-    const password = formData.get("password").trim();
-    const rePass = formData.get("rePass").trim();
-    const ctx = { email, password, rePass };
+   
+    const {email,password,rePass}=names
     const regex = new RegExp(/^[A-Za-z0-9]+@[A-Za-z]+\.[a-z]+$/);
-    const match = email.match(regex);
-    console.log(match, "match");
-
+    let match=email.match(regex);
+    let ctx={email,password,rePass}
     try {
       if (match === null) {
         throw new Error("Invalid email!");
@@ -43,7 +51,7 @@ const Register = () => {
     <>
       <article className={styles["art"]}>
         <h1>Sing Up</h1>
-        {err.length > 0 ? <h1 className="p">{err}</h1> : ""}
+ 
       </article>
 
       <div className={styles["signupSection"]}>
@@ -74,7 +82,8 @@ const Register = () => {
                 id="email"
                 name="email"
                 placeholder="Email: batman@red.gmail"
-                defaultValue=""
+                value={names.email}
+                onChange={changeHendler}
               />
             </li>
             <li>
@@ -85,7 +94,8 @@ const Register = () => {
                 id="password"
                 name="password"
                 placeholder="Password"
-                defaultValue=""
+                value={names.password}
+                onChange={changeHendler}
               />
             </li>
             <li>
@@ -96,7 +106,8 @@ const Register = () => {
                 id="rePass"
                 name="rePass"
                 placeholder="Confirm password"
-                defaultValue=""
+                value={names.rePass}
+                onChange={changeHendler}
               />
             </li>
             <li id="center-btn">
@@ -105,7 +116,7 @@ const Register = () => {
                 className={styles["join-btn"]}
                 name="join"
                 alt=""
-                defaultValue=""
+                
               >
                 Register
               </button>
