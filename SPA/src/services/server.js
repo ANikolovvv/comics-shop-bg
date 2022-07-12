@@ -107,6 +107,9 @@ export async function createOrder(data, token) {
 }
 
 export async function updateOrder(data, id, token) {
+  console.log(id,'id')
+  console.log(token,'token')
+  console.log(data,'data')
   const response = await fetch(`http://localhost:3030/api/owner/${id}`, {
     method: "put",
     headers: {
