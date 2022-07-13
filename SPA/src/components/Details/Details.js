@@ -51,19 +51,19 @@ const Details = () => {
           <div className={styles["info"]}>
             <h2>The Description</h2>
             <ul>
-              <li key={1}>
+              <li key={comic._id}>
                 <strong>Author: </strong>
                 {comic.author}
               </li>
-              <li key={2}>
+              <li key={comic._id}>
                 <strong>Price: </strong>
                 {comic.price}
               </li>
-              <li key={3}>
+              <li key={comic._id}>
                 <strong>Release data: </strong>
                 {comic.year}
               </li>
-              <li key={4}>
+              <li key={comic._id}>
                 <strong>Rating: </strong>
                 {final}
               </li>
