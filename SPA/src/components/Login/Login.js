@@ -3,9 +3,12 @@ import { onLogin } from "../../services/server";
 import AuthContexts from "../../contexts/authContext";
 import { useContext, useState } from "react";
 import styles from "../Login/Login.module.css";
+import { Errors } from "../Erorrs/Errors";
 
 const Login = () => {
   const [user, setContext] = useContext(AuthContexts);
+  const [errors, setErrors] = useState({});
+  const [userErr, setUserErr] = useState([]);
   const [value, setValue] = useState({
     email: "",
     password: "",
@@ -17,21 +20,27 @@ const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
+  const minLength = (e, length) => {
+    setErrors((state) => ({
+      ...state,
+      [e.target.name]: value[e.target.name].length < length,
+    }));
+  };
   const navigation = useNavigate();
   const formHandler = (e) => {
     e.preventDefault();
-     const{email,password}=value;
+    const { email, password } = value;
     const ctx = { email, password };
     login(ctx);
     async function login(ctx) {
-      try {
-        await onLogin(ctx);
+      let login = await onLogin(ctx);
+
+      if (login.message) {
+        setUserErr(login.message);
+        navigation("/login");
+      } else {
         setContext(ctx);
         navigation("/catalog");
-      } catch (err) {
-        console.log(err);
-        console.log(err.message, "err");
-        navigation("/login");
       }
     }
   };
@@ -83,7 +92,13 @@ const Login = () => {
                 placeholder="Password"
                 value={value.password}
                 onChange={changeHendler}
+                onBlur={(e) => minLength(e, 4)}
               />
+              {errors.password && (
+                <p className={styles["error-form"]}>
+                  Password should be at least 4 characters long!
+                </p>
+              )}
             </li>
             <li id="center-btn">
               <button
@@ -107,6 +122,7 @@ const Login = () => {
           </ul>
         </form>
       </div>
+      {userErr.length > 0 && <Errors error={userErr}></Errors>}
     </>
   );
 };
