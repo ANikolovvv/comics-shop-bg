@@ -28,7 +28,7 @@ export async function resLogout(token) {
     },
   });
   try {
-    if (res.status === 403) {
+    if (res.status === 401) {
       localStorage.clear();
       throw new Error("Something went wrong");
     }
@@ -50,7 +50,7 @@ export async function onLogin(data) {
   });
 
   try {
-    if (res.status === 403) {
+    if (res.status === 400) {
       const reds = await res.json();
       throw new Error(reds.message);
     }
@@ -58,10 +58,12 @@ export async function onLogin(data) {
     const user = await res.json();
     localStorage.setItem("user", JSON.stringify(user));
   } catch (error) {
-    console.log(error.message);
+   
+    return error
+    
   }
 
-  return res;
+  return res
 }
 
 // export function getAll() {
