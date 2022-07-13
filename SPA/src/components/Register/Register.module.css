@@ -35,6 +35,7 @@
 
 .signupSection {
   margin: 20px;
+ 
   background-repeat: no-repeat;
   position: absolute;
   top: 50%;
@@ -74,7 +75,7 @@
 }
 
 .inputFields {
-  margin: 16px 0;
+  margin: 10px 0;
   font-size: 16px;
   padding: 7px 1;
   width: 240px;
@@ -83,7 +84,7 @@
   border-left: none;
   border-right: none;
   background-image: linear-gradient(45deg, #e3e688 0%, #F09819  51%, #FF512F  100%);
-  color: white;
+  color: rgb(19, 0, 0);
   outline: none;
 }
 
@@ -103,7 +104,7 @@
   transition: 0.4s;
 }
 .link-form{
-  text-decoration-color: aliceblue;
+  text-decoration-color: rgb(1, 7, 12);
   color: orangered
 }
 .click{
@@ -112,4 +113,9 @@
 }
 ::placeholder{
   color: black;
+}
+.error-form{
+  font-weight: bolder;
+  color: red;
+  font-size: 15px;
 }
