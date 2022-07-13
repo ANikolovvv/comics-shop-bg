@@ -3,47 +3,49 @@ import AuthContexts from "../../contexts/authContext";
 import * as server from "../../services/server";
 import { useContext, useState } from "react";
 import styles from "./Register.module.css";
+import { errorWrapeer } from "../../helpers/Form-Validate";
+import { Errors } from "../Erorrs/Errors";
 
 const Register = () => {
   const navigation = useNavigate();
   const [user, setContext] = useContext(AuthContexts);
-  const [errors, setError] = useState([]);
-  const [names,setNames]=useState({
-    email:'',
-    password:'',
-    rePass:''
-  })
-  console.log(user,'user')
-  console.log(errors,'errr')
-  const changeHendler=(e)=>{
-      setNames(state=>({
-        ...state,
-        [e.target.name]:e.target.value
-      }))
-  }
-
-
+  const [errors, setErrors] = useState({});
+  const [userErr, setUserErr] = useState([]);
+  const [names, setNames] = useState({
+    email: "",
+    password: "",
+    rePass: "",
+  });
+  console.log(user, "user");
+  console.log(errors, "errr");
+  const changeHendler = (e) => {
+    setNames((state) => ({
+      ...state,
+      [e.target.name]: e.target.value,
+    }));
+  };
+  const minLength = (e, length) => {
+    setErrors((state) => ({
+      ...state,
+      [e.target.name]: names[e.target.name].length < length,
+    }));
+  };
 
   const formHandler = async (e) => {
     e.preventDefault();
-   
-    const {email,password,rePass}=names
-    const regex = new RegExp(/^[A-Za-z0-9]+@[A-Za-z]+\.[a-z]+$/);
-    let match=email.match(regex);
-    let ctx={email,password,rePass}
+
+    const { email, password, rePass } = names;
+
+    let ctx = { email, password, rePass };
     try {
-      if (match === null) {
-        throw new Error("Invalid email!");
-      }
-      if (password !== rePass) {
-        throw new Error("Password dont match !");
-      }
+      errorWrapeer(ctx, "register");
       await server.regUsers(ctx);
       setContext(ctx);
       navigation("/catalog");
     } catch (error) {
-      setError(error.message);
-      //setError(err);
+      console.log(error.message, "error");
+      setUserErr(error.message);
+
       e.target.reset();
     }
   };
@@ -51,7 +53,6 @@ const Register = () => {
     <>
       <article className={styles["art"]}>
         <h1>Sing Up</h1>
- 
       </article>
 
       <div className={styles["signupSection"]}>
@@ -96,7 +97,13 @@ const Register = () => {
                 placeholder="Password"
                 value={names.password}
                 onChange={changeHendler}
+                onBlur={(e) => minLength(e, 4)}
               />
+              {errors.password && (
+                <p className={styles["error-form"]}>
+                  Password should be at least 4 characters long!
+                </p>
+              )}
             </li>
             <li>
               <label htmlFor="password"></label>
@@ -108,7 +115,13 @@ const Register = () => {
                 placeholder="Confirm password"
                 value={names.rePass}
                 onChange={changeHendler}
+                onBlur={(e) => minLength(e, 4)}
               />
+              {errors.rePass && (
+                <p className={styles["error-form"]}>
+                  Confirm-pass should be at least 4 characters long!
+                </p>
+              )}
             </li>
             <li id="center-btn">
               <button
@@ -116,7 +129,6 @@ const Register = () => {
                 className={styles["join-btn"]}
                 name="join"
                 alt=""
-                
               >
                 Register
               </button>
@@ -132,6 +144,7 @@ const Register = () => {
           </ul>
         </form>
       </div>
+      {userErr.length > 0 && <Errors error={userErr}></Errors>}
     </>
   );
 };
