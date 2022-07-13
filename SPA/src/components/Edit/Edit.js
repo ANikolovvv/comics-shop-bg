@@ -3,10 +3,14 @@ import * as requests from "../../services/server";
 import { useState, useEffect } from "react";
 
 import styles from "./Edit.module.css";
+import { Errors } from "../Erorrs/Errors";
 
 export const Edit = () => {
   const [comics, setComics] = useState({});
   const [value, setValue] = useState({});
+  const [errors, setErrors] = useState({});
+  const [serverError, setServerErr] = useState([]);
+
   let { id } = useParams();
   useEffect(() => {
     requests.getOwnerData(id).then((result) => {
@@ -29,7 +33,30 @@ export const Edit = () => {
       [e.target.name]: e.target.value,
     }));
   };
+  const minLength = (e, length) => {
+    setErrors((state) => ({
+      ...state,
+      [e.target.name]: value[e.target.name].length < length,
+    }));
+  };
+  const isNumber = (e) => {
+    let number = Number(e.target.value);
 
+    setErrors(state => ({
+        ...state,
+        [e.target.name]: number <= 0,
+    }));
+}
+const regEmail=(e)=>{
+  const regex = new RegExp(/^[A-Za-z0-9]+@[A-Za-z]+\.[a-z]+$/);
+    let email=e.target.value;
+    let match=email.match(regex);
+    setErrors(state=>({
+      ...state,
+      [e.target.name]: !match
+
+    }))
+}
   const navigation = useNavigate();
   const formHandler = async (e) => {
     e.preventDefault();
@@ -52,6 +79,7 @@ export const Edit = () => {
       await requests.updateOrder(ctx, comics._id, token.accessToken);
       navigation("/my-orders");
     } catch (err) {
+      setServerErr(err.message)
       console.log(err.message);
     }
     console.log(ctx);
@@ -91,8 +119,14 @@ export const Edit = () => {
                 placeholder="Title: Batman"
                 value={value.title}
                 onChange={changeHendler}
+                onBlur={(e)=>minLength(e,3)}
               />
             </li>
+            {errors.title && (
+                <p className={styles["error-form"]}>
+                  Title should be at least 3 characters long!
+                </p>
+              )}
             <li>
               <label htmlFor="text"></label>
               <input
@@ -102,8 +136,14 @@ export const Edit = () => {
                 placeholder="Author: Bob Kane"
                 value={value.author}
                 onChange={changeHendler}
+                onBlur={(e)=>minLength(e,3)}
               />
             </li>
+            {errors.author && (
+                <p className={styles["error-form"]}>
+                  Author should be at least 3 characters long!
+                </p>
+              )}
             <li>
               <label htmlFor="email"></label>
               <input
@@ -113,8 +153,14 @@ export const Edit = () => {
                 placeholder="Email: ivan@abv.bg"
                 value={value.email}
                 onChange={changeHendler}
+                onBlur={regEmail}
               />
             </li>
+            {errors.email && (
+                <p className={styles["error-form"]}>
+                  Email is not valid - valid email red@abv.bg!
+                </p>
+              )}
             <li>
               <label htmlFor="text"></label>
               <input
@@ -124,8 +170,14 @@ export const Edit = () => {
                 placeholder="Address: Town and Street "
                 value={value.address}
                 onChange={changeHendler}
+                onBlur={(e)=>minLength(e,10)}
               />
             </li>
+            {errors.address && (
+                <p className={styles["error-form"]}>
+                  Address should be at least 10 characters long!
+                </p>
+              )}
             <li>
               <label htmlFor="text"></label>
               <input
@@ -135,8 +187,14 @@ export const Edit = () => {
                 placeholder="Courier service: Econt, Speedy "
                 value={value.courier}
                 onChange={changeHendler}
+                onBlur={(e)=>minLength(e,4)}
               />
             </li>
+            {errors.courier && (
+                <p className={styles["error-form"]}>
+                  Courier should be at least 4 characters long!
+                </p>
+              )}
             <li>
               <label htmlFor="number"></label>
               <input
@@ -146,8 +204,14 @@ export const Edit = () => {
                 placeholder="Number: 1, 2, 3 "
                 value={value.number}
                 onChange={changeHendler}
+                onBlur={isNumber}
               />
             </li>
+            {errors.number && (
+                <p className={styles["error-form"]}>
+                  Number should be biger then 0!
+                </p>
+              )}
 
             <select
               name="payment"
@@ -170,6 +234,7 @@ export const Edit = () => {
           </ul>
         </form>
       </div>
+      {serverError.length > 0 && <Errors error={serverError}></Errors>}
     </>
   );
 };
