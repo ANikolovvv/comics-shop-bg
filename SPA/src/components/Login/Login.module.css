@@ -88,7 +88,7 @@
     #f09819 51%,
     #ff512f 100%
   );
-  color: white;
+  color: rgb(0, 0, 0);
   outline: none;
 }
 
@@ -116,4 +116,9 @@
 }
 ::placeholder {
   color: black;
+}
+.error-form{
+  font-weight: bolder;
+  color: red;
+  font-size: 15px;
 }
