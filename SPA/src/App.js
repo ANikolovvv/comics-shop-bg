@@ -12,6 +12,7 @@ import { Footer } from "./components/common/Footer/Footer";
 import { MyOrder } from "./components/MyOrder/MyOrder";
 import { NotFound } from "./components/404/404";
 import { Edit } from "./components/Edit/Edit";
+import Buy from "./components/Buy-create/BuyCreate";
 
 
 function App() {
@@ -31,8 +32,9 @@ function App() {
           <Route path="/"  element={<Home/>}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/catalog/*" element={<Catalog />}></Route>
+          <Route path="/catalog" element={<Catalog />}></Route>
           <Route path="/create" element={<Create />}></Route>
+          <Route path="/buy-create/:id" element={<Buy/>}></Route>
           <Route path="/my-orders" element={<MyOrder/>}></Route>
           <Route path="/details/:id" element={<Details />}></Route>
           <Route path="/edit/:id" element={<Edit />}></Route>
