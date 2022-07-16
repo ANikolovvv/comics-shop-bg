@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import AuthContexts from "../../../contexts/authContext";
 import { useContext } from "react";
 import { resLogout } from "../../../services/server";
-
+import logo from "../../../logo.svg";
 import styles from "./Header.module.css";
 
 const Header = (props) => {
@@ -12,8 +12,7 @@ const Header = (props) => {
   console.log(localStorage.getItem("user"), "sdsaassasaaaaaaaaa");
   const token = JSON.parse(localStorage.getItem("user"));
   const logoutHandller = () => {
-    
-    console.log(token.accessToken,'logaout')
+    console.log(token.accessToken, "logaout");
     resLogout(token.accessToken);
     localStorage.clear();
     user = undefined;
@@ -26,44 +25,45 @@ const Header = (props) => {
     <>
       <header>
         <nav className={styles["container"]}>
-          <div className={styles["row"]}>
-            <div className={styles["col-sm-3"]}>
-              <div className={styles["btno"]}>
-                <Link className={styles["btn"]} to="/">
-                  Home
-                </Link>
-                <Link className={styles["btn"]} to="/catalog">
-                  Catalog
-                </Link>
-              </div>
-              {!token ? (
-                <div className={styles["btno"]}>
-                  <Link className={styles["btn"]} to="/login">
-                    Login
-                  </Link>
-                  <Link className={styles["btn"]} to="/register">
-                    Register
-                  </Link>
-                </div>
-              ) : (
-                <div className={styles["btno"]}>
-                  <Link className={styles["btn"]} to="/create">
-                    Orders
-                  </Link>
-                  <Link className={styles["btn"]} to="/my-orders">
-                    My Orders
-                  </Link>
-                  <Link
-                    className={styles["btn"]}
-                    onClick={logoutHandller}
-                    to="/login"
-                  >
-                    Logout
-                  </Link>
-                </div>
-              )}
-            </div>
-          </div>
+          <section className={styles["logo"]}>
+            <Link className={styles["logo"]} to="/">
+              <img src={logo} className={styles["logo-img"]} alt="LOGO"></img>
+            </Link>
+          </section>
+          <section className={styles["btno"]}>
+            <Link className={styles["btn"]} to="/">
+              Home
+            </Link>
+            <Link className={styles["btn"]} to="/catalog">
+              Catalog
+            </Link>
+          </section>
+          {!token ? (
+            <section className={styles["btno"]}>
+              <Link className={styles["btn"]} to="/login">
+                Login
+              </Link>
+              <Link className={styles["btn"]} to="/register">
+                Register
+              </Link>
+            </section>
+          ) : (
+            <section className={styles["btno"]}>
+              <Link className={styles["btn"]} to="/create">
+                Orders
+              </Link>
+              <Link className={styles["btn"]} to="/my-orders">
+                My Orders
+              </Link>
+              <Link
+                className={styles["btn"]}
+                onClick={logoutHandller}
+                to="/login"
+              >
+                Logout
+              </Link>
+            </section>
+          )}
         </nav>
       </header>
     </>
