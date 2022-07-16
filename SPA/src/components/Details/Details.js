@@ -1,24 +1,30 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import * as requests from "../../services/server";
 import styles from "./Details.module.css";
 
 const Details = () => {
   const [comic, setComic] = useState({});
+  const [admin,setAdmin]=useState(false)
   let { id } = useParams();
   console.log(id, "id");
   let arr = comic.userLiked;
   let final = arr?.length;
+  const user = localStorage.getItem("user");
+  console.log(user);
 
   useEffect(() => {
     requests.getData(id).then((result) => {
       console.log(result, "result");
-      setComic(result);
+       if(result){
+        setComic(result);
+       }
+      
     });
   }, [id]);
   return (
     <>
-    <article className={styles["art"]}>
+      <article className={styles["art"]}>
         <h1>More details</h1>
       </article>
       <div className={styles["container"]}>
@@ -34,36 +40,49 @@ const Details = () => {
           </span>
 
           <p className={styles["information"]}>{comic.description}</p>
-          <div className={styles["like"]}>
-            <button className={styles["btn"]}>Like</button>
-          </div>
-
-          <div className={styles["control"]}>
-            <button className={styles["btn"]}>Buy</button>
-            <button className={styles["btn"]}>Edit</button>
-            <button className={styles["btn"]}>Delete</button>
-          </div>
+          {user ? (
+            <>
+              <div className={styles["like"]}>
+                <button className={styles["btn"]}>Like</button>
+              </div>
+              <div className={styles["control"]}>
+                <Link to={`/buy-create/${comic._id}`} className={styles["link"]}>Buy</Link>
+                 {admin===true &&
+                  <>
+                <button className={styles["btn"]}>Edit</button>
+                <button className={styles["btn"]}>Delete</button>
+                  </>
+                 }
+              </div>
+            </>
+          ) : (
+            ""
+          )}
         </div>
 
         <div className={styles["product-image"]}>
-          <img src={comic.imageUrl} className={styles['container img']} alt={comic.title} />
+          <img
+            src={comic.imageUrl}
+            className={styles["container img"]}
+            alt={comic.title}
+          />
 
           <div className={styles["info"]}>
             <h2>The Description</h2>
             <ul>
-              <li key={comic._id}>
+              <li key={ comic.author}>
                 <strong>Author: </strong>
                 {comic.author}
               </li>
-              <li key={comic._id}>
+              <li key={ comic.price}>
                 <strong>Price: </strong>
                 {comic.price}
               </li>
-              <li key={comic._id}>
+              <li key={comic.year}>
                 <strong>Release data: </strong>
                 {comic.year}
               </li>
-              <li key={comic._id}>
+              <li key={ comic.title}>
                 <strong>Rating: </strong>
                 {final}
               </li>
