@@ -218,3 +218,15 @@
 
 .product-image:hover img {transition: all 0.3s ease-out;}
 .product-image:hover img {transform: scale(1.2, 1.2);}
+.link{
+	border: black;
+	border-style: solid;
+	text-decoration: none;
+    text-align: center;
+    color: aliceblue;
+    margin: 2px;
+    padding: 1px 10px;
+    font-size: 20px;
+	background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+	border-radius: 2px;
+}
