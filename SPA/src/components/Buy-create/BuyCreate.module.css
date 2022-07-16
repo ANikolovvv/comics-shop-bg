@@ -1,0 +1,133 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.art h1 {
+  background-size: 10% auto;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+  letter-spacing: 6px;
+  text-align: center;
+}
+
+.icon {
+  width: 90%;
+  height: 70%;
+  object-fit: cover;
+  font-size: 8em;
+  padding: 20px 0;
+  color: rgba(10, 180, 180, 1);
+}
+.signupSection {
+  margin: 30px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+
+  text-align: center;
+  display: flex;
+  color: white;
+  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0);
+}
+
+.info-form {
+  width: 55%;
+  background: rgba(255, 180, 82, 0.8);
+  padding: 20px 0;
+  border-right: 5px solid rgba(30, 30, 30, 0.8);
+}
+.info-form h2 {
+  color: rgb(239, 248, 248);
+}
+
+.signupForm {
+  width: 55%;
+  padding: 0px 0;
+  background: rgba(255, 180, 82, 0.8);
+  transition: 0.2s;
+}
+
+.inputFields {
+  margin: 7px 0;
+  font-size: 14px;
+  padding: 2px 1;
+  width: 250px;
+  border: 10px solid rgb(241, 243, 243);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-image: linear-gradient(
+    45deg,
+    #f1e4ae 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  color: rgb(0, 0, 0);
+  outline: none;
+}
+
+.noBullet {
+  list-style: none;
+  list-style-type: none;
+  padding: 17px;
+}
+
+.link-form {
+  color: aliceblue;
+  font-weight: bold;
+}
+.btn {
+  margin: 5px;
+  color: #fff;
+  background: transparent;
+  font-family: "Amaranth", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: capitalize;
+  padding: 3px 15px;
+  border-radius: 0;
+  border: 2px solid rgba(243, 240, 240, 0.799);
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease 0.1s;
+}
+
+.payment {
+  border-radius: 7px;
+  margin: 2px 0;
+  font-size: 14px;
+  padding: 7px 1;
+  width: 240px;
+  border: 10px solid rgb(241, 243, 243);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgb(235, 109, 36);
+  color: white;
+  outline: none;
+}
+li {
+  list-style: none;
+}
+.error-form{
+  font-weight: bolder;
+  color: red;
+  font-size: 11px;
+}
