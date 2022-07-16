@@ -1,33 +1,56 @@
-header{
-    text-align: right;
+header {
+  text-align: right;
 }
 
-
-.btn{
-
-    color: #fff;
-    background: transparent;
-    font-family: 'Amaranth', sans-serif;
-    font-size: 22px;
-    font-weight: 400;
-    font-style: italic;
-    text-transform: capitalize;
-    padding: 3px 15px;
-    border-radius: 0;
-    border: 2px solid rgba(243, 240, 240, 0.799);
-    background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
-    position: relative;
-    z-index: 1;
-    transition: all 0.3s ease 0.1s;
+.container {
+  margin: 10px;
+  top: 50%;
+}
+.btn {
+  color: #fff;
+  background: transparent;
+  font-family: "Amaranth", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: capitalize;
+  padding: 3px 15px;
+  border-radius: 0;
+  border: 2px solid rgba(243, 240, 240, 0.799);
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease 0.1s;
 }
 
-.btno  {
+.btno {
   display: inline-block;
   margin: 1px;
-  padding: 10px;
+  padding: 0px;
 }
-.btno a  {
+.btno a {
   margin: 5px;
   padding: 10px;
 }
+.logo {
+  margin: 10px;
+  top: 30%;
+   right: 10%;
+  font-size: 1.2rem;
+  color: white;
+}
+.logo-img {
 
+  position: relative;
+  float: left;
+  width:  100px;
+  height: 100px;
+  background-position: 50% 50%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+}
