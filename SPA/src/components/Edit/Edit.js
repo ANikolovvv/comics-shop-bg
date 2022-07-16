@@ -117,7 +117,7 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="title"
                 placeholder="Title: Batman"
-                value={value.title}
+                value={value.title||''}
                 onChange={changeHendler}
                 onBlur={(e)=>minLength(e,3)}
               />
@@ -134,7 +134,7 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="author"
                 placeholder="Author: Bob Kane"
-                value={value.author}
+                value={value.author||''}
                 onChange={changeHendler}
                 onBlur={(e)=>minLength(e,3)}
               />
@@ -151,7 +151,7 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="email"
                 placeholder="Email: ivan@abv.bg"
-                value={value.email}
+                value={value.email||''}
                 onChange={changeHendler}
                 onBlur={regEmail}
               />
@@ -168,7 +168,7 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="address"
                 placeholder="Address: Town and Street "
-                value={value.address}
+                value={value.address||''}
                 onChange={changeHendler}
                 onBlur={(e)=>minLength(e,10)}
               />
@@ -185,7 +185,7 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="courier"
                 placeholder="Courier service: Econt, Speedy "
-                value={value.courier}
+                value={value.courier||''}
                 onChange={changeHendler}
                 onBlur={(e)=>minLength(e,4)}
               />
@@ -202,7 +202,7 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="number"
                 placeholder="Number: 1, 2, 3 "
-                value={value.number}
+                value={value.number||''}
                 onChange={changeHendler}
                 onBlur={isNumber}
               />
@@ -216,7 +216,7 @@ const regEmail=(e)=>{
             <select
               name="payment"
               className={styles["payment"]}
-              value={value.payment}
+              value={value.payment ||''}
               onChange={changeHendler}
             >
               <option value="cash-delivery">Cash on Delivery</option>
@@ -227,6 +227,7 @@ const regEmail=(e)=>{
               <button
                 className={styles["btn"]}
                 type="submit"
+                value='Submit'
               >
                 Update your order
               </button>
