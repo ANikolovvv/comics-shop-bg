@@ -16,6 +16,7 @@ const Catalog = () => {
         let data = await requests.getAll();
         //let data =undefined
         if (data !== undefined) {
+   
           setCurrentData(true);
           setCurrentItems(data);
         }
