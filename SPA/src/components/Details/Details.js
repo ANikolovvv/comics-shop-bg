@@ -1,27 +1,48 @@
 import { useState, useEffect } from "react";
-import { useParams,Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import * as requests from "../../services/server";
 import styles from "./Details.module.css";
 
 const Details = () => {
   const [comic, setComic] = useState({});
-  const [admin,setAdmin]=useState(false)
+  const [admin, setAdmin] = useState(false);
+  const [like, setLike] = useState(false);
+  const [rating, setRating] = useState(0);
+
   let { id } = useParams();
   console.log(id, "id");
-  let arr = comic.userLiked;
-  let final = arr?.length;
-  const user = localStorage.getItem("user");
-  console.log(user);
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log("details",like);
+
+  // setLike(arr.includes(user._id))
 
   useEffect(() => {
     requests.getData(id).then((result) => {
       console.log(result, "result");
-       if(result){
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (result !== undefined) {
         setComic(result);
-       }
-      
+        let num = result.userLiked.length;
+        let userLiked = result.userLiked.includes(user._id);
+        setRating(num);
+        setLike(userLiked);
+      }
     });
   }, [id]);
+
+  const likeHandler = async (e) => {
+    try {
+      let like = await requests.addLike(comic._id, user);
+      let num = like.userLiked.length;
+      setLike(true);
+      setComic(like);
+      setRating(num);
+      console.log(like, "like");
+    } catch (error) {
+      console.log(error, "like errr");
+    }
+  };
   return (
     <>
       <article className={styles["art"]}>
@@ -42,17 +63,26 @@ const Details = () => {
           <p className={styles["information"]}>{comic.description}</p>
           {user ? (
             <>
-              <div className={styles["like"]}>
-                <button className={styles["btn"]}>Like</button>
-              </div>
+              {like === false && (
+                <div className={styles["like"]}>
+                  <button className={styles["btn"]} onClick={likeHandler}>
+                    Like
+                  </button>
+                </div>
+              )}
               <div className={styles["control"]}>
-                <Link to={`/buy-create/${comic._id}`} className={styles["link"]}>Buy</Link>
-                 {admin===true &&
+                <Link
+                  to={`/buy-create/${comic._id}`}
+                  className={styles["link"]}
+                >
+                  Buy
+                </Link>
+                {admin === true && (
                   <>
-                <button className={styles["btn"]}>Edit</button>
-                <button className={styles["btn"]}>Delete</button>
+                    <button className={styles["btn"]}>Edit</button>
+                    <button className={styles["btn"]}>Delete</button>
                   </>
-                 }
+                )}
               </div>
             </>
           ) : (
@@ -70,11 +100,11 @@ const Details = () => {
           <div className={styles["info"]}>
             <h2>The Description</h2>
             <ul>
-              <li key={ comic.author}>
+              <li key={comic.author}>
                 <strong>Author: </strong>
                 {comic.author}
               </li>
-              <li key={ comic.price}>
+              <li key={comic.price}>
                 <strong>Price: </strong>
                 {comic.price}
               </li>
@@ -82,9 +112,9 @@ const Details = () => {
                 <strong>Release data: </strong>
                 {comic.year}
               </li>
-              <li key={ comic.title}>
+              <li key={comic.title}>
                 <strong>Rating: </strong>
-                {final}
+                {rating}
               </li>
             </ul>
           </div>
