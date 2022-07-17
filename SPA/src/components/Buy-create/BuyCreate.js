@@ -82,7 +82,7 @@ const regEmail=(e)=>{
     };
      console.log(payment,'paiment')
     try {
-        if(number===NaN|| number<1){
+        if(isNaN(number)|| number<1){
           throw new Error('Number must be bigger than 0!')
         }
       let token = JSON.parse(localStorage.getItem("user"));
@@ -114,6 +114,7 @@ const regEmail=(e)=>{
           <img
             className={styles["icon"]}
             src="https://keithroysdon.files.wordpress.com/2012/10/clark-kent-reporter.jpg?w=625"
+            alt="LOGO"
           ></img>
         </div>
         <form
