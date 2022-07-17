@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import AuthContexts from "../../../contexts/authContext";
 import { useContext } from "react";
 import { resLogout } from "../../../services/server";
@@ -6,8 +6,8 @@ import logo from "../../../logo.svg";
 import styles from "./Header.module.css";
 
 const Header = (props) => {
-  console.log("props", props);
 
+  const navigation = useNavigate();
   let [user, setContext] = useContext(AuthContexts);
   console.log(localStorage.getItem("user"), "sdsaassasaaaaaaaaa");
   const token = JSON.parse(localStorage.getItem("user"));
@@ -17,6 +17,7 @@ const Header = (props) => {
     localStorage.clear();
     user = undefined;
     setContext(user);
+    navigation('/')
   };
   //const isUser = props.user !== undefined;
 
