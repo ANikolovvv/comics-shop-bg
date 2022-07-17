@@ -2,7 +2,7 @@ const { validateToken } = require("../services/authServices");
 
 module.exports = () => (req, res, next) => {
   const token = req.headers["x-authorization"];
-
+  console.log(token,'iadsfsd')
   if (token) {
     console.log(token, "is atuh token");
     try {
@@ -13,6 +13,7 @@ module.exports = () => (req, res, next) => {
         _id: payload._id,
         token,
       };
+      console.log(req.user,'user')
     } catch (err) {
       console.error(err);
       return res
