@@ -5,7 +5,7 @@ const orderSchema = new mongoose.Schema({
   author: { type: String, required: true },
   email: { type: String, required: true },
   address: { type: String, required: true },
-  courier: { type: String, required: true },
+  courier: { type: String, required: true ,enum:{values:['econt','speedy'],message:'Courier must be between Speedy or Econt!' }},
   number:{type:Number,required:true},
   payment: { type: String, required: true ,enum:['cash-delivery','credit-card','debit-card']},
   price: { type: Number, default: true },
