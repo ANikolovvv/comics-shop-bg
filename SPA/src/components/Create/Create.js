@@ -66,6 +66,9 @@ const regEmail=(e)=>{
     };
      console.log(payment,'paiment')
     try {
+      if(isNaN(number)|| number<1){
+        throw new Error('Number must be bigger than 0!')
+      }
       let token = JSON.parse(localStorage.getItem("user"));
       let res=await requests.createOrder(ctx, token.accessToken);
        if(res.message){

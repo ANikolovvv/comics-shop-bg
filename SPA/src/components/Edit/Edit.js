@@ -73,6 +73,9 @@ export const Edit = () => {
     };
 
     try {
+      if(isNaN(number)|| number<1){
+        throw new Error('Number must be bigger than 0!')
+      }
       let token = JSON.parse(localStorage.getItem("user"));
       console.log(ctx.title, token);
       let res = await requests.updateOrder(ctx, comics._id, token.accessToken);
