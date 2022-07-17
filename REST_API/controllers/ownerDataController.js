@@ -17,19 +17,27 @@ router.get("/my-data/:id", async (req, res) => {
   //let item = await api.getData(req.params.id);
  
 });
-router.put("/:id", preload(api), isOwner(), async (req, res) => {
+router.get('/:id',preload(api),async(req,res)=>{
+    console.log('get order')
+    res.json(res.locals.item);
+   
+})
+router.put("/:id", preload(api),isOwner(), async (req, res) => {
   console.log("editvbb hhh put");
   try {
     const result = await api.updateData(res.locals.item, req.body);
     res.json({ result });
   } catch (err) {
     console.error(err);
-    res.status(400).json({ message: "Request error" });
+    res.status(400).json({ message: err.message });
   }
 });
-router.delete("/:id", isAuth(), isOwner(), async (req, res) => {
+router.delete("/:id",preload(api), isAuth(), isOwner(),async (req, res) => {
   const id = req.params.id;
   console.log("delete ssssssss");
+  // res.json({ok:'ok'})
+  // res.status(200)
+ // isAuth(), isOwner(),
   try {
     const result = await api.deleteData(id);
     res.json({ result });
