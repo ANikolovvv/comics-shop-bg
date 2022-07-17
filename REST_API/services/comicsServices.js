@@ -4,7 +4,9 @@ exports.getAllComics = async () => {
   return await Comics.find({}).lean();
 };
 exports.getById = async (id) => {
-  const comic = await Comics.findById(id).populate("userLiked").lean();
+  console.log(id,'iddddddddd')
+  const comic = await Comics.findById(id);
+  console.log(comic,'soft')
   if (!comic) {
     throw new Error("Sory someting when wrong!");
   }
@@ -18,3 +20,12 @@ exports.createData = async (order) => {
 
   return newOrder;
 };
+exports.comicsAddLike=async(user,id)=>{
+  const comic = await Comics.findById(id).populate("userLiked");
+  if (!comic) {
+    throw new Error("Sory someting when wrong!");
+  }
+  comic.userLiked.push(user);
+  comic.save()
+   return comic
+}
