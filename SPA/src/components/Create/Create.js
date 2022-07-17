@@ -20,7 +20,7 @@ const Create = () => {
     payment: "cash-delivery",
   });
   //console.log(user, setContext, "create");
-
+ 
   const changeHendler = (e) => {
     setValue((state) => ({
       ...state,
@@ -67,11 +67,14 @@ const regEmail=(e)=>{
      console.log(payment,'paiment')
     try {
       let token = JSON.parse(localStorage.getItem("user"));
-      await requests.createOrder(ctx, token.accessToken);
+      let res=await requests.createOrder(ctx, token.accessToken);
+       if(res.message){
+         throw new Error(res.message)
+       }
       navigation("/my-orders");
     } catch (err) {
       setServerErr(err.message)
-      console.log(err.message);
+      console.log(err.message,'errreeeeeeeeeee');
     }
     console.log(ctx);
   };
@@ -182,7 +185,7 @@ const regEmail=(e)=>{
             </li>
             {errors.courier && (
                 <p className={styles["error-form"]}>
-                  Courier should be at least 4 characters long!
+                  Courier should Econt or Speedy!
                 </p>
               )}
             <li>
