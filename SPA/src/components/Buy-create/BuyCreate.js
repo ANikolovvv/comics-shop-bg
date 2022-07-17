@@ -48,7 +48,7 @@ const Buy = () => {
   };
   const isNumber = (e) => {
     let number = Number(e.target.value);
-
+     
     setErrors(state => ({
         ...state,
         [e.target.name]: number <= 0,
@@ -82,12 +82,19 @@ const regEmail=(e)=>{
     };
      console.log(payment,'paiment')
     try {
+        if(number===NaN|| number<1){
+          throw new Error('Number must be bigger than 0!')
+        }
       let token = JSON.parse(localStorage.getItem("user"));
-      await requests.createOrder(ctx, token.accessToken);
+      let res=await requests.createOrder(ctx, token.accessToken);
+      console.log(res,'response  ')
+       if(res.message){
+         throw new Error(res.message)
+       }
       navigation("/my-orders");
     } catch (err) {
       setServerErr(err.message)
-      console.log(err.message);
+      console.log(err.message,'err.mesasa');
     }
     console.log(ctx);
   };
@@ -229,7 +236,7 @@ const regEmail=(e)=>{
             </select>
             <li>
                 
-              <button disabled={next}
+              <button 
                 className={styles["btn"]}
                 type="submit"
               >
