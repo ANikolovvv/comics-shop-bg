@@ -7,16 +7,17 @@ import { Top } from "./TopFive";
 //import { Top } from "./TopFive";
 
 function Home() {
-  const [comics, setGames] = useState([]);
+  const [comics, setComics] = useState([]);
   const [count, setCount] = useState(0);
 
   console.log(comics, " top reiting");
 
-
   useEffect(() => {
     requests.getAll().then((result) => {
          if(result !==undefined){
-          setGames(result);
+          const rating=result.sort((a,b)=>b.userLiked.length - a.userLiked.length);
+         
+          setComics(rating);
          }
      
     });
