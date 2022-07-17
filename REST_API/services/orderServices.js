@@ -11,8 +11,6 @@ exports.createData = async (order) => {
   return newOrder;
 };
 
-
-
 exports.shareData = async (id, user) => {
   let order = await Comic.findById(id);
   console.log("share", order);
@@ -22,15 +20,29 @@ exports.shareData = async (id, user) => {
 exports.getAll = async () => {
   return await Comic.find({}).lean();
 };
-exports.getData = async (id) => {
+exports.getById = async (id) => {
   return await Order.findById(id);
 };
+// const item={
+//   title:req.body.title,
+//   author:req.body.author,
+//   email:req.body.email,
+//   address:req.body.address,
+//   courier:req.body.courier,
+//   number:req.body.number,
+//   payment:req.body.payment,
+//   price:(Math.random() * 10).toFixed(2) * req.body.number,
+//   _ownerId:req.user._id
+// }
 exports.updateData = async (existing, item) => {
   existing.title = item.title;
   existing.author = item.author;
-  existing.year = item.year;
-  existing.image = item.image;
-  existing.price = (Math.random() * 10).toFixed(2);
+  existing.email = item.email;
+  existing.address = item.address;
+  existing.courier = item.courier;
+  existing.number = item.number;
+  existing.payment = item.payment;
+  existing.price = (Math.random() * 10 * item.number).toFixed(2);
   existing._ownerId = existing._ownerId;
 
   await existing.save();
@@ -41,7 +53,15 @@ exports.deleteData = async (id) => {
   return await Order.findByIdAndDelete(id);
 };
 exports.searchData = async (type) => {
-  const regExp = new RegExp(`^${type}$`, "i");
-  const match = await Comic.find({ type: { $regex: regExp } }).lean();
-  console.log(match);
+  const regExp = new RegExp(`^${type}`, "i");
+  const match = await Comic.find({ title: { $regex: regExp } }).lean();
+  const author = await Comic.find({ author: { $regex: regExp } }).lean();
+  if (match.length > 0) {
+    return match;
+  } else if (author.length > 0) {
+    return author;
+  } else {
+    return author;
+  }
 };
+
