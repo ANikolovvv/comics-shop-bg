@@ -3,7 +3,7 @@ import AuthContexts from "../../contexts/authContext";
 import * as server from "../../services/server";
 import { useContext, useState } from "react";
 import styles from "./Register.module.css";
-import { errorWrapeer } from "../../helpers/Form-Validate";
+import { errorWrapeer, matchEmail } from "../../helpers/Form-Validate";
 import { Errors } from "../Erorrs/Errors";
 
 const Register = () => {
@@ -38,7 +38,14 @@ const Register = () => {
 
     let ctx = { email, password, rePass };
     try {
-      errorWrapeer(ctx, "register");
+      let match = matchEmail(ctx.email);
+
+      if (match === null) {
+        throw new Error(
+          "Email must includes @ and . ()=> valid email (asd@sds.bg)"
+        );
+      }
+      errorWrapeer(ctx);
       await server.regUsers(ctx);
       setContext(ctx);
       navigation("/catalog");
@@ -85,7 +92,13 @@ const Register = () => {
                 placeholder="Email: batman@red.gmail"
                 value={names.email}
                 onChange={changeHendler}
+                onBlur={(e) => minLength(e, 8)}
               />
+              {errors.email && (
+                <p className={styles["error-form"]}>
+                  Email should be at least 8 characters long!
+                </p>
+              )}
             </li>
             <li>
               <label htmlFor="password"></label>
