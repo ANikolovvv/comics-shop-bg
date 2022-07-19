@@ -4,6 +4,7 @@ import * as requests from "../../services/server";
 import {  useState } from "react";
 import styles from "./Create.module.css";
 import { Errors } from "../Erorrs/Errors";
+import { ctxValidation } from "../../helpers/Form-Validate";
 
 const Create = () => {
   const navigation = useNavigate();
@@ -41,16 +42,7 @@ const Create = () => {
         [e.target.name]: number <= 0,
     }));
 }
-const regEmail=(e)=>{
-  const regex = new RegExp(/^[A-Za-z0-9]+@[A-Za-z]+\.[a-z]+$/);
-    let email=e.target.value;
-    let match=email.match(regex);
-    setErrors(state=>({
-      ...state,
-      [e.target.name]: !match
 
-    }))
-}
   const formHandler = async (e) => {
     e.preventDefault();
     const { title, author, email, address, courier, number, payment } = value;
@@ -66,14 +58,10 @@ const regEmail=(e)=>{
     };
      console.log(payment,'paiment')
     try {
-      if(isNaN(number)|| number<1){
-        throw new Error('Number must be bigger than 0!')
-      }
+      ctxValidation(ctx);
       let token = JSON.parse(localStorage.getItem("user"));
-      let res=await requests.createOrder(ctx, token.accessToken);
-       if(res.message){
-         throw new Error(res.message)
-       }
+      await requests.createOrder(ctx, token.accessToken);
+      
       navigation("/my-orders");
     } catch (err) {
       setServerErr(err.message)
@@ -149,12 +137,12 @@ const regEmail=(e)=>{
                 placeholder="Email: ivan@abv.bg"
                 value={value.email}
                 onChange={changeHendler}
-                onBlur={regEmail}
+                onBlur={(e)=>minLength(e,8)}
               />
             </li>
             {errors.email && (
                 <p className={styles["error-form"]}>
-                  Email is not valid - valid email red@abv.bg!
+                  Email is not valid  - valid email red@abv.bg!
                 </p>
               )}
             <li>
