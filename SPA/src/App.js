@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import {useEffect, useState}from 'react';
+import { useEffect, useState } from "react";
 import AuthContexts from "./contexts/authContext";
 import Catalog from "./components/Catalog/Catalog";
 import Create from "./components/Create/Create";
@@ -13,36 +13,46 @@ import { MyOrder } from "./components/MyOrder/MyOrder";
 import { NotFound } from "./components/404/404";
 import { Edit } from "./components/Edit/Edit";
 import Buy from "./components/Buy-create/BuyCreate";
-
+import * as requests from "../src/services/server";
 
 function App() {
-  const [user,setUser]=useState();
-    console.log(user,'attach user')
-    console.log(setUser)
-  useEffect(()=>{
-
-  },[])
- // value={[user,setUser]}
+  const [user, setUser] = useState();
+  const [comics, setComics] = useState([]);
+  console.log(user, "attach user");
+  console.log(setUser);
+  useEffect(() => {
+    requests.getAll().then((result) => {
+      setComics(result);
+      if(result!==undefined){
+         setComics(result)
+      }
+    });
+  }, []);
+  console.log('app',comics)
+  // value={[user,setUser]}
   return (
-    <AuthContexts.Provider value={[user,setUser]} >
-    <div className="App">
-      <Header ></Header>
-      <main className="main">
-        <Routes>
-          <Route path="/"  element={<Home/>}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-          <Route path="/catalog" element={<Catalog />}></Route>
-          <Route path="/create" element={<Create />}></Route>
-          <Route path="/buy-create/:id" element={<Buy/>}></Route>
-          <Route path="/my-orders" element={<MyOrder/>}></Route>
-          <Route path="/details/:id" element={<Details />}></Route>
-          <Route path="/edit/:id" element={<Edit />}></Route>
-          <Route path="*" element={<NotFound/>}></Route>
-        </Routes>
-      </main>
-         <Footer/>
-    </div>
+    <AuthContexts.Provider value={[user, setUser]}>
+      <div className="App">
+        <Header></Header>
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<Home comic={comics}/>}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/register" element={<Register />}></Route>
+            <Route
+              path="/catalog"
+              element={<Catalog comics={comics} />}
+            ></Route>
+            <Route path="/create" element={<Create />}></Route>
+            <Route path="/buy-create/:id" element={<Buy />}></Route>
+            <Route path="/my-orders" element={<MyOrder />}></Route>
+            <Route path="/details/:id" element={<Details />}></Route>
+            <Route path="/edit/:id" element={<Edit />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </AuthContexts.Provider>
   );
 }
