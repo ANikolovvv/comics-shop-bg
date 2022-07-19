@@ -1,35 +1,35 @@
-import { useNavigate,useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 //import AuthContexts from "../../contexts/authContext";
 import * as requests from "../../services/server";
-import {  useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 import styles from "./BuyCreate.module.css";
 import { Errors } from "../Erorrs/Errors";
+import { ctxValidation } from "../../helpers/Form-Validate";
 
 const Buy = () => {
   const navigation = useNavigate();
- // const [user, setContext] = useContext(AuthContexts);
- const [errors, setErrors] = useState({});
- const[next,setNext]= useState(true);
- const [serverError, setServerErr] = useState([]);
+  // const [user, setContext] = useContext(AuthContexts);
+  const [errors, setErrors] = useState({});
+
+  const [serverError, setServerErr] = useState([]);
   const [value, setValue] = useState({});
-  //console.log(user, setContext, "create");
+
   let { id } = useParams();
   useEffect(() => {
     requests.getData(id).then((result) => {
       console.log(result, "result");
-       if(result){
+      if (result) {
         setValue({
-            title: result.title,
-            author: result.author,
-            email: '',
-            address: '',
-            courier:'',
-            number: '',
-            payment: "cash-delivery",
-            price:result.price
-          });
-       }
-   
+          title: result.title,
+          author: result.author,
+          email: "",
+          address: "",
+          courier: "",
+          number: "",
+          payment: "cash-delivery",
+          price: result.price,
+        });
+      }
     });
   }, [id]);
 
@@ -44,57 +44,41 @@ const Buy = () => {
       ...state,
       [e.target.name]: value[e.target.name].length < length,
     }));
-    setNext(value[e.target.name].length < length)
   };
   const isNumber = (e) => {
     let number = Number(e.target.value);
-     
-    setErrors(state => ({
-        ...state,
-        [e.target.name]: number <= 0,
-    }));
-     setNext(number<=0)
-}
-const regEmail=(e)=>{
-  const regex = new RegExp(/^[A-Za-z0-9]+@[A-Za-z]+\.[a-z]+$/);
-    let email=e.target.value;
-    let match=email.match(regex);
-    setErrors(state=>({
-      ...state,
-      [e.target.name]: !match
 
-    }))
-    setNext(!match)
-}
+    setErrors((state) => ({
+      ...state,
+      [e.target.name]: number <= 0,
+    }));
+  };
+
   const formHandler = async (e) => {
     e.preventDefault();
-    const { title, author, email, address, courier, number, payment,price } = value;
+    const { title, author, email, address, courier, number, payment, price } =
+      value;
 
     const ctx = {
       title: title.trim(),
       author: author.trim(),
       email: email.trim(),
       address: address.trim(),
-      courier: courier.trim(),
+      courier: courier.toLowerCase().trim(),
       number: Number(number),
       price: Number(price),
       payment,
     };
-     console.log(payment,'paiment')
+    console.log(payment, "paiment");
     try {
-        if(isNaN(number)|| number<1){
-          throw new Error('Number must be bigger than 0!')
-        }
+      ctxValidation(ctx);
       let token = JSON.parse(localStorage.getItem("user"));
-      let res=await requests.createOrder(ctx, token.accessToken);
-      console.log(res,'response  ')
-       if(res.message){
-         throw new Error(res.message)
-       }
+      await requests.createOrder(ctx, token.accessToken);
+
       navigation("/my-orders");
     } catch (err) {
-      setServerErr(err.message)
-      console.log(err.message,'err.mesasa');
+      setServerErr(err.message);
+      console.log(err.message, "err.mesasa");
     }
     console.log(ctx);
   };
@@ -130,16 +114,16 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="title"
                 placeholder="Title: Batman"
-                value={value.title||''}
+                value={value.title || ""}
                 onChange={changeHendler}
-                onBlur={(e)=>minLength(e,3)}
+                onBlur={(e) => minLength(e, 3)}
               />
             </li>
             {errors.title && (
-                <p className={styles["error-form"]}>
-                  Title should be at least 3 characters long!
-                </p>
-              )}
+              <p className={styles["error-form"]}>
+                Title should be at least 3 characters long!
+              </p>
+            )}
             <li>
               <label htmlFor="text"></label>
               <input
@@ -147,16 +131,16 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="author"
                 placeholder="Author: Bob Kane"
-                value={value.author||''}
+                value={value.author || ""}
                 onChange={changeHendler}
-                onBlur={(e)=>minLength(e,3)}
+                onBlur={(e) => minLength(e, 3)}
               />
             </li>
             {errors.author && (
-                <p className={styles["error-form"]}>
-                  Author should be at least 3 characters long!
-                </p>
-              )}
+              <p className={styles["error-form"]}>
+                Author should be at least 3 characters long!
+              </p>
+            )}
             <li>
               <label htmlFor="email"></label>
               <input
@@ -164,16 +148,16 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="email"
                 placeholder="Email: ivan@abv.bg"
-                value={value.email|| ''}
+                value={value.email || ""}
                 onChange={changeHendler}
-                onBlur={regEmail}
+                onBlur={(e) => minLength(e, 8)}
               />
             </li>
             {errors.email && (
-                <p className={styles["error-form"]}>
-                  Email is not valid - valid email red@abv.bg!
-                </p>
-              )}
+              <p className={styles["error-form"]}>
+                Email is not valid - valid email red@abv.bg!
+              </p>
+            )}
             <li>
               <label htmlFor="text"></label>
               <input
@@ -181,16 +165,16 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="address"
                 placeholder="Address: Town and Street "
-                value={value.address||''}
+                value={value.address || ""}
                 onChange={changeHendler}
-                onBlur={(e)=>minLength(e,10)}
+                onBlur={(e) => minLength(e, 10)}
               />
             </li>
             {errors.address && (
-                <p className={styles["error-form"]}>
-                  Address should be at least 10 characters long!
-                </p>
-              )}
+              <p className={styles["error-form"]}>
+                Address should be at least 10 characters long!
+              </p>
+            )}
             <li>
               <label htmlFor="text"></label>
               <input
@@ -198,16 +182,16 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="courier"
                 placeholder="Courier service: Econt, Speedy "
-                value={value.courier||''}
+                value={value.courier || ""}
                 onChange={changeHendler}
-                onBlur={(e)=>minLength(e,4)}
+                onBlur={(e) => minLength(e, 4)}
               />
             </li>
             {errors.courier && (
-                <p className={styles["error-form"]}>
-                  Courier should be at least 4 characters long!
-                </p>
-              )}
+              <p className={styles["error-form"]}>
+                Courier should be at least 4 characters long!
+              </p>
+            )}
             <li>
               <label htmlFor="number"></label>
               <input
@@ -215,20 +199,20 @@ const regEmail=(e)=>{
                 className={styles["inputFields"]}
                 name="number"
                 placeholder="Number: 1, 2, 3 "
-                value={value.number||''}
+                value={value.number || ""}
                 onChange={changeHendler}
                 onBlur={isNumber}
               />
             </li>
             {errors.number && (
-                <p className={styles["error-form"]}>
-                  Number should be biger then 0!
-                </p>
-              )}
+              <p className={styles["error-form"]}>
+                Number should be biger then 0!
+              </p>
+            )}
             <select
               name="payment"
               className={styles["payment"]}
-              value={value.payment||''}
+              value={value.payment || ""}
               onChange={changeHendler}
             >
               <option value="cash-delivery">Cash on Delivery</option>
@@ -236,14 +220,9 @@ const regEmail=(e)=>{
               <option value="debit-card">Debit Card</option>
             </select>
             <li>
-                
-              <button 
-                className={styles["btn"]}
-                type="submit"
-              >
+              <button className={styles["btn"]} type="submit">
                 Order
               </button>
-              
             </li>
           </ul>
         </form>
