@@ -6,26 +6,19 @@ import { Spinner } from "../Spinner/Spinner";
 import styles from "./Catalog.module.css";
 import { Search } from "./Search/Search";
 
-const Catalog = () => {
+const Catalog = ({ comics }) => {
   const [currentItems, setCurrentItems] = useState([]);
   const [currentdata, setCurrentData] = useState(false);
 
   useEffect(() => {
-    (async () => {
-      try {
-        let data = await requests.getAll();
-        //let data =undefined
-        if (data !== undefined) {
-   
-          setCurrentData(true);
-          setCurrentItems(data);
-        }
-      } catch (error) {}
-    })();
-  }, []);
+    if (comics !== undefined) {
+      setCurrentItems(comics);
+      setCurrentData(true);
+    }
+  }, [comics]);
 
   let user = JSON.parse(localStorage.getItem("user"));
-  console.log(user, "user");
+
   const searchHendler = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -33,7 +26,6 @@ const Catalog = () => {
 
     try {
       let result = await requests.searchData(search);
-      console.log(result, "seeeeee");
 
       if (result !== undefined) {
         setCurrentData(true);
