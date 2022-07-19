@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect ,useId} from "react";
 import { useParams, Link } from "react-router-dom";
 import * as requests from "../../services/server";
 import styles from "./Details.module.css";
@@ -11,11 +11,11 @@ const Details = () => {
 
   let { id } = useParams();
   console.log(id, "id");
+  let key=useId();
 
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log("details",like);
+  console.log("details",user);
 
-  // setLike(arr.includes(user._id))
 
   useEffect(() => {
     requests.getData(id).then((result) => {
@@ -24,9 +24,12 @@ const Details = () => {
       if (result !== undefined) {
         setComic(result);
         let num = result.userLiked.length;
-        let userLiked = result.userLiked.includes(user._id);
-        setRating(num);
-        setLike(userLiked);
+        if(user!==null){
+          let userLiked = result.userLiked.includes(user._id);
+          setRating(num);
+          setLike(userLiked);
+        }
+        
       }
     });
   }, [id]);
@@ -63,13 +66,13 @@ const Details = () => {
           <p className={styles["information"]}>{comic.description}</p>
           {user ? (
             <>
-              {like === false && (
+              {like === false ? (
                 <div className={styles["like"]}>
                   <button className={styles["btn"]} onClick={likeHandler}>
                     Like
                   </button>
                 </div>
-              )}
+              ):<h1>You already like this comics!</h1>}
               <div className={styles["control"]}>
                 <Link
                   to={`/buy-create/${comic._id}`}
@@ -100,19 +103,19 @@ const Details = () => {
           <div className={styles["info"]}>
             <h2>The Description</h2>
             <ul>
-              <li key={comic.author}>
+              <li key={key}>
                 <strong>Author: </strong>
                 {comic.author}
               </li>
-              <li key={comic.price}>
+              <li key={`${key}-price`}>
                 <strong>Price: </strong>
                 {comic.price}
               </li>
-              <li key={comic.year}>
+              <li key={`${key}-date`}>
                 <strong>Release data: </strong>
                 {comic.year}
               </li>
-              <li key={comic.title}>
+              <li key={`${key}-raiting`}>
                 <strong>Rating: </strong>
                 {rating}
               </li>
