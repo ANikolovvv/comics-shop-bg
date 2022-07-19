@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from './Card.module.css'
-//className="btn btn-outline-success btn-sm">
+
 const Card = (props) => {
   console.log(props,'card');
   return (
