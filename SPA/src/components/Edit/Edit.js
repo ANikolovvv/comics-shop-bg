@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 import styles from "./Edit.module.css";
 import { Errors } from "../Erorrs/Errors";
+import { ctxValidation } from "../../helpers/Form-Validate";
 
 export const Edit = () => {
   const [comics, setComics] = useState({});
@@ -47,15 +48,7 @@ export const Edit = () => {
       [e.target.name]: number <= 0,
     }));
   };
-  const regEmail = (e) => {
-    const regex = new RegExp(/^[A-Za-z0-9]+@[A-Za-z]+\.[a-z]+$/);
-    let email = e.target.value;
-    let match = email.match(regex);
-    setErrors((state) => ({
-      ...state,
-      [e.target.name]: !match,
-    }));
-  };
+
   const navigation = useNavigate();
   const formHandler = async (e) => {
     e.preventDefault();
@@ -67,21 +60,17 @@ export const Edit = () => {
       author: author.trim(),
       email: email.trim(),
       address: address.trim(),
-      courier: courier.trim(),
+      courier: courier.toLowerCase().trim(),
       number: Number(number),
       payment,
     };
 
     try {
-      if(isNaN(number)|| number<1){
-        throw new Error('Number must be bigger than 0!')
-      }
+      ctxValidation(ctx);
       let token = JSON.parse(localStorage.getItem("user"));
-      console.log(ctx.title, token);
-      let res = await requests.updateOrder(ctx, comics._id, token.accessToken);
-      if (res.message) {
-        throw new Error(res.message);
-      }
+
+      await requests.updateOrder(ctx, comics._id, token.accessToken);
+
       navigation("/my-orders");
     } catch (err) {
       setServerErr(err.message);
@@ -158,7 +147,7 @@ export const Edit = () => {
                 placeholder="Email: ivan@abv.bg"
                 value={value.email || ""}
                 onChange={changeHendler}
-                onBlur={regEmail}
+                onBlur={(e) => minLength(e, 8)}
               />
             </li>
             {errors.email && (
