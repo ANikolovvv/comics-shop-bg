@@ -4,11 +4,13 @@ import AuthContexts from "../../contexts/authContext";
 import { useContext, useState } from "react";
 import styles from "../Login/Login.module.css";
 import { Errors } from "../Erorrs/Errors";
+import { matchEmail } from "../../helpers/Form-Validate";
 
 const Login = () => {
   const [user, setContext] = useContext(AuthContexts);
   const [errors, setErrors] = useState({});
   const [userErr, setUserErr] = useState([]);
+
   const [value, setValue] = useState({
     email: "",
     password: "",
@@ -20,12 +22,14 @@ const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
+
   const minLength = (e, length) => {
     setErrors((state) => ({
       ...state,
       [e.target.name]: value[e.target.name].length < length,
     }));
   };
+
   const navigation = useNavigate();
   const formHandler = (e) => {
     e.preventDefault();
@@ -33,17 +37,24 @@ const Login = () => {
     const ctx = { email, password };
     login(ctx);
     async function login(ctx) {
-      let login = await onLogin(ctx);
+      try {
+        let match = matchEmail(ctx.email);
 
-      if (login.message) {
-        setUserErr(login.message);
-        navigation("/login");
-      } else {
+        if (match === null) {
+          throw new Error(
+            "Email must includes @ and . ()=> valid email (asd@sds.bg)"
+          );
+        }
+        await onLogin(ctx);
         setContext(ctx);
         navigation("/catalog");
+      } catch (error) {
+        console.log(error.message, "hfghg message");
+        setUserErr(error.message);
       }
     }
   };
+
   return (
     <>
       <article className={styles["art"]}>
@@ -80,7 +91,13 @@ const Login = () => {
                 placeholder="Email: batman@red.gmail"
                 value={value.email}
                 onChange={changeHendler}
+                onBlur={(e) => minLength(e, 8)}
               />
+              {errors.email && (
+                <p className={styles["error-form"]}>
+                  Email should be at least 8 characters long!
+                </p>
+              )}
             </li>
             <li>
               <label htmlFor="password"></label>
