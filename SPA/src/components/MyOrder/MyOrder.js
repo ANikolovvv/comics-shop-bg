@@ -56,6 +56,7 @@ export const MyOrder = () => {
       <h1 className={styles["art"]}>My orders</h1>
       {currentdata === false && <Spinner />}
       {currentItems.length > 0 && currentdata===true&&
+          
         currentItems.map((x) => (
           <MyCard
             key={x._id}
@@ -63,6 +64,8 @@ export const MyOrder = () => {
             onClick={() => deleteHandller(x)}
           ></MyCard>
         ))}
+        
+
       { currentItems.length === 0 && currentdata===true&& (
         <div className={styles["link"]}>
           <h1>Make your first order</h1>
