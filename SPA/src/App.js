@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AuthContexts from "./contexts/authContext";
 import Catalog from "./components/Catalog/Catalog";
 import Create from "./components/Create/Create";
@@ -13,22 +13,16 @@ import { MyOrder } from "./components/MyOrder/MyOrder";
 import { NotFound } from "./components/404/404";
 import { Edit } from "./components/Edit/Edit";
 import Buy from "./components/Buy-create/BuyCreate";
-import * as requests from "../src/services/server";
+
+import { Contact } from "./components/Contact-us/Contact";
+import useFetch from "./hooks/useFetch";
 
 function App() {
   const [user, setUser] = useState();
-  const [comics, setComics] = useState([]);
-  console.log(user, "attach user");
-  console.log(setUser);
-  useEffect(() => {
-    requests.getAll().then((result) => {
-      setComics(result);
-      if(result!==undefined){
-         setComics(result)
-      }
-    });
-  }, []);
-  console.log('app',comics)
+
+  const [comics] = useFetch(`http://localhost:3030/api`, []);
+
+  console.log("app", comics);
   // value={[user,setUser]}
   return (
     <AuthContexts.Provider value={[user, setUser]}>
@@ -36,7 +30,8 @@ function App() {
         <Header></Header>
         <main className="main">
           <Routes>
-            <Route path="/" element={<Home comic={comics}/>}></Route>
+            <Route path="/" element={<Home comic={comics} />}></Route>
+            <Route path="/about" element={<Contact />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
             <Route
