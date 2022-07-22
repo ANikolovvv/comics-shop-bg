@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom";
 //import AuthContexts from "../../contexts/authContext";
-import * as requests from "../../services/server";
 import {  useState } from "react";
 import styles from "./Create.module.css";
 import { Errors } from "../Erorrs/Errors";
 import { ctxValidation } from "../../helpers/Form-Validate";
+import useOwnerApi from "../../hooks/useOwnerApi";
 
 const Create = () => {
   const navigation = useNavigate();
+  const[createOrder] =useOwnerApi();
  // const [user, setContext] = useContext(AuthContexts);
  const [errors, setErrors] = useState({});
  const [serverError, setServerErr] = useState([]);
@@ -60,7 +61,8 @@ const Create = () => {
     try {
       ctxValidation(ctx);
       let token = JSON.parse(localStorage.getItem("user"));
-      await requests.createOrder(ctx, token.accessToken);
+      //await requests.createOrder(ctx, token.accessToken);
+      await createOrder(ctx,token.accessToken)
       
       navigation("/my-orders");
     } catch (err) {
