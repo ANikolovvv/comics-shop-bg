@@ -5,11 +5,13 @@ import { useState, useEffect } from "react";
 import styles from "./BuyCreate.module.css";
 import { Errors } from "../Erorrs/Errors";
 import { ctxValidation } from "../../helpers/Form-Validate";
+import useOwnerApi from "../../hooks/useOwnerApi";
 
 const Buy = () => {
   const navigation = useNavigate();
   // const [user, setContext] = useContext(AuthContexts);
   const [errors, setErrors] = useState({});
+  const [createOrder]=useOwnerApi();
 
   const [serverError, setServerErr] = useState([]);
   const [value, setValue] = useState({});
@@ -69,12 +71,12 @@ const Buy = () => {
       price: Number(price),
       payment,
     };
-    console.log(payment, "paiment");
+    console.log(payment, "payment");
     try {
       ctxValidation(ctx);
       let token = JSON.parse(localStorage.getItem("user"));
-      await requests.createOrder(ctx, token.accessToken);
-
+      //await requests.createOrder(ctx, token.accessToken);
+       await createOrder(ctx,token.accessToken)
       navigation("/my-orders");
     } catch (err) {
       setServerErr(err.message);
