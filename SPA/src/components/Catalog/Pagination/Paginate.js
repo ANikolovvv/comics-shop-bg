@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 //import { NavLink } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import Card from "../Card/Card";
-import "./Paginate.css";
+import styles from"./Paginate.module.css";
 
 const Paginate = (props) => {
   const { data } = props;
@@ -40,11 +40,11 @@ const Paginate = (props) => {
         pageCount={pageCount}
         previousLabel="Previous "
         renderOnZeroPageCount={null}
-        containerClassName="pagination"
-        pageLinkClassName="page"
-        previousLinkClassName="page"
-        nextLinkClassName="page"
-        activeLinkClassName="active"
+        containerClassName={styles["pagination"]}
+        pageLinkClassName={styles["page"]}
+        previousLinkClassName={styles["page"]}
+        nextLinkClassName={styles["page"]}
+        activeLinkClassName={styles["active"]}
       />
     </>
   );
