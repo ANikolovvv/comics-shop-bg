@@ -5,6 +5,7 @@ export const MyCard = (props) => {
     console.log(props.data,'my card')
     
   return (
+   
     <div className={styles["wraper"]}>
       <div key={props.data._id} className={styles["card"]}>
         <img
@@ -29,5 +30,6 @@ export const MyCard = (props) => {
         </div>
       </div>
     </div>
+   
   );
 };
