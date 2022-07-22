@@ -1,0 +1,56 @@
+[
+    {
+      "id": 123,
+      "title": "Think Company",
+      "website": "www.google.com",
+      "image":
+        "http://thinkcompany.fi/wp-content/uploads/2014/05/hkithinkco04-1024x702.jpg",
+      "address": [
+        {
+          "id": 1234,
+          "country": "Finland",
+          "city": "Helsinki",
+          "street": "Yliopistonkatu 4",
+          "postcode": "00101",
+          "lat": "60.169787",
+          "lng": "24.948776"
+        },
+        {
+          "id": 1235,
+          "country": "Finland",
+          "city": "Helsinki",
+          "street": "Ladugordsbogen 3",
+          "postcode": "00790",
+          "lat": "60.228029",
+          "lng": "25.015569"
+        },
+        {
+          "id": 1236,
+          "country": "Finland",
+          "city": "Helsinki",
+          "street": "Haartmansgatan 4",
+          "postcode": "00290",
+          "lat": "60.190711",
+          "lng": "24.907195"
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "title": "MS Flux",
+      "website": "www.google.com",
+      "image": " ",
+      "address": [
+        {
+          "id": 1237,
+          "country": "Finland",
+          "city": "Helsinki",
+          "street": "Hogbergsgatan 35",
+          "postcode": "00101",
+          "lat": "60.165238",
+          "lng": "24.946249"
+        }
+      ]
+    }
+  ]
+  
