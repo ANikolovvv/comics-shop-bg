@@ -5,13 +5,15 @@ import { useState, useEffect } from "react";
 import styles from "./Edit.module.css";
 import { Errors } from "../Erorrs/Errors";
 import { ctxValidation } from "../../helpers/Form-Validate";
+import useOwnerApi from "../../hooks/useOwnerApi";
 
 export const Edit = () => {
   const [comics, setComics] = useState({});
   const [value, setValue] = useState({});
   const [errors, setErrors] = useState({});
   const [serverError, setServerErr] = useState([]);
-
+  const [createOrder,deleteOrder, updateOrder] = useOwnerApi();
+  console.log(createOrder,deleteOrder);
   let { id } = useParams();
   useEffect(() => {
     requests.getOwnerData(id).then((result) => {
@@ -69,8 +71,8 @@ export const Edit = () => {
       ctxValidation(ctx);
       let token = JSON.parse(localStorage.getItem("user"));
 
-      await requests.updateOrder(ctx, comics._id, token.accessToken);
-
+      // await requests.updateOrder(ctx, comics._id, token.accessToken);
+      await updateOrder(ctx, comics._id, token.accessToken);
       navigation("/my-orders");
     } catch (err) {
       setServerErr(err.message);
