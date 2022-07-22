@@ -1,28 +1,24 @@
 .card {
- 
-  border-style: solid;
-  border-color: black;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
-  transition: 0.4s;
-  width: 1px;
-  background: #fff;
-  text-align: center;
-  font-size: 15px;
-  font-family: sans-serif;
-  float: left;
-  margin: 10px;
-  display: flex;
-  flex-direction:column;
-  width: 40%;
 
+  border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+   transition: 0.4s;
+   width: 200px;
+   background: #fff;
+   text-align: center;
+   font-size: 20px;
+   font-family: sans-serif;
+   float: left;
+   margin: 1px;
  
 
  
 }
 .card-img-top {
   width: 100%;
-  height: 15vw;
+  height: 18vw;
   object-fit: cover;
 }
 .card:hover {
@@ -63,4 +59,11 @@
     #f09819 51%,
     #ff512f 100%
   );
+}
+.wraper{
+  text-align: center;
+  flex: 0 0 20.33%;
+  display: flex;
+  padding: 10px; /* gutter width */
+ 
 }
