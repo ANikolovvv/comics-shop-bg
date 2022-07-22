@@ -1,0 +1,39 @@
+.pagination{
+
+    margin: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 30px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     text-align: center;
+    font-size: 1.2rem;
+    gap: 5px;
+}
+.page{
+    background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+    border-style: solid;
+    border-color: black;
+    color: rgb(249, 249, 249);
+    padding: 4px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 400;
+}
+.page:hover{
+    background-color: skyblue;
+    color: white;
+}
+.pagination.active{
+    background-color: skyblue;
+}
+
+    /* position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;    */
+
+  
