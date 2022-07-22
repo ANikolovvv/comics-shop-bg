@@ -35,6 +35,9 @@ const Header = (props) => {
             <Link className={styles["btn"]} to="/">
               Home
             </Link>
+            <Link className={styles["btn"]} to="/about">
+              Contact Us
+            </Link>
             <Link className={styles["btn"]} to="/catalog">
               Catalog
             </Link>
