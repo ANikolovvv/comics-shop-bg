@@ -1,28 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContexts } from "../../contexts/AuthContext";
 
 import { Link } from "react-router-dom";
-import * as requests from "../../services/server";
+import * as requests from "../../services/owner";
 
 import { MyCard } from "./MyCard/MyCard";
 import { Spinner } from "../Spinner/Spinner";
 
 import styles from "./MyOrder.module.css";
-import useOwnerApi from "../../hooks/useOwnerApi";
+import { deleteOrder } from "../../services/owner";
 
 export const MyOrder = () => {
+  const { user } = useContext(AuthContexts);
   const [currentItems, setCurrentItems] = useState([]);
   const [currentdata, setCurrentData] = useState(false);
-  const[createOrder,deleteOrder]=useOwnerApi();
 
-  console.log(createOrder,)
-  let token = JSON.parse(localStorage.getItem("user")).accessToken;
-  // let token = JSON.parse(localStorage.getItem("user"));
-  console.log(token, "token");
   useEffect(() => {
     (async () => {
       try {
-        let token = JSON.parse(localStorage.getItem("user"));
-        let data = await requests.getMyData(token._id);
+        let data = await requests.getMyData(user._id);
 
         if (data !== undefined) {
           setCurrentData(true);
@@ -37,16 +33,13 @@ export const MyOrder = () => {
         console.log(err.message);
       }
     })();
-  }, []);
+  }, [user._id]);
 
   const deleteHandller = async (item) => {
     const id = item._id;
 
-    let updateMyData = currentItems.filter((x) => x._id !== id);
-    console.log("data", updateMyData);
     try {
-      //await requests.deleteOrder(id, token);
-      await deleteOrder(id,token)
+      await deleteOrder(id, user.accessToken);
       let updateMyData = currentItems.filter((x) => x._id !== id);
       setCurrentItems(updateMyData);
     } catch (err) {
