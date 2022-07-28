@@ -1,17 +1,18 @@
 import { useNavigate, useParams } from "react-router-dom";
-//import AuthContexts from "../../contexts/authContext";
+import { AuthContexts } from "../../contexts/AuthContext";
 import * as requests from "../../services/server";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
 import styles from "./BuyCreate.module.css";
+
 import { Errors } from "../Erorrs/Errors";
 import { ctxValidation } from "../../helpers/Form-Validate";
-import useOwnerApi from "../../hooks/useOwnerApi";
+import { createOrder } from "../../services/owner";
 
 const Buy = () => {
   const navigation = useNavigate();
-  // const [user, setContext] = useContext(AuthContexts);
+  const { user } = useContext(AuthContexts);
   const [errors, setErrors] = useState({});
-  const [createOrder]=useOwnerApi();
 
   const [serverError, setServerErr] = useState([]);
   const [value, setValue] = useState({});
@@ -74,9 +75,8 @@ const Buy = () => {
     console.log(payment, "payment");
     try {
       ctxValidation(ctx);
-      let token = JSON.parse(localStorage.getItem("user"));
-      //await requests.createOrder(ctx, token.accessToken);
-       await createOrder(ctx,token.accessToken)
+
+      await createOrder(ctx, user.accessToken);
       navigation("/my-orders");
     } catch (err) {
       setServerErr(err.message);
