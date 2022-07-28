@@ -1,19 +1,21 @@
 import { useNavigate, useParams } from "react-router-dom";
-import * as requests from "../../services/server";
-import { useState, useEffect } from "react";
+import * as requests from "../../services/owner";
+import { useState, useEffect, useContext } from "react";
+import { AuthContexts } from "../../contexts/AuthContext";
 
 import styles from "./Edit.module.css";
 import { Errors } from "../Erorrs/Errors";
+
 import { ctxValidation } from "../../helpers/Form-Validate";
-import useOwnerApi from "../../hooks/useOwnerApi";
+import { updateOrder } from "../../services/owner";
 
 export const Edit = () => {
+  const { user } = useContext(AuthContexts);
   const [comics, setComics] = useState({});
   const [value, setValue] = useState({});
   const [errors, setErrors] = useState({});
   const [serverError, setServerErr] = useState([]);
-  const [createOrder,deleteOrder, updateOrder] = useOwnerApi();
-  console.log(createOrder,deleteOrder);
+
   let { id } = useParams();
   useEffect(() => {
     requests.getOwnerData(id).then((result) => {
@@ -69,10 +71,8 @@ export const Edit = () => {
 
     try {
       ctxValidation(ctx);
-      let token = JSON.parse(localStorage.getItem("user"));
 
-      // await requests.updateOrder(ctx, comics._id, token.accessToken);
-      await updateOrder(ctx, comics._id, token.accessToken);
+      await updateOrder(ctx, comics._id, user.accessToken);
       navigation("/my-orders");
     } catch (err) {
       setServerErr(err.message);
