@@ -1,12 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContexts } from "../../contexts/AuthContext";
 import * as requests from "../../services/server";
+
 import Paginate from "./Pagination/Paginate";
 import { Spinner } from "../Spinner/Spinner";
 import styles from "./Catalog.module.css";
 import { Search } from "./Search/Search";
 
 const Catalog = ({ comics }) => {
+  const { user } = useContext(AuthContexts);
+
   const [currentItems, setCurrentItems] = useState([]);
   const [currentdata, setCurrentData] = useState(false);
 
@@ -16,8 +20,8 @@ const Catalog = ({ comics }) => {
       setCurrentData(true);
     }
   }, [comics]);
+   console.log(user,'sere')
 
-  let user = JSON.parse(localStorage.getItem("user"));
 
   const searchHendler = async (e) => {
     e.preventDefault();
@@ -55,12 +59,12 @@ const Catalog = ({ comics }) => {
       {currentItems.length === 0 && currentdata === true && (
         <div className={styles["link"]}>
           <h1>Make your first order</h1>
-          {user !== null && (
+          {user.email  ? (
             <Link to={"/create"} className={styles["click"]}>
               Click here!
             </Link>
-          )}
-          {user == null && (
+          ):
+           (
             <Link to={"/login"} className={styles["click"]}>
               Click to login !
             </Link>
