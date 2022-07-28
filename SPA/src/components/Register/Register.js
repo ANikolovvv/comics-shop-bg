@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import AuthContexts from "../../contexts/authContext";
+import { AuthContexts } from "../../contexts/AuthContext";
 import * as server from "../../services/server";
 import { useContext, useState } from "react";
 import styles from "./Register.module.css";
@@ -8,7 +8,7 @@ import { Errors } from "../Erorrs/Errors";
 
 const Register = () => {
   const navigation = useNavigate();
-  const [user, setContext] = useContext(AuthContexts);
+  const { userLogin } = useContext(AuthContexts);
   const [errors, setErrors] = useState({});
   const [userErr, setUserErr] = useState([]);
   const [names, setNames] = useState({
@@ -16,7 +16,7 @@ const Register = () => {
     password: "",
     rePass: "",
   });
-  console.log(user, "user");
+
   console.log(errors, "errr");
   const changeHendler = (e) => {
     setNames((state) => ({
@@ -46,8 +46,9 @@ const Register = () => {
         );
       }
       errorWrapeer(ctx);
-      await server.regUsers(ctx);
-      setContext(ctx);
+      let user = await server.regUsers(ctx);
+
+      userLogin(user);
       navigation("/catalog");
     } catch (error) {
       console.log(error.message, "error");
