@@ -8,7 +8,8 @@ export async function regUsers(option) {
   try {
     if (res.ok) {
       const user = await res.json();
-      localStorage.setItem("user", JSON.stringify(user));
+
+      return user;
     } else {
       const ress = await res.json();
       throw new Error(ress.message);
@@ -16,7 +17,6 @@ export async function regUsers(option) {
   } catch (message) {
     console.log(message.message);
   }
-  return res;
 }
 export async function resLogout(token) {
   console.log(token, "reslogaiuiuiu");
@@ -56,21 +56,13 @@ export async function onLogin(data) {
     }
 
     const user = await res.json();
-    localStorage.setItem("user", JSON.stringify(user));
+
+    return user;
   } catch (error) {
     return error;
   }
-
-  return res;
 }
 
-
-
-export async function getMyData(id) {
-  const response = await fetch(`http://localhost:3030/api/owner/my-data/${id}`);
-
-  return response.json();
-}
 export function getData(id) {
   return fetch(`http://localhost:3030/api/data/details/${id}`).then((res) =>
     res.json()
@@ -89,12 +81,6 @@ export async function addLike(id, token) {
   });
   return response.json();
 }
-export function getOwnerData(id) {
-  return fetch(`http://localhost:3030/api/owner/${id}`).then((res) =>
-    res.json()
-  );
-}
-
 
 export async function searchData(data) {
   const response = await fetch(`http://localhost:3030/api/data/search`, {
