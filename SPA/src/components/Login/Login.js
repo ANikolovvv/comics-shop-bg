@@ -1,13 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { onLogin } from "../../services/server";
-import AuthContexts from "../../contexts/authContext";
+import { AuthContexts } from "../../contexts/AuthContext";
 import { useContext, useState } from "react";
 import styles from "../Login/Login.module.css";
 import { Errors } from "../Erorrs/Errors";
 import { matchEmail } from "../../helpers/Form-Validate";
 
 const Login = () => {
-  const [user, setContext] = useContext(AuthContexts);
+  const { userLogin } = useContext(AuthContexts);
   const [errors, setErrors] = useState({});
   const [userErr, setUserErr] = useState([]);
 
@@ -15,7 +15,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-  console.log(user);
+
   const changeHendler = (e) => {
     setValue((state) => ({
       ...state,
@@ -45,8 +45,10 @@ const Login = () => {
             "Email must includes @ and . ()=> valid email (asd@sds.bg)"
           );
         }
-        await onLogin(ctx);
-        setContext(ctx);
+        let user = await onLogin(ctx);
+
+        console.log(user, "loginnn");
+        userLogin(user);
         navigation("/catalog");
       } catch (error) {
         console.log(error.message, "hfghg message");
