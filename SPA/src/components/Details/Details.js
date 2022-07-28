@@ -1,21 +1,21 @@
-import { useState, useEffect ,useId} from "react";
+import { useState, useEffect, useId, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
+import { AuthContexts } from "../../contexts/AuthContext";
 import * as requests from "../../services/server";
 import styles from "./Details.module.css";
 
 const Details = () => {
+  const { user } = useContext(AuthContexts);
   const [comic, setComic] = useState({});
   const [admin, setAdmin] = useState(false);
   const [like, setLike] = useState(false);
   const [rating, setRating] = useState(0);
 
   let { id } = useParams();
-  console.log(id, "id");
-  let key=useId();
+  console.log(setAdmin);
+  let key = useId();
 
-  const user = JSON.parse(localStorage.getItem("user"));
-  console.log("details",user);
-
+  console.log("details", user);
 
   useEffect(() => {
     requests.getData(id).then((result) => {
@@ -24,12 +24,11 @@ const Details = () => {
       if (result !== undefined) {
         setComic(result);
         let num = result.userLiked.length;
-        if(user!==null){
+        if (user !== null) {
           let userLiked = result.userLiked.includes(user._id);
           setRating(num);
           setLike(userLiked);
         }
-        
       }
     });
   }, [id]);
@@ -64,7 +63,7 @@ const Details = () => {
           </span>
 
           <p className={styles["information"]}>{comic.description}</p>
-          {user ? (
+          {user.email ? (
             <>
               {like === false ? (
                 <div className={styles["like"]}>
@@ -72,7 +71,9 @@ const Details = () => {
                     Like
                   </button>
                 </div>
-              ):<h1>You already like this comics!</h1>}
+              ) : (
+                <h1>You already like this comics!</h1>
+              )}
               <div className={styles["control"]}>
                 <Link
                   to={`/buy-create/${comic._id}`}
