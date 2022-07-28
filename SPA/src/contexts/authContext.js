@@ -1,5 +1,3 @@
 import {createContext} from "react"
+export const AuthContexts=createContext();
 
-const AuthContexts=createContext([]);
-
-export default AuthContexts
