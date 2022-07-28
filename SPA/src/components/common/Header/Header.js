@@ -1,27 +1,16 @@
-import { Link ,useNavigate} from "react-router-dom";
-import AuthContexts from "../../../contexts/authContext";
+import { Link } from "react-router-dom";
+
+import { AuthContexts } from "../../../contexts/AuthContext";
 import { useContext } from "react";
-import { resLogout } from "../../../services/server";
+
 import logo from "../../../logo.svg";
 import styles from "./Header.module.css";
 
-const Header = (props) => {
+const Header = () => {
+  const { user } = useContext(AuthContexts);
 
-  const navigation = useNavigate();
-  let [user, setContext] = useContext(AuthContexts);
-  console.log(localStorage.getItem("user"), "sdsaassasaaaaaaaaa");
-  const token = JSON.parse(localStorage.getItem("user"));
-  const logoutHandller = () => {
-    console.log(token.accessToken, "logaout");
-    resLogout(token.accessToken);
-    localStorage.clear();
-    user = undefined;
-    setContext(user);
-    navigation('/')
-  };
-  //const isUser = props.user !== undefined;
+  console.log(user, "sdsaassasaaaaaaaaa");
 
-  console.log();
   return (
     <>
       <header>
@@ -35,14 +24,15 @@ const Header = (props) => {
             <Link className={styles["btn"]} to="/">
               Home
             </Link>
-            <Link className={styles["btn"]} to="/about">
-              Contact Us
-            </Link>
+
             <Link className={styles["btn"]} to="/catalog">
               Catalog
             </Link>
+            <Link className={styles["btn"]} to="/about">
+              Contact Us
+            </Link>
           </section>
-          {!token ? (
+          {!user.email ? (
             <section className={styles["btno"]}>
               <Link className={styles["btn"]} to="/login">
                 Login
@@ -59,11 +49,7 @@ const Header = (props) => {
               <Link className={styles["btn"]} to="/my-orders">
                 My Orders
               </Link>
-              <Link
-                className={styles["btn"]}
-                onClick={logoutHandller}
-                to="/login"
-              >
+              <Link className={styles["btn"]} to="/logout">
                 Logout
               </Link>
             </section>
