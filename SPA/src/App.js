@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { useState } from "react";
-import AuthContexts from "./contexts/authContext";
+
+import { AuthContexts } from "./contexts/AuthContext";
 import Catalog from "./components/Catalog/Catalog";
 import Create from "./components/Create/Create";
 import Details from "./components/Details/Details";
@@ -13,19 +13,25 @@ import { MyOrder } from "./components/MyOrder/MyOrder";
 import { NotFound } from "./components/404/404";
 import { Edit } from "./components/Edit/Edit";
 import Buy from "./components/Buy-create/BuyCreate";
-
+import { useLocaleStorage } from "./hooks/useLocaleStorage";
 import { Contact } from "./components/Contact-us/Contact";
 import useFetch from "./hooks/useFetch";
+import Logout from "./components/Logout/Logout";
 
 function App() {
-  const [user, setUser] = useState();
-
+  const [auth, setAuth] = useLocaleStorage("auth", {});
   const [comics] = useFetch(`http://localhost:3030/api`, []);
 
-  console.log("app", comics);
-  // value={[user,setUser]}
+  const userLogin = (authData) => {
+    setAuth(authData);
+  };
+
+  const userLogout = () => {
+    setAuth({});
+  };
+
   return (
-    <AuthContexts.Provider value={[user, setUser]}>
+    <AuthContexts.Provider value={{ user: auth, userLogin, userLogout }}>
       <div className="App">
         <Header></Header>
         <main className="main">
@@ -33,6 +39,7 @@ function App() {
             <Route path="/" element={<Home comic={comics} />}></Route>
             <Route path="/about" element={<Contact />}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/logout" element={<Logout />}></Route>
             <Route path="/register" element={<Register />}></Route>
             <Route
               path="/catalog"
