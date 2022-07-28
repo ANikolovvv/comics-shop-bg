@@ -53,6 +53,9 @@
   text-decoration: none;
 }
 .click {
+  padding:2px;
+  font-weight: bolder;
+  text-decoration: none;
   letter-spacing: 3px;
   border-color: #000000;
   border-style: solid;
