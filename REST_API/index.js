@@ -1,5 +1,5 @@
 const express = require("express");
-const port = process.env.EXPRESS_PORT || process.env.PORT || "3030"
+const port =  process.env.PORT || "3030"
 const db = require("./config/datebase");
  const auth = require("./middlewares/isAuth");
 const router = require("./config/routes");
