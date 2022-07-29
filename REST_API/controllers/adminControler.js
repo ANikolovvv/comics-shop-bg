@@ -18,6 +18,7 @@ router.post("/", async (req, res) => {
     price: (Math.random() * 10).toFixed(2),
     year: req.body.year,
     author: req.body.author,
+    admin:"62c453bed121f579a48d5def"
   };
 
   try {
