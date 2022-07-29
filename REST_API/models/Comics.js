@@ -8,6 +8,7 @@ const comicsSchema = new mongoose.Schema({
   year: { type: Number, required: true },
   userLiked: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   author: { type: String, required: true },
+  admin:{type:String}
 });
 
 const Comics = mongoose.model("Comics", comicsSchema);
