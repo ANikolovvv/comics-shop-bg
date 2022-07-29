@@ -1,7 +1,6 @@
 {
   "name": "mongodb",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "engines": {
     "node": "v16.15.0"
@@ -28,5 +27,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
-  }
+  },
+  "description": ""
 }
