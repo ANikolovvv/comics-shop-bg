@@ -1,9 +1,7 @@
-//import { useState,useEffect } from "react";
 import styles from "./TopFive.module.css";
 import { Link } from "react-router-dom";
 
 export function Top(props) {
-  console.log(props.info, "props");
   const data = props.info;
 
   return (

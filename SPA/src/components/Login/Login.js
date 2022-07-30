@@ -42,16 +42,17 @@ const Login = () => {
 
         if (match === null) {
           throw new Error(
-            "Email must includes @ and . ()=> valid email (asd@sds.bg)"
+            "Email must includes @ and .  valid email (asd@sds.bg)"
           );
         }
         let user = await onLogin(ctx);
+        if (user.message) {
+          throw new Error(user.message);
+        }
 
-        console.log(user, "loginnn");
         userLogin(user);
         navigation("/catalog");
       } catch (error) {
-        console.log(error.message, "hfghg message");
         setUserErr(error.message);
       }
     }
