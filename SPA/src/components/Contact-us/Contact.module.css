@@ -1,0 +1,67 @@
+.art h1 {
+  background-size: 10% auto;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+  letter-spacing: 10px;
+  text-align: center;
+}
+.signupSection {
+  margin: 20px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  text-align: center;
+  display: flex;
+  color: white;
+  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0);
+}
+.info-form {
+  font-size: 20px;
+  width: 55%;
+
+  padding: 20px 0;
+  border-right: 5px solid rgba(30, 30, 30, 0.8);
+  text-align: center;
+  font-weight: bolder;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+}
+.signupForm {
+  width: 55%;
+  padding: 0px 0;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  transition: 0.2s;
+}
+.li {
+  margin: 10px;
+  font-weight: bolder;
+}
+.li-info {
+  color: aquamarine;
+  margin: 10px;
+  font-weight: bolder;
+}
+.icon {
+  font-size: 2px;
+  width: 45%;
+  object-fit: cover;
+}
