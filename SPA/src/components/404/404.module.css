@@ -6,20 +6,17 @@ label {
   margin: 0;
   padding: 0;
   border-style: solid;
- 
+
   vertical-align: baseline;
   background: transparent;
   text-decoration: none;
-  color:rgba(255, 180, 82, 0.8);
+  color: rgba(255, 180, 82, 0.8);
 }
-
-
 
 textarea {
   margin: 0;
   font-size: 60%;
 }
-
 
 .input {
   border: 0;
@@ -226,8 +223,6 @@ textarea {
   }
 }
 
-
-
 :focus {
   outline: 0;
 }
@@ -347,7 +342,7 @@ textarea {
   margin: 0 15px;
   border: 1px solid #c0c0c6;
   color: #ffffff;
- 
+
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-size: 11px;
@@ -604,7 +599,6 @@ textarea {
     line-height: 2;
     padding-right: 20px;
     padding-left: 20px;
-  
   }
   .lamp {
     zoom: 0.6;
@@ -627,14 +621,14 @@ textarea {
     color: #03a9f4;
   }
 }
-.link{
-    width: 170px;
-    font-weight: bolder;
-    display: inline-block;
-    border: #212121;
-    border-style: solid;
-    font-size: 24px;
-    text-decoration-style: solid;
-    color: #f60505;
-    text-decoration: none;
+.link {
+  width: 170px;
+  font-weight: bolder;
+  display: inline-block;
+  border: #212121;
+  border-style: solid;
+  font-size: 24px;
+  text-decoration-style: solid;
+  color: #f60505;
+  text-decoration: none;
 }
