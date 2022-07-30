@@ -20,7 +20,6 @@ const Buy = () => {
   let { id } = useParams();
   useEffect(() => {
     requests.getData(id).then((result) => {
-      console.log(result, "result");
       if (result) {
         setValue({
           title: result.title,
@@ -72,7 +71,7 @@ const Buy = () => {
       price: Number(price),
       payment,
     };
-    console.log(payment, "payment");
+
     try {
       ctxValidation(ctx);
 
@@ -82,7 +81,6 @@ const Buy = () => {
       setServerErr(err.message);
       console.log(err.message, "err.mesasa");
     }
-    console.log(ctx);
   };
 
   return (
