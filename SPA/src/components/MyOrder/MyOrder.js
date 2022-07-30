@@ -27,7 +27,6 @@ export const MyOrder = () => {
           } else {
             setCurrentItems(data);
           }
-          console.log(data.history, "data");
         }
       } catch (err) {
         console.log(err.message);
@@ -37,13 +36,17 @@ export const MyOrder = () => {
 
   const deleteHandller = async (item) => {
     const id = item._id;
-
-    try {
-      await deleteOrder(id, user.accessToken);
-      let updateMyData = currentItems.filter((x) => x._id !== id);
-      setCurrentItems(updateMyData);
-    } catch (err) {
-      console.log(err.message);
+    const confirmation = window.confirm(
+      "Are you sure you want to delete this order?"
+    );
+    if (confirmation) {
+      try {
+        await deleteOrder(id, user.accessToken);
+        let updateMyData = currentItems.filter((x) => x._id !== id);
+        setCurrentItems(updateMyData);
+      } catch (err) {
+        console.log(err.message);
+      }
     }
   };
 

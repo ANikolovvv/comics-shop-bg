@@ -17,7 +17,6 @@ const Register = () => {
     rePass: "",
   });
 
-  console.log(errors, "errr");
   const changeHendler = (e) => {
     setNames((state) => ({
       ...state,
