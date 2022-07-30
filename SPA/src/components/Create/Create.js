@@ -12,7 +12,7 @@ const Create = () => {
   const navigation = useNavigate();
 
   const { user } = useContext(AuthContexts);
-  console.log(user, "contexttttt");
+
   const [errors, setErrors] = useState({});
   const [serverError, setServerErr] = useState([]);
   const [value, setValue] = useState({
@@ -59,7 +59,7 @@ const Create = () => {
       number: Number(number),
       payment,
     };
-    console.log(payment, "paiment");
+
     try {
       ctxValidation(ctx);
 
@@ -68,7 +68,7 @@ const Create = () => {
       navigation("/my-orders");
     } catch (err) {
       setServerErr(err.message);
-      console.log(err.message, "errreeeeeeeeeee");
+      console.log(err.message, "");
     }
     console.log(ctx);
   };

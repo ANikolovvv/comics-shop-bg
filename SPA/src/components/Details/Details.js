@@ -12,14 +12,11 @@ const Details = () => {
   const [rating, setRating] = useState(0);
 
   let { id } = useParams();
-  console.log(setAdmin);
+  //console.log(setAdmin);
   let key = useId();
-
-  console.log("details", user);
 
   useEffect(() => {
     requests.getData(id).then((result) => {
-      console.log(result, "result");
       const user = JSON.parse(localStorage.getItem("user"));
       if (result !== undefined) {
         setComic(result);
@@ -40,7 +37,6 @@ const Details = () => {
       setLike(true);
       setComic(like);
       setRating(num);
-      console.log(like, "like");
     } catch (error) {
       console.log(error, "like errr");
     }
