@@ -14,7 +14,6 @@
   font-size: 20px;
   letter-spacing: 10px;
   text-align: center;
- 
 }
 .art p {
   font-weight: 700;
@@ -53,7 +52,7 @@
   text-decoration: none;
 }
 .click {
-  padding:2px;
+  padding: 2px;
   font-weight: bolder;
   text-decoration: none;
   letter-spacing: 3px;

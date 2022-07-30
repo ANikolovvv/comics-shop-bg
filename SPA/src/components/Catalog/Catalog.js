@@ -20,8 +20,6 @@ const Catalog = ({ comics }) => {
       setCurrentData(true);
     }
   }, [comics]);
-   console.log(user,'sere')
-
 
   const searchHendler = async (e) => {
     e.preventDefault();
@@ -59,12 +57,11 @@ const Catalog = ({ comics }) => {
       {currentItems.length === 0 && currentdata === true && (
         <div className={styles["link"]}>
           <h1>Make your first order</h1>
-          {user.email  ? (
+          {user.email ? (
             <Link to={"/create"} className={styles["click"]}>
               Click here!
             </Link>
-          ):
-           (
+          ) : (
             <Link to={"/login"} className={styles["click"]}>
               Click to login !
             </Link>

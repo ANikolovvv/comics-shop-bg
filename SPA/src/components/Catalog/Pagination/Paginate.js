@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-//import { NavLink } from "react-router-dom";
+
 import ReactPaginate from "react-paginate";
 import Card from "../Card/Card";
-import styles from"./Paginate.module.css";
+import styles from "./Paginate.module.css";
 
 const Paginate = (props) => {
   const { data } = props;
@@ -27,7 +27,6 @@ const Paginate = (props) => {
 
   return (
     <>
-     
       {currentItems.map((item) => {
         return <Card key={item._id} data={item}></Card>;
       })}
