@@ -1,9 +1,13 @@
-import { Link ,useNavigate} from "react-router-dom";
-import styles from './404.module.css'
+import { Link } from "react-router-dom";
+import styles from "./404.module.css";
 export const NotFound = () => {
   return (
     <>
-      <div className={styles["div"]} to="https://codepen.io/uiswarup/full/yLzypyY" target="_blank">
+      <div
+        className={styles["div"]}
+        to="https://codepen.io/uiswarup/full/yLzypyY"
+        target="_blank"
+      >
         <header className={styles["top-header"]}></header>
 
         <div>
@@ -34,7 +38,9 @@ export const NotFound = () => {
               </p>
             </div>
             <div className={styles["error__nav e-nav"]}>
-              <Link to="/"  className={styles["link"]}>Click here!</Link>
+              <Link to="/" className={styles["link"]}>
+                Click here!
+              </Link>
             </div>
           </div>
         </section>
