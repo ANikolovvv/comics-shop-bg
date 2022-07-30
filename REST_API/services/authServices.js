@@ -13,7 +13,7 @@ async function register(email, password) {
   if (existing) {
     throw new Error("Email is taken");
   }
-  console.log("registerr");
+
   // hash password
   const hashedPassword = await bcrypt.hash(password, 10);
 
