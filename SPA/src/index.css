@@ -1,16 +1,12 @@
 body {
-    background-image: url("../public/images/foto20a.jpg");
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    
+  background-image: url("../public/images/foto20a.jpg");
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-.main{
-    margin: 30px;
-    text-align: center;
+.main {
+  margin: 30px;
+  text-align: center;
 }
-
-
-

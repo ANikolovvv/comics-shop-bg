@@ -19,7 +19,6 @@ export async function regUsers(option) {
   }
 }
 export async function resLogout(token) {
-  console.log(token, "reslogaiuiuiu");
   const res = await fetch(`http://localhost:3030/api/auth/logout`, {
     method: "get",
     headers: {
@@ -69,7 +68,6 @@ export function getData(id) {
   );
 }
 export async function addLike(id, token) {
-  console.log(token, "like");
   let data = { user: token._id, comics: id };
   const response = await fetch(`http://localhost:3030/api/data/like`, {
     method: "post",

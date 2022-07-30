@@ -1,5 +1,4 @@
 export const createOrder = async (data, token) => {
-  console.log(token, "create");
   const response = await fetch(`http://localhost:3030/api/data/create`, {
     method: "post",
     headers: {
@@ -12,7 +11,6 @@ export const createOrder = async (data, token) => {
   return response.json();
 };
 export const deleteOrder = async (id, token) => {
-  console.log(token, "deeeeeeeeeeeee");
   let res = await fetch(`http://localhost:3030/api/owner/${id}`, {
     method: "delete",
     headers: {

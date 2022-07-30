@@ -14,7 +14,6 @@
   font-size: 20px;
   letter-spacing: 10px;
   text-align: center;
-
 }
 .art p {
   font-weight: 700;
@@ -35,10 +34,10 @@
 
 .signupSection {
   margin: 20px;
- 
+
   background-repeat: no-repeat;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 600px;
@@ -83,7 +82,12 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  background-image: linear-gradient(45deg, #e3e688 0%, #F09819  51%, #FF512F  100%);
+  background-image: linear-gradient(
+    45deg,
+    #e3e688 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
   color: rgb(19, 0, 0);
   outline: none;
 }
@@ -103,18 +107,17 @@
   cursor: pointer;
   transition: 0.4s;
 }
-.link-form{
+.link-form {
   text-decoration-color: rgb(1, 7, 12);
-  color: orangered
+  color: orangered;
 }
-.click{
+.click {
   font-size: 15px;
-
 }
-::placeholder{
+::placeholder {
   color: black;
 }
-.error-form{
+.error-form {
   font-weight: bolder;
   color: red;
   font-size: 15px;
