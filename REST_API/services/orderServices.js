@@ -13,7 +13,7 @@ exports.createData = async (order) => {
 
 exports.shareData = async (id, user) => {
   let order = await Comic.findById(id);
-  console.log("share", order);
+
   order.userLiked.push(user);
   order.save();
 };
@@ -23,17 +23,7 @@ exports.getAll = async () => {
 exports.getById = async (id) => {
   return await Order.findById(id);
 };
-// const item={
-//   title:req.body.title,
-//   author:req.body.author,
-//   email:req.body.email,
-//   address:req.body.address,
-//   courier:req.body.courier,
-//   number:req.body.number,
-//   payment:req.body.payment,
-//   price:(Math.random() * 10).toFixed(2) * req.body.number,
-//   _ownerId:req.user._id
-// }
+
 exports.updateData = async (existing, item) => {
   existing.title = item.title;
   existing.author = item.author;
@@ -64,4 +54,3 @@ exports.searchData = async (type) => {
     return author;
   }
 };
-
