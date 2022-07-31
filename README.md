@@ -22,10 +22,11 @@ The repo includes the "<i>back-end</i>" and the "<i>front-end</i>" of the app.
 - <i><b>Create order (user only) </b></i>
 - <i><b>Update my order (owner only)</b></i>
 - <i><b>Delete my order (owner only)</b></i>
-- <i><b>Details for (users and guest)</b></i>
-- <i><b>Catalog and search for (users and guest) </b></i>
+- <i><b>Details  (users and guest)</b></i>
+- <i><b>Catalog   (users and guest) </b></i>
+- <i><b>Catalog and search  (users only) </b></i>
 - <i><b>Buy from catalog (users only) </b></i>
-- <i><b>Like comics from details (users only) </b></i>
+- <i><b>Like and buy comics from details (users only) </b></i>
 - <i><b>-</b></i>
 - <i><b></b></i>
 - <i><b>-</b></i>
