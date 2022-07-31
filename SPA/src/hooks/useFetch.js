@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (url, defautValue) => {
+const useFetch = ( defautValue) => {
+  const url="https://test-server-rest-api.herokuapp.com/api/" ||
+  `http://localhost:3030/api`;
   const [data, setData] = useState(defautValue);
 
   useEffect(() => {
