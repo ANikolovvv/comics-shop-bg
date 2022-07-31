@@ -10,10 +10,10 @@ export const Search = (search) => {
     >
       <input
         className={styles["input"]}
-        type="search"
+        type="text"
         name="search"
         placeholder="Search comics by author or title."
-        required
+        
       />
       <button className={styles["btn"]} type="submit">
         Search
