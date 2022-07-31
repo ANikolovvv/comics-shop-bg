@@ -41,7 +41,7 @@ const Register = () => {
 
       if (match === null) {
         throw new Error(
-          "Email must includes @ and . ()=> valid email (asd@sds.bg)"
+          "Email must includes @ and . - valid email (asd@sds.bg)"
         );
       }
       errorWrapeer(ctx);
