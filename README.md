@@ -47,4 +47,4 @@ The REST API is written with Express JS
 - Express Validator
 - Mongoose
 
-<h2>Hosted back end in heroku <a href="https://test-server-rest-api.herokuapp.com/"/>"https://test-server-rest-api.herokuapp.com/api/"</h2>
+<h2>Hosted back end in heroku <a href="https://test-server-rest-api.herokuapp.com/"/>https://test-server-rest-api.herokuapp.com/api/</h2>
