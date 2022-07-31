@@ -32,10 +32,10 @@
   background: rgba(255, 180, 82, 0.8);
   background-repeat: no-repeat;
   position: absolute;
+  font-size: 20px;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: block;
   width: 200px;
   margin: 0 auto;
   transition: 12s;
@@ -50,7 +50,6 @@
 }
 .home span {
   font-size: 2rem;
-
   color: rgb(136, 4, 4);
 }
 .home > span:hover:before {
@@ -59,7 +58,9 @@
 }
 
 .home > img {
+  height: 10vw;
   width: 100%;
+  object-fit: cover;
 }
 .home-art {
   text-align: center;
