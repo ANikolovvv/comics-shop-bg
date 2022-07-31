@@ -36,7 +36,7 @@ Dependencies, (besides Create-React-App deps):
 
 - React Router v6
 <h2>Hosted front end in firebase <a 
-href="https://fir-comics-3273e.firebaseapp.com/"></h2>
+href="https://fir-comics-3273e.firebaseapp.com/"/>"https://fir-comics-3273e.firebaseapp.com/"</h2>
 
 The REST API is written with Express JS 
 
