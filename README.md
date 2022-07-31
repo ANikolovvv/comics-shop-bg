@@ -13,3 +13,36 @@
 
 The repo includes the "<i>back-end</i>" and the "<i>front-end</i>" of the app.
 <hr/>
+<hr/>
+
+- <i><b>Responsive Design</b></i>
+- <i><b>Home page with  top comics for the year</b></i>
+- <i><b>Auth (Register, Login)</b></i>
+- <i><b>-</b></i>
+- <i><b>Create order (user only) </b></i>
+- <i><b>Update my order (owner only)</b></i>
+- <i><b>Delete my order (owner only)</b></i>
+- <i><b>Details for (users and guest)</b></i>
+- <i><b>Catalog and search for (users and guest) </b></i>
+- <i><b>Buy from catalog (users only) </b></i>
+- <i><b>Like comics from details (users only) </b></i>
+- <i><b>-</b></i>
+- <i><b></b></i>
+- <i><b>-</b></i>
+- <i><b>others (images placeholders when loading, funny 404 page, etc.)</b></i>
+
+<hr/>
+Dependencies, (besides Create-React-App deps): 
+
+- React Router v6
+<h2>Hosted front end in firebase <a 
+href="https://fir-comics-3273e.firebaseapp.com/"></h2>
+
+The REST API is written with Express JS 
+
+<h2>Used: </h2>
+- JSON Web Token for the auth,
+- Bcrypt for password hashing
+- Express Validator
+- Mongoose
+<h2>Back end  is not hosted, must be running in localhost environment!

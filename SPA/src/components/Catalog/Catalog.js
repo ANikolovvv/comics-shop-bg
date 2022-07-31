@@ -45,7 +45,7 @@ const Catalog = ({ comics }) => {
   return (
     <>
       <article className={styles["art"]}>
-        <h1>Catalog</h1>
+        <h1>Catalog </h1>
       </article>
       {currentdata === false && <Spinner />}
       <Search onSubmit={searchHendler}></Search>
