@@ -46,4 +46,4 @@ The REST API is written with Express JS
 - Bcrypt for password hashing
 - Express Validator
 - Mongoose
-<h2>Back end  is not hosted, must be running in localhost environment!
+<h2>Hosted back end in heroku <a href="https://test-server-rest-api.herokuapp.com/"/>"https://test-server-rest-api.herokuapp.com/api/"</h2>
