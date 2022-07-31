@@ -22,8 +22,12 @@ import UserGuard from "./components/common/UserGuard";
 import GuestGuard from "./components/common/GuestGuard";
 
 function App() {
-  const [comics] = useFetch(`http://localhost:3030/api`, []);
-  
+  const [comics] = useFetch(
+    "https://test-server-rest-api.herokuapp.com/api/" ||
+      `http://localhost:3030/api`,
+    []
+  );
+
   return (
     <AuthProvider>
       <div className="App">
