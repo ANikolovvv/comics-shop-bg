@@ -90,3 +90,4 @@ export async function searchData(data) {
   });
   return response.json();
 }
+
