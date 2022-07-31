@@ -17,7 +17,7 @@ const Details = () => {
 
   useEffect(() => {
     requests.getData(id).then((result) => {
-      const user = JSON.parse(localStorage.getItem("user"));
+      //const user = JSON.parse(localStorage.getItem("user"));
       if (result !== undefined) {
         setComic(result);
         let num = result.userLiked.length;
@@ -28,7 +28,7 @@ const Details = () => {
         }
       }
     });
-  }, [id]);
+  }, [id,user]);
 
   const likeHandler = async (e) => {
     try {
@@ -61,13 +61,14 @@ const Details = () => {
           <p className={styles["information"]}>{comic.description}</p>
           {user.email ? (
             <>
-              {like === false ? (
+              {like === false && (
                 <div className={styles["like"]}>
                   <button className={styles["btn"]} onClick={likeHandler}>
                     Like
                   </button>
                 </div>
-              ) : (
+              )} 
+              {like===true&&(
                 <h1>You already like this comics!</h1>
               )}
               <div className={styles["control"]}>
@@ -124,4 +125,4 @@ const Details = () => {
   );
 };
 export default Details;
-//float: right;
+
