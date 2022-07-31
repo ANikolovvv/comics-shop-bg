@@ -48,7 +48,7 @@ const Catalog = ({ comics }) => {
         <h1>Catalog </h1>
       </article>
       {currentdata === false && <Spinner />}
-      <Search onSubmit={searchHendler}></Search>
+      {user.email &&<Search onSubmit={searchHendler}></Search>}
       {currentItems.length > 0 && (
         <section className="">
           <Paginate data={currentItems}></Paginate>
