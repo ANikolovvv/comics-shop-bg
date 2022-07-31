@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { onLogin } from "../../services/server";
-import { AuthContexts } from "../../contexts/AuthContext";
+import { AuthContexts } from "../../contexts/authContext";
 import { useContext, useState } from "react";
 import styles from "../Login/Login.module.css";
 import { Errors } from "../Erorrs/Errors";

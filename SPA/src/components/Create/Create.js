@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { AuthContexts } from "../../contexts/AuthContext";
+import { AuthContexts } from "../../contexts/authContext";
 import { useState, useContext } from "react";
 
 import styles from "./Create.module.css";

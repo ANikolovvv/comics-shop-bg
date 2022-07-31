@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContexts } from "../../contexts/AuthContext";
+import { AuthContexts } from "../../contexts/authContext";
 import * as requests from "../../services/server";
 
 import Paginate from "./Pagination/Paginate";

@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import * as requests from "../../services/owner";
 import { useState, useEffect, useContext } from "react";
-import { AuthContexts } from "../../contexts/AuthContext";
+import { AuthContexts } from "../../contexts/authContext";
 
 import styles from "./Edit.module.css";
 import { Errors } from "../Erorrs/Errors";

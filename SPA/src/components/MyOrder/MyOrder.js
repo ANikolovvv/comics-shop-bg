@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { AuthContexts } from "../../contexts/AuthContext";
+import { AuthContexts } from "../../contexts/authContext";
 
 import { Link } from "react-router-dom";
 import * as requests from "../../services/owner";

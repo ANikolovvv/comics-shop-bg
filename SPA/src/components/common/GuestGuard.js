@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContexts } from "../../contexts/AuthContext";
+import { AuthContexts } from "../../contexts/authContext";
 
 const GuestGuard = ({ children }) => {
   const { user } = useContext(AuthContexts);

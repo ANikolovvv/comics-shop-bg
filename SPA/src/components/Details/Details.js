@@ -1,6 +1,6 @@
 import { useState, useEffect, useId, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import { AuthContexts } from "../../contexts/AuthContext";
+import { AuthContexts } from "../../contexts/authContext";
 import * as requests from "../../services/server";
 import styles from "./Details.module.css";
 

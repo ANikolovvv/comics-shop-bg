@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContexts } from "../../contexts/AuthContext";
+import { AuthContexts } from "../../contexts/authContext";
 import * as server from "../../services/server";
 import { useContext, useState } from "react";
 import styles from "./Register.module.css";
