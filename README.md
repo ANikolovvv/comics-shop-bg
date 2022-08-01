@@ -36,7 +36,7 @@ The repo includes the "<i>back-end</i>" and the "<i>front-end</i>" of the app.
 Dependencies, (besides Create-React-App deps): 
 
 - React Router v6
-<h2>Hosted front end in firebase <a 
+<h2>Front end hosted at firebase <a 
 href="https://fir-comics-3273e.firebaseapp.com/"/>"https://fir-comics-3273e.firebaseapp.com/"</h2>
 
 The REST API is written with Express JS 
@@ -47,4 +47,4 @@ The REST API is written with Express JS
 - Express Validator
 - Mongoose
 
-<h2>Hosted back end in heroku ></h2>
+<h2>Back end hosted at heroku ></h2>
