@@ -28,7 +28,7 @@ const Details = () => {
         }
       }
     });
-  }, [id,user]);
+  }, [id, user]);
 
   const likeHandler = async (e) => {
     try {
@@ -46,6 +46,7 @@ const Details = () => {
       <article className={styles["art"]}>
         <h1>More details</h1>
       </article>
+
       <div className={styles["container"]}>
         <div className={styles["product-details"]}>
           <h1>{comic.title}</h1>
@@ -59,25 +60,28 @@ const Details = () => {
           </span>
 
           <p className={styles["information"]}>{comic.description}</p>
+
           {user.email ? (
             <>
               {like === false && (
-                <div className={styles["like"]}>
+                <div className={styles["div-btn"]}>
                   <button className={styles["btn"]} onClick={likeHandler}>
                     Like
                   </button>
                 </div>
-              )} 
-              {like===true&&(
-                <h1>You already like this comics!</h1>
               )}
+              {like === true && <h1>You already like this comics!</h1>}
               <div className={styles["control"]}>
+                <Link to={`/catalog`} className={styles["link"]}>
+                  Back
+                </Link>
                 <Link
                   to={`/buy-create/${comic._id}`}
                   className={styles["link"]}
                 >
                   Buy
                 </Link>
+
                 {admin === true && (
                   <>
                     <button className={styles["btn"]}>Edit</button>
@@ -87,7 +91,9 @@ const Details = () => {
               </div>
             </>
           ) : (
-            ""
+            <Link to={`/catalog`} className={styles["link"]}>
+              Back
+            </Link>
           )}
         </div>
 
@@ -120,9 +126,9 @@ const Details = () => {
             </ul>
           </div>
         </div>
+      
       </div>
     </>
   );
 };
 export default Details;
-
