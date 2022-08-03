@@ -1,13 +1,13 @@
 import styles from "./Contact.module.css";
 import { Map } from "./Map/Map";
+
 export const Contact = () => {
   return (
     <>
-
       <article className={styles["art"]}>
         <h1>Contact us</h1>
       </article>
-      
+
       <div className={styles["signupSection"]}>
         <div className={styles["info-form"]}>
           <div className={styles["about"]}>
@@ -27,7 +27,6 @@ export const Contact = () => {
           src="https://starwarsblog.starwars.com/wp-content/uploads/2020/12/marvel-star-wars-12-cover.jpg"
           alt="..."
         ></img>
-        
       </div>
       <Map></Map>
     </>

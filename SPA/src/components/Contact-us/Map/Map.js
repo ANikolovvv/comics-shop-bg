@@ -1,5 +1,4 @@
-import mapboxgl from "mapbox-gl";
-
+import mapboxgl from "mapbox-gl"; 
 import { useRef, useEffect, useState } from "react";
 import styles from "./Map.module.css";
 
@@ -36,6 +35,7 @@ export const Map = () => {
         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
       </div>
       <div ref={mapContainer} className={styles["map-container"]} />
+    
     </div>
   );
 };
