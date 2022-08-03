@@ -1,0 +1,33 @@
+.map-container {
+  margin: 20px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 400px;
+  text-align: center;
+  display: flex;
+  color: white;
+  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0);
+}
+
+.sidebar {
+  font-size: 11px;
+  background-image: linear-gradient(
+    45deg,
+    #fd6c4f 0%,
+    #f09819 51%,
+    #fe8269 100%
+  );
+  color: #fff;
+  padding: 2px 2px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 27.5%;
+  left: 6.2%;
+  margin: 12px;
+  border-radius: 2px;
+}
