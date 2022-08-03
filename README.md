@@ -27,7 +27,7 @@ The repo includes the "<i>back-end</i>" and the "<i>front-end</i>" of the app.
 - <i><b>Catalog and search  (users only) </b></i>
 - <i><b>Buy from catalog (users only) </b></i>
 - <i><b>Like and buy comics from details (users only) </b></i>
-- <i><b>-</b></i>
+- <i><b>Contact Us page (with mapbox apis)</b></i>
 - <i><b></b></i>
 - <i><b>-</b></i>
 - <i><b>others (images placeholders when loading, funny 404 page, etc.)</b></i>
