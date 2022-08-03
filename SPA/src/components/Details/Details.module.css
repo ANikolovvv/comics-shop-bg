@@ -122,10 +122,13 @@
 }
 /* the Button */
 .btn {
+  text-align: center;
+  border: black;
+  border-style: solid;
   color: aliceblue;
-  margin: 2px;
+  margin: 1px;
   padding: 10px;
-  font-size: 20px;
+  font-size: 18px;
   background-image: linear-gradient(
     45deg,
     #ff512f 0%,
@@ -134,7 +137,10 @@
   );
   border-radius: 5px;
 }
-
+.div-btn{
+  margin: 10px;
+  text-align: center;
+}
 .btn:hover {
   transform: translateY(-4px);
 }
@@ -244,8 +250,8 @@
   text-decoration: none;
   text-align: center;
   color: aliceblue;
-  margin: 2px;
-  padding: 1px 10px;
+  margin-right: 130px;
+  padding: 5px 10px;
   font-size: 20px;
   background-image: linear-gradient(
     45deg,
@@ -255,3 +261,4 @@
   );
   border-radius: 2px;
 }
+
