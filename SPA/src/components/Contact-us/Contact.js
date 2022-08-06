@@ -1,3 +1,4 @@
+import { MapProvider } from "react-map-gl";
 import styles from "./Contact.module.css";
 import { Map } from "./Map/Map";
 
@@ -28,7 +29,9 @@ export const Contact = () => {
           alt="..."
         ></img>
       </div>
-      <Map></Map>
+      <MapProvider>
+        <Map></Map>
+      </MapProvider>
     </>
   );
 };
