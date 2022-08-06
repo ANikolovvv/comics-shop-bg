@@ -50,7 +50,7 @@ const Catalog = ({ comics }) => {
       {currentdata === false && <Spinner />}
       {user.email &&<Search onSubmit={searchHendler}></Search>}
       {currentItems.length > 0 && (
-        <section className="">
+        <section className="p">
           <Paginate data={currentItems}></Paginate>
         </section>
       )}
