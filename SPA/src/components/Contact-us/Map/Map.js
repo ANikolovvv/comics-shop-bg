@@ -1,5 +1,6 @@
-import mapboxgl from "mapbox-gl"; 
+import mapboxgl from "mapbox-gl";
 import { useRef, useEffect, useState } from "react";
+
 import styles from "./Map.module.css";
 
 mapboxgl.accessToken =
@@ -21,6 +22,7 @@ export const Map = () => {
       zoom: zoom,
     });
   });
+
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
     map.current.on("move", () => {
@@ -29,13 +31,19 @@ export const Map = () => {
       setZoom(map.current.getZoom().toFixed(2));
     });
   });
+
+  if (map.current !== null) {
+    const marker = new mapboxgl.Marker()
+      .setLngLat([27.4734, 42.5007])
+      .addTo(map.current);
+  }
+
   return (
-    <div className={styles["map"]}>
+    <div id="map" className={styles["map"]}>
       <div className={styles["sidebar"]}>
         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
       </div>
       <div ref={mapContainer} className={styles["map-container"]} />
-    
     </div>
   );
 };
