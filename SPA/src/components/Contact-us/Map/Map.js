@@ -21,6 +21,9 @@ export const Map = () => {
       center: [lng, lat],
       zoom: zoom,
     });
+    const marker = new mapboxgl.Marker()
+      .setLngLat([27.4734, 42.5007])
+      .addTo(map.current);
   });
 
   useEffect(() => {
@@ -31,12 +34,6 @@ export const Map = () => {
       setZoom(map.current.getZoom().toFixed(2));
     });
   });
-
-  if (map.current !== null) {
-    const marker = new mapboxgl.Marker()
-      .setLngLat([27.4734, 42.5007])
-      .addTo(map.current);
-  }
 
   return (
     <div id="map" className={styles["map"]}>
