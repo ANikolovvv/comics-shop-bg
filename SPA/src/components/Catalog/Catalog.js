@@ -45,12 +45,12 @@ const Catalog = ({ comics }) => {
   return (
     <>
       <article className={styles["art"]}>
-        <h1>Catalog </h1>
+        <h1>Catalog</h1>
       </article>
       {currentdata === false && <Spinner />}
       {user.email &&<Search onSubmit={searchHendler}></Search>}
       {currentItems.length > 0 && (
-        <section className="p">
+        <section id='1' className="paginate-el">
           <Paginate data={currentItems}></Paginate>
         </section>
       )}
