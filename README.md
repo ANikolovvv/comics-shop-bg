@@ -30,6 +30,7 @@ The repo includes the "<i>back-end</i>" and the "<i>front-end</i>" of the app.
 - <i><b>Contact Us page (with mapbox apis)</b></i>
 - <i><b></b></i>
 - <i><b>-</b></i>
+- <i><b>-Unit testing for some components </b></i>
 - <i><b>others (images placeholders when loading, funny 404 page, etc.)</b></i>
 
 <hr/>
