@@ -1,5 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
-import { cleanup, render, screen } from "@testing-library/react";
+import {
+  cleanup,
+  getAllByRole,
+  getByText,
+  render,
+  screen,
+} from "@testing-library/react";
 import Catalog from "./Catalog";
 import { AuthProvider } from "../../contexts/authContext";
 
@@ -19,12 +25,18 @@ test("Loading comics from server", async () => {
 
   expect(all.length).not.toBe(0);
 });
-test("renders Catalog component", () => {
-  render(
+test("render Title and Spinner", async () => {
+  const { getByText } = render(
     <BrowserRouter>
       <AuthProvider>
         <Catalog />
       </AuthProvider>
     </BrowserRouter>
   );
+
+  const title = getByText("Catalog");
+  const spiner=getByText('Loading...')
+  //console.log(title)
+  expect(title).toBeInTheDocument();
+  expect(spiner).toBeInTheDocument();
 });
