@@ -1,12 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
-import {
-  cleanup,
-  getAllByRole,
-  getByText,
-  render,
-  screen,
-} from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import Catalog from "./Catalog";
+
 import { AuthProvider } from "../../contexts/authContext";
 
 test("Loading comics from server", async () => {
@@ -28,15 +23,18 @@ test("Loading comics from server", async () => {
 test("render Title and Spinner", async () => {
   const { getByText } = render(
     <BrowserRouter>
-      <AuthProvider>
-        <Catalog />
+      <AuthProvider
+        value={{
+          user: { email: "dsasAbc." },
+        }}
+      >
+        <Catalog></Catalog>
       </AuthProvider>
     </BrowserRouter>
   );
 
   const title = getByText("Catalog");
-  const spiner=getByText('Loading...')
-  //console.log(title)
+  const spiner = getByText("Loading...");
   expect(title).toBeInTheDocument();
   expect(spiner).toBeInTheDocument();
 });
