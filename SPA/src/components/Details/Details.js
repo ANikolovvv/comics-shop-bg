@@ -2,12 +2,13 @@ import { useState, useEffect, useId, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import { AuthContexts } from "../../contexts/authContext";
 import * as requests from "../../services/server";
+import { Spinner } from "../Spinner/Spinner";
 import styles from "./Details.module.css";
 
 const Details = () => {
   const { user } = useContext(AuthContexts);
   const [comic, setComic] = useState({});
-  const [admin, setAdmin] = useState(false);
+  const [currentdata, setCurrentData] = useState(false);
   const [like, setLike] = useState(false);
   const [rating, setRating] = useState(0);
 
@@ -20,6 +21,7 @@ const Details = () => {
       //const user = JSON.parse(localStorage.getItem("user"));
       if (result !== undefined) {
         setComic(result);
+        setCurrentData(true);
         let num = result.userLiked.length;
         if (user !== null) {
           let userLiked = result.userLiked.includes(user._id);
@@ -46,7 +48,7 @@ const Details = () => {
       <article className={styles["art"]}>
         <h1>More details</h1>
       </article>
-
+      {currentdata === false && <Spinner />}
       <div className={styles["container"]}>
         <div className={styles["product-details"]}>
           <h1>{comic.title}</h1>
@@ -81,13 +83,6 @@ const Details = () => {
                 >
                   Buy
                 </Link>
-
-                {admin === true && (
-                  <>
-                    <button className={styles["btn"]}>Edit</button>
-                    <button className={styles["btn"]}>Delete</button>
-                  </>
-                )}
               </div>
             </>
           ) : (
@@ -126,7 +121,6 @@ const Details = () => {
             </ul>
           </div>
         </div>
-      
       </div>
     </>
   );
