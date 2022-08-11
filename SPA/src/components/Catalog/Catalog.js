@@ -10,7 +10,7 @@ import { Search } from "./Search/Search";
 
 const Catalog = ({ comics }) => {
   const { user } = useContext(AuthContexts);
-
+   console.log(user,'user')
   const [currentItems, setCurrentItems] = useState([]);
   const [currentdata, setCurrentData] = useState(false);
 
