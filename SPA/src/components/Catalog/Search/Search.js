@@ -3,6 +3,7 @@ import styles from "./Search.module.css";
 export const Search = (search) => {
   return (
     <form
+      data-testid="item"
       className={styles["search"]}
       action=""
       method="POST"
