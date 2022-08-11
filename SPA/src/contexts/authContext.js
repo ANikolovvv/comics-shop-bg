@@ -5,6 +5,7 @@ export const AuthContexts = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useLocaleStorage("auth", {});
+ 
 
   const userLogin = (authData) => {
     setAuth(authData);
