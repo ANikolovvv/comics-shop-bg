@@ -1,27 +1,26 @@
-import { BrowserRouter } from "react-router-dom";
-import { cleanup, render, screen, waitFor } from "@testing-library/react";
-
-import { AuthProvider } from "../../../contexts/authContext";
+import { AuthContexts, AuthProvider } from "../../../contexts/authContext";
 import Catalog from "../Catalog";
+import { BrowserRouter } from "react-router-dom";
+
+import { cleanup, render, screen } from "@testing-library/react";
 
 test("render Search only for users", async () => {
   const { getByText } = render(
     <BrowserRouter>
-      <AuthProvider
+      <AuthContexts.Provider
         value={{
           user: { email: "dsasAbc." },
         }}
       >
         <Catalog></Catalog>
-      </AuthProvider>
+      </AuthContexts.Provider>
     </BrowserRouter>
   );
 
   const spiner = getByText("Loading...");
-  waitFor(() => {
-    const title = getByText("Search");
-    expect(title).toBeInTheDocument();
-  });
+  const title = getByText("Search");
+  expect(title).toBeInTheDocument();
 
   expect(spiner).toBeInTheDocument();
 });
+
