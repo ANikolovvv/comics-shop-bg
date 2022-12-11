@@ -1,4 +1,4 @@
-const url="https://test-server-rest-api.herokuapp.com/api/"||"http://localhost:3030/api/";
+const url="http://localhost:3030/api/";
 
 export const createOrder = async (data, token) => {
   const response = await fetch(`${url}data/create`, {
