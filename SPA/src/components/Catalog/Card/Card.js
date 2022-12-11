@@ -5,11 +5,13 @@ const Card = (props) => {
   return (
     <div className={styles["wraper"]}>
       <div key={props.data._id} className={styles["card"]}>
-        <img
-          src={props.data.imageUrl}
-          alt="..."
-          className={styles["card-img-top"]}
-        />
+        <div>
+          <img
+            src={props.data.imageUrl}
+            alt="comics"
+            className={styles["card-img-top"]}
+          />
+        </div>
         <div className={styles["card-body"]}>
           <h5 className={styles["card-title"]}>{props.data.title}</h5>
 
