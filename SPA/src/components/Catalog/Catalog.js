@@ -10,10 +10,7 @@ import { Search } from "./Search/Search";
 
 const Catalog = ({ comics }) => {
   const { user } = useContext(AuthContexts);
-  let c=5
-  let a=c++
-  let b=++a
-   console.log(b,'user')
+
   const [currentItems, setCurrentItems] = useState([]);
   const [currentdata, setCurrentData] = useState(false);
 
@@ -51,9 +48,9 @@ const Catalog = ({ comics }) => {
         <h1>Catalog</h1>
       </article>
       {currentdata === false && <Spinner />}
-      {user.email &&<Search onSubmit={searchHendler}></Search>}
+      {user.email && <Search onSubmit={searchHendler}></Search>}
       {currentItems.length > 0 && (
-        <section id='1' className="paginate-el">
+        <section className="cards">
           <Paginate data={currentItems}></Paginate>
         </section>
       )}
