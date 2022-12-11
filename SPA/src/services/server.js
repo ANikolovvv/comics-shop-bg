@@ -1,4 +1,4 @@
-const url="https://test-server-rest-api.herokuapp.com/api/"||"http://localhost:3030/api/";
+const url="http://localhost:3030/api/";
 
 export async function regUsers(option) {
   const urlReg = `${url}auth/register`;
