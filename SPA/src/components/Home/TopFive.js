@@ -7,7 +7,9 @@ export function Top(props) {
   return (
     <div className={styles["home"]}>
       <p className={styles["date-title"]}>{data.title}</p>
-      <img src={data.imageUrl} id="image" alt=".." />
+      <div className={styles["div-img"]}>
+        <img src={data.imageUrl} id="image" alt=".." />
+      </div>
 
       <div>
         <Link className={styles["button-top"]} to={`/details/${data._id}`}>
@@ -15,11 +17,14 @@ export function Top(props) {
         </Link>
       </div>
       <p className={styles["date-title"]}>Raiting: {data.userLiked.length}</p>
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
+      <ul className={styles["star"]}>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+      </ul>
     </div>
   );
 }
