@@ -40,8 +40,8 @@
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 400px;
+  width: 50%;
+  height: 70%;
   text-align: center;
   display: flex;
   color: white;
@@ -77,11 +77,10 @@
   margin: 16px 0;
   font-size: 16px;
   padding: 7px 1;
-  width: 240px;
+  width: 60%;
   border: 10px solid rgb(241, 243, 243);
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border-radius: 5px;
+
   background-image: linear-gradient(
     45deg,
     #f1e4ae 0%,
@@ -94,30 +93,52 @@
 
 .noBullet {
   list-style-type: none;
-  padding: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.noBullet li {
+   position: relative;
+
 }
 
 .join-btn {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: 5px solid rgb(246, 250, 250);
   background: rgba(20, 20, 20, 0.6);
-  font-size: 18px;
+  font-size: 16px;
   color: white;
-  margin-top: 8px;
-  padding: 10px 40px;
+  margin-top: 5px;
+  padding: 5px 20px;
   cursor: pointer;
   transition: 0.4s;
+  border-radius: 5px;
+}
+.join-btn:hover{
+  background-color: #f09819;
+  color: black;
 }
 .link-form {
-  text-decoration-color: aliceblue;
-  color: orangered;
+  font-size: 24px;
+  letter-spacing: normal;
+  text-decoration: none;
+  color: rgb(195, 255, 0);
+  cursor: pointer;
+}
+.link-form:hover{
+  color: black;
 }
 .click {
-  font-size: 15px;
+  font-size: 24px;
 }
 ::placeholder {
   color: black;
 }
 .error-form{
+  text-align:center;
+  position: absolute;
+  top: 80%;
+  left: 18%;
   font-weight: bolder;
   color: red;
   font-size: 15px;
