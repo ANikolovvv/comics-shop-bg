@@ -27,9 +27,11 @@ const Paginate = (props) => {
 
   return (
     <>
-      {currentItems.map((item) => {
-        return <Card key={item._id} data={item}></Card>;
-      })}
+      <div className={styles["cards-div"]}>
+        {currentItems.map((item) => {
+          return <Card key={item._id} data={item}></Card>;
+        })}
+      </div>
 
       <ReactPaginate
         breakLabel="..."
