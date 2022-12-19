@@ -18,6 +18,7 @@ const Header = () => {
               <img src={logo} className={styles["logo-img"]} alt="LOGO"></img>
             </Link>
           </section>
+
           <ul className={styles["btno"]}>
             <li>
               <Link className={styles["btn"]} to="/">
