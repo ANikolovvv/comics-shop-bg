@@ -1,10 +1,13 @@
-header {
-  text-align: right;
-}
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap");
 
 .container {
-  margin: 10px;
-  top: 50%;
+  font-family: "Playfair Display", serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
 }
 .btn {
   color: #fff;
@@ -12,37 +15,63 @@ header {
   font-family: "Amaranth", sans-serif;
   font-size: 22px;
   font-weight: 400;
-  font-style: italic;
   text-transform: capitalize;
   padding: 3px 15px;
-  border-radius: 0;
-  border: 2px solid rgba(243, 240, 240, 0.799);
+  border-radius: 20px;
   background-image: linear-gradient(
     45deg,
     #ff512f 0%,
     #f09819 51%,
     #ff512f 100%
   );
-  position: relative;
-  z-index: 1;
+
   transition: all 0.3s ease 0.1s;
+  cursor: pointer;
+}
+.btn:hover {
+  background-image: linear-gradient(
+    45deg,
+    #6bc6c6 0%,
+    #19f0a8 51%,
+    #93ff2f 100%
+  );
 }
 
 .btno {
-  display: inline-block;
-  margin: 1px;
-  padding: 0px;
+  animation: nav-load var(--nav-load-time) ease-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.btno > li {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  animation-name: nav-link;
+  animation-duration: var(--nav-load-link-time);
+  animation-timing-function: ease-out;
+  animation-delay: var(--nav-load-time);
+  animation-fill-mode: forwards;
+  transform: scale(0);
 }
 .btno a {
-  margin: 5px;
-  padding: 10px;
+  font-family: "Playfair Display";
+  letter-spacing: 2px;
+  text-decoration: none;
+  padding: 10px 20px;
+  text-align: center;
 }
+
 .logo {
   margin: 10px;
   top: 30%;
   right: 10%;
   font-size: 1.2rem;
   color: white;
+  animation: nav-logo 500ms ease-out;
 }
 .logo-img {
   position: relative;
@@ -52,4 +81,84 @@ header {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+@keyframes nav-load {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes nav-logo {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes nav-link {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+@media (max-width: 1024px) {
+  .btn {
+    font-size: 18px;
+  }
+}
+@media (max-width: 800px) {
+  .container{
+    gap:1px;
+  }
+  .btn {
+    font-size: 10px;
+  }
+  li {
+    font-size: 12px;
+    padding: 3px 15px;
+    font-weight: lighter;
+  }
+  .btno {
+    display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+    font-size: 12px;
+    gap: 0px;
+  }
+  .logo {
+    margin: 0px;
+    top: 30%;
+    font-size: 14px;
+  }
+  .logo-img {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+  }
+  .logo {
+    margin: 0 auto;
+    top: 30%;
+    font-size: 14px;
+    
+  }
 }
