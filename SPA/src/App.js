@@ -22,7 +22,7 @@ import UserGuard from "./components/common/UserGuard";
 import GuestGuard from "./components/common/GuestGuard";
 
 function App() {
-  //href="https://fir-comics-3273e.firebaseapp.com/"/>"https://fir-comics-3273e.firebaseapp.com/"
+  
   const [comics] = useFetch([]);
 
   return (
