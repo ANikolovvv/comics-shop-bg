@@ -18,39 +18,54 @@ const Header = () => {
               <img src={logo} className={styles["logo-img"]} alt="LOGO"></img>
             </Link>
           </section>
-          <section className={styles["btno"]}>
-            <Link className={styles["btn"]} to="/">
-              Home
-            </Link>
-
-            <Link className={styles["btn"]} to="/catalog">
-              Catalog
-            </Link>
-            <Link className={styles["btn"]} to="/about">
-              Contact Us
-            </Link>
-          </section>
+          <ul className={styles["btno"]}>
+            <li>
+              <Link className={styles["btn"]} to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className={styles["btn"]} to="/catalog">
+                Catalog
+              </Link>
+            </li>
+            <li>
+              <Link className={styles["btn"]} to="/about">
+                Contact Us
+              </Link>
+            </li>
+          </ul>
           {!user.email ? (
-            <section className={styles["btno"]}>
-              <Link className={styles["btn"]} to="/login">
-                Login
-              </Link>
-              <Link className={styles["btn"]} to="/register">
-                Register
-              </Link>
-            </section>
+            <ul className={styles["btno"]}>
+              <li>
+                <Link className={styles["btn"]} to="/login">
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link className={styles["btn"]} to="/register">
+                  Register
+                </Link>
+              </li>
+            </ul>
           ) : (
-            <section className={styles["btno"]}>
-              <Link className={styles["btn"]} to="/create">
-                Orders
-              </Link>
-              <Link className={styles["btn"]} to="/my-orders">
-                My Orders
-              </Link>
-              <Link className={styles["btn"]} to="/logout">
-                Logout
-              </Link>
-            </section>
+            <ul className={styles["btno"]}>
+              <li>
+                <Link className={styles["btn"]} to="/create">
+                  Orders
+                </Link>
+              </li>
+              <li>
+                <Link className={styles["btn"]} to="/my-orders">
+                  My Orders
+                </Link>
+              </li>
+              <li>
+                <Link className={styles["btn"]} to="/logout">
+                  Logout
+                </Link>
+              </li>
+            </ul>
           )}
         </nav>
       </header>
