@@ -4,7 +4,7 @@ const User = require("../models/User");
 
 const blacklist = new Set();
 
-const JWT_SECRET = "Houston, we have a problem (:";
+const JWT_SECRET = process.env.SECRET_TOKEN;
 
 async function register(email, password) {
   // check if email is taken
@@ -15,7 +15,7 @@ async function register(email, password) {
   }
 
   // hash password
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const hashedPassword = await bcrypt.hash(password, process.env.SALT_ROUNDS);
 
   // store user
   const user = new User({
