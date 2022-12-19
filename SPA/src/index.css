@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap");
 body {
   background-image: url("../public/images/foto20a.jpg");
   background-attachment: fixed;
@@ -5,6 +6,9 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: "Playfair Display", serif;
+  --nav-load-time: 500ms;
+  --nav-load-link-time: 600ms;
 }
 .main {
   margin: 30px;
