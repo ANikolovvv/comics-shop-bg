@@ -1,4 +1,4 @@
-const url="http://localhost:3030/api/";
+const url= 'https://comics-shop-bg.onrender.com/api/'|| "http://localhost:3030/api/";
 
 export const createOrder = async (data, token) => {
   const response = await fetch(`${url}data/create`, {
