@@ -1,4 +1,4 @@
-const url="http://localhost:3030/api/";
+const url="https://comics-shop-bg.onrender.com/api/"|| "http://localhost:3030/api/";
 
 export async function regUsers(option) {
   const urlReg = `${url}auth/register`;
