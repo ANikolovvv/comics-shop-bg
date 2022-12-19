@@ -118,11 +118,8 @@
   }
 }
 @media (max-width: 800px) {
-  .container{
-    gap:1px;
-  }
   .btn {
-    font-size: 10px;
+    font-size: 14px;
   }
   li {
     font-size: 12px;
@@ -131,12 +128,12 @@
   }
   .btno {
     display: flex;
-   flex-direction: row;
-   justify-content: space-between;
+    flex-direction: row;
     font-size: 12px;
     gap: 0px;
   }
   .logo {
+    width: 30%;
     margin: 0px;
     top: 30%;
     font-size: 14px;
@@ -149,16 +146,14 @@
 @media (max-width: 600px) {
   .container {
     display: grid;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
     justify-content: center;
     align-items: center;
     text-align: center;
-
   }
   .logo {
     margin: 0 auto;
     top: 30%;
     font-size: 14px;
-    
   }
 }
