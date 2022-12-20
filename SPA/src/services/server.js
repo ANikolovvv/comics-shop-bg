@@ -1,5 +1,5 @@
-const url= "http://localhost:3030/api/";
-//"https://comics-shop-bg.onrender.com/api/"||
+const url =
+  "https://comics-shop-bg.onrender.com/api/" || "http://localhost:3030/api/";
 
 export async function regUsers(option) {
   const urlReg = `${url}auth/register`;
@@ -66,9 +66,7 @@ export async function onLogin(data) {
 }
 
 export function getData(id) {
-  return fetch(`${url}data/details/${id}`).then((res) =>
-    res.json()
-  );
+  return fetch(`${url}data/details/${id}`).then((res) => res.json());
 }
 export async function addLike(id, token) {
   let data = { user: token._id, comics: id };
@@ -91,4 +89,3 @@ export async function searchData(data) {
   });
   return response.json();
 }
-
