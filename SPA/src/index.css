@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap");
+@import url("https://use.fontawesome.com/releases/v6.2.0/css/all.css");
 body {
   background-image: url("../public/images/foto20a.jpg");
   background-attachment: fixed;
@@ -13,4 +14,29 @@ body {
 .main {
   margin: 30px;
   text-align: center;
+}
+
+input {
+  font-size: 18px;
+  border-radius: 15px;
+  border: 1px white;
+  color: #000000;
+  padding: 5px;
+}
+input:hover {
+  background-image: linear-gradient(
+    45deg,
+    #6bc6c6 0%,
+    #19f0a8 51%,
+    #93ff2f 100%
+  );
+}
+i {
+  font-size: 18px;
+  color: #22d3ee;
+}
+label {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
