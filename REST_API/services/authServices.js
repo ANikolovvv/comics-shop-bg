@@ -15,7 +15,7 @@ async function register(email, password) {
   }
 
   // hash password
-  const hashedPassword = await bcrypt.hash(password, process.env.SALT_ROUNDS);
+  const hashedPassword = await bcrypt.hash(password, 10);
 
   // store user
   const user = new User({
