@@ -83,9 +83,11 @@ const Login = () => {
           className={styles["signupForm"]}
           onSubmit={formHandler}
         >
-          <ul className={styles["noBullet"]}>
-            <li>
-              <label htmlFor="email"></label>
+          <div className={styles["noBullet"]}>
+            <div>
+              <label htmlFor="email">
+                <i class="fa-solid fa-envelope"></i> Email
+              </label>
               <input
                 type="email"
                 className={styles["inputFields"]}
@@ -101,9 +103,12 @@ const Login = () => {
                   Email should be at least 8 characters long!
                 </p>
               )}
-            </li>
-            <li>
-              <label htmlFor="password"></label>
+            </div>
+            <div>
+              <label htmlFor="password">
+                {" "}
+                <i class="fa-solid fa-lock"></i> Password
+              </label>
               <input
                 type="password"
                 className={styles["inputFields"]}
@@ -119,8 +124,8 @@ const Login = () => {
                   Password should be at least 4 characters long!
                 </p>
               )}
-            </li>
-            <li id="center-btn">
+            </div>
+            <div id="center-btn">
               <button
                 type="submit"
                 className={styles["join-btn"]}
@@ -130,16 +135,16 @@ const Login = () => {
                 {" "}
                 Login
               </button>
-            </li>
-            <li>
-              <h1 className={styles["click"]}>
-                For registration -
-                <Link className={styles["link-form"]} to="/register">
-                  click here!
-                </Link>
-              </h1>
-            </li>
-          </ul>
+              <div>
+                <h1 className={styles["click"]}>
+                  For registration <></>
+                  <Link className={styles["link-form"]} to="/register">
+                     click here!
+                  </Link>
+                </h1>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
       {userErr.length > 0 && <Errors error={userErr}></Errors>}
