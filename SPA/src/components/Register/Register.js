@@ -81,51 +81,55 @@ const Register = () => {
           className={styles["signupForm"]}
           onSubmit={formHandler}
         >
-          <ul className={styles["noBullet"]}>
-            <li>
-              <label htmlFor="email"></label>
+          <div className={styles["noBullet"]}>
+            <div>
+              <label htmlFor="email">
+                <i class="fa-solid fa-envelope"></i> Email
+              </label>
               <input
                 type="email"
                 className={styles["inputFields"]}
                 id="email"
                 name="email"
-                placeholder="Email: batman@red.gmail"
+                placeholder=" Email: batman@red.gmail"
                 value={names.email}
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 8)}
               />
               {errors.email && (
-                <p className={styles["error-form"]}>
-                  Email should be at least 8 characters long!
-                </p>
+                <p className={styles["error-form"]}>Email is not valid !</p>
               )}
-            </li>
-            <li>
-              <label htmlFor="password"></label>
+            </div>
+            <div>
+              <label htmlFor="password">
+                <i class="fa-solid fa-lock"></i> Password
+              </label>
               <input
                 type="password"
                 className={styles["inputFields"]}
                 id="password"
                 name="password"
-                placeholder="Password"
+                placeholder=" Password"
                 value={names.password}
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 4)}
               />
               {errors.password && (
                 <p className={styles["error-form"]}>
-                  Password should be at least 4 characters long!
+                  The given password should be at least 4 characters !
                 </p>
               )}
-            </li>
-            <li>
-              <label htmlFor="password"></label>
+            </div>
+            <div>
+              <label htmlFor="password">
+                <i class="fa-solid fa-lock"></i> Repeat Password
+              </label>
               <input
                 type="password"
                 className={styles["inputFields"]}
                 id="rePass"
                 name="rePass"
-                placeholder="Confirm password"
+                placeholder=" Confirm password"
                 value={names.rePass}
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 4)}
@@ -135,8 +139,8 @@ const Register = () => {
                   Confirm-pass should be at least 4 characters long!
                 </p>
               )}
-            </li>
-            <li id="center-btn">
+            </div>
+            <div id="center-btn">
               <button
                 type="submit"
                 className={styles["join-btn"]}
@@ -145,16 +149,16 @@ const Register = () => {
               >
                 Register
               </button>
-            </li>
-            <li>
-              <h1 className={styles["click"]}>
-                Login to your account-
-                <Link className={styles["link-form"]} to="/login">
-                  click here!
-                </Link>
-              </h1>
-            </li>
-          </ul>
+              <div>
+                <h1 className={styles["click"]}>
+                  Login to your account <></>
+                  <Link className={styles["link-form"]} to="/login">
+                    click here!
+                  </Link>
+                </h1>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
       {userErr.length > 0 && <Errors error={userErr}></Errors>}
