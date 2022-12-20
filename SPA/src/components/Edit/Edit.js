@@ -94,7 +94,7 @@ export const Edit = () => {
           ></i>
           <img
             className="icon"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-kxUeCxzsDEP-3hk83gJexMBWaajbosf4V5RnFy8W9ytDPHBUlKwoM2MIdmzWoZj2ZZo&usqp=CAU"
+            src="https://3.bp.blogspot.com/-Yy1u6V_K1GM/ViVxBmGYORI/AAAAAAARXVw/RQ_Pv-BtTkA/s1600/3_00.jpg"
             alt="..."
           ></img>
         </div>
@@ -117,12 +117,13 @@ export const Edit = () => {
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 3)}
               />
+              {errors.title && (
+                <p className={styles["error-form"]}>
+                  Title should be at least 3 characters long!
+                </p>
+              )}
             </li>
-            {errors.title && (
-              <p className={styles["error-form"]}>
-                Title should be at least 3 characters long!
-              </p>
-            )}
+
             <li>
               <label htmlFor="text"></label>
               <input
@@ -134,12 +135,13 @@ export const Edit = () => {
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 3)}
               />
+              {errors.author && (
+                <p className={styles["error-form"]}>
+                  Author should be at least 3 characters long!
+                </p>
+              )}
             </li>
-            {errors.author && (
-              <p className={styles["error-form"]}>
-                Author should be at least 3 characters long!
-              </p>
-            )}
+
             <li>
               <label htmlFor="email"></label>
               <input
@@ -151,12 +153,13 @@ export const Edit = () => {
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 8)}
               />
+              {errors.email && (
+                <p className={styles["error-form"]}>
+                  Email is not valid - valid email red@abv.bg!
+                </p>
+              )}
             </li>
-            {errors.email && (
-              <p className={styles["error-form"]}>
-                Email is not valid - valid email red@abv.bg!
-              </p>
-            )}
+
             <li>
               <label htmlFor="text"></label>
               <input
@@ -168,12 +171,13 @@ export const Edit = () => {
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 10)}
               />
+              {errors.address && (
+                <p className={styles["error-form"]}>
+                  Address should be at least 10 characters long!
+                </p>
+              )}
             </li>
-            {errors.address && (
-              <p className={styles["error-form"]}>
-                Address should be at least 10 characters long!
-              </p>
-            )}
+
             <li>
               <label htmlFor="text"></label>
               <input
@@ -185,12 +189,13 @@ export const Edit = () => {
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 4)}
               />
+              {errors.courier && (
+                <p className={styles["error-form"]}>
+                  Courier should be at least 4 characters long!
+                </p>
+              )}
             </li>
-            {errors.courier && (
-              <p className={styles["error-form"]}>
-                Courier should be at least 4 characters long!
-              </p>
-            )}
+
             <li>
               <label htmlFor="number"></label>
               <input
@@ -202,12 +207,12 @@ export const Edit = () => {
                 onChange={changeHendler}
                 onBlur={isNumber}
               />
+              {errors.number && (
+                <p className={styles["error-form"]}>
+                  Number should be biger then 0!
+                </p>
+              )}
             </li>
-            {errors.number && (
-              <p className={styles["error-form"]}>
-                Number should be biger then 0!
-              </p>
-            )}
 
             <select
               name="payment"
