@@ -1,6 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+@import url("https://use.fontawesome.com/releases/v6.2.0/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap");
 * {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Playfair Display", serif;
 }
 
 .art h1 {
@@ -13,19 +14,31 @@
   );
   font-family: "Luckiest Guy", cursive;
   font-size: 20px;
-  letter-spacing: 10px;
+  letter-spacing: 6px;
   text-align: center;
 }
 
+.icon {
+  width: 90%;
+  height: 90%;
+  object-fit: fill;
+  padding: 20px 0;
+  color: rgb(0, 0, 0);
+}
+img {
+  width: 90%;
+  height: 90%;
+  object-fit: fill;
+}
 .signupSection {
-  margin: 30px;
+  margin: 20px;
   background-repeat: no-repeat;
   position: absolute;
-  top: 55%;
-  left: 46%;
+  top: 60%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 400px;
+  width: 80%;
+  height: 70%;
   text-align: center;
   display: flex;
   color: white;
@@ -40,6 +53,7 @@
 }
 .info-form h2 {
   color: rgb(239, 248, 248);
+  margin: 0;
 }
 
 .signupForm {
@@ -49,30 +63,24 @@
   transition: 0.2s;
 }
 
-.inputFields {
-  margin: 7px 0;
-  font-size: 14px;
-  padding: 2px 1;
-  width: 250px;
-  border: 10px solid rgb(241, 243, 243);
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background-image: linear-gradient(
-    45deg,
-    #f1e4ae 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
-  color: rgb(0, 0, 0);
-  outline: none;
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 60px;
+  margin-right: 10px;
 }
-
-.noBullet {
-  list-style-type: none;
-  padding: 17px;
+li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  letter-spacing: 2px;
+  gap: 10px;
+  position: relative;
 }
-
 .link-form {
   color: aliceblue;
   font-weight: bold;
@@ -81,13 +89,11 @@
   margin: 5px;
   color: #fff;
   background: transparent;
-  font-family: "Amaranth", sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
-  font-style: italic;
   text-transform: capitalize;
   padding: 3px 15px;
-  border-radius: 0;
+  border-radius: 15px;
   border: 2px solid rgba(243, 240, 240, 0.799);
   background-image: linear-gradient(
     45deg,
@@ -98,13 +104,21 @@
   position: relative;
   z-index: 1;
   transition: all 0.3s ease 0.1s;
+  cursor: pointer;
+}
+.btn:hover {
+  background-image: linear-gradient(
+    45deg,
+    #6bc6c6 0%,
+    #19f0a8 51%,
+    #93ff2f 100%
+  );
 }
 .payment {
-  border-radius: 7px;
+  border-radius: 15px;
   margin: 2px 0;
-  font-size: 14px;
+  font-size: 18px;
   padding: 7px 1;
-  width: 240px;
   border: 10px solid rgb(241, 243, 243);
   border-top: none;
   border-left: none;
@@ -112,9 +126,25 @@
   background: rgb(235, 109, 36);
   color: white;
   outline: none;
+  letter-spacing: 2px;
+  text-align: center;
 }
+
 .error-form {
+  width: 100%;
+  text-align: left;
+  position: absolute;
+  top: 83%;
+  letter-spacing: 2px;
   font-weight: bolder;
-  color: red;
-  font-size: 11px;
+  color: rgb(247, 5, 5);
+  font-size: 15px;
+  background-color: white;
+  text-align: center;
+  border-radius: 15px;
+  padding: 5px 5px;
+}
+
+.error-form {
+  width: 98%;
 }
