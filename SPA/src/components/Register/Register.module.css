@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap");
 * {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Playfair Display", serif;
 }
 .art h1 {
   background-size: 10% auto;
@@ -34,13 +34,12 @@
 
 .signupSection {
   margin: 20px;
-
   background-repeat: no-repeat;
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
+  width: 70%;
   height: 70%;
   text-align: center;
   display: flex;
@@ -56,14 +55,15 @@
 }
 .info-form h2 {
   color: rgb(239, 248, 248);
+  margin: 0;
 }
 .icon {
   width: 90%;
-  height: 70%;
-  object-fit: cover;
+  height: 90%;
+  object-fit: fill;
   font-size: 8em;
   padding: 20px 0;
-  color: rgba(10, 180, 180, 1);
+  color: rgb(0, 0, 0);
 }
 
 .signupForm {
@@ -73,51 +73,39 @@
   transition: 0.2s;
 }
 
-.inputFields {
-  margin: 10px 0;
-  font-size: 14px;
-  padding: 7px 10;
-  width: 60%;
-  border: 10px solid rgb(241, 243, 243);
-  border-radius: 5px;
-  background-image: linear-gradient(
-    45deg,
-    #e3e688 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
-  color: rgb(19, 0, 0);
-  outline: none;
-}
-
 .noBullet {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  justify-content: center;
+  gap: 40px;
 }
-.noBullet li{
-  list-style-type: none;
+.noBullet div:first-child {
+  margin-top: 10px;
+}
+.noBullet div {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  gap: 10px;
   position: relative;
+  width: 80%;
 }
 
 .join-btn {
-  margin-top: 40px;
+  margin: 0 auto;
   width: 50%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
   border: 5px solid rgb(246, 250, 250);
-  background: rgba(20, 20, 20, 0.6);
   font-size: 14px;
-  color: white;
+  color: black;
   margin-top: 5px;
   padding: 5px 10px;
   cursor: pointer;
   transition: 0.4s;
-  border-radius: 2px;
+  border-radius: 15px;
 }
 .join-btn:hover {
   background-color: #f09819;
@@ -127,11 +115,11 @@
   font-size: 24px;
   letter-spacing: normal;
   text-decoration: none;
-  color: rgb(195, 255, 0);
+  color: black;
   cursor: pointer;
 }
 .link-form:hover {
-  color: black;
+  color: rgba(30, 30, 30, 0.8);
 }
 .click {
   font-size: 24px;
@@ -139,14 +127,22 @@
 ::placeholder {
   color: black;
 }
-#center-btn{
-  margin-top: 20px;
+#center-btn {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 .error-form {
-  text-align:left;
+  width: 100%;
+  text-align: left;
   position: absolute;
-  top: 80%;
+  top: 83%;
+  letter-spacing: 2px;
   font-weight: bolder;
-  color: red;
+  color: rgb(247, 5, 5);
   font-size: 15px;
+  background-color: white;
+  text-align: center;
+  border-radius: 15px;
+  padding: 5px 5px;
 }
