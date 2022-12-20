@@ -3,7 +3,7 @@ import { AuthContexts } from "../../contexts/authContext";
 import * as requests from "../../services/server";
 import { useState, useEffect, useContext } from "react";
 
-import styles from "./BuyCreate.module.css";
+import styles from "../Create/Create.module.css";
 
 import { Errors } from "../Erorrs/Errors";
 import { ctxValidation } from "../../helpers/Form-Validate";
@@ -108,7 +108,9 @@ const Buy = () => {
         >
           <ul className={["noBullet"]}>
             <li>
-              <label htmlFor="text"></label>
+              <label htmlFor="text">
+                <i class="fa-sharp fa-solid fa-t"></i> Ttle
+              </label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -118,14 +120,18 @@ const Buy = () => {
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 3)}
               />
+              {errors.title && (
+                <p className={styles["error-form"]}>
+                  Title should be at least 3 characters long!
+                </p>
+              )}
             </li>
-            {errors.title && (
-              <p className={styles["error-form"]}>
-                Title should be at least 3 characters long!
-              </p>
-            )}
+
             <li>
-              <label htmlFor="text"></label>
+              <label htmlFor="text">
+                {" "}
+                <i class="fa-solid fa-font"></i> Author
+              </label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -135,14 +141,17 @@ const Buy = () => {
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 3)}
               />
+              {errors.author && (
+                <p className={styles["error-form"]}>
+                  Author should be at least 3 characters long!
+                </p>
+              )}
             </li>
-            {errors.author && (
-              <p className={styles["error-form"]}>
-                Author should be at least 3 characters long!
-              </p>
-            )}
+
             <li>
-              <label htmlFor="email"></label>
+              <label htmlFor="email">
+                <i class="fa-solid fa-envelope"></i> Email
+              </label>
               <input
                 type="email"
                 className={styles["inputFields"]}
@@ -152,14 +161,17 @@ const Buy = () => {
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 8)}
               />
+              {errors.email && (
+                <p className={styles["error-form"]}>
+                  Email is not valid - valid email red@abv.bg!
+                </p>
+              )}
             </li>
-            {errors.email && (
-              <p className={styles["error-form"]}>
-                Email is not valid - valid email red@abv.bg!
-              </p>
-            )}
+
             <li>
-              <label htmlFor="text"></label>
+              <label htmlFor="text">
+                <i class="fa-solid fa-font"></i> Address
+              </label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -169,14 +181,17 @@ const Buy = () => {
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 10)}
               />
+              {errors.address && (
+                <p className={styles["error-form"]}>
+                  Address should be at least 10 characters long!
+                </p>
+              )}
             </li>
-            {errors.address && (
-              <p className={styles["error-form"]}>
-                Address should be at least 10 characters long!
-              </p>
-            )}
+
             <li>
-              <label htmlFor="text"></label>
+              <label htmlFor="text">
+                <i class="fa-solid fa-truck"></i> Courier
+              </label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -186,14 +201,17 @@ const Buy = () => {
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 4)}
               />
+              {errors.courier && (
+                <p className={styles["error-form"]}>
+                  Courier should be at least 4 characters long!
+                </p>
+              )}
             </li>
-            {errors.courier && (
-              <p className={styles["error-form"]}>
-                Courier should be at least 4 characters long!
-              </p>
-            )}
+
             <li>
-              <label htmlFor="number"></label>
+              <label htmlFor="number">
+                <i class="fa-solid fa-arrow-up-1-9"></i> Number
+              </label>
               <input
                 type="number"
                 className={styles["inputFields"]}
@@ -203,12 +221,13 @@ const Buy = () => {
                 onChange={changeHendler}
                 onBlur={isNumber}
               />
+              {errors.number && (
+                <p className={styles["error-form"]}>
+                  Number should be biger then 0!
+                </p>
+              )}
             </li>
-            {errors.number && (
-              <p className={styles["error-form"]}>
-                Number should be biger then 0!
-              </p>
-            )}
+
             <select
               name="payment"
               className={styles["payment"]}
