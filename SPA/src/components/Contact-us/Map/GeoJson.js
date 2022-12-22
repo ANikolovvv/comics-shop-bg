@@ -12,17 +12,7 @@ export const geojson = {
           description: 'Burgas'
         }
       },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [-122.414, 37.776]
-        },
-        properties: {
-          title: 'Mapbox',
-          description: 'San Francisco, California'
-        }
-      }
+    
     ]
   };
   
