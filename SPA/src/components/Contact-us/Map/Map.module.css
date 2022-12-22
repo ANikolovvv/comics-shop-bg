@@ -4,6 +4,7 @@
   color: white;
   box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0);
   margin: 0;
+  width: 40%;
 }
 .map-container {
   height: 100%;
@@ -11,6 +12,9 @@
 }
 .sidebar {
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   background-image: linear-gradient(
     45deg,
     #fd6c4f 0%,
@@ -18,6 +22,7 @@
     #fe8269 100%
   );
   color: #fff;
+  font-size: 18px;
   font-family: monospace;
   border-radius: 2px;
 }
