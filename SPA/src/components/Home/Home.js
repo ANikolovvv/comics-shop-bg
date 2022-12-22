@@ -36,8 +36,9 @@ function Home({ comic }) {
         <article className={styles["info"]}>
           {comics.length > 0 ? <Top info={comics[count]}></Top> : <Spinner />}
         </article>
-        <div className={styles["home-art"]}>
+        <article className={styles["home-art"]}>
           <div className={styles["art-info"]}>
+            <i className="fa-solid fa-book"> comics-shop.bg</i>
             <p>
               comics-shop.bg is an app for buying online comics.Inside the app
               you can find different comics from different countries, and you
@@ -46,7 +47,7 @@ function Home({ comic }) {
               the end of the fifth working day, after you place your order.
             </p>
           </div>
-        </div>
+        </article>
       </div>
     </>
   );
