@@ -62,15 +62,12 @@ const Details = () => {
           </span>
 
           <p className={styles["information"]}>{comic.description}</p>
-
           {user.email ? (
-            <>
+            <div className={["btn"]}>
               {like === false && (
-                <div className={styles["div-btn"]}>
-                  <button className={styles["btn"]} onClick={likeHandler}>
-                    Like
-                  </button>
-                </div>
+                <button className={styles["button"]} onClick={likeHandler}>
+                  Like
+                </button>
               )}
               {like === true && <h1>You already like this comics!</h1>}
               <div className={styles["control"]}>
@@ -84,11 +81,13 @@ const Details = () => {
                   Buy
                 </Link>
               </div>
-            </>
+            </div>
           ) : (
-            <Link to={`/catalog`} className={styles["link"]}>
-              Back
-            </Link>
+            <div className={styles["control"]}>
+              <Link to={`/catalog`} className={styles["link"]}>
+                Back
+              </Link>
+            </div>
           )}
         </div>
 
