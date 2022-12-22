@@ -27,7 +27,7 @@
   color:white;
 }
 .art p {
-  font-weight: 700;
+  
   background-size: 10% auto;
   background-image: linear-gradient(
     45deg,
@@ -51,7 +51,7 @@
   flex-direction: column;
   justify-content: center;
   width: 25%;
-  height: 80%;
+  height: 500px;
   height: auto;
   transition: 12s;
   border: 2px solid;
@@ -86,4 +86,26 @@
   padding: 15px;
   font-family: "Merriweather", serif;
   color: white;
+}
+@media (max-width: 1024px) {
+  .info {
+    width: 50%;
+    height: 700px;
+  }
+  .home-art{
+    width: 50%;
+    height: 560px;
+  }
+  .art-info p {
+    font-size: 18px;
+    padding: 10px;
+   
+  }
+}
+@media (max-width: 800px) {
+ 
+}
+@media (max-width: 600px) {
+  
+  
 }
