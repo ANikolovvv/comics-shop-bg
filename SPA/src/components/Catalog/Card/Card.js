@@ -14,7 +14,6 @@ const Card = (props) => {
         </div>
         <div className={styles["card-body"]}>
           <h5 className={styles["card-title"]}>{props.data.title}</h5>
-
           <Link
             to={`/details/${props.data._id}`}
             info={props}
