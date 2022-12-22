@@ -9,6 +9,11 @@
   text-align: center;
   gap: 10px;
 }
+.nav-box {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
 .btn {
   color: #fff;
   background: transparent;
@@ -115,23 +120,46 @@
 @media (max-width: 1024px) {
   .btn {
     font-size: 18px;
+    padding: 5px 20px;
   }
 }
 @media (max-width: 800px) {
-  .btn {
-    font-size: 14px;
+  section {
+    margin: 0;
+    padding: 0;
   }
-  li {
-    font-size: 12px;
-    padding: 3px 15px;
-    font-weight: lighter;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .nav-box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2px;
+  }
+  .btn {
+    font-size: 16px;
   }
   .btno {
     display: flex;
     flex-direction: row;
-    font-size: 12px;
-    gap: 0px;
   }
+  .btno > li {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 18px;
+    justify-content: left;
+  }
+  .btno a {
+    font-size: 12px;
+    padding: 3px 30px;
+  }
+
   .logo {
     width: 30%;
     margin: 0px;
@@ -144,16 +172,54 @@
   }
 }
 @media (max-width: 600px) {
+  section {
+    margin: 0;
+    padding: 0;
+  }
   .container {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+  }
+  .nav-box {
+    width: 60%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    gap: 10px;
   }
+  .btn {
+    font-size: 12px;
+  }
+  .btno {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    justify-content: left;
+    gap: 10px;
+
+  }
+  .btno > li {
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 12px;
+    justify-content: left;
+  }
+  .btno a {
+    font-size: 12px;
+    padding: 3px 15px;
+  }
+
   .logo {
-    margin: 0 auto;
+    width: 15%;
+    margin: 0px;
     top: 30%;
-    font-size: 14px;
+    
+  }
+  .logo-img {
+    width: 50px;
+    height: 50px;
   }
 }
