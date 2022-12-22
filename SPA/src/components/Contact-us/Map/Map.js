@@ -22,7 +22,7 @@ export const Map = () => {
       zoom: zoom,
     });
     
-  });
+  },[lng,zoom,lat]);
 
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
