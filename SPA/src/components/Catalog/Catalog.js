@@ -56,7 +56,7 @@ const Catalog = ({ comics }) => {
       )}
       {currentItems.length === 0 && currentdata === true && (
         <div className={styles["link"]}>
-          <h1>Make your first order</h1>
+          <h1>Make your first order !</h1>
           {user.email ? (
             <Link to={"/create"} className={styles["click"]}>
               Click here!
