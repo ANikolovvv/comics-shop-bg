@@ -87,3 +87,14 @@ li >i{
   font-size: 20px;
   text-transform: uppercase;
 }
+@media (max-width: 1024px) {
+  .home{
+    width: 80%;
+  }
+  .star li {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(211, 187, 50);
+    
+  }
+}
