@@ -107,7 +107,7 @@ export const Edit = () => {
         >
           <ul className={["noBullet"]}>
             <li>
-              <label htmlFor="text"></label>
+              <label htmlFor="text"><i className="fa-sharp fa-solid fa-t"></i> Title</label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -125,7 +125,7 @@ export const Edit = () => {
             </li>
 
             <li>
-              <label htmlFor="text"></label>
+              <label htmlFor="text"> <i className="fa-solid fa-font"></i> Author</label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -143,7 +143,7 @@ export const Edit = () => {
             </li>
 
             <li>
-              <label htmlFor="email"></label>
+              <label htmlFor="email"> <i className="fa-solid fa-envelope"></i> Email</label>
               <input
                 type="email"
                 className={styles["inputFields"]}
@@ -161,7 +161,7 @@ export const Edit = () => {
             </li>
 
             <li>
-              <label htmlFor="text"></label>
+              <label htmlFor="text">  <i className="fa-solid fa-font"></i> Address</label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -179,7 +179,7 @@ export const Edit = () => {
             </li>
 
             <li>
-              <label htmlFor="text"></label>
+              <label htmlFor="text"><i className="fa-solid fa-truck"></i> Courier</label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -197,7 +197,7 @@ export const Edit = () => {
             </li>
 
             <li>
-              <label htmlFor="number"></label>
+              <label htmlFor="number"><i className="fa-solid fa-arrow-up-1-9"></i> Number</label>
               <input
                 type="number"
                 className={styles["inputFields"]}
@@ -213,7 +213,7 @@ export const Edit = () => {
                 </p>
               )}
             </li>
-
+             
             <select
               name="payment"
               className={styles["payment"]}
