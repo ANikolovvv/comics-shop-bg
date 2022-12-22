@@ -1,7 +1,7 @@
 .wraper {
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: 40%;
+  height: 40%;
 }
 h5 {
   font-size: 18px;
@@ -13,6 +13,7 @@ h5 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
   transition: 0.4s;
   width: 100%;
+  height: 50%;
   background: #fff;
   text-align: center;
   font-family: sans-serif;
@@ -59,4 +60,12 @@ h5 {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+.button-top:hover{
+  background-image: linear-gradient(
+    45deg,
+    #6bc6c6 0%,
+    #19f0a8 51%,
+    #93ff2f 100%
+  );
 }
