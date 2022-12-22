@@ -14,60 +14,59 @@ const Header = () => {
       <header>
         <nav className={styles["container"]}>
           <section className={styles["logo"]}>
-            <Link className={styles["logo"]} to="/">
-              <img src={logo} className={styles["logo-img"]} alt="LOGO"></img>
-            </Link>
+            <img src={logo} className={styles["logo-img"]} alt="LOGO"></img>
           </section>
-
-          <ul className={styles["btno"]}>
-            <li>
-              <Link className={styles["btn"]} to="/">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link className={styles["btn"]} to="/catalog">
-                Catalog
-              </Link>
-            </li>
-            <li>
-              <Link className={styles["btn"]} to="/about">
-                Contact Us
-              </Link>
-            </li>
-          </ul>
-          {!user.email ? (
+          <section className={styles["nav-box"]}>
             <ul className={styles["btno"]}>
               <li>
-                <Link className={styles["btn"]} to="/login">
-                  Login
+                <Link className={styles["btn"]} to="/">
+                  Home
                 </Link>
               </li>
               <li>
-                <Link className={styles["btn"]} to="/register">
-                  Register
+                <Link className={styles["btn"]} to="/catalog">
+                  Catalog
+                </Link>
+              </li>
+              <li>
+                <Link className={styles["btn"]} to="/about">
+                  Contact us
                 </Link>
               </li>
             </ul>
-          ) : (
-            <ul className={styles["btno"]}>
-              <li>
-                <Link className={styles["btn"]} to="/create">
-                  Orders
-                </Link>
-              </li>
-              <li>
-                <Link className={styles["btn"]} to="/my-orders">
-                  My Orders
-                </Link>
-              </li>
-              <li>
-                <Link className={styles["btn"]} to="/logout">
-                  Logout
-                </Link>
-              </li>
-            </ul>
-          )}
+            {!user.email ? (
+              <ul className={styles["btno"]}>
+                <li>
+                  <Link className={styles["btn"]} to="/login">
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link className={styles["btn"]} to="/register">
+                    Register
+                  </Link>
+                </li>
+              </ul>
+            ) : (
+              <ul className={styles["btno"]}>
+                <li>
+                  <Link className={styles["btn"]} to="/create">
+                    Orders
+                  </Link>
+                </li>
+                <li>
+                  <Link className={styles["btn"]} to="/my-orders">
+                    My Orders
+                  </Link>
+                </li>
+                <li>
+                  <Link className={styles["btn"]} to="/logout">
+                    Logout
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </section>
         </nav>
       </header>
     </>
