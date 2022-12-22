@@ -13,46 +13,33 @@
   font-size: 20px;
   letter-spacing: 10px;
   text-align: center;
-}
-.art p {
-  font-weight: 700;
-
-  background-size: 10% auto;
-  background-image: linear-gradient(
-    45deg,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
-  font-family: "Luckiest Guy", cursive;
-  font-size: 15px;
-  letter-spacing: 10px;
-  text-align: center;
-  display: block;
+  color: #fff;
 }
 
 .container {
-  border-style: solid;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
   color: #333;
   box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
   background: rgba(255, 255, 255, 0.9);
   text-align: center;
   border-radius: 5px;
   overflow: hidden;
-  margin: 5em auto;
-  height: 350px;
-  width: 700px;
+  width: 100%;
+  height: 700px;
 }
 
 /* 	Product details  */
 .product-details {
-  position: relative;
-  text-align: left;
-  overflow: hidden;
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
   height: 100%;
-  float: left;
-  width: 40%;
+  gap: 10px;
 }
 
 /* 	Product Name */
@@ -62,7 +49,7 @@
   position: relative;
   font-size: 30px;
   color: #344055;
-  margin: 0;
+  margin: 10px;
 }
 
 .product-details h1:before {
@@ -72,7 +59,6 @@
   top: 0%;
   transform: translate(25px, -15px);
   font-family: "Farsan", cursive;
-  display: inline-block;
   border-radius: 5px;
   font-size: 14px;
   padding: 5px;
@@ -100,111 +86,28 @@
 
 /* The most important information about the product */
 .product-details > p {
+  padding: 10px;
   font-family: "Farsan", cursive;
   text-align: center;
-  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  font-size: 22px;
   color: #333;
 }
 
-/* control */
-
-.control {
-  margin: 5px;
-  bottom: 20%;
-  left: 15.8%;
-  padding: 2px;
-}
-.like {
-  margin: 5px;
-  bottom: 20%;
-  left: 15.8%;
-  padding: 2px;
-}
-/* the Button */
-.btn {
-  text-align: center;
-  border: black;
-  border-style: solid;
-  color: aliceblue;
-  margin: 1px;
-  padding: 10px;
-  font-size: 18px;
-  background-image: linear-gradient(
-    45deg,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
-  border-radius: 5px;
-}
-.div-btn{
-  margin: 10px;
-  text-align: center;
-}
-.btn:hover {
-  transform: translateY(-4px);
-}
-
-.btn span {
-  font-family: "Farsan", cursive;
-  transition: transform 0.3s;
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  margin: 0;
-}
-/* shopping cart icon */
-.btn .price,
-.shopping-cart {
-  background: #333;
-  border: 0;
-  margin: 0;
-}
-
-.btn .price {
-  transform: translateX(-10%);
-  padding-right: 15px;
-}
-
-/* the Icon */
-.btn .shopping-cart {
-  transform: translateX(-100%);
-  position: absolute;
-  background: #333;
-  z-index: 1;
-  left: 0;
-  top: 0;
-}
-
-/* buy */
-.btn .buy {
-  z-index: 3;
-  font-weight: bolder;
-}
-
-.btn:hover .price {
-  transform: translateX(-110%);
-}
-
-.btn:hover .shopping-cart {
-  transform: translateX(0%);
-}
-
-/* product image  */
 .product-image {
   transition: all 0.3s ease-out;
-  display: inline-block;
   position: relative;
   overflow: hidden;
+  width: 40%;
   height: 100%;
-
-  width: 50%;
-  display: inline-block;
+  text-align: center;
 }
 
-.container img {
+img {
   width: 100%;
   height: 100%;
+  object-fit: fill;
 }
 
 .info {
@@ -244,21 +147,67 @@
 .product-image:hover img {
   transform: scale(1.2, 1.2);
 }
-.link {
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+.button {
+  position: absolute;
+  left: 31%;
   border: black;
+  color: #fff;
   border-style: solid;
   text-decoration: none;
   text-align: center;
-  color: aliceblue;
-  margin-right: 130px;
   padding: 5px 10px;
-  font-size: 20px;
   background-image: linear-gradient(
     45deg,
     #ff512f 0%,
     #f09819 51%,
     #ff512f 100%
   );
-  border-radius: 2px;
+  border-radius: 10px;
+  width: 10%;
+  font-size: 18px;
 }
-
+.control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+}
+.link {
+  border: black;
+  color: #fff;
+  border-style: solid;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px 10px;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  border-radius: 10px;
+  width: 10%;
+  font-size: 18px;
+}
+.link:hover {
+  background-image: linear-gradient(
+    45deg,
+    #6bc6c6 0%,
+    #19f0a8 51%,
+    #93ff2f 100%
+  );
+}
+.button:hover {
+  background-image: linear-gradient(
+    45deg,
+    #6bc6c6 0%,
+    #19f0a8 51%,
+    #93ff2f 100%
+  );
+}
