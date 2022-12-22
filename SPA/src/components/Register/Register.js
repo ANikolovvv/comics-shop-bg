@@ -64,16 +64,20 @@ const Register = () => {
 
       <div className={styles["signupSection"]}>
         <div className={styles["info-form"]}>
-          <h2>Sign Up Form.</h2>
-          <i
-            className={styles["icon ion-ios-ionic-outline"]}
-            aria-hidden="true"
-          ></i>
-          <img
-            className={styles["icon"]}
-            src="https://i.pinimg.com/236x/9f/fa/6e/9ffa6ed06be1f65082360d42461c86b7.jpg"
-            alt="..."
-          ></img>
+          <div className={styles["title"]}>
+            <h2>Sign Up Form.</h2>
+          </div>
+          <div className={styles["image-box"]}>
+            <i
+              className={styles["icon ion-ios-ionic-outline"]}
+              aria-hidden="true"
+            ></i>
+            <img
+              className={styles["icon"]}
+              src="https://i.pinimg.com/236x/9f/fa/6e/9ffa6ed06be1f65082360d42461c86b7.jpg"
+              alt="..."
+            ></img>
+          </div>
         </div>
         <form
           action="#"
@@ -84,7 +88,7 @@ const Register = () => {
           <div className={styles["noBullet"]}>
             <div>
               <label htmlFor="email">
-                <i class="fa-solid fa-envelope"></i> Email
+                <i className="fa-solid fa-envelope"></i> Email
               </label>
               <input
                 type="email"
@@ -102,7 +106,7 @@ const Register = () => {
             </div>
             <div>
               <label htmlFor="password">
-                <i class="fa-solid fa-lock"></i> Password
+                <i className="fa-solid fa-lock"></i> Password
               </label>
               <input
                 type="password"
@@ -122,7 +126,7 @@ const Register = () => {
             </div>
             <div>
               <label htmlFor="password">
-                <i class="fa-solid fa-lock"></i> Repeat Password
+                <i className="fa-solid fa-lock"></i> Repeat Password
               </label>
               <input
                 type="password"
