@@ -80,16 +80,20 @@ const Create = () => {
       </article>
       <div className={styles["signupSection"]}>
         <div className={styles["info-form"]}>
-          <h2>Order your comics book!</h2>
-          <i
-            className={styles["icon ion-ios-ionic-outline"]}
-            aria-hidden="true"
-          ></i>
-          <img
-            className={styles["icon"]}
-            src="https://www.comicbasics.com/wp-content/uploads/2019/05/Best-DC-Stories.jpg"
-            alt="..."
-          ></img>
+          <div className={styles["title"]}>
+            <h2>Order your comics book!</h2>
+          </div>
+          <div className={styles["image-box"]}>
+            <i
+              className={styles["icon ion-ios-ionic-outline"]}
+              aria-hidden="true"
+            ></i>
+            <img
+              className={styles["icon"]}
+              src="https://i.ebayimg.com/images/g/B8IAAOSwgSthDdgU/s-l1600.jpg"
+              alt="..."
+            ></img>
+          </div>
         </div>
         <form
           method="POST"
@@ -99,7 +103,7 @@ const Create = () => {
           <ul className={["noBullet"]}>
             <li>
               <label htmlFor="text">
-                <i class="fa-sharp fa-solid fa-t"></i> Ttle
+                <i className="fa-sharp fa-solid fa-t"></i> Title
               </label>
               <input
                 type="text"
@@ -119,7 +123,7 @@ const Create = () => {
 
             <li>
               <label htmlFor="text">
-                <i class="fa-solid fa-font"></i> Author
+                <i className="fa-solid fa-font"></i> Author
               </label>
               <input
                 type="text"
@@ -139,7 +143,7 @@ const Create = () => {
 
             <li>
               <label htmlFor="email">
-                <i class="fa-solid fa-envelope"></i> Email
+                <i className="fa-solid fa-envelope"></i> Email
               </label>
               <input
                 type="email"
@@ -159,7 +163,7 @@ const Create = () => {
 
             <li>
               <label htmlFor="text">
-                <i class="fa-solid fa-font"></i> Address
+                <i className="fa-solid fa-font"></i> Address
               </label>
               <input
                 type="text"
@@ -179,7 +183,7 @@ const Create = () => {
 
             <li>
               <label htmlFor="text">
-                <i class="fa-solid fa-truck"></i> Courier
+                <i className="fa-solid fa-truck"></i> Courier
               </label>
               <input
                 type="text"
@@ -199,7 +203,7 @@ const Create = () => {
 
             <li>
               <label htmlFor="number">
-                <i class="fa-solid fa-arrow-up-1-9"></i> Number
+                <i className="fa-solid fa-arrow-up-1-9"></i> Number
               </label>
               <input
                 type="number"
