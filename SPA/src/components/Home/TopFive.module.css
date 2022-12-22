@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif");
 @import url("https://use.fontawesome.com/releases/v6.2.0/css/all.css");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap");
 
 .home {
   font-family: "Merriweather", serif;
@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 600px;
+  height: 80%;
   transition: 12s;
   border: 2px solid;
   border-width: 4px;
@@ -27,19 +27,22 @@
   height: 100%;
 }
 .star {
-  margin: 10px, 0;
-  padding: 0%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  text-align: left;
-  align-items: left;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
 .star li {
   text-align: center;
   font-size: 1.5rem;
-  color: rgb(136, 4, 4);
+  color: rgb(211, 187, 50);
+  
 }
-
+li >i{
+  color: rgb(0, 225, 255);
+}
 .home .div-img img {
   height: 250px;
   width: 90%;
