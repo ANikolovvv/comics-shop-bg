@@ -66,16 +66,20 @@ const Login = () => {
 
       <div className={styles["signupSection"]}>
         <div className={styles["info-form"]}>
-          <h2>Sign In Form.</h2>
-          <i
-            className={styles["icon ion-ios-ionic-outline"]}
-            aria-hidden="true"
-          ></i>
-          <img
-            className={styles["icon"]}
-            src="https://3.bp.blogspot.com/-EYhzbgX3eqA/WNPf3EX0AlI/AAAAAAAAQR4/818HP3L1tYoq0f_pl3foqoqdhX5qHdcswCLcB/s1600/spider-read.jpg"
-            alt="..."
-          ></img>
+          <div className="title">
+            <h2>Sign In Form.</h2>
+          </div>
+          <div className={styles["image-box"]}>
+            <i
+              className={styles["icon ion-ios-ionic-outline"]}
+              aria-hidden="true"
+            ></i>
+            <img
+              className={styles["icon"]}
+              src="https://3.bp.blogspot.com/-EYhzbgX3eqA/WNPf3EX0AlI/AAAAAAAAQR4/818HP3L1tYoq0f_pl3foqoqdhX5qHdcswCLcB/s1600/spider-read.jpg"
+              alt="..."
+            ></img>
+          </div>
         </div>
         <form
           action="#"
@@ -86,7 +90,7 @@ const Login = () => {
           <div className={styles["noBullet"]}>
             <div>
               <label htmlFor="email">
-                <i class="fa-solid fa-envelope"></i> Email
+                <i className="fa-solid fa-envelope"></i> Email
               </label>
               <input
                 type="email"
@@ -107,7 +111,7 @@ const Login = () => {
             <div>
               <label htmlFor="password">
                 {" "}
-                <i class="fa-solid fa-lock"></i> Password
+                <i className="fa-solid fa-lock"></i> Password
               </label>
               <input
                 type="password"
@@ -139,7 +143,7 @@ const Login = () => {
                 <h1 className={styles["click"]}>
                   For registration <></>
                   <Link className={styles["link-form"]} to="/register">
-                     click here!
+                    click here!
                   </Link>
                 </h1>
               </div>
