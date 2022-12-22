@@ -18,12 +18,10 @@ export function Top(props) {
       </div>
       <p className={styles["date-title"]}>Raiting: {data.userLiked.length}</p>
       <ul className={styles["star"]}>
-        <li>☆</li>
-        <li>☆</li>
-        <li>☆</li>
-        <li>☆</li>
-        <li>☆</li>
-        <li>☆</li>
+        <li><i className="fa-solid fa-star"></i></li>
+        <li><i className="fa-solid fa-star"></i></li>
+        <li><i className="fa-solid fa-star"></i></li>
+        <li><i className="fa-solid fa-star"></i></li>
       </ul>
     </div>
   );
