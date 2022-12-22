@@ -5,13 +5,16 @@ const useFetch = (defautValue) => {
   const [data, setData] = useState(defautValue);
 
   useEffect(() => {
-    fetch(url)
+    setTimeout(()=>{
+      fetch(url)
       .then((res) => res.json())
       .then((result) => {
         if (result !== undefined) {
           setData(result);
         }
       });
+    },1000)
+    
   }, [url]);
   return [data];
 };
