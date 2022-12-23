@@ -211,3 +211,85 @@ img {
     #93ff2f 100%
   );
 }
+@media (max-width: 1024px) {
+  .art h1 {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .container {
+    width: 80%;
+    height: 600px;
+  }
+  .product-details {
+    width: 50%;
+  }
+  .product-image {
+    width: 50%;
+  }
+  .link {
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 10%;
+    font-size: 14px;
+  }
+  .button {
+    left: 26.5%;
+    font-size: 14px;
+  }
+  .product-details > p {
+    padding: 10px;
+    font-family: "Farsan", cursive;
+    text-align: left;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    font-size: 18px;
+    color: #333;
+  }
+}
+@media (max-width: 800px) {
+}
+@media (max-width: 600px) {
+  .art h1 {
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .container {
+    margin-top: 70px;
+    width: 80%;
+    height: 500px;
+  }
+  .product-details {
+    width: 50%;
+  }
+  .product-image {
+    width: 50%;
+  }
+  .link {
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 10%;
+    font-size: 12px;
+  }
+  .button {
+    left: 28.5%;
+    font-size: 12px;
+    padding: 5px;
+    width: 8%;
+  }
+  .product-details > h1 {
+    font-size: 18px;
+  }
+  .product-details > p {
+    text-align: left;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #333;
+  }
+  .info {
+    font-size: 80%;
+  }
+  .info h2{
+    font-size: 16px;
+  }
+}
