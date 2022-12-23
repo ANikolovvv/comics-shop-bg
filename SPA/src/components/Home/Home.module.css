@@ -24,10 +24,9 @@
   font-size: 20px;
   letter-spacing: 7px;
   text-align: center;
-  color:white;
+  color: white;
 }
 .art p {
-  
   background-size: 10% auto;
   background-image: linear-gradient(
     45deg,
@@ -70,14 +69,13 @@
   justify-content: center;
   align-items: center;
   font-weight: bolder;
- font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
   gap: 10px;
 }
 .art-info > i {
   font-size: 40px;
   font-weight: bold;
-  color:#881337;
-  
+  color: #881337;
 }
 .art-info p {
   text-align: left;
@@ -86,26 +84,37 @@
   padding: 15px;
   font-family: "Merriweather", serif;
   color: white;
+  font-weight: 500;
 }
 @media (max-width: 1024px) {
   .info {
     width: 50%;
     height: 700px;
   }
-  .home-art{
+  .home-art {
     width: 50%;
     height: 560px;
   }
   .art-info p {
     font-size: 18px;
     padding: 10px;
-   
   }
 }
 @media (max-width: 800px) {
- 
+  .art-info > i {
+    font-size: 30px;
+  }
+  .art-info p {
+    font-size: 18px;
+    font-weight: 500;
+  }
 }
 @media (max-width: 600px) {
-  
-  
+  .art-info > i {
+    font-size: 16px;
+  }
+  .art-info p {
+    font-size: 16px;
+    font-weight: 500;
+  }
 }
