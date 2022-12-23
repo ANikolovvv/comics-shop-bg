@@ -41,3 +41,44 @@
 .pagination.active {
   background-color: skyblue;
 }
+@media (max-width: 1024px) {
+  .cards-div {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: baseline;
+    gap: 10px;
+  }
+  .page {
+    margin-top: 20px;
+    padding: 4px 15px;
+    font-weight: 300;
+  }
+  .pagination {
+    height: 40px;
+    font-size: 18px;
+    gap: 2px;
+  }
+ 
+}
+@media (max-width: 800px) {
+  .cards-div {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: baseline;
+    gap: 5px;
+  }
+  .page {
+    margin-top: 50px;
+    padding: 4px 15px;
+    font-weight: 400;
+  }
+  .pagination {
+    height: 30px;
+    font-size: 14px;
+    gap: 2px;
+  }
+}
+@media (max-width: 600px) {
+}
