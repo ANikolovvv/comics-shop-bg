@@ -60,5 +60,33 @@
   );
   border-radius: 5px;
 }
-
+@media (max-width: 1024px) {
+  .btn{
+    font-size: 12px;
+  }
+  .card-title{
+    font-size: 18px;
+  }
+  
+}
+@media (max-width: 800px) {
+  .btn{
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+  .card-title{
+    font-size: 16px;
+  }
+  
+}
+@media (max-width: 600px) {
+  .btn{
+    font-size: 8px;
+    padding: 3px 5px;
+  }
+  .card-title{
+    font-size: 12px;
+  }
+  
+}
 
