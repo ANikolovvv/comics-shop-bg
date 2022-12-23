@@ -66,8 +66,8 @@ const Login = () => {
 
       <div className={styles["signupSection"]}>
         <div className={styles["info-form"]}>
-          <div className="title">
-            <h2>Sign In Form.</h2>
+          <div className={styles["title"]}>
+            <h2 >Sign In Form.</h2>
           </div>
           <div className={styles["image-box"]}>
             <i
