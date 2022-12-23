@@ -30,3 +30,29 @@
 ::placeholder {
   color: rgb(254, 254, 254);
 }
+@media (max-width: 1024px) {
+  .search {
+    width: 60%;
+    height: 42px;
+  }
+ 
+ 
+}
+@media (max-width: 800px) {
+  .search {
+    width: 80%;
+    height: 42px;
+  }
+  .input{
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .search {
+    width: 90%;
+    height: 25px;
+  }
+  .input{
+    font-size: 14px;
+  }
+}
