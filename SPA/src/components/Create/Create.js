@@ -100,7 +100,7 @@ const Create = () => {
           className={styles["signupForm"]}
           onSubmit={formHandler}
         >
-          <ul className={["noBullet"]}>
+          <ul className={styles["noBullet"]}>
             <li>
               <label htmlFor="text">
                 <i className="fa-sharp fa-solid fa-t"></i> Title
@@ -169,7 +169,7 @@ const Create = () => {
                 type="text"
                 className={styles["inputFields"]}
                 name="address"
-                placeholder="Address: Town and Street "
+                placeholder="Town and Street "
                 value={value.address}
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 10)}
@@ -189,7 +189,7 @@ const Create = () => {
                 type="text"
                 className={styles["inputFields"]}
                 name="courier"
-                placeholder="Courier service: Econt, Speedy "
+                placeholder=" Econt, Speedy "
                 value={value.courier}
                 onChange={changeHendler}
                 onBlur={(e) => minLength(e, 4)}
