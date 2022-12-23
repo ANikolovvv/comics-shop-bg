@@ -10,9 +10,11 @@
   font-size: 20px;
   letter-spacing: 10px;
   text-align: center;
+  color: #fff;
+  font-weight: 500;
 }
 .article{
-  margin:  auto;
+  margin:0  auto;
 }
 .link {
   position: absolute;
