@@ -110,7 +110,7 @@ const Buy = () => {
           className={styles["signupForm"]}
           onSubmit={formHandler}
         >
-          <ul className={["noBullet"]}>
+          <ul className={styles["noBullet"]}>
             <li>
               <label htmlFor="text">
                 <i className="fa-sharp fa-solid fa-t"></i> Title
