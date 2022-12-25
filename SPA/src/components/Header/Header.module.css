@@ -186,6 +186,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
+   
   }
   .btn {
     font-size: 12px;
@@ -197,7 +198,6 @@
     padding: 0;
     justify-content: left;
     gap: 10px;
-
   }
   .btno > li {
     width: 120px;
@@ -216,7 +216,62 @@
     width: 15%;
     margin: 0px;
     top: 30%;
+  }
+  .logo-img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 400px) {
+  section {
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     
+  }
+  .nav-box {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+  
+  }
+  .btn {
+    font-size: 10px;
+  }
+  .btno {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+  }
+  .btno > li {
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 10px;
+ 
+  }
+  .btno a {
+    font-size: 8px;
+    padding: 1px 5px;
+  }
+
+  .logo {
+    width: 15%;
+    margin: 0px;
+    top: 30%;
   }
   .logo-img {
     width: 50px;
