@@ -80,5 +80,21 @@
     gap: 2px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 400px) {
+  .cards-div {
+    margin: 0;
+    display: grid;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .page {
+    margin-top: 50px;
+    padding: 2px 12px;
+    font-weight: 400;
+  }
+  .pagination {
+    height: 20px;
+    font-size: 12px;
+    gap: 2px;
+  }
 }
