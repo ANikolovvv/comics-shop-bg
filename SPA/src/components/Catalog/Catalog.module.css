@@ -136,3 +136,27 @@
     padding: 3px, 10px;
   }
 }
+@media (max-width: 400px) {
+  .art h1 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .link{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  .link h1 {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .click {
+    
+    margin-top: 20px;
+    font-size: 12px;
+    padding: 1px, 5px;
+  }
+}
