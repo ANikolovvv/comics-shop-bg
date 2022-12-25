@@ -15,43 +15,47 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
- font-weight: bolder;
-  color:white;
+  font-weight: bolder;
+  color: white;
   font-size: 18px;
   font-family: monospace;
   border-radius: 2px;
 }
 @media (max-width: 1024px) {
- 
-   .sidebar{
+  .sidebar {
     width: 25%;
     gap: 10px;
     font-weight: 300;
     font-size: 16px;
     margin: 0;
     padding: 15px;
-
-   }
+  }
 }
 @media (max-width: 800px) {
-  .sidebar{
+  .sidebar {
     width: 25%;
     gap: 5px;
     font-weight: 300;
     font-size: 14px;
     margin: 0;
     padding: 15px;
-
-   }
+  }
 }
 @media (max-width: 600px) {
-  .sidebar{
+  .sidebar {
     width: 25%;
     gap: 5px;
     font-weight: 300;
     font-size: 12px;
     margin: 0;
     padding: 15px;
-
-   }
+  }
+}
+@media (max-width: 400px) {
+  .map {
+    width: 50%;
+  }
+  .sidebar {
+    display: none;
+  }
 }
