@@ -126,4 +126,25 @@
     font-size: 14px;
     font-weight: 500;
   }
+  .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .info {
+    width: 100%;
+    height: 400px;
+  }
+  .home-art {
+    width: 100%;
+  }
+  .art h1 {
+    background-size: 10% auto;
+
+    font-size: 14px;
+    letter-spacing: 5px;
+  }
+  .art p {
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
 }
