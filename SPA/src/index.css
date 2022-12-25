@@ -75,14 +75,13 @@ label {
     padding: 5px;
     text-align: center;
   }
- 
+
   i {
     font-size: 16px;
     color: #c2410c;
   }
   label {
     font-size: 16px;
-    
   }
 }
 @media (max-width: 800px) {
@@ -105,14 +104,13 @@ label {
     padding: 5px;
     text-align: center;
   }
- 
+
   i {
     font-size: 14px;
     color: #c2410c;
   }
   label {
     font-size: 16px;
-    
   }
 }
 @media (max-width: 600px) {
@@ -122,20 +120,37 @@ label {
   .error-form {
     top: 83%;
     font-size: 10px;
-   
   }
   input {
     font-size: 12px;
-    
   }
- 
+
   i {
     font-size: 12px;
-   
   }
   label {
     font-size: 14px;
-    
   }
 }
+@media (max-width: 400px) {
+  body {
+    background-image: none;
+  }
+  .art h1 {
+    font-size: 14px;
+  }
+  .error-form {
+    top: 83%;
+    font-size: 8px;
+  }
+  input {
+    font-size: 10px;
+  }
 
+  i {
+    font-size: 10px;
+  }
+  label {
+    font-size: 10px;
+  }
+}
