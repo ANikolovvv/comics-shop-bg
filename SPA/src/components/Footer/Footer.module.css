@@ -23,3 +23,8 @@
     font-size: 14px;
   }
 }
+@media (max-width: 400px) {
+  .footer {
+    font-size: 10px;
+  }
+}
