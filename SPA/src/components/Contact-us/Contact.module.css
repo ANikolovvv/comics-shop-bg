@@ -146,3 +146,36 @@
     object-fit: fill;
   }
 }
+@media (max-width: 400px) {
+  .info-form {
+    font-size: 14px;
+    width: 50%;
+  }
+  .art h1 {
+    font-size: 14px;
+  }
+  .contact {
+    width: 100%;
+    height: 400px;
+  }
+  .icon {
+    object-fit: fill;
+  }
+  .ul {
+    gap: 10px;
+  }
+  .info-form h2 {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .li {
+    font-size: 10;
+    text-align: center;
+  }
+  .li-info {
+    font-size: 10px;
+  }
+  .div-icon {
+     display: none;
+  }
+}
