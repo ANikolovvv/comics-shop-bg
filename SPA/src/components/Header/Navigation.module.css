@@ -1,0 +1,42 @@
+.links {
+  padding: 5px;
+  width: 100%;
+  border-radius: 2px;
+  background: rgba(18, 17, 16, 0.8);
+}
+.links > i {
+  text-align: right;
+  color: antiquewhite;
+  opacity: 1;
+}
+.links .btno {
+  margin: 0;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: initial;
+  gap: 4px;
+}
+.links .btno li {
+  display: flex;
+  justify-content: left;
+}
+.links .btno .btn {
+  color: antiquewhite;
+  text-decoration: none;
+  cursor: pointer;
+}
+.links .btno .btn:hover {
+  opacity: 0.5;
+}
+@media (max-width: 600px) {
+  .links .btno .btn {
+    font-size: 14px;
+  }
+}
+@media (max-width: 400px) {
+  .links .btno .btn {
+    font-size: 12px;
+  }
+}
