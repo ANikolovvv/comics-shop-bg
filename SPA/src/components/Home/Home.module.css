@@ -8,7 +8,6 @@
   justify-content: center;
   background: rgba(255, 180, 82, 0.8);
   height: 650px;
-  
 }
 .info {
   display: flex;
@@ -82,48 +81,49 @@
   color: white;
   font-weight: 500;
 }
+@media (max-width: 1382px) {
+  .container {
+    height: 700px;
+  }
+}
 @media (max-width: 1024px) {
   .art-info p {
     font-size: 18px;
     padding: 10px;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 992px) {
+  .art-info p {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+@media (max-width: 768px) {
   .art-info > i {
     font-size: 30px;
   }
   .art-info p {
     font-size: 18px;
-    font-weight: 500;
   }
 }
 @media (max-width: 600px) {
-  .art-info > i {
-    font-size: 16px;
-  }
-  .art-info p {
-    font-size: 16px;
-    font-weight: 500;
-  }
-}
-@media (max-width: 400px) {
-  .art-info > i {
-    font-size: 14px;
-  }
-  .art-info p {
-    font-size: 14px;
-    font-weight: 500;
-  }
   .container {
     flex-direction: column;
     gap: 10px;
+  }
+  .art-info > i {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .art-info p {
+    font-size: 16px;
+    font-weight: 500;
   }
   .info {
     width: 100%;
   }
   .home-art {
     width: 100%;
-    height: 400px;
   }
   .art h1 {
     background-size: 10% auto;
@@ -134,5 +134,21 @@
   .art p {
     font-size: 12px;
     letter-spacing: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .art-info > i {
+    font-size: 12px;
+  }
+  .art-info p {
+    font-size: 10px;
+  }
+}
+@media (max-width: 320px) {
+  .art h1 {
+    font-size: 12px;
+  }
+  .art p {
+    font-size: 8px;
   }
 }
