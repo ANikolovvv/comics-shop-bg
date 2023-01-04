@@ -49,8 +49,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 25%;
-  height: 500px;
+  width: 40%;
+  height: 40%;
   height: auto;
   transition: 12s;
   border: 2px solid;
@@ -87,14 +87,6 @@
   font-weight: 500;
 }
 @media (max-width: 1024px) {
-  .info {
-    width: 50%;
-    height: 700px;
-  }
-  .home-art {
-    width: 50%;
-    height: 560px;
-  }
   .art-info p {
     font-size: 18px;
     padding: 10px;
@@ -132,10 +124,10 @@
   }
   .info {
     width: 100%;
-    height: 400px;
   }
   .home-art {
     width: 100%;
+    height: 400px;
   }
   .art h1 {
     background-size: 10% auto;
