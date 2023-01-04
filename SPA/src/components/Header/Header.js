@@ -1,22 +1,38 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import { AuthContexts } from "../../contexts/authContext";
 import { useContext } from "react";
 
 import logo from "../../logo.svg";
 import styles from "./Header.module.css";
+import Navigation from "./Navigation";
 
 const Header = () => {
   const { user } = useContext(AuthContexts);
-
+  const [toggle, setToggle] = useState(false);
+  function navigationHandler(e) {
+    setToggle(!toggle);
+  }
   return (
     <>
       <header>
         <nav className={styles["container"]}>
-          <section className={styles["logo"]}>
+          <div className={styles["logo"]}>
             <img src={logo} className={styles["logo-img"]} alt="LOGO"></img>
-          </section>
-          <section className={styles["nav-box"]}>
+          </div>
+          <div className={styles["nav-small"]} onClick={navigationHandler}>
+            {toggle ? (
+              <div className={styles["small"]}>
+                <Navigation user={user}></Navigation>
+              </div>
+            ) : (
+              <div className={styles["small"]}>
+                <i className="fa-solid fa-bars"></i>
+              </div>
+            )}
+          </div>
+          <div className={styles["nav-box"]}>
             <ul className={styles["btno"]}>
               <li>
                 <Link className={styles["btn"]} to="/">
@@ -66,7 +82,7 @@ const Header = () => {
                 </li>
               </ul>
             )}
-          </section>
+          </div>
         </nav>
       </header>
     </>
