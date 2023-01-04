@@ -8,6 +8,7 @@
   align-items: center;
   text-align: center;
   gap: 10px;
+  position: relative;
 }
 .nav-box {
   display: flex;
@@ -15,13 +16,14 @@
   gap: 10px;
 }
 .btn {
+  text-decoration: none;
   color: #fff;
   background: transparent;
   font-family: "Amaranth", sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
   text-transform: capitalize;
-  padding: 3px 15px;
+  padding: 3px 10px;
   border-radius: 20px;
   background-image: linear-gradient(
     45deg,
@@ -40,6 +42,7 @@
     #19f0a8 51%,
     #93ff2f 100%
   );
+  opacity: 0.8;
 }
 
 .btno {
@@ -62,13 +65,6 @@
   animation-fill-mode: forwards;
   transform: scale(0);
 }
-.btno a {
-  font-family: "Playfair Display";
-  letter-spacing: 2px;
-  text-decoration: none;
-  padding: 10px 20px;
-  text-align: center;
-}
 
 .logo {
   margin: 10px;
@@ -87,6 +83,15 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.nav-small {
+  display: none;
+}
+
+.nav-small i {
+  color: #fff;
+  font-size: 16px;
+}
+
 @keyframes nav-load {
   0% {
     transform: translateY(-100%);
@@ -117,10 +122,17 @@
     transform: scale(1);
   }
 }
+
+@media (max-width: 1600px) {
+  .btn {
+    font-size: 20px;
+    padding: 3px 12px;
+  }
+}
 @media (max-width: 1024px) {
   .btn {
     font-size: 18px;
-    padding: 5px 20px;
+    padding: 3px 10px;
   }
 }
 @media (max-width: 800px) {
@@ -129,35 +141,31 @@
     padding: 0;
   }
   .container {
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
+    position: relative;
   }
   .nav-box {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2px;
+    display: none;
   }
-  .btn {
-    font-size: 16px;
-  }
-  .btno {
+
+  .nav-small {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    position: relative;
+  
   }
-  .btno > li {
-    width: 200px;
+  .small {
+    position: absolute;
+    top: 50%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-size: 18px;
-    justify-content: left;
-  }
-  .btno a {
-    font-size: 12px;
-    padding: 3px 30px;
+    flex-direction: column;
+    
   }
 
   .logo {
@@ -182,11 +190,7 @@
     gap: 2px;
   }
   .nav-box {
-    width: 60%;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
-   
+    display: none;
   }
   .btn {
     font-size: 12px;
@@ -197,7 +201,7 @@
     margin: 0;
     padding: 0;
     justify-content: left;
-    gap: 10px;
+    gap: 5px;
   }
   .btno > li {
     width: 120px;
@@ -206,10 +210,6 @@
     flex-wrap: wrap;
     font-size: 12px;
     justify-content: left;
-  }
-  .btno a {
-    font-size: 12px;
-    padding: 3px 15px;
   }
 
   .logo {
@@ -231,26 +231,19 @@
     display: flex;
     flex-direction: column;
     gap: 1px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
+    justify-content: left;
+    text-align: left;
   }
   .nav-box {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2px;
-  
+    display: none;
   }
   .btn {
     font-size: 10px;
   }
   .btno {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     margin: 0;
     padding: 0;
     gap: 5px;
@@ -261,20 +254,21 @@
     flex-direction: row;
     flex-wrap: wrap;
     font-size: 10px;
- 
-  }
-  .btno a {
-    font-size: 8px;
-    padding: 1px 5px;
   }
 
   .logo {
     width: 15%;
     margin: 0px;
     top: 30%;
+    color: #ff512f;
   }
   .logo-img {
     width: 50px;
     height: 50px;
+    color: #ff512f;
+  }
+  .nav-small i {
+    color: rgb(22, 21, 21);
+    font-size: 12px;
   }
 }
