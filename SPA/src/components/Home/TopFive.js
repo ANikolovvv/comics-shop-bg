@@ -7,6 +7,7 @@ export function Top(props) {
   return (
     <div className={styles["home"]}>
       <p className={styles["date-title"]}>{data.title}</p>
+
       <div className={styles["div-img"]}>
         <img src={data.imageUrl} id="image" alt=".." />
       </div>
@@ -18,10 +19,18 @@ export function Top(props) {
       </div>
       <p className={styles["date-title"]}>Raiting: {data.userLiked.length}</p>
       <ul className={styles["star"]}>
-        <li><i className="fa-solid fa-star"></i></li>
-        <li><i className="fa-solid fa-star"></i></li>
-        <li><i className="fa-solid fa-star"></i></li>
-        <li><i className="fa-solid fa-star"></i></li>
+        <li>
+          <i className="fa-solid fa-star"></i>
+        </li>
+        <li>
+          <i className="fa-solid fa-star"></i>
+        </li>
+        <li>
+          <i className="fa-solid fa-star"></i>
+        </li>
+        <li>
+          <i className="fa-solid fa-star"></i>
+        </li>
       </ul>
     </div>
   );
