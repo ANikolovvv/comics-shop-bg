@@ -59,100 +59,102 @@ const Login = () => {
   };
 
   return (
-    <>
-      <article className={styles["art"]}>
-        <h1>Sing In</h1>
-      </article>
+    
+      <>
+        <article className={styles["art"]}>
+          <h1>Sing In</h1>
+        </article>
 
-      <div className={styles["signupSection"]}>
-        <div className={styles["info-form"]}>
-          <div className={styles["title"]}>
-            <h2 >Sign In Form.</h2>
-          </div>
-          <div className={styles["image-box"]}>
-            <i
-              className={styles["icon ion-ios-ionic-outline"]}
-              aria-hidden="true"
-            ></i>
-            <img
-              className={styles["icon"]}
-              src="https://3.bp.blogspot.com/-EYhzbgX3eqA/WNPf3EX0AlI/AAAAAAAAQR4/818HP3L1tYoq0f_pl3foqoqdhX5qHdcswCLcB/s1600/spider-read.jpg"
-              alt="..."
-            ></img>
-          </div>
-        </div>
-        <form
-          action="#"
-          method="POST"
-          className={styles["signupForm"]}
-          onSubmit={formHandler}
-        >
-          <div className={styles["noBullet"]}>
-            <div>
-              <label htmlFor="email">
-                <i className="fa-solid fa-envelope"></i> Email
-              </label>
-              <input
-                type="email"
-                className={styles["inputFields"]}
-                id="email"
-                name="email"
-                placeholder="Email: batman@red.gmail"
-                value={value.email}
-                onChange={changeHendler}
-                onBlur={(e) => minLength(e, 8)}
-              />
-              {errors.email && (
-                <p className={styles["error-form"]}>
-                  Email should be at least 8 characters long!
-                </p>
-              )}
+        <div className={styles["signupSection"]}>
+          <div className={styles["info-form"]}>
+            <div className={styles["title"]}>
+              <h2>Sign In Form.</h2>
             </div>
-            <div>
-              <label htmlFor="password">
-                {" "}
-                <i className="fa-solid fa-lock"></i> Password
-              </label>
-              <input
-                type="password"
-                className={styles["inputFields"]}
-                id="password"
-                name="password"
-                placeholder="Password"
-                value={value.password}
-                onChange={changeHendler}
-                onBlur={(e) => minLength(e, 4)}
-              />
-              {errors.password && (
-                <p className={styles["error-form"]}>
-                  Password should be at least 4 characters long!
-                </p>
-              )}
+            <div className={styles["image-box"]}>
+              <i
+                className={styles["icon ion-ios-ionic-outline"]}
+                aria-hidden="true"
+              ></i>
+              <img
+                className={styles["icon"]}
+                src="https://3.bp.blogspot.com/-EYhzbgX3eqA/WNPf3EX0AlI/AAAAAAAAQR4/818HP3L1tYoq0f_pl3foqoqdhX5qHdcswCLcB/s1600/spider-read.jpg"
+                alt="..."
+              ></img>
             </div>
-            <div id="center-btn">
-              <button
-                type="submit"
-                className={styles["join-btn"]}
-                name="join"
-                alt=""
-              >
-                {" "}
-                Login
-              </button>
+          </div>
+          <form
+            action="#"
+            method="POST"
+            className={styles["signupForm"]}
+            onSubmit={formHandler}
+          >
+            <div className={styles["noBullet"]}>
               <div>
-                <h1 className={styles["click"]}>
-                  For registration <></>
-                  <Link className={styles["link-form"]} to="/register">
-                    click here!
-                  </Link>
-                </h1>
+                <label htmlFor="email">
+                  <i className="fa-solid fa-envelope"></i> Email
+                </label>
+                <input
+                  type="email"
+                  className={styles["inputFields"]}
+                  id="email"
+                  name="email"
+                  placeholder="Email: batman@red.gmail"
+                  value={value.email}
+                  onChange={changeHendler}
+                  onBlur={(e) => minLength(e, 8)}
+                />
+                {errors.email && (
+                  <p className={styles["error-form"]}>
+                    Email should be at least 8 characters long!
+                  </p>
+                )}
+              </div>
+              <div>
+                <label htmlFor="password">
+                  {" "}
+                  <i className="fa-solid fa-lock"></i> Password
+                </label>
+                <input
+                  type="password"
+                  className={styles["inputFields"]}
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  value={value.password}
+                  onChange={changeHendler}
+                  onBlur={(e) => minLength(e, 4)}
+                />
+                {errors.password && (
+                  <p className={styles["error-form"]}>
+                    Password should be at least 4 characters long!
+                  </p>
+                )}
+              </div>
+              <div id="center-btn">
+                <button
+                  type="submit"
+                  className={styles["join-btn"]}
+                  name="join"
+                  alt=""
+                >
+                  {" "}
+                  Login
+                </button>
+                <div>
+                  <h1 className={styles["click"]}>
+                    For registration <></>
+                    <Link className={styles["link-form"]} to="/register">
+                      click here!
+                    </Link>
+                  </h1>
+                </div>
               </div>
             </div>
-          </div>
-        </form>
-      </div>
-      {userErr.length > 0 && <Errors error={userErr}></Errors>}
-    </>
+          </form>
+        </div>
+        {userErr.length > 0 && <Errors error={userErr}></Errors>}
+      </>
+    
   );
 };
 export default Login;
