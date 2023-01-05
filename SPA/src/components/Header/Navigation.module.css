@@ -3,6 +3,7 @@
   width: 100%;
   border-radius: 2px;
   background: rgba(18, 17, 16, 0.8);
+  z-index: 1;
 }
 .links > i {
   text-align: right;
