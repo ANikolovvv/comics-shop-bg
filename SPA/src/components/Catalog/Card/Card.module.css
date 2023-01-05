@@ -73,7 +73,7 @@ h5 {
   .wraper {
     margin-top: 5px;
     display: flex;
-    width: 400px;
+    width: 100%;
     height: 300px;
   }
   h5 {
@@ -103,7 +103,6 @@ h5 {
   .wraper {
     margin-top: 5px;
     display: flex;
-    width: 300px;
     height: 300px;
   }
   h5 {
@@ -129,7 +128,6 @@ h5 {
   .wraper {
     margin-top: 5px;
     display: flex;
-    width: 250px;
     height: 300px;
   }
   h5 {
@@ -151,7 +149,6 @@ h5 {
   .wraper {
     margin-top: 2px;
     display: flex;
-    width: 150px;
     height: 250px;
   }
   h5 {
