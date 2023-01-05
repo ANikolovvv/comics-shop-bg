@@ -73,7 +73,7 @@
     font-size: 18px;
     font-weight: 500;
   }
-  .link{
+  .link {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -90,7 +90,7 @@
     padding: 3px, 15px;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .art h1 {
     font-size: 16px;
     font-weight: 500;
@@ -98,7 +98,7 @@
   .link h1 {
     font-size: 16px;
   }
-  .link{
+  .link {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -117,7 +117,7 @@
     font-size: 14px;
     font-weight: 500;
   }
-  .link{
+  .link {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -130,7 +130,6 @@
     font-weight: 300;
   }
   .click {
-    
     margin-top: 20px;
     font-size: 14px;
     padding: 3px, 10px;
@@ -139,22 +138,15 @@
 @media (max-width: 400px) {
   .art h1 {
     font-size: 14px;
-    font-weight: 500;
   }
-  .link{
-    display: flex;
-    flex-direction: column;
+  .link {
     gap: 10px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
   }
   .link h1 {
     font-size: 14px;
     font-weight: 300;
   }
   .click {
-    
     margin-top: 20px;
     font-size: 12px;
     padding: 1px, 5px;
