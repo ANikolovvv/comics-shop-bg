@@ -47,7 +47,8 @@
     margin: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    align-items: baseline;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
   }
   .page {
@@ -80,7 +81,7 @@
     gap: 2px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .cards-div {
     margin: 0;
     display: grid;
@@ -93,8 +94,22 @@
     font-weight: 400;
   }
   .pagination {
-    height: 20px;
+    margin: 0;
+    padding: 0;
+    max-height: 18px;
     font-size: 12px;
+    gap: 2px;
+  }
+}
+@media (max-width: 320px) {
+  .page {
+    margin-top: 50px;
+    padding: 2px 12px;
+    font-weight: 400;
+  }
+  .pagination {
+    height: 16px;
+    font-size: 4px;
     gap: 2px;
   }
 }
