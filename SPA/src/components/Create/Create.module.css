@@ -170,7 +170,7 @@
   }
 }
 @media (max-width: 800px) {
-  .title h2{
+  .title h2 {
     font-size: 16px;
   }
   .signupSection {
@@ -213,7 +213,7 @@
   .noBullet li i {
     margin-top: 40px;
   }
- 
+
   .error-form {
     width: 70%;
     font-size: 10px;
@@ -234,10 +234,10 @@
 }
 @media (max-width: 600px) {
   .noBullet li label {
-   font-size: 12px;
+    font-size: 12px;
   }
   .noBullet li input {
-   font-size: 12px;
+    font-size: 12px;
   }
   .payment {
     font-size: 12px;
@@ -249,32 +249,30 @@
     padding: 2px 5px;
   }
   .btn {
-  
     font-size: 12px;
     width: 60%;
   }
 }
 @media (max-width: 480px) {
-  .title h2{
+  .title h2 {
     font-size: 12px;
   }
   .noBullet li input {
     text-align: center;
+    font-size: 10px;
+    
+  }
+  .btn {
     font-size: 12px;
-    width: 80%;
+    width: 100%;
   }
-  .btn{
-    font-size: 14px;
+  .payment {
+    margin-left: 5px;
+    font-size: 8px;
   }
- .payment{
-  margin-left: 5px;
-  font-size: 10px;
- }
-
 }
 @media (max-width: 320px) {
- 
-  .signupForm{
+  .signupForm {
     height: 750px;
   }
   .art h1 {
@@ -292,26 +290,25 @@
     padding: 0;
   }
   .noBullet li input {
-
     text-align: center;
     font-size: 12px;
     width: 80%;
   }
-  .btn{
+  .btn {
     font-size: 14px;
   }
-  .image-box{
+  .image-box {
     display: none;
   }
- .payment{
-  margin:0 auto;
-  width: 80%;
-  font-size: 12px;
- }
- .error-form {
-  width: 70%;
-  font-size: 8px;
-  top: -1%;
-  padding: 2px 5px;
-}
+  .payment {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 12px;
+  }
+  .error-form {
+    width: 70%;
+    font-size: 8px;
+    top: -1%;
+    padding: 2px 5px;
+  }
 }
