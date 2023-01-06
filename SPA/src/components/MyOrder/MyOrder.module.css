@@ -13,8 +13,8 @@
   color: #fff;
   font-weight: 500;
 }
-.article{
-  margin:0  auto;
+.article {
+  margin: 0 auto;
 }
 .link {
   position: absolute;
@@ -27,7 +27,6 @@
   text-decoration: none;
 }
 .click {
- 
   border-radius: 10px;
   font-weight: bolder;
   text-decoration: none;
@@ -57,4 +56,29 @@
 .article {
   display: flex;
   flex-direction: row;
+}
+@media (max-width: 800px) {
+  .art {
+    font-size: 18px;
+  }
+  .article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+}
+@media (max-width: 600px) {
+  .art {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .article {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+  .art {
+    font-size: 14px;
+  }
 }
