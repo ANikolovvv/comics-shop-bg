@@ -1,5 +1,5 @@
 .error {
-  top: 60%;
+  top: 70%;
   margin: 17px;
   text-align: center;
   display: flex;
@@ -21,11 +21,15 @@
   }
 }
 @media (max-width: 800px) {
+  .error{
+    top:20%
+  }
   .p-error {
     font-size: 14px;
   }
 }
 @media (max-width: 600px) {
+
   .error {
     top: 30%;
     left: 40%;
@@ -49,6 +53,7 @@
   }
 }
 @media (max-width: 320px) {
+  
   .error {
     left: 20%;
     width: 40%;
