@@ -88,15 +88,17 @@ export const Edit = () => {
       <div className={styles["signupSection"]}>
         <div className={styles["info-form"]}>
           <h2>Update your comics book!</h2>
-          <i
-            className={styles["icon ion-ios-ionic-outline"]}
-            aria-hidden="true"
-          ></i>
-          <img
-            className="icon"
-            src="https://3.bp.blogspot.com/-Yy1u6V_K1GM/ViVxBmGYORI/AAAAAAARXVw/RQ_Pv-BtTkA/s1600/3_00.jpg"
-            alt="..."
-          ></img>
+          <div className={styles["image-box"]}>
+            <i
+              className={styles["icon ion-ios-ionic-outline"]}
+              aria-hidden="true"
+            ></i>
+            <img
+              className="icon"
+              src="https://3.bp.blogspot.com/-Yy1u6V_K1GM/ViVxBmGYORI/AAAAAAARXVw/RQ_Pv-BtTkA/s1600/3_00.jpg"
+              alt="..."
+            ></img>
+          </div>
         </div>
         <form
           action="#"
@@ -107,7 +109,9 @@ export const Edit = () => {
         >
           <ul className={styles["noBullet"]}>
             <li>
-              <label htmlFor="text"><i className="fa-sharp fa-solid fa-t"></i> Title</label>
+              <label htmlFor="text">
+                <i className="fa-sharp fa-solid fa-t"></i> Title
+              </label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -125,7 +129,10 @@ export const Edit = () => {
             </li>
 
             <li>
-              <label htmlFor="text"> <i className="fa-solid fa-font"></i> Author</label>
+              <label htmlFor="text">
+                {" "}
+                <i className="fa-solid fa-font"></i> Author
+              </label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -143,7 +150,10 @@ export const Edit = () => {
             </li>
 
             <li>
-              <label htmlFor="email"> <i className="fa-solid fa-envelope"></i> Email</label>
+              <label htmlFor="email">
+                {" "}
+                <i className="fa-solid fa-envelope"></i> Email
+              </label>
               <input
                 type="email"
                 className={styles["inputFields"]}
@@ -161,7 +171,10 @@ export const Edit = () => {
             </li>
 
             <li>
-              <label htmlFor="text">  <i className="fa-solid fa-font"></i> Address</label>
+              <label htmlFor="text">
+                {" "}
+                <i className="fa-solid fa-font"></i> Address
+              </label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -179,7 +192,9 @@ export const Edit = () => {
             </li>
 
             <li>
-              <label htmlFor="text"><i className="fa-solid fa-truck"></i> Courier</label>
+              <label htmlFor="text">
+                <i className="fa-solid fa-truck"></i> Courier
+              </label>
               <input
                 type="text"
                 className={styles["inputFields"]}
@@ -197,7 +212,9 @@ export const Edit = () => {
             </li>
 
             <li>
-              <label htmlFor="number"><i className="fa-solid fa-arrow-up-1-9"></i> Number</label>
+              <label htmlFor="number">
+                <i className="fa-solid fa-arrow-up-1-9"></i> Number
+              </label>
               <input
                 type="number"
                 className={styles["inputFields"]}
@@ -213,17 +230,18 @@ export const Edit = () => {
                 </p>
               )}
             </li>
-             
-            <select
-              name="payment"
-              className={styles["payment"]}
-              value={value.payment || ""}
-              onChange={changeHendler}
-            >
-              <option value="cash-delivery">Cash on Delivery</option>
-              <option value="credit-card">Credit Card</option>
-              <option value="debit-card">Debit Card</option>
-            </select>
+            <li>
+              <select
+                name="payment"
+                className={styles["payment"]}
+                value={value.payment || ""}
+                onChange={changeHendler}
+              >
+                <option value="cash-delivery">Cash on Delivery</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="debit-card">Debit Card</option>
+              </select>
+            </li>
             <li>
               <button className={styles["btn"]} type="submit" value="Submit">
                 Update your order
