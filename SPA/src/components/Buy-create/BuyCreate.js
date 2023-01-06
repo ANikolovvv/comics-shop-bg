@@ -231,17 +231,18 @@ const Buy = () => {
                 </p>
               )}
             </li>
-
-            <select
-              name="payment"
-              className={styles["payment"]}
-              value={value.payment || ""}
-              onChange={changeHendler}
-            >
-              <option value="cash-delivery">Cash on Delivery</option>
-              <option value="credit-card">Credit Card</option>
-              <option value="debit-card">Debit Card</option>
-            </select>
+            <li>
+              <select
+                name="payment"
+                className={styles["payment"]}
+                value={value.payment || ""}
+                onChange={changeHendler}
+              >
+                <option value="cash-delivery">Cash on Delivery</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="debit-card">Debit Card</option>
+              </select>
+            </li>
             <li>
               <button className={styles["btn"]} type="submit">
                 Order
