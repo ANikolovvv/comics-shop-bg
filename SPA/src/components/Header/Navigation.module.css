@@ -17,11 +17,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   flex-grow: initial;
+  justify-content: center;
   gap: 4px;
 }
-.links .btno li {
+.links > .btno > li {
   display: flex;
   justify-content: left;
+  text-align: center;
+  align-items: center;
 }
 .links .btno .btn {
   color: antiquewhite;
