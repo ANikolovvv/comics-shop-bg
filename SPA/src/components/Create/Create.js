@@ -220,7 +220,7 @@ const Create = () => {
                 </p>
               )}
             </li>
-
+             <li>
             <select
               name="payment"
               className={styles["payment"]}
@@ -231,6 +231,7 @@ const Create = () => {
               <option value="credit-card">Credit Card</option>
               <option value="debit-card">Debit Card</option>
             </select>
+            </li>
             <li>
               <button className={styles["btn"]} type="submit">
                 Order
