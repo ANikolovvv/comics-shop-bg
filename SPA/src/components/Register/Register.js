@@ -17,6 +17,12 @@ const Register = () => {
     rePass: "",
   });
 
+  if (userErr.length > 0) {
+    setInterval(() => {
+      setUserErr([]);
+    }, 3000);
+  }
+
   const changeHendler = (e) => {
     setNames((state) => ({
       ...state,
