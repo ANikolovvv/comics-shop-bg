@@ -15,7 +15,11 @@ const Login = () => {
     email: "",
     password: "",
   });
-
+     if(userErr.length > 0){
+       setInterval(()=>{
+          setUserErr([])
+       },3000)
+     }
   const changeHendler = (e) => {
     setValue((state) => ({
       ...state,
