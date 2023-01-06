@@ -4,9 +4,7 @@
   flex: 0 0 20.33%;
   display: flex;
   padding: 10px; /* gutter width */
- 
 }
-
 
 .card {
   border-style: solid;
@@ -27,7 +25,6 @@
   width: 100%;
   height: 100%;
   object-fit: fill;
-  
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
@@ -41,52 +38,103 @@
   font-family: "Luckiest Guy", cursive;
   color: rgb(207, 100, 39);
 }
-.buttons{
+.buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 .btn {
   text-decoration: none;
+  padding: 5px 25px;
+  font-weight: bolder;
   text-align: center;
-  color: aliceblue;
-  padding: 5px 20px;
-  font-size: 15px;
+  background-color: #eca55e;
+  border: none;
+  border-radius: 5px;
+  color: #0b0a09;
+}
+.btn:hover {
   background-image: linear-gradient(
     45deg,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
+    #6bc6c6 0%,
+    #19f0a8 51%,
+    #93ff2f 100%
   );
-  border-radius: 5px;
 }
 @media (max-width: 1024px) {
-  .btn{
+  .btn {
     font-size: 12px;
   }
-  .card-title{
+  .card-title {
     font-size: 18px;
   }
-  
 }
 @media (max-width: 800px) {
-  .btn{
+  .img {
+    height: 70%;
+  }
+  .wraper {
+    width: 100%;
+    height: 550px;
+    text-align: center;
+    flex: none;
+    display: flex;
+    padding: 0; /* gutter width */
+  }
+  .card {
+    height: 550px;
+  }
+  .btn {
     font-size: 10px;
     padding: 5px 10px;
   }
-  .card-title{
+  .card-title {
     font-size: 16px;
   }
-  
 }
 @media (max-width: 600px) {
-  .btn{
-    font-size: 8px;
-    padding: 3px 5px;
+  .img {
+    height: 70%;
   }
-  .card-title{
-    font-size: 12px;
+  .wraper {
+    width: 100%;
+    height: 550px;
+    text-align: center;
+    flex: none;
+    display: flex;
+    padding: 0; /* gutter width */
   }
-  
+  .card {
+    height: 450px;
+  }
+  .btn {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+  .card-title {
+    font-size: 16px;
+  }
 }
-
+@media (max-width: 480px) {
+  .img {
+    height: 50%;
+  }
+  .wraper {
+    width: 100%;
+    height: 350px;
+    text-align: center;
+    flex: none;
+    display: flex;
+    padding: 0; /* gutter width */
+  }
+  .card {
+    height: 350px;
+  }
+  .btn {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+  .card-title {
+    font-size: 16px;
+  }
+}
