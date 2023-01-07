@@ -59,10 +59,12 @@
   );
 }
 .ul {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   display: flex;
   flex-direction: column;
+  list-style: none;
+  justify-content: center;
 }
 .li {
   font-weight: bolder;
