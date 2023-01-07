@@ -31,6 +31,9 @@ export function Top(props) {
         <li>
           <i className="fa-solid fa-star"></i>
         </li>
+        <li>
+          <i className="fa-solid fa-star"></i>
+        </li>
       </ul>
     </div>
   );
