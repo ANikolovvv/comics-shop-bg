@@ -13,7 +13,6 @@ function Home({ comic }) {
       const rating = comic.sort(
         (a, b) => b.userLiked.length - a.userLiked.length
       );
-
       setComics(rating);
     }
   }, [comic]);
@@ -23,7 +22,6 @@ function Home({ comic }) {
     } else {
       setCount(0);
     }
-    // count is 0 here
   }, 2000);
 
   return (
