@@ -19,6 +19,18 @@ const Buy = () => {
 
   let { id } = useParams();
   useEffect(() => {
+    if (serverError.length > 0) {
+      const timer = setTimeout(() => {
+        setServerErr([]);
+      }, 3000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [serverError]);
+  
+  useEffect(() => {
     requests.getData(id).then((result) => {
       if (result) {
         setValue({
