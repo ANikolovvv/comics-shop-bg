@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContexts } from "../../contexts/authContext";
 import * as server from "../../services/server";
-import { useContext, useState } from "react";
+import { useContext, useState,useEffect } from "react";
 import styles from "./Register.module.css";
 import { errorWrapeer, matchEmail } from "../../helpers/Form-Validate";
 import { Errors } from "../Erorrs/Errors";
@@ -17,11 +17,17 @@ const Register = () => {
     rePass: "",
   });
 
-  if (userErr.length > 0) {
-    setInterval(() => {
-      setUserErr([]);
-    }, 3000);
-  }
+  useEffect(() => {
+    if (userErr.length > 0) {
+      const timer = setTimeout(() => {
+        setUserErr([]);
+      }, 3000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [userErr]);
 
   const changeHendler = (e) => {
     setNames((state) => ({
