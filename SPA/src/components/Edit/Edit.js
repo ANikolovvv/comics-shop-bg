@@ -32,6 +32,18 @@ export const Edit = () => {
       });
     });
   }, [id]);
+
+  useEffect(() => {
+    if (serverError.length > 0) {
+      const timer = setTimeout(() => {
+        setServerErr([]);
+      }, 3000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [serverError]);
   const changeHendler = (e) => {
     setValue((state) => ({
       ...state,
@@ -226,7 +238,7 @@ export const Edit = () => {
               />
               {errors.number && (
                 <p className={styles["error-form"]}>
-                  Number should be biger then 0!
+                  Number should be biger then 0 !
                 </p>
               )}
             </li>
