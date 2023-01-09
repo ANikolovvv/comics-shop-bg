@@ -7,6 +7,7 @@ import { Errors } from "../Erorrs/Errors";
 
 import { ctxValidation } from "../../helpers/Form-Validate";
 import { createOrder } from "../../services/owner";
+import { useEffect } from "react";
 
 const Create = () => {
   const navigation = useNavigate();
@@ -24,7 +25,17 @@ const Create = () => {
     number: "",
     payment: "cash-delivery",
   });
+  useEffect(() => {
+    if (serverError.length > 0) {
+      const timer = setTimeout(() => {
+        setServerErr([]);
+      }, 3000);
 
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [serverError]);
   const changeHendler = (e) => {
     setValue((state) => ({
       ...state,
