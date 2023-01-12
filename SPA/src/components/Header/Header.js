@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import { AuthContexts } from "../../contexts/authContext";
 import { useContext } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
 
 import logo from "../../logo.svg";
 import styles from "./Header.module.css";
@@ -16,7 +17,7 @@ const Header = () => {
   }
   return (
     <>
-      <header>
+      <header className={styles.header}>
         <nav className={styles["container"]}>
           <div className={styles["logo"]}>
             <img src={logo} className={styles["logo-img"]} alt="LOGO"></img>
@@ -28,7 +29,7 @@ const Header = () => {
               </div>
             ) : (
               <div className={styles["small"]}>
-                <i className="fa-solid fa-bars"></i>
+                <AiOutlineMenu size={25} color="#fff" />
               </div>
             )}
           </div>
