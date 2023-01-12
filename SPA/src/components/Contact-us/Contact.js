@@ -1,6 +1,9 @@
 import styles from "./Contact.module.css";
 import { Map } from "./Map/Map";
 
+import { FaFacebookF, FaTwitter } from "react-icons/fa";
+import { BsInstagram } from "react-icons/bs";
+
 export const Contact = () => {
   return (
     <>
@@ -11,17 +14,26 @@ export const Contact = () => {
         <article className={styles["contact"]}>
           <div className={styles["contactSection"]}>
             <div className={styles["info-form"]}>
-              <h2 className={styles["about"]}>
-                If you have any question you can contact us.
-              </h2>
+            
               <ul className={styles["ul"]}>
                 <li className={styles["li"]}>Comics-shop number:</li>
-                <li className={styles["li-info"]}>088 777 6667</li>
+                <li className={styles["li"]}>088 777 6667</li>
                 <li className={styles["li"]}>Comics-shop email:</li>
-                <li className={styles["li-info"]}> comicsshop@red.bg</li>
+                <li className={styles["li"]}> comicsshop@red.bg</li>
                 <li className={styles["li"]}>Comics-shop address:</li>
-                <li className={styles["li-info"]}>Burgas str. Oborishte </li>
+                <li className={styles["li"]}>Burgas str. Oborishte </li>
               </ul>
+              <div className={styles["react-icons"]}>
+                <div className={styles["react-icon"]}>
+                  <FaFacebookF />
+                </div>
+                <div className={styles["react-icon"]}>
+                  <FaTwitter />
+                </div>
+                <div className={styles["react-icon"]}>
+                  <BsInstagram />
+                </div>
+              </div>
             </div>
             <div className={styles["div-icon"]}>
               <img
