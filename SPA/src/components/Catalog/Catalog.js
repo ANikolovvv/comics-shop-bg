@@ -55,7 +55,7 @@ const Catalog = ({ comics }) => {
             <Paginate data={currentItems}></Paginate>
           </div>
         )}
-        {currentItems.length === 0 && currentdata === true && (
+        {currentItems.length === 0 && currentdata === true && user.email && (
           <div className={styles["link"]}>
             <h1>Make your first order !</h1>
             {user.email ? (
