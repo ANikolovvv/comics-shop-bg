@@ -2,7 +2,6 @@
 @import url("https://use.fontawesome.com/releases/v6.2.0/css/all.css");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap");
 
-
 .home {
   font-family: "Merriweather", serif;
   display: flex;
@@ -100,13 +99,13 @@ li > i {
     font-size: 18px;
     color: rgb(211, 187, 50);
   }
-  .date-title{
+  .date-title {
     font-size: 16px;
   }
 }
 @media (max-width: 800px) {
   .home {
-    width: 90%;
+    width: 80%;
   }
   .star {
     display: flex;
@@ -122,14 +121,15 @@ li > i {
   .button-top {
     padding: 3px 12px;
     font-weight: 500;
+    font-size: 14px;
   }
-  .date-title{
+  .date-title {
     font-size: 14px;
   }
 }
 @media (max-width: 600px) {
   .home {
-    width: 90%;
+    width: 100%;
   }
   .star {
     display: flex;
@@ -142,7 +142,7 @@ li > i {
     font-size: 12px;
     color: rgb(211, 187, 50);
   }
-  .date-title{
+  .date-title {
     font-size: 14px;
   }
 }
@@ -198,6 +198,5 @@ li > i {
   }
   .date-title {
     font-size: 10px;
-    
   }
 }
