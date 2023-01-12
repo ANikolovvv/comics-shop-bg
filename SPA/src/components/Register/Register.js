@@ -165,7 +165,7 @@ const Register = () => {
               >
                 Register
               </button>
-              <div>
+              <div className={styles['box-h1']}>
                 <h1 className={styles["click"]}>
                   Login to your account <></>
                   <Link className={styles["link-form"]} to="/login">
