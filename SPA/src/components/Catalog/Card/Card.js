@@ -5,7 +5,7 @@ const Card = (props) => {
   return (
     <div className={styles["wraper"]}>
       <div key={props.data._id} className={styles["card"]}>
-        <div>
+        <div className={styles["box-image"]}>
           <img
             src={props.data.imageUrl}
             alt="comics"

@@ -47,27 +47,29 @@ const Catalog = ({ comics }) => {
       <article className={styles["art"]}>
         <h1>Catalog</h1>
       </article>
-      {currentdata === false && <Spinner />}
-      {user.email && <Search onSubmit={searchHendler}></Search>}
-      {currentItems.length > 0 && (
-        <section className="cards">
-          <Paginate data={currentItems}></Paginate>
-        </section>
-      )}
-      {currentItems.length === 0 && currentdata === true && (
-        <div className={styles["link"]}>
-          <h1>Make your first order !</h1>
-          {user.email ? (
-            <Link to={"/create"} className={styles["click"]}>
-              Click here!
-            </Link>
-          ) : (
-            <Link to={"/login"} className={styles["click"]}>
-              Click to login !
-            </Link>
-          )}
-        </div>
-      )}
+      <div className={styles["container"]}>
+        {currentdata === false && <Spinner />}
+        {user.email && <Search onSubmit={searchHendler}></Search>}
+        {currentItems.length > 0 && (
+          <div className="cards">
+            <Paginate data={currentItems}></Paginate>
+          </div>
+        )}
+        {currentItems.length === 0 && currentdata === true && (
+          <div className={styles["link"]}>
+            <h1>Make your first order !</h1>
+            {user.email ? (
+              <Link to={"/create"} className={styles["click"]}>
+                Click here!
+              </Link>
+            ) : (
+              <Link to={"/login"} className={styles["click"]}>
+                Click to login !
+              </Link>
+            )}
+          </div>
+        )}
+      </div>
     </>
   );
 };

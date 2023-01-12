@@ -1,8 +1,9 @@
 .cards {
   margin: 0 auto;
+  width: 100%;
 }
 .cards-div {
-  margin-top: 100px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -21,23 +22,35 @@
 }
 .page {
   font-family: "Courier New", Courier, monospace;
-  background-image: linear-gradient(
-    45deg,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
+
   border-style: solid;
-  border-color: black;
+  border-color: rgb(253, 244, 244);
   color: rgb(249, 249, 249);
   padding: 4px 15px;
   cursor: pointer;
-  border-radius: 3px;
+  --tw-shadow: 0 10px 15px -5px rgba(255, 246, 246, 0.954),
+    0 8px 10px -6px rgba(0, 0, 0, 0.74);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+    0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(14, 105, 241, 0.945)),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  border-radius: 5px;
   font-weight: 400;
 }
 .page:hover {
-  background-color: skyblue;
-  color: white;
+  background-image: linear-gradient(
+    45deg,
+    #6bc6c6 0%,
+    #19f0a8 51%,
+    #93ff2f 100%
+  );
+  opacity: 0.8;
+  border-bottom-width: 1px;
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .pagination.active {
   background-color: skyblue;
@@ -76,7 +89,8 @@
     font-weight: 400;
   }
   .pagination {
-    height: 30px;
+    margin-top: 10px;
+    height: 50px;
     font-size: 14px;
     gap: 2px;
   }
@@ -101,15 +115,34 @@
     gap: 2px;
   }
 }
+@media (max-width: 600px) {
+  .cards-div {
+    display: grid;
+    align-items: center;
+    gap: 10px;
+  }
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 @media (max-width: 320px) {
+  .cards-div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+  }
   .page {
     margin-top: 50px;
     padding: 2px 12px;
     font-weight: 400;
   }
   .pagination {
-    height: 16px;
-    font-size: 4px;
-    gap: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 30px;
+    font-size: 8px;
+    gap: 10px;
   }
 }

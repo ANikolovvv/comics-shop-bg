@@ -1,33 +1,22 @@
-.catalog {
-  margin-top: 100px;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
-
 .art h1 {
-  background-size: 10% auto;
-  background-image: linear-gradient(
-    45deg,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
+
   font-family: "Luckiest Guy", cursive;
   font-size: 20px;
-  letter-spacing: 10px;
+  letter-spacing: 5px;
   text-align: center;
-  color: white;
+ color: #6a6868;;
 }
 .art p {
   font-weight: 700;
-  background-size: 10% auto;
-  background-image: linear-gradient(
-    45deg,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
   font-family: "Luckiest Guy", cursive;
   font-size: 15px;
-  letter-spacing: 10px;
+  letter-spacing: 5px;
   text-align: center;
   display: block;
 }
@@ -150,5 +139,25 @@
     margin-top: 20px;
     font-size: 12px;
     padding: 1px, 5px;
+  }
+}
+@media (max-width: 400px) {
+  .art h1 {
+    font-size: 14px;
+  }
+  .link {
+    gap: 10px;
+  }
+  .link h1 {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .click {
+    margin-top: 20px;
+    font-size: 12px;
+    padding: 1px, 5px;
+  }
+  .art{
+    margin: 0;
   }
 }
