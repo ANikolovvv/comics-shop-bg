@@ -29,7 +29,7 @@ function App() {
     <AuthProvider>
       <div className="App">
         <Header></Header>
-        <main className="main">
+        <main className='main'>
           <Routes>
             <Route path="/" element={<Home comic={comics} />}></Route>
 
