@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap");
 
 html {
-  scroll-behavior: smooth;
+  overflow-x: hidden;
   font-family: "Raleway", sans-serif;
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 input {
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 15px;
   border: 1px white;
   color: #000000;
@@ -49,13 +49,14 @@ input:hover {
   );
 }
 i {
-  font-size: 18px;
+  font-size: 16px;
   color: #c2410c;
 }
 label {
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 2px;
   font-weight: bold;
+  color: #6a6868;
 }
 
 @media (max-width: 1382px) {
