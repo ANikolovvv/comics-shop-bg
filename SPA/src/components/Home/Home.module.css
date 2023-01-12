@@ -83,7 +83,7 @@
   }
 }
 @media (max-width: 768px) {
-  .art-info{
+  .art-info {
     gap: 0px;
   }
   .art-info > i {
@@ -96,7 +96,6 @@
 @media (max-width: 600px) {
   .container {
     flex-direction: column;
-    height: 580px;
   }
   .art-info > i {
     font-size: 14px;
