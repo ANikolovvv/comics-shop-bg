@@ -22,14 +22,13 @@ import UserGuard from "./components/common/UserGuard";
 import GuestGuard from "./components/common/GuestGuard";
 
 function App() {
-  
   const [comics] = useFetch([]);
 
   return (
     <AuthProvider>
       <div className="App">
         <Header></Header>
-        <main className='main'>
+        <main className="main">
           <Routes>
             <Route path="/" element={<Home comic={comics} />}></Route>
 
@@ -53,8 +52,8 @@ function App() {
             <Route path="*" element={<NotFound />}></Route>
             <Route path="/about" element={<Contact />}></Route>
           </Routes>
+          <Footer />
         </main>
-        <Footer />
       </div>
     </AuthProvider>
   );
