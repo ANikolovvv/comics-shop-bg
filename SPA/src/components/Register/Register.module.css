@@ -3,18 +3,11 @@
   font-family: "Playfair Display", serif;
 }
 .art h1 {
-  background-size: 10% auto;
-  background-image: linear-gradient(
-    45deg,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
   font-family: "Luckiest Guy", cursive;
   font-size: 20px;
   letter-spacing: 10px;
   text-align: center;
-  color: #fff;
+  color: #6a6868;
   font-weight: 500;
 }
 
@@ -23,19 +16,25 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
-  width: 100%;
+  margin: auto;
+  width: 80%;
   height: 650px;
   color: white;
-  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0);
+  border-radius: 5px;
 }
 
 .info-form {
-  max-height: 650px;
-  background: rgba(255, 180, 82, 0.8);
-  border-right: 5px solid rgba(30, 30, 30, 0.8);
+  --tw-shadow: 0 10px 15px -5px rgba(255, 246, 246, 0.954),
+    0 8px 10px -6px rgba(205, 202, 202, 0.74);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+    0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(190, 193, 197, 0.945)),
+    var(--tw-ring-shadow, 0 0 rgba(245, 239, 239, 0.487)), var(--tw-shadow);
+  max-height: 600px;
+  border-radius: 5px;
 }
 .title {
-  color: rgb(239, 248, 248);
+  color: #6a6868;
   margin: 0;
   padding: 0;
   letter-spacing: 2px;
@@ -58,10 +57,15 @@
 }
 
 .signupForm {
-  max-height: 650px;
+  max-height: 600px;
   padding: 0px 0;
-  background: rgba(255, 180, 82, 0.8);
-  transition: 0.2s;
+  --tw-shadow: 0 10px 15px -5px rgba(255, 246, 246, 0.954),
+    0 8px 10px -6px rgba(205, 202, 202, 0.74);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+    0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(190, 193, 197, 0.945)),
+    var(--tw-ring-shadow, 0 0 rgba(245, 239, 239, 0.487)), var(--tw-shadow);
+    border-radius: 5px;
 }
 
 .noBullet {
@@ -99,21 +103,27 @@
   border-radius: 15px;
 }
 .join-btn:hover {
-  background-color: #f09819;
+  background-color: #aca7a0;
   color: black;
 }
 .link-form {
   font-size: 24px;
   letter-spacing: normal;
   text-decoration: none;
-  color: black;
+  color: #2c2a2a;
   cursor: pointer;
 }
 .link-form:hover {
-  color: rgba(30, 30, 30, 0.8);
+  color: rgba(86, 85, 85, 0.8);
 }
 .click {
-  font-size: 24px;
+  margin: 0;
+  font-size: 18px;
+  color: #6a6868;
+}
+.box-h1{
+  margin: 0;
+  padding: 0;
 }
 ::placeholder {
   color: black;
@@ -177,9 +187,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 60px;
+    margin: 0 auto;
     background-repeat: no-repeat;
-    max-height: 700px;
+    height: 750px;
   }
   .click {
     font-size: 14px;
@@ -187,7 +197,7 @@
   }
   .info-form {
     width: 100%;
-    max-height: 350px;
+    max-height: 300px;
     border-right: none;
   }
   .link-form {
@@ -197,10 +207,15 @@
   .signupForm {
     width: 100%;
   }
+  .join-btn {
+    padding: 3px 5px;
+    font-size: 12px;
+    border: none;
+  }
   .icon {
-    width: 90%;
-    height: 100%;
-    object-fit: cover;
+    width: 80%;
+    height: 80%;
+    object-fit: fill;
     font-size: 8em;
     padding: 20px 0;
     color: rgb(0, 0, 0);
