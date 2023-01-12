@@ -5,12 +5,11 @@
   width: 100%;
 }
 .art h1 {
-
   font-family: "Luckiest Guy", cursive;
   font-size: 20px;
   letter-spacing: 5px;
   text-align: center;
- color: #6a6868;;
+  color: #6a6868;
 }
 .art p {
   font-weight: 700;
@@ -119,8 +118,8 @@
     font-weight: 300;
   }
   .click {
-    margin-top: 20px;
-    font-size: 14px;
+    margin-top: 10px;
+    font-size: 12px;
     padding: 3px, 10px;
   }
 }
@@ -136,7 +135,7 @@
     font-weight: 300;
   }
   .click {
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 12px;
     padding: 1px, 5px;
   }
@@ -153,11 +152,9 @@
     font-weight: 300;
   }
   .click {
-    margin-top: 20px;
-    font-size: 12px;
-    padding: 1px, 5px;
+    font-size: 10px;
   }
-  .art{
+  .art {
     margin: 0;
   }
 }
