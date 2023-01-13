@@ -156,6 +156,13 @@
 }
 
 @media (max-width: 768px) {
+  header {
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+ 
+  }
   .logo {
     width: 90px;
     height: 50px;
