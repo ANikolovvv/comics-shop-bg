@@ -134,9 +134,7 @@
   font-weight: bolder;
   color: rgb(247, 5, 5);
   font-size: 15px;
-  background-color: white;
   text-align: center;
-  border-radius: 15px;
   padding: 5px 5px;
 }
 @media (max-width: 1024px) {
@@ -151,9 +149,7 @@
   .error-form {
     top: 83%;
     font-size: 12px;
-    background-color: white;
     text-align: center;
-    border-radius: 15px;
     padding: 5px 5px;
   }
   .click {
