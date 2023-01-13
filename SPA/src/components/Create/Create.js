@@ -91,9 +91,6 @@ const Create = () => {
       </article>
       <div className={styles["signupSection"]}>
         <div className={styles["info-form"]}>
-          <div className={styles["title"]}>
-            <h2>Order your comics book!</h2>
-          </div>
           <div className={styles["image-box"]}>
             <i
               className={styles["icon ion-ios-ionic-outline"]}
@@ -231,17 +228,17 @@ const Create = () => {
                 </p>
               )}
             </li>
-             <li>
-            <select
-              name="payment"
-              className={styles["payment"]}
-              value={value.payment}
-              onChange={changeHendler}
-            >
-              <option value="cash-delivery">Cash on Delivery</option>
-              <option value="credit-card">Credit Card</option>
-              <option value="debit-card">Debit Card</option>
-            </select>
+            <li>
+              <select
+                name="payment"
+                className={styles["payment"]}
+                value={value.payment}
+                onChange={changeHendler}
+              >
+                <option value="cash-delivery">Cash on Delivery</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="debit-card">Debit Card</option>
+              </select>
             </li>
             <li>
               <button className={styles["btn"]} type="submit">
