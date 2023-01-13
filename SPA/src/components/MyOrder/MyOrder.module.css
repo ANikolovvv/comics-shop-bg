@@ -1,16 +1,9 @@
 .art {
-  background-size: 10% auto;
-  background-image: linear-gradient(
-    45deg,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
   font-family: "Luckiest Guy", cursive;
   font-size: 20px;
   letter-spacing: 10px;
   text-align: center;
-  color: #fff;
+  color: #6a6868;
   font-weight: 500;
 }
 .article {
@@ -54,8 +47,13 @@
 }
 
 .article {
+  width: 90%;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 700px;
 }
 @media (max-width: 800px) {
   .art {
@@ -63,6 +61,7 @@
   }
   .article {
     display: grid;
+   min-height: 800px;
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
   }
@@ -77,6 +76,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 15px;
+    min-height: 800px;
   }
   .art {
     font-size: 14px;
