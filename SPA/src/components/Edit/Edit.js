@@ -95,11 +95,10 @@ export const Edit = () => {
   return (
     <>
       <article className={styles["art"]}>
-        <h1>You can order comics which we don't have in our catalog</h1>
+        <h1>Change order </h1>
       </article>
       <div className={styles["signupSection"]}>
         <div className={styles["info-form"]}>
-          <h2>Update your comics book!</h2>
           <div className={styles["image-box"]}>
             <i
               className={styles["icon ion-ios-ionic-outline"]}
@@ -238,7 +237,7 @@ export const Edit = () => {
               />
               {errors.number && (
                 <p className={styles["error-form"]}>
-                  Number should be biger then 0 !
+                  Number should be bigger than 0 !
                 </p>
               )}
             </li>
