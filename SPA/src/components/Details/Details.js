@@ -92,11 +92,13 @@ const Details = () => {
         </div>
 
         <div className={styles["product-image"]}>
-          <img
-            src={comic.imageUrl}
-            className={styles["container img"]}
-            alt={comic.title}
-          />
+          <div className={styles["box-img"]}>
+            <img
+              src={comic.imageUrl}
+              className={styles["container img"]}
+              alt={comic.title}
+            />
+          </div>
 
           <div className={styles["info"]}>
             <h2>The Description</h2>
