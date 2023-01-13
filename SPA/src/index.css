@@ -41,6 +41,8 @@ html {
   font-family: "Raleway", sans-serif;
   font-size: 1em;
   box-sizing: border-box;
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch;
 }
 *,
 *:before,
@@ -58,6 +60,7 @@ body {
   font-family: "Playfair Display", serif;
   --nav-load-time: 500ms;
   --nav-load-link-time: 600ms;
+
 }
 .main {
   display: flex;
@@ -168,6 +171,17 @@ label {
   }
   label {
     font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-y: auto !important;
+    overflow: auto;
+    overscroll-behavior: none;
+  }
+  body {
+    height: auto !important;
   }
 }
 @media (max-width: 600px) {
