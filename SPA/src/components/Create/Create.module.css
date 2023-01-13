@@ -5,11 +5,11 @@
 }
 
 .art h1 {
-  color: #6a6868;
   font-family: "Luckiest Guy", cursive;
   font-size: 20px;
   letter-spacing: 6px;
   text-align: center;
+  color: #6a6868;
   font-weight: 500;
 }
 .title {
@@ -23,14 +23,16 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 80%;
+  height: 100%;
   text-align: center;
+  border-radius: 5px;
 }
 .icon {
   width: 90%;
   height: 100%;
   object-fit: fill;
   color: rgb(0, 0, 0);
+  border-radius: 5px;
 }
 .signupSection {
   margin: auto;
@@ -39,8 +41,8 @@
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   width: 80%;
-  height: 650px;
-  color: white;
+  height: 750px;
+
   box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0);
 }
 
@@ -51,12 +53,12 @@
     0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(190, 193, 197, 0.945)),
     var(--tw-ring-shadow, 0 0 rgba(245, 239, 239, 0.487)), var(--tw-shadow);
-  max-height: 600px;
+  max-height: 700px;
   border-radius: 5px;
 }
 
 .signupForm {
-  height: 650px;
+  height: 700px;
   padding: 0px 0;
   transition: 0.2s;
   --tw-shadow: 0 10px 15px -5px rgba(255, 246, 246, 0.954),
@@ -65,22 +67,25 @@
     0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(190, 193, 197, 0.945)),
     var(--tw-ring-shadow, 0 0 rgba(245, 239, 239, 0.487)), var(--tw-shadow);
-  max-height: 600px;
   border-radius: 5px;
+  align-items: center;
+  text-align: center;
 }
 
 .noBullet {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   text-align: center;
   align-items: center;
-  gap: 60px;
-  margin-right: 10px;
+  gap: 30px;
+  margin: auto 0;
+  padding: 0;
 }
 .noBullet li {
+  width: 80%;
   display: flex;
-  width: 100%;
   flex-direction: column;
   justify-content: center;
   list-style: none;
@@ -102,7 +107,6 @@
   padding: 3px 15px;
   border-radius: 15px;
   border: 2px solid rgba(243, 240, 240, 0.799);
-
   position: relative;
   z-index: 1;
   transition: all 0.3s ease 0.1s;
@@ -141,29 +145,23 @@
   font-weight: bolder;
   color: rgb(247, 5, 5);
   font-size: 15px;
-  background-color: white;
   text-align: center;
-  border-radius: 15px;
   padding: 5px 5px;
+  font-family: "Courier New", Courier, monospace;
 }
 
-.error-form {
-  width: 98%;
-}
 @media (max-width: 1382px) {
   .error-form {
     font-size: 12px;
-    border-radius: 15px;
     padding: 5px 5px;
   }
-  .image-box {
-    margin-top: 20px;
-  }
 }
-
 @media (max-width: 1024px) {
   .art h1 {
     font-size: 18px;
+  }
+  .noBullet {
+    gap: 35px;
   }
   .inputFields {
     font-size: 12px;
@@ -173,32 +171,29 @@
     letter-spacing: 2px;
   }
   .error-form {
+    top: 100%;
     font-size: 12px;
-    background-color: white;
     text-align: center;
-    border-radius: 15px;
     padding: 5px 5px;
   }
   .click {
     font-size: 18px;
   }
 }
-
 @media (max-width: 800px) {
-  .title h2 {
+  .art h1 {
     font-size: 16px;
-    margin-bottom: 10px;
   }
   .signupSection {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 600px;
+    height: 800px;
     gap: 10px;
   }
 
   .signupForm {
-    height: 550px;
+    height: 780px;
   }
   .info-form {
     width: 100%;
@@ -210,7 +205,7 @@
     grid-template-columns: repeat(2, 1fr);
     margin: 0;
     padding: 0;
-    gap: 20px;
+    gap: 0px;
   }
   .noBullet li label {
     max-height: 50px;
@@ -234,7 +229,7 @@
   .error-form {
     top: 102%;
     width: 70%;
-    font-size: 10px;
+    font-size: 14px;
     padding: 2px 5px;
   }
   .payment {
@@ -261,8 +256,7 @@
     width: 90%;
   }
   .error-form {
-    width: 70%;
-    font-size: 8px;
+    font-size: 10px;
     top: 92%;
     padding: 2px 5px;
   }
@@ -275,8 +269,8 @@
   }
 }
 @media (max-width: 480px) {
-  .title h2 {
-    font-size: 12px;
+  .art h1 {
+    font-size: 16px;
   }
   .signupSection {
     height: 850px;
@@ -287,9 +281,11 @@
   }
 
   .noBullet {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     gap: 0;
   }
   .noBullet li {
@@ -297,15 +293,18 @@
   }
   .noBullet li input {
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
+    width: 90%;
   }
   .btn {
+    padding: 2px 8px;
     font-size: 12px;
-    width: 50%;
+    width: 70%;
   }
   .payment {
     margin-left: 5px;
-    font-size: 8px;
+    font-size: 10px;
+    margin: 0;
   }
 }
 @media (max-width: 320px) {
@@ -329,7 +328,7 @@
     width: 80%;
   }
   .btn {
-    font-size: 14px;
+    font-size: 12px;
   }
   .image-box {
     display: none;
@@ -340,8 +339,7 @@
     font-size: 12px;
   }
   .error-form {
-    width: 70%;
-    font-size: 8px;
+    font-size: 14px;
     top: -1%;
     padding: 2px 5px;
   }
