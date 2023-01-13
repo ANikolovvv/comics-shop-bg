@@ -1,14 +1,16 @@
 .container {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 20px;
-  height: 100%;
-  margin-bottom: 20px;
+  height: 750px;
 }
 .contact {
   display: flex;
   margin: 0 auto;
+  justify-content: center;
   border-radius: 5px;
   --tw-shadow: 0 10px 15px -5px rgba(255, 246, 246, 0.954),
     0 8px 10px -6px rgba(0, 0, 0, 0.74);
@@ -115,8 +117,7 @@
     font-weight: 300;
   }
   .contact {
-    width: 80%;
-    height: 500px;
+    width: 90%;
   }
   h2 {
     font-size: 14px;
@@ -130,21 +131,24 @@
 }
 @media (max-width: 800px) {
   .container {
+    width: 80%;
     gap: 25px;
   }
-
-  .icon {
-    object-fit: fill;
+  .contactSection {
+    width: 100%;
+  }
+  .div-icon {
+    display: none;
   }
   .info-form {
+    width: 100%;
     font-size: 16px;
   }
   .art h1 {
     font-size: 18px;
   }
   .contact {
-    width: 80%;
-    height: 500px;
+    width: 100%;
   }
   .ul {
     gap: 20px;
@@ -191,5 +195,4 @@
     font-size: 12px;
     width: 100%;
   }
-
 }
