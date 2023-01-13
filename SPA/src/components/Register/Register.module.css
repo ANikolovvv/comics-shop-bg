@@ -65,7 +65,7 @@
     0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(190, 193, 197, 0.945)),
     var(--tw-ring-shadow, 0 0 rgba(245, 239, 239, 0.487)), var(--tw-shadow);
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 .noBullet {
@@ -121,7 +121,7 @@
   font-size: 18px;
   color: #6a6868;
 }
-.box-h1{
+.box-h1 {
   margin: 0;
   padding: 0;
 }
@@ -142,9 +142,7 @@
   font-weight: bolder;
   color: rgb(247, 5, 5);
   font-size: 15px;
-  background-color: white;
   text-align: center;
-  border-radius: 15px;
   padding: 5px 5px;
 }
 @media (max-width: 1024px) {
@@ -158,11 +156,8 @@
   }
   .error-form {
     top: 83%;
-
     font-size: 12px;
-    background-color: white;
     text-align: center;
-    border-radius: 15px;
     padding: 5px 5px;
   }
   .click {
@@ -236,9 +231,7 @@
   }
   .error-form {
     font-size: 10px;
-    background-color: white;
     text-align: center;
-    border-radius: 15px;
     padding: 2px 5px;
   }
 }
