@@ -41,8 +41,7 @@ html {
   font-family: "Raleway", sans-serif;
   font-size: 1em;
   box-sizing: border-box;
-  overflow-y: scroll !important;
-  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -56,11 +55,11 @@ body {
   max-width: 100%;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  overflow: hidden;
   font-family: "Playfair Display", serif;
   --nav-load-time: 500ms;
   --nav-load-link-time: 600ms;
-
+  scroll-behavior: smooth;
+  overflow-y: auto;
 }
 .main {
   display: flex;
@@ -68,6 +67,7 @@ body {
   text-align: center;
   justify-content: center;
   margin: 30px;
+
 
   background-color: #000000;
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
@@ -174,15 +174,7 @@ label {
   }
 }
 @media (max-width: 768px) {
-  html,
-  body {
-    overflow-y: auto !important;
-    overflow: auto;
-    overscroll-behavior: none;
-  }
-  body {
-    height: auto !important;
-  }
+
 }
 @media (max-width: 600px) {
   .art h1 {
