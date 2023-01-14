@@ -73,7 +73,7 @@
   letter-spacing: 1px;
   font-weight: bolder;
   font-size: 18px;
-  color: #6a6868;
+  color: #f9f4f4;
 }
 
 .product-image {
@@ -194,7 +194,7 @@ img {
     letter-spacing: 1px;
     font-weight: bolder;
     font-size: 18px;
-    color: #333;
+  
   }
   .product-details h1 {
     font-size: 24px;
@@ -252,7 +252,7 @@ img {
     letter-spacing: 1px;
     font-weight: 300;
     font-size: 14px;
-    color: #333;
+ 
   }
   .info {
     font-size: 80%;
@@ -299,7 +299,7 @@ img {
     letter-spacing: 1px;
     font-weight: 300;
     font-size: 14px;
-    color: #333;
+ 
   }
   .info {
     font-size: 80%;
