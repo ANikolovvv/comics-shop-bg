@@ -99,6 +99,9 @@
   }
 }
 @media (max-width: 480px) {
+  .icon{
+    margin-left: 20px;
+  }
   .links {
     width: 50%;
   }
