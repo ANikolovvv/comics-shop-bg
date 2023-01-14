@@ -31,9 +31,9 @@ function Home({ comic }) {
         <p>Best Comics of 2022 </p>
       </article>
       <div className={styles["container"]}>
-        <article className={styles["info"]}>
+        <div className={styles["info"]}>
           {comics.length > 0 ? <Top info={comics[count]}></Top> : <Spinner />}
-        </article>
+        </div>
         <article className={styles["home-art"]}>
           <div className={styles["art-info"]}>
             <i className="fa-solid fa-book"> comics-shop.bg</i>
