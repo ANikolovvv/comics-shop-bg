@@ -63,3 +63,14 @@
     padding: 15px;
   }
 }
+@media (max-width: 480px) {
+  
+  .sidebar {
+    width: 25%;
+    gap: 2px;
+    font-weight: 300;
+    font-size: 8px;
+    margin: 0;
+    padding: 10px;
+  }
+}
