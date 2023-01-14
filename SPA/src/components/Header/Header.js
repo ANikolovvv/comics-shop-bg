@@ -12,9 +12,11 @@ import Navigation from "./Navigation";
 const Header = () => {
   const { user } = useContext(AuthContexts);
   const [toggle, setToggle] = useState(false);
+
   function navigationHandler(e) {
     setToggle(!toggle);
   }
+
   return (
     <>
       <header className={styles.header}>
