@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./contexts/authContext";
 
+
 import Catalog from "./components/Catalog/Catalog";
 import Create from "./components/Create/Create";
 import Details from "./components/Details/Details";
@@ -20,10 +21,23 @@ import useFetch from "./hooks/useFetch";
 import Logout from "./components/Logout/Logout";
 import UserGuard from "./components/common/UserGuard";
 import GuestGuard from "./components/common/GuestGuard";
+import { useEffect, useState } from "react";
 
 function App() {
   const [comics] = useFetch([]);
 
+  const [scrollValue, setScrollValue] = useState(0);
+
+  useEffect(() => {
+    const onScroll = (e) => {
+      setScrollValue(e.target.documentElement.scrollTop);
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollValue]);
+  console.log(scrollValue,'scroll')
   return (
     <AuthProvider>
       <div className="App">
