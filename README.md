@@ -12,8 +12,7 @@
 
 The repo includes the "<i>back-end</i>" and the "<i>front-end</i>" of the app.
 
-<hr/>
-<hr/>
+
 <p align="center">
   <img src="./home.png" width="350" title="hover text">
   <img src="./catalog.png" width="350" alt="accessibility text">
