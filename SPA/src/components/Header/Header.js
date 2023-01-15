@@ -13,13 +13,14 @@ const Header = () => {
   const { user } = useContext(AuthContexts);
   const [toggle, setToggle] = useState(false);
 
-  function navigationHandler(e) {
+  const navigationHandler=()=> {
     setToggle(!toggle);
+    console.log(toggle)
   }
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={styles["header"]}>
         <nav className={styles["container"]}>
           <div className={styles["logo"]}>
             <img src={logo} className={styles["logo-img"]} alt="LOGO"></img>
