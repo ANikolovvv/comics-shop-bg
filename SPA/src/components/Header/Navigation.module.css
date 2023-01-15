@@ -10,7 +10,7 @@
   animation: nav-link 500ms ease-in;
 }
 @keyframes nav-link {
-  5% {
+  0% {
     transform: translateX(-100%);
   }
 
@@ -99,7 +99,7 @@
   }
 }
 @media (max-width: 480px) {
-  .icon{
+  .icon {
     margin-left: 20px;
   }
   .links {
