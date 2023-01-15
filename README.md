@@ -7,6 +7,10 @@
 <h4 align="center"><i>Stack: </i></h3>
 
 <img src="./mern_logo.png"/>
+<p align="center">
+  <img src="./home.png" width="350" title="hover text">
+  <img src="./catalog.png" width="350" alt="accessibility text">
+</p>
 
 <h1 align="center">THE WHOLE APP IS CUSTOM!</h1>
 <hr/>
@@ -32,6 +36,7 @@ The repo includes the "<i>back-end</i>" and the "<i>front-end</i>" of the app.
 - <i><b>-</b></i>
 - <i><b>-Unit testing for some components(catalog,details,search) </b></i>
 - <i><b>others (images placeholders when loading, funny 404 page, etc.)</b></i>
+- <i><b>Deploy <a> https://fir-comics-3273e.web.app/</a></b></i>
 
 
 <hr/>
