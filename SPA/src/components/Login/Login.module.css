@@ -130,13 +130,20 @@
   width: 100%;
   text-align: left;
   position: absolute;
-  top: 83%;
+  top: 110%;
   letter-spacing: 2px;
   font-weight: bolder;
   color: rgb(247, 5, 5);
   font-size: 15px;
   text-align: center;
   padding: 5px 5px;
+}
+
+@media (max-width: 1382px) {
+  .error-form {
+    font-size: 12px;
+    padding: 5px 5px;
+  }
 }
 @media (max-width: 1024px) {
   .art h1 {
@@ -148,7 +155,7 @@
     letter-spacing: 2px;
   }
   .error-form {
-    top: 83%;
+    top: 100%;
     font-size: 12px;
     text-align: center;
     padding: 5px 5px;
@@ -171,6 +178,12 @@
   }
   .link-form {
     font-size: 18px;
+  }
+  .error-form {
+    top: 102%;
+    width: 100%;
+    font-size: 14px;
+    padding: 2px 5px;
   }
 }
 @media (max-width: 600px) {
@@ -197,6 +210,10 @@
   .signupForm {
     width: 100%;
   }
+  .error-form {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
 }
 @media (max-width: 480px) {
   .click {
@@ -219,13 +236,16 @@
     font-size: 12px;
   }
   .error-form {
-    font-size: 10px;
-    padding: 2px 5px;
+    top: 115%;
   }
 }
 @media (max-width: 320px) {
   .join-btn {
     padding: 1px;
     font-size: 10px;
+  }
+  .error-form {
+    font-size: 8px;
+    padding: 2px 5px;
   }
 }
