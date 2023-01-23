@@ -191,9 +191,10 @@ img {
     padding: 10px;
     font-family: "Farsan", cursive;
     text-align: left;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
     font-weight: bolder;
     font-size: 18px;
+    color: #fffbfb;
   
   }
   .product-details h1 {
