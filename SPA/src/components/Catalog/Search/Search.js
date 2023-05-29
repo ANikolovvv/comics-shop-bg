@@ -1,23 +1,69 @@
 import styles from "./Search.module.css";
+import { useState } from "react";
 
-export const Search = (search) => {
+export const Search = ({ onSubmit, comics, error }) => {
+  const [priceMin, setPriceMin] = useState("");
+  const [priceMax, setPriceMax] = useState("");
+  const [yearMin, setYearMin] = useState("");
+  const [yearMax, setYearMax] = useState("");
   return (
-    <form
-      data-testid="item"
-      className={styles["search"]}
-      action=""
-      method="POST"
-      onSubmit={search.onSubmit}
-    >
-      <input
-        className={styles["input"]}
-        type="text"
+    <div className={styles["formBox"]}>
+      <form
+        action="#"
+        method="POST"
+        className={styles["searchForm"]}
         name="search"
-        placeholder="Search comics"
-      />
-      <button className={styles["btn"]} type="submit">
-        Search
-      </button>
-    </form>
+        onSubmit={onSubmit}
+      >
+        <div>
+          <label>Price Range:</label>
+          <input
+            name="minPrice"
+            type="number"
+            placeholder="Min prices 1$"
+            value={priceMin}
+            onChange={(e) => setPriceMin(e.target.value)}
+          />
+          <input
+            name="maxPrice"
+            type="number"
+            placeholder="Max price 50$"
+            value={priceMax}
+            onChange={(e) => setPriceMax(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Authors:</label>
+          <select name="authors" className={styles["authors"]}>
+            {comics.map((comic) => (
+              <option key={comic.id} value={comic.author}>
+                {comic.author}
+              </option>
+            ))}
+          </select>
+          {error.length > 0 && <span>{error}</span>}
+        </div>
+        <div>
+          <label>Year Range:</label>
+          <input
+            name="minYear"
+            type="number"
+            placeholder="Min Year 1941"
+            value={yearMin}
+            onChange={(e) => setYearMin(e.target.value)}
+          />
+          <input
+            name="maxYear"
+            type="number"
+            placeholder="Max Year 2005"
+            value={yearMax}
+            onChange={(e) => setYearMax(e.target.value)}
+          />
+        </div>
+        <button type="submit" value="Submit">
+          Search
+        </button>
+      </form>
+    </div>
   );
 };
