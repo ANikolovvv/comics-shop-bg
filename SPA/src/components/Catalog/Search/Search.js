@@ -1,14 +1,24 @@
 import styles from "./Search.module.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export const Search = ({ onSubmit, comics, error }) => {
   const [priceMin, setPriceMin] = useState("");
   const [priceMax, setPriceMax] = useState("");
   const [yearMin, setYearMin] = useState("");
   const [yearMax, setYearMax] = useState("");
+  const formRef = useRef(null);
+
+  function resetForm() {
+    setPriceMin("");
+    setPriceMax("");
+    setYearMin("");
+    setYearMax("");
+    formRef.current.reset();
+  }
   return (
     <div className={styles["formBox"]}>
       <form
+        ref={formRef}
         action="#"
         method="POST"
         className={styles["searchForm"]}
@@ -34,7 +44,10 @@ export const Search = ({ onSubmit, comics, error }) => {
         </div>
         <div>
           <label>Authors:</label>
-          <select name="authors" className={styles["authors"]}>
+          <select name="author" className={styles["authors"]}>
+            <option key="123%" value="">
+              Select an author
+            </option>
             {comics.map((comic) => (
               <option key={comic.id} value={comic.author}>
                 {comic.author}
@@ -63,6 +76,7 @@ export const Search = ({ onSubmit, comics, error }) => {
         <button type="submit" value="Submit">
           Search
         </button>
+        <button onClick={resetForm}>Clear Filters</button>
       </form>
     </div>
   );
