@@ -68,7 +68,8 @@ const Catalog = ({ comics }) => {
       } else {
         data = Filter(comics, search);
       }
-
+      console.log(data,'zsdsffsdfsdfsdsfdsdf')
+      
       setCurrentItems(data);
       e.target.reset();
     } catch (error) {
