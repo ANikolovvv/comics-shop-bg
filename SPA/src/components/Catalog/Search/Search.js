@@ -1,7 +1,13 @@
 import styles from "./Search.module.css";
 import { useState, useRef } from "react";
 
-export const Search = ({ onSubmit, comics, error }) => {
+export const Search = ({
+  onSubmit,
+  comics,
+  error,
+  updateParentState,
+  setSearch,
+}) => {
   const [priceMin, setPriceMin] = useState("");
   const [priceMax, setPriceMax] = useState("");
   const [yearMin, setYearMin] = useState("");
@@ -14,6 +20,8 @@ export const Search = ({ onSubmit, comics, error }) => {
     setYearMin("");
     setYearMax("");
     formRef.current.reset();
+    updateParentState(comics);
+    setSearch(false);
   }
   return (
     <div className={styles["formBox"]}>
