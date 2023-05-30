@@ -104,6 +104,8 @@ export const Filter = (currentItems, search) => {
     author === ""
   ) {
     data = currentItems.filter((x) => x.year >= minY && x.year < maxY);
+
+    data.map((x) => console.log(x.year));
   } else if (
     minP &&
     maxP &&
@@ -112,6 +114,7 @@ export const Filter = (currentItems, search) => {
     author === ""
   ) {
     data = currentItems.filter((x) => x.price >= minP && x.price < maxP);
+    data.map((x) => console.log(x.price));
   } else if (
     minP &&
     maxPrice === "" &&
@@ -128,6 +131,14 @@ export const Filter = (currentItems, search) => {
     author === ""
   ) {
     data = currentItems.filter((x) => maxP === x.price);
+  } else if (
+    minPrice === "" &&
+    maxP &&
+    minYear === "" &&
+    maxYear === "" &&
+    author !== ""
+  ) {
+    data = currentItems.filter((x) => maxP === x.price && author === x.author);
   } else if (
     minY &&
     minPrice === "" &&
@@ -152,7 +163,8 @@ export const Filter = (currentItems, search) => {
     author !== ""
   ) {
     data = currentItems.filter((x) => x.author === author);
-  }
+    console.log("author 15", author, data);
+  } 
   if (
     minYear === "" &&
     minPrice === "" &&
