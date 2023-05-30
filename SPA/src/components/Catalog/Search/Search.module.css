@@ -1,39 +1,51 @@
-.search {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 35%;
-  height: 42px;
-  margin: 10px auto;
-  background-color: #fff;
-}
-.input {
-  width: 100%;
-  padding: 10px 5px;
-  color: rgb(6, 3, 3);
-  background: transparent;
-  border-radius: 3px 0 0 3px;
+.formBox {
+  margin-top: 40px;
 }
 
-.btn {
+.searchForm {
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  gap: 10px;
+  background-color: #ccc;
+}
+
+.searchForm label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.searchForm input[type="number"],
+.searchForm select {
   width: 100%;
-  border: 0;
-  padding: 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.searchForm button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  color: rgb(0, 0, 0);
-}
-.btn:hover {
-  background: rgb(8, 235, 235);
-  color: rgb(255, 255, 255);
+  margin-top: 10px;
 }
 
-::placeholder {
-  color: rgb(254, 254, 254);
+.searchForm span {
+  color: red;
+  font-size: 12px;
 }
 @media (max-width: 1024px) {
   .search {
     width: 60%;
-    height:35px;
+    height: 35px;
   }
 }
 @media (max-width: 800px) {
@@ -57,7 +69,6 @@
 @media (max-width: 480px) {
   .search {
     width: 80%;
-    
   }
   .input {
     font-size: 8px;
