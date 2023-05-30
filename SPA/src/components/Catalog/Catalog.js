@@ -1,12 +1,12 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContexts } from "../../contexts/authContext";
-import * as requests from "../../services/server";
 
 import Paginate from "./Pagination/Paginate";
 import { Spinner } from "../Spinner/Spinner";
 import styles from "./Catalog.module.css";
 import { Search } from "./Search/Search";
+import { Filter } from "../../helpers/Filter";
 
 const Catalog = ({ comics }) => {
   const { user } = useContext(AuthContexts);
@@ -14,11 +14,17 @@ const Catalog = ({ comics }) => {
   const [currentItems, setCurrentItems] = useState([]);
   const [currentdata, setCurrentData] = useState(false);
   const [searchError, setSearchError] = useState("");
+  const [searchData, setSearch] = useState(false);
+
+  const updateParentState = (newValue) => {
+    setCurrentItems(newValue);
+  };
 
   useEffect(() => {
     if (comics !== undefined) {
       setCurrentItems(comics);
       setCurrentData(true);
+      setSearch(false);
     }
   }, [comics]);
 
@@ -29,30 +35,41 @@ const Catalog = ({ comics }) => {
     const { minPrice, maxPrice, minYear, maxYear, author } = search;
 
     try {
-      if ((minPrice < 1 && minPrice !== "") || minPrice > 50) {
+      if (
+        (minPrice < 1 && minPrice !== "") ||
+        (minPrice > 50 && minPrice !== "")
+      ) {
         throw new Error("The price should not be less 1 and bigger then 50!");
       }
-      if ((maxPrice > 50 && maxPrice !== "") || maxPrice < 1) {
+      if (
+        (maxPrice > 50 && maxPrice !== "") ||
+        (maxPrice < 1 && maxPrice !== "")
+      ) {
         throw new Error(
           "The price should not be more then 50 and smoller then 1!"
         );
       }
-      if ((minYear > 1941 && minYear !== "") || minYear > 2005) {
+      if (
+        (minYear < 1941 && minYear !== "") ||
+        (minYear > 2005 && minYear !== "")
+      ) {
         throw new Error("The year must be after 1940 and before 2006!");
       }
-      if ((maxYear > 2005 && maxYear !== "") || maxYear < 1941) {
+      if (
+        (maxYear > 2005 && maxYear !== "") ||
+        (maxYear < 1941 && maxYear !== "")
+      ) {
         throw new Error("The year must be before 2006 and after 1941!");
       }
-      const collection = currentItems.filter((item) => {
-        return (
-          (minPrice === "" || item.price >= minPrice) &&
-          (maxPrice === "" || item.price <= maxPrice) &&
-          (minYear === "" || item.year >= minYear) &&
-          (maxYear === "" || item.year <= maxYear) &&
-          (author === "" || item.author === author)
-        );
-      });
-      console.log(collection);
+      let data = [];
+      if (!searchData) {
+        data = Filter(currentItems, search);
+        setSearch(true);
+      } else {
+        data = Filter(comics, search);
+      }
+
+      setCurrentItems(data);
       e.target.reset();
     } catch (error) {
       setSearchError(error.message);
@@ -68,8 +85,10 @@ const Catalog = ({ comics }) => {
         {/* {user.email && <Search onSubmit={searchHendler}></Search>} */}
         <Search
           onSubmit={searchHendler}
-          comics={currentItems}
+          comics={comics}
           error={searchError}
+          updateParentState={updateParentState}
+          setSearch={setSearch}
         />
 
         {currentItems.length > 0 && (
