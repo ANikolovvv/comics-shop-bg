@@ -4,15 +4,17 @@ import { useState, useRef } from "react";
 export const Search = ({
   onSubmit,
   comics,
-  error,
   updateParentState,
   setSearch,
+  authors,
+  selectedAuthors,
 }) => {
   const [priceMin, setPriceMin] = useState("");
   const [priceMax, setPriceMax] = useState("");
   const [yearMin, setYearMin] = useState("");
   const [yearMax, setYearMax] = useState("");
   const formRef = useRef(null);
+  const newAuthors = [...new Set(comics.map((comic) => comic.author))];
 
   function resetForm() {
     setPriceMin("");
@@ -23,8 +25,15 @@ export const Search = ({
     updateParentState(comics);
     setSearch(false);
   }
+  const handleAuthorChange = (event) => {
+    const selectedOptions = Array.from(event.target.selectedOptions);
+    const selectedValues = selectedOptions.map((option) => option.value);
+    authors(selectedValues);
+    console.log(selectedValues, "search");
+  };
   return (
     <div className={styles["formBox"]}>
+     
       <form
         ref={formRef}
         action="#"
@@ -52,17 +61,19 @@ export const Search = ({
         </div>
         <div>
           <label>Authors:</label>
-          <select name="author" className={styles["authors"]}>
-            <option key="123%" value="">
-              Select an author
-            </option>
-            {comics.map((comic) => (
-              <option key={comic.id} value={comic.author}>
-                {comic.author}
+          <select
+            multiple
+            name="author"
+            className={styles["authors"]}
+            value={selectedAuthors}
+            onChange={handleAuthorChange}
+          >
+            {newAuthors.map((author) => (
+              <option key={author} value={author}>
+                {author}
               </option>
             ))}
           </select>
-          {error.length > 0 && <span>{error}</span>}
         </div>
         <div>
           <label>Year Range:</label>
