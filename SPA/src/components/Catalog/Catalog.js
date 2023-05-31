@@ -15,6 +15,7 @@ const Catalog = ({ comics }) => {
   const [currentdata, setCurrentData] = useState(false);
   const [searchError, setSearchError] = useState("");
   const [searchData, setSearch] = useState(false);
+  const [selectedAuthors, setSelectedAuthors] = useState([]);
 
   const updateParentState = (newValue) => {
     setCurrentItems(newValue);
@@ -33,6 +34,7 @@ const Catalog = ({ comics }) => {
     const formData = new FormData(e.target);
     const search = Object.fromEntries(formData);
     const { minPrice, maxPrice, minYear, maxYear, author } = search;
+  
 
     try {
       if (
@@ -51,35 +53,40 @@ const Catalog = ({ comics }) => {
       }
       if (
         (minYear < 1941 && minYear !== "") ||
-        (minYear > 2005 && minYear !== "")
+        (minYear > 2020 && minYear !== "")
       ) {
-        throw new Error("The year must be after 1940 and before 2006!");
+        throw new Error("The year must be after 1940 and before 2021!");
       }
       if (
-        (maxYear > 2005 && maxYear !== "") ||
+        (maxYear > 2020 && maxYear !== "") ||
         (maxYear < 1941 && maxYear !== "")
       ) {
-        throw new Error("The year must be before 2006 and after 1941!");
+        throw new Error("The year must be before 2021 and after 1941!");
       }
       let data = [];
+
       if (!searchData) {
-        data = Filter(currentItems, search);
+        data = Filter(currentItems, search, selectedAuthors);
         setSearch(true);
       } else {
-        data = Filter(comics, search);
+        data = Filter(comics, search, selectedAuthors);
       }
-      console.log(data,'zsdsffsdfsdfsdsfdsdf')
-      
       setCurrentItems(data);
       e.target.reset();
     } catch (error) {
       setSearchError(error.message);
+      console.log(error.message);
     }
   };
   return (
     <>
       <article className={styles["art"]}>
         <h1>Catalog</h1>
+        <div className={styles["divError"]}>
+          {searchError && (
+            <span className={styles.spanError}>{searchError}</span>
+          )}
+        </div>
       </article>
       <div className={styles["container"]}>
         {currentdata === false && <Spinner />}
@@ -90,6 +97,8 @@ const Catalog = ({ comics }) => {
           error={searchError}
           updateParentState={updateParentState}
           setSearch={setSearch}
+          authors={setSelectedAuthors}
+          selectedAuthors={selectedAuthors}
         />
 
         {currentItems.length > 0 && (
@@ -117,3 +126,4 @@ const Catalog = ({ comics }) => {
 };
 
 export default Catalog;
+
