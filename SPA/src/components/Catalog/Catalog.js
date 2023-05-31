@@ -68,6 +68,7 @@ const Catalog = ({ comics }) => {
       if (!searchData) {
         data = Filter(currentItems, search, selectedAuthors);
         setSearch(true);
+        setSelectedAuthors([])
       } else {
         data = Filter(comics, search, selectedAuthors);
       }
@@ -82,9 +83,9 @@ const Catalog = ({ comics }) => {
     <>
       <article className={styles["art"]}>
         <h1>Catalog</h1>
-        <div className={styles["divError"]}>
+        <div className={styles["div_error"]}>
           {searchError && (
-            <span className={styles.spanError}>{searchError}</span>
+            <span className={styles.span_error}>{searchError}</span>
           )}
         </div>
       </article>
