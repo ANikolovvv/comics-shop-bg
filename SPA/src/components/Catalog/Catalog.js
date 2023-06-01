@@ -17,6 +17,8 @@ const Catalog = ({ comics }) => {
   const [searchData, setSearch] = useState(false);
   const [selectedAuthors, setSelectedAuthors] = useState([]);
 
+  let data = [];
+
   const updateParentState = (newValue) => {
     setCurrentItems(newValue);
   };
@@ -29,51 +31,60 @@ const Catalog = ({ comics }) => {
     }
   }, [comics]);
 
+  useEffect(() => {
+    if (searchError.length > 0) {
+      const timer = setTimeout(() => {
+        setSearchError("");
+      }, 3000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [searchError]);
+
   const searchHendler = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const search = Object.fromEntries(formData);
     const { minPrice, maxPrice, minYear, maxYear, author } = search;
-  
 
     try {
       if (
-        (minPrice < 1 && minPrice !== "") ||
-        (minPrice > 50 && minPrice !== "")
+        (Number(minPrice) < 1 && minPrice !== "") ||
+        (Number(minPrice) > 50 && minPrice !== "")
       ) {
         throw new Error("The price should not be less 1 and bigger then 50!");
       }
       if (
-        (maxPrice > 50 && maxPrice !== "") ||
-        (maxPrice < 1 && maxPrice !== "")
+        (Number(maxPrice) > 50 && maxPrice !== "") ||
+        (Number(maxPrice) < 1 && maxPrice !== "")
       ) {
         throw new Error(
           "The price should not be more then 50 and smoller then 1!"
         );
       }
       if (
-        (minYear < 1941 && minYear !== "") ||
-        (minYear > 2020 && minYear !== "")
+        (Number(minYear) < 1941 && minYear !== "") ||
+        (Number(minYear) > 2020 && minYear !== "")
       ) {
         throw new Error("The year must be after 1940 and before 2021!");
       }
       if (
-        (maxYear > 2020 && maxYear !== "") ||
-        (maxYear < 1941 && maxYear !== "")
+        (Number(maxYear) > 2020 && maxYear !== "") ||
+        (Number(maxYear) < 1941 && maxYear !== "")
       ) {
         throw new Error("The year must be before 2021 and after 1941!");
       }
-      let data = [];
 
       if (!searchData) {
         data = Filter(currentItems, search, selectedAuthors);
         setSearch(true);
-        setSelectedAuthors([])
+        setSelectedAuthors([]);
       } else {
         data = Filter(comics, search, selectedAuthors);
       }
       setCurrentItems(data);
-      e.target.reset();
     } catch (error) {
       setSearchError(error.message);
       console.log(error.message);
@@ -101,7 +112,13 @@ const Catalog = ({ comics }) => {
           authors={setSelectedAuthors}
           selectedAuthors={selectedAuthors}
         />
-
+        {searchData && currentItems.length === 0 && (
+          <div className={styles["div_error"]}>
+            <span className={styles.span_error}>
+              Comics not found with this filters!
+            </span>
+          </div>
+        )}
         {currentItems.length > 0 && (
           <div className="cards">
             <Paginate data={currentItems}></Paginate>
@@ -127,4 +144,3 @@ const Catalog = ({ comics }) => {
 };
 
 export default Catalog;
-
