@@ -29,11 +29,9 @@ export const Search = ({
     const selectedOptions = Array.from(event.target.selectedOptions);
     const selectedValues = selectedOptions.map((option) => option.value);
     authors(selectedValues);
-    console.log(selectedValues, "search");
   };
   return (
     <div className={styles["formBox"]}>
-     
       <form
         ref={formRef}
         action="#"
