@@ -8,21 +8,26 @@ export const Filter = (currentItems, search, authors) => {
 
   const filterByPrice = (item) => {
     const price = Number(item.price);
-    return (
-      (!minPrice || price >= Number(minPrice)) &&
-      (!maxPrice || price <= Number(maxPrice))
-    );
+    if (minPrice && price <= Number(minPrice)) {
+      return false;
+    }
+    if (maxPrice && price >= Number(maxPrice)) {
+      return false;
+    }
+    return true;
   };
 
   const filterByYear = (item) => {
     const year = Number(item.year);
-    return (
-      (!minYear || year >= Number(minYear)) &&
-      (!maxYear || year <= Number(maxYear))
-    );
+    if (minYear && year <= Number(minYear)) {
+      return false;
+    }
+    if (maxYear && year >= Number(maxYear)) {
+      return false;
+    }
+    return true;
   };
 
   data = data.filter(filterByPrice).filter(filterByYear);
-
   return data;
 };
