@@ -134,23 +134,7 @@
     padding: 3px, 10px;
   }
 }
-@media (max-width: 400px) {
-  .art h1 {
-    font-size: 14px;
-  }
-  .link {
-    gap: 10px;
-  }
-  .link h1 {
-    font-size: 14px;
-    font-weight: 300;
-  }
-  .click {
-    margin-top: 15px;
-    font-size: 12px;
-    padding: 1px, 5px;
-  }
-}
+
 @media (max-width: 400px) {
   .art h1 {
     font-size: 14px;
