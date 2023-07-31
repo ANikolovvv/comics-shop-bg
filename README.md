@@ -4,7 +4,7 @@
 
 <hr/>
 
-<h4 align="center"><i>Stack: </i></h3>
+<h4 align="center"><i>Stack: </i></h4>
 <p>
 <img src="./mern_logo.png"/>
 </p>
