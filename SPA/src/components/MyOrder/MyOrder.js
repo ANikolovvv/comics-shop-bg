@@ -10,7 +10,7 @@ import { Spinner } from "../Spinner/Spinner";
 import styles from "./MyOrder.module.css";
 import { deleteOrder } from "../../services/owner";
 
-export const MyOrder = () => {
+ const MyOrder = () => {
   const { user } = useContext(AuthContexts);
   const [currentItems, setCurrentItems] = useState([]);
   const [currentdata, setCurrentData] = useState(false);
@@ -77,3 +77,4 @@ export const MyOrder = () => {
     </>
   );
 };
+export default MyOrder
