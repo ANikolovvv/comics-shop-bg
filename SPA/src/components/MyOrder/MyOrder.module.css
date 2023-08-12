@@ -11,6 +11,9 @@
 }
 .link {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   left: 40%;
   color: aliceblue;
   border-radius: 5px;
