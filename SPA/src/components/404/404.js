@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./404.module.css";
-export const NotFound = () => {
+
+const NotFound = () => {
   return (
     <>
       <div
@@ -48,3 +49,4 @@ export const NotFound = () => {
     </>
   );
 };
+export default NotFound;
