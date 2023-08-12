@@ -3,14 +3,16 @@ export const errorWrapeer = (ctx) => {
     throw new Error("Password dont match !");
   }
 };
+
 export const matchEmail = (value) => {
   const regex = new RegExp(/^[A-Za-z0-9]+@[A-Za-z]+\.[a-z]+$/);
   let result = value.match(regex);
 
   return result;
 };
+
 export const ctxValidation = (ctx) => {
-  //const { title, author, email, address, courier, number, payment } = value;
+
   if (ctx.title.length < 3) {
     throw new Error("Title should be at least 3 characters long!");
   }
