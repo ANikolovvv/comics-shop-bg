@@ -4,9 +4,11 @@ import { AuthContexts } from "../../contexts/authContext";
 
 import Paginate from "./Pagination/Paginate";
 import { Spinner } from "../Spinner/Spinner";
+
 import styles from "./Catalog.module.css";
 import { Search } from "./Search/Search";
-import { Filter } from "../../helpers/Filter";
+import{filteredData} from "../../helpers/filter"
+
 
 const Catalog = ({ comics }) => {
   const { user } = useContext(AuthContexts);
@@ -47,47 +49,20 @@ const Catalog = ({ comics }) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const search = Object.fromEntries(formData);
-    const { minPrice, maxPrice, minYear, maxYear, author } = search;
 
     try {
-      if (
-        (Number(minPrice) < 1 && minPrice !== "") ||
-        (Number(minPrice) > 50 && minPrice !== "")
-      ) {
-        throw new Error("The price should not be less 1 and bigger then 50!");
-      }
-      if (
-        (Number(maxPrice) > 50 && maxPrice !== "") ||
-        (Number(maxPrice) < 1 && maxPrice !== "")
-      ) {
-        throw new Error(
-          "The price should not be more then 50 and smoller then 1!"
-        );
-      }
-      if (
-        (Number(minYear) < 1941 && minYear !== "") ||
-        (Number(minYear) > 2020 && minYear !== "")
-      ) {
-        throw new Error("The year must be after 1940 and before 2021!");
-      }
-      if (
-        (Number(maxYear) > 2020 && maxYear !== "") ||
-        (Number(maxYear) < 1941 && maxYear !== "")
-      ) {
-        throw new Error("The year must be before 2021 and after 1941!");
-      }
-
+    
       if (!searchData) {
-        data = Filter(currentItems, search, selectedAuthors);
+        data = filteredData(currentItems, search, selectedAuthors);
         setSearch(true);
         setSelectedAuthors([]);
       } else {
-        data = Filter(comics, search, selectedAuthors);
+        data = filteredData(comics, search, selectedAuthors);
       }
       setCurrentItems(data);
     } catch (error) {
       setSearchError(error.message);
-      console.log(error.message);
+      
     }
   };
   return (
@@ -102,7 +77,7 @@ const Catalog = ({ comics }) => {
       </article>
       <div className={styles["container"]}>
         {currentdata === false && <Spinner />}
-        {/* {user.email && <Search onSubmit={searchHendler}></Search>} */}
+        
         <Search
           onSubmit={searchHendler}
           comics={comics}
