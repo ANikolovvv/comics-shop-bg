@@ -1,25 +1,27 @@
 import { Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./contexts/authContext";
 
+
 import Catalog from "./components/Catalog/Catalog";
 import Create from "./components/Create/Create";
 import Details from "./components/Details/Details";
+
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 
-import { Footer } from "./components/Footer/Footer";
-import { MyOrder } from "./components/MyOrder/MyOrder";
-import { NotFound } from "./components/404/404";
-import { Edit } from "./components/Edit/Edit";
-import Buy from "./components/Buy-create/BuyCreate";
+import Footer from "./components/Footer/Footer";
+import NotFound from "./components/404/404";
+import  Edit  from "./components/Edit/Edit";
 
-import { Contact } from "./components/Contact-us/Contact";
+import  Contact  from "./components/Contact-us/Contact";
 import useFetch from "./hooks/useFetch";
 import Logout from "./components/Logout/Logout";
+
 import UserGuard from "./components/common/UserGuard";
 import GuestGuard from "./components/common/GuestGuard";
+import MyOrder from "./components/MyOrder/MyOrder";
 
 
 function App() {
@@ -46,15 +48,21 @@ function App() {
             <Route element={<UserGuard />}>
               <Route path="/logout" element={<Logout />}></Route>
               <Route path="/create" element={<Create />}></Route>
-              <Route path="/buy-create/:id" element={<Buy />}></Route>
-              <Route path="/my-orders" element={<MyOrder />}></Route>
-              <Route path="/edit/:id" element={<Edit />}></Route>
+              <Route
+                path="/buy-create/:id"
+                element={<Edit title={"Order"} name={'buy'} />}
+              ></Route>
+              <Route path="/my-orders/" element={<MyOrder />}></Route>
+              <Route
+                path="/edit/:id"
+                element={<Edit title={"Change order"} name={'edit'} />}
+              ></Route>
             </Route>
             <Route path="*" element={<NotFound />}></Route>
             <Route path="/about" element={<Contact />}></Route>
           </Routes>
-          <Footer />
         </main>
+        <Footer />
       </div>
     </AuthProvider>
   );
