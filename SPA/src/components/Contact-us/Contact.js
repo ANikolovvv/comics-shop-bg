@@ -4,7 +4,7 @@ import { Map } from "./Map/Map";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 
-export const Contact = () => {
+const Contact = () => {
   return (
     <>
       <div className={styles["container"]}>
@@ -14,7 +14,6 @@ export const Contact = () => {
         <article className={styles["contact"]}>
           <div className={styles["contactSection"]}>
             <div className={styles["info-form"]}>
-            
               <ul className={styles["ul"]}>
                 <li className={styles["li"]}>Comics-shop number:</li>
                 <li className={styles["li"]}>088 777 6667</li>
@@ -50,3 +49,4 @@ export const Contact = () => {
     </>
   );
 };
+export default Contact;
