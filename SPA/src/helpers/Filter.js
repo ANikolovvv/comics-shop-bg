@@ -1,4 +1,4 @@
-export const Filter = (currentItems, search, authors) => {
+export const filteredData = (currentItems, search, authors) => {
   const { minPrice, maxPrice, minYear, maxYear } = search;
   let data = currentItems;
 
