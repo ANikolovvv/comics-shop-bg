@@ -49,7 +49,8 @@ html {
 :root {
   --c1: rgba(168, 239, 255, 1);
   --c2: rgba(168, 239, 255, 0.1);
-  --c3: #168dff;;
+  --c3: #168dff;
+  --c4:#161A1D;
 }
 body {
   font-family: "Amaranth", sans-serif;
@@ -62,7 +63,6 @@ body {
   --nav-load-link-time: 600ms;
   scroll-behavior: smooth;
   overflow-y: auto;
- 
 }
 
 .main {
@@ -80,7 +80,13 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-duration: 1000ms;
 }
-
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  text-align: center;
+  color: black;
+}
 input {
   font-size: 16px;
   border-radius: 15px;
@@ -89,14 +95,7 @@ input {
   padding: 5px;
   text-align: center;
 }
-input:hover {
-  background-image: linear-gradient(
-    45deg,
-    #6bc6c6 0%,
-    #19f0a8 51%,
-    #93ff2f 100%
-  );
-}
+
 i {
   font-size: 16px;
   color: #c2410c;
@@ -113,7 +112,7 @@ label {
 @media (max-width: 1200px) {
 }
 @media (max-width: 1024px) {
-  .art h1 {
+  h1 {
     font-size: 18px;
   }
   .error-form {
@@ -144,7 +143,7 @@ label {
 @media (max-width: 996px) {
 }
 @media (max-width: 800px) {
-  .art h1 {
+  h1 {
     font-size: 18px;
   }
   .error-form {
