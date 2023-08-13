@@ -1,5 +1,5 @@
+import Button from "../UI/Button/Button";
 import styles from "./TopFive.module.css";
-import { Link } from "react-router-dom";
 
 export function Top(props) {
   const data = props.info;
@@ -12,9 +12,7 @@ export function Top(props) {
       </div>
 
       <div>
-        <Link className={styles["btn"]} to={`/details/${data._id}`}>
-          Read more
-        </Link>
+        <Button to={`/details/${data._id}`}>Read more</Button>
       </div>
       <ul className={styles["star"]}>
         <li>
