@@ -6,18 +6,16 @@ export function Top(props) {
 
   return (
     <div className={styles["home"]}>
-      <p className={styles["date-title"]}>{data.title}</p>
-
-      <div className={styles["div-img"]}>
+      <h2 className={styles["title"]}>{data.title}</h2>
+      <div className={styles["box__img"]}>
         <img src={data.imageUrl} id="image" alt=".." />
       </div>
 
       <div>
-        <Link className={styles["button-top"]} to={`/details/${data._id}`}>
+        <Link className={styles["btn"]} to={`/details/${data._id}`}>
           Read more
         </Link>
       </div>
-      <p className={styles["date-title"]}>Raiting: {data.userLiked.length}</p>
       <ul className={styles["star"]}>
         <li>
           <i className="fa-solid fa-star"></i>
