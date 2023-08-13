@@ -25,29 +25,32 @@ function Home({ comic }) {
   }, 2000);
 
   return (
-    <>
+    <div className={styles["page"]}>
       <article className={styles["art"]}>
         <h1>Welcome to comics-shop.bg</h1>
-        <p>Best Comics of 2022 </p>
+        <h2>Best Comics of 2022 </h2>
       </article>
       <div className={styles["container"]}>
-        <div className={styles["info"]}>
+        <div className={styles["right-page"]}>
           {comics.length > 0 ? <Top info={comics[count]}></Top> : <Spinner />}
         </div>
-        <article className={styles["home-art"]}>
+        <div className={styles["left-page"]}>
           <div className={styles["art-info"]}>
             <i className="fa-solid fa-book"> comics-shop.bg</i>
             <p>
-              comics-shop.bg is an app for buying online comics.Inside the app
-              you can find different comics from different countries, and you
-              can order a comics which we don't have in the moment.You may
-              cancel and update an online order for any reason at any time up to
-              the end of the fifth working day, after you place your order.
+              "Discover the world of comics with comics-shop.bg – your gateway
+              to a diverse collection of online comic books. Immerse yourself in
+              a treasure trove of captivating narratives from various countries.
+              If you stumble upon a comic that's not currently available, worry
+              not – you have the power to request it. We offer the flexibility
+              to modify or cancel your online order anytime within the first
+              five business days after placing it, ensuring your satisfaction is
+              our priority."
             </p>
           </div>
-        </article>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 export default Home;
