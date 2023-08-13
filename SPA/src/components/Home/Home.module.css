@@ -1,79 +1,88 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
 
+.page {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 .container {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
-  min-height: 750px ;
+  width: 80%;
+  border: 15px solid black;
+  border-radius: 5px;
+  background-color:   #161A1D;
+  color: #ffffff;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
-.info {
+
+.left-page,
+.right-page {
+  width: 50%;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right-page {
   display: flex;
   justify-content: center;
-  width: 50%;
-  height: 100%;
   order: 2;
-  flex-shrink: initial;
+  border-left: 4px solid rgb(0, 0, 0);
+}
+.left-page {
+  display: flex;
+  flex-direction: column;
+  border-right: 4px solid rgb(0, 0, 0);
 }
 
 .art h1 {
-  font-family: "Luckiest Guy", cursive;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 700;
   letter-spacing: 0.025em;
   text-align: center;
-  color: #6a6868;
+  color: black;
+ 
 }
-.art p {
-  display: flex;
-  justify-content: center;
-  font-family: "Luckiest Guy", cursive;
-  font-size: 15px;
+.art h2 {
   letter-spacing: 0.025em;
   text-align: center;
-  color: #6a6868;
-}
-
-.home-art {
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: black;
+  
 }
 
 .art-info {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
   font-weight: bolder;
-  font-family: "Playfair Display", serif;
+  color: #ffffff;
   gap: 10px;
 }
 .art-info > i {
   font-size: 18px;
   font-weight: bold;
-  color: #6a6868;
-  --tw-shadow: 0 20px 25px -5px rgba(227, 216, 216, 0.1),
-  0 8px 10px -6px rgba(212, 196, 196, 0.74);
---tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
-  0 8px 10px -6px var(--tw-shadow-color);
-box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(217, 220, 224, 0.945)),
-  var(--tw-ring-shadow, 0 0 rgba(249, 247, 247, 0)), var(--tw-shadow);
+  color: #ffffff;
+  
+  
 }
 .art-info p {
   text-align: left;
   font-size: 22px;
   letter-spacing: 1px;
   padding: 15px;
-  font-family: "Merriweather", serif;
-  color: rgb(95, 89, 89);
   font-weight: 500;
 }
-
 @media (max-width: 1382px) {
 }
 @media (max-width: 1024px) {
@@ -114,7 +123,7 @@ box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(217, 220, 224, 0.945)),
   .info {
     width: 100%;
   }
-  .home-art {
+  .left-page {
     width: 100%;
   }
   .art h1 {
