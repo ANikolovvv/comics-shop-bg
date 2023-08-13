@@ -13,10 +13,10 @@ const Header = () => {
   const { user } = useContext(AuthContexts);
   const [toggle, setToggle] = useState(false);
 
-  const navigationHandler=()=> {
+  const navigationHandler = () => {
     setToggle(!toggle);
-    console.log(toggle)
-  }
+    console.log(toggle);
+  };
 
   return (
     <>
@@ -25,6 +25,7 @@ const Header = () => {
           <div className={styles["logo"]}>
             <img src={logo} className={styles["logo-img"]} alt="LOGO"></img>
           </div>
+        
           <div className={styles["nav-small"]} onClick={navigationHandler}>
             {toggle ? (
               <div className={styles["small"]}>
@@ -37,50 +38,50 @@ const Header = () => {
             )}
           </div>
           <div className={styles["nav-box"]}>
-            <ul className={styles["btno"]}>
+            <ul className={styles["box__ul"]}>
               <li>
-                <Link className={styles["btn"]} to="/">
+                <Link className={styles["link"]} to="/">
                   Home
                 </Link>
               </li>
               <li>
-                <Link className={styles["btn"]} to="/catalog">
-                  Catalog
+                <Link className={styles["link"]} to="/catalog">
+                Catalog
                 </Link>
               </li>
               <li>
-                <Link className={styles["btn"]} to="/about">
+                <Link className={styles["link"]} to="/about">
                   Contact us
                 </Link>
               </li>
             </ul>
             {!user.email ? (
-              <ul className={styles["btno"]}>
+              <ul className={styles["box__ul"]}>
                 <li>
-                  <Link className={styles["btn"]} to="/login">
+                  <Link className={styles["link"]} to="/login">
                     Login
                   </Link>
                 </li>
                 <li>
-                  <Link className={styles["btn"]} to="/register">
+                  <Link className={styles["link"]} to="/register">
                     Register
                   </Link>
                 </li>
               </ul>
             ) : (
-              <ul className={styles["btno"]}>
+              <ul className={styles["box__ul"]}>
                 <li>
-                  <Link className={styles["btn"]} to="/create">
+                  <Link className={styles["link"]} to="/create">
                     Orders
                   </Link>
                 </li>
                 <li>
-                  <Link className={styles["btn"]} to="/my-orders">
+                  <Link className={styles["link"]} to="/my-orders">
                     My Orders
                   </Link>
                 </li>
                 <li>
-                  <Link className={styles["btn"]} to="/logout">
+                  <Link className={styles["link"]} to="/logout">
                     Logout
                   </Link>
                 </li>
