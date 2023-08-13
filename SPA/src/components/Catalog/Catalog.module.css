@@ -1,35 +1,39 @@
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 750px;
+}
+.box__title {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+.box__title {
+  margin-top: 10px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  min-height: 750px ;
+  min-height: 750px;
+  gap: 10px;
 }
-.div_error {
-  text-align: center;
-  align-items: center;
-  height: 25px;
-  margin-bottom: 0;
-}
+
 .span_error {
   color: red;
   margin-bottom: 5px;
 }
-.art h1 {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 20px;
-  letter-spacing: 5px;
-  text-align: center;
-  color: #d7d6d6;
-}
-.art p {
-  font-weight: 700;
-  font-family: "Luckiest Guy", cursive;
-  font-size: 15px;
-  letter-spacing: 5px;
-  text-align: center;
-  display: block;
-}
+
 .link {
   margin: 0, auto;
   color: aliceblue;
