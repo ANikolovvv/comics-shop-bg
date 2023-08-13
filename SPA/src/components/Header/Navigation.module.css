@@ -18,19 +18,19 @@
     transform: translateX(0);
   }
 }
-.box_ul {
+.box__ul {
   margin-top: 80px;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-.links .btno {
+.links .box__links {
   margin: 0;
   padding: 0;
   list-style: none;
   text-align: left;
 }
-.links .box_ul > .btno > li {
+.links .box__ul  .box__links  li {
   display: flex;
   justify-content: left;
   text-align: center;
@@ -41,15 +41,15 @@
   text-transform: uppercase;
   font-weight: 800;
 }
-.links .btno .btn {
+.links .box__links .link {
   color: #6a6868;
   text-decoration: none;
   cursor: pointer;
 }
-.btn:hover {
+.link:hover {
   border-bottom-width: 1px;
 }
-.links .btno .btn:hover {
+.links .box__links .link:hover {
   opacity: 0.5;
 }
 .react-icons {
@@ -88,7 +88,7 @@
   }
 }
 @media (max-width: 640px) {
-  .links .btno .btn {
+  .links .box__links .link {
     font-size: 14px;
   }
   .links {
@@ -105,7 +105,7 @@
   .links {
     width: 50%;
   }
-  .links .btno .btn {
+  .links .box__links .link {
     font-size: 12px;
   }
   .react-icons {
