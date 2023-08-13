@@ -15,32 +15,32 @@ function Navigation(props) {
         </div>
       </div>
 
-      <div className={styles["box_ul"]}>
-        <ul className={styles["btno"]}>
+      <div className={styles["box__ul"]}>
+        <ul className={styles["box__links"]}>
           <li>
-            <Link className={styles["btn"]} to="/">
+            <Link className={styles["link"]} to="/">
               Home
             </Link>
           </li>
           <li>
-            <Link className={styles["btn"]} to="/catalog">
+            <Link className={styles["link"]} to="/catalog">
               Catalog
             </Link>
           </li>
           <li>
-            <Link className={styles["btn"]} to="/about">
+            <Link className={styles["link"]} to="/about">
               Contact us
             </Link>
           </li>
           {!user.email ? (
             <>
               <li>
-                <Link className={styles["btn"]} to="/login">
+                <Link className={styles["link"]} to="/login">
                   Login
                 </Link>
               </li>
               <li>
-                <Link className={styles["btn"]} to="/register">
+                <Link className={styles["link"]} to="/register">
                   Register
                 </Link>
               </li>
@@ -48,17 +48,17 @@ function Navigation(props) {
           ) : (
             <>
               <li>
-                <Link className={styles["btn"]} to="/create">
+                <Link className={styles["link"]} to="/create">
                   Orders
                 </Link>
               </li>
               <li>
-                <Link className={styles["btn"]} to="/my-orders">
+                <Link className={styles["link"]} to="/my-orders">
                   My Orders
                 </Link>
               </li>
               <li>
-                <Link className={styles["btn"]} to="/logout">
+                <Link className={styles["link"]} to="/logout">
                   Logout
                 </Link>
               </li>
