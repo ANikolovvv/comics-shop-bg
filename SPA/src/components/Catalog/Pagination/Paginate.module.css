@@ -8,6 +8,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .pagination {
@@ -21,13 +22,12 @@
   gap: 5px;
 }
 .page {
-  font-family: "Courier New", Courier, monospace;
-
   border-style: solid;
-  border-color: rgb(253, 244, 244);
+  border-color: var(--c3);
   color: rgb(249, 249, 249);
   padding: 4px 15px;
   cursor: pointer;
+  background-color: var(--c4);
   --tw-shadow: 0 10px 15px -5px rgba(255, 246, 246, 0.954),
     0 8px 10px -6px rgba(0, 0, 0, 0.74);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
