@@ -1,6 +1,6 @@
 import styles from "./Form.module.css";
 import { Errors } from "../Erorrs/Errors";
-import Li from "../UI/Li";
+import Li from "../UI/Li/Li";
 
 const Form = ({
   title,
