@@ -7,17 +7,17 @@ import { Spinner } from "../Spinner/Spinner";
 
 import styles from "./Catalog.module.css";
 import { Search } from "./Search/Search";
-import{filteredData} from "../../helpers/filter"
-
+import { filteredData } from "../../helpers/filter";
 
 const Catalog = ({ comics }) => {
   const { user } = useContext(AuthContexts);
-
   const [currentItems, setCurrentItems] = useState([]);
   const [currentdata, setCurrentData] = useState(false);
+
   const [searchError, setSearchError] = useState("");
   const [searchData, setSearch] = useState(false);
   const [selectedAuthors, setSelectedAuthors] = useState([]);
+  console.log(searchData);
 
   let data = [];
 
@@ -51,7 +51,6 @@ const Catalog = ({ comics }) => {
     const search = Object.fromEntries(formData);
 
     try {
-    
       if (!searchData) {
         data = filteredData(currentItems, search, selectedAuthors);
         setSearch(true);
@@ -62,22 +61,23 @@ const Catalog = ({ comics }) => {
       setCurrentItems(data);
     } catch (error) {
       setSearchError(error.message);
-      
     }
   };
   return (
-    <>
-      <article className={styles["art"]}>
+    <div className={styles["box"]}>
+      <div className={styles["box__title"]}>
         <h1>Catalog</h1>
-        <div className={styles["div_error"]}>
-          {searchError && (
-            <span className={styles.span_error}>{searchError}</span>
-          )}
-        </div>
-      </article>
+      </div>
+
+      <div className={styles["div_error"]}>
+        {searchError && (
+          <span className={styles.span_error}>{searchError}</span>
+        )}
+      </div>
+
       <div className={styles["container"]}>
         {currentdata === false && <Spinner />}
-        
+
         <Search
           onSubmit={searchHendler}
           comics={comics}
@@ -87,6 +87,7 @@ const Catalog = ({ comics }) => {
           authors={setSelectedAuthors}
           selectedAuthors={selectedAuthors}
         />
+
         {searchData && currentItems.length === 0 && (
           <div className={styles["div_error"]}>
             <span className={styles.span_error}>
@@ -114,7 +115,7 @@ const Catalog = ({ comics }) => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
