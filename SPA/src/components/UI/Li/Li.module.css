@@ -1,0 +1,66 @@
+.box__li {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  letter-spacing: 2px;
+  gap: 10px;
+  position: relative;
+}
+.link-form {
+  color: #6a6868;
+  font-weight: bold;
+}
+.btn {
+  margin: 5px;
+  color: #fff;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: 3px 15px;
+  border-radius: 15px;
+  border: 2px solid rgba(243, 240, 240, 0.799);
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease 0.1s;
+  cursor: pointer;
+}
+.btn:hover {
+  background-image: linear-gradient(
+    45deg,
+    #6bc6c6 0%,
+    #19f0a8 51%,
+    #93ff2f 100%
+  );
+}
+.payment {
+  border-radius: 15px;
+  margin: 2px 0;
+  font-size: 18px;
+  padding: 7px 1;
+  border: 10px solid rgb(241, 243, 243);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #6a6868;
+  color: white;
+  outline: none;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.error-form {
+  width: 100%;
+  text-align: left;
+  position: absolute;
+  top: 110%;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  color: rgb(247, 5, 5);
+  font-size: 15px;
+  text-align: center;
+  padding: 5px 5px;
+  font-family: "Courier New", Courier, monospace;
+}
