@@ -40,7 +40,7 @@ export const Search = ({
         name="search"
         onSubmit={onSubmit}
       >
-        <div>
+        <div className={styles["input__box"]}>
           <label>Price Range:</label>
           <input
             name="minPrice"
@@ -57,7 +57,7 @@ export const Search = ({
             onChange={(e) => setPriceMax(e.target.value)}
           />
         </div>
-        <div>
+        <div className={styles["input__box"]}>
           <label>Authors:</label>
           <select
             multiple
@@ -73,7 +73,7 @@ export const Search = ({
             ))}
           </select>
         </div>
-        <div>
+        <div className={styles["input__box"]}>
           <label>Year Range:</label>
           <input
             name="minYear"
@@ -90,10 +90,12 @@ export const Search = ({
             onChange={(e) => setYearMax(e.target.value)}
           />
         </div>
-        <button type="submit" value="Submit">
-          Search
-        </button>
-        <button onClick={resetForm}>Clear Filters</button>
+        <div className={styles["btns__box"]}>
+          <button type="submit" value="Submit">
+            Search
+          </button>
+          <button onClick={resetForm}>Clear Filters</button>
+        </div>
       </form>
     </div>
   );
