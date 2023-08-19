@@ -1,6 +1,7 @@
 import { useState, useEffect, useId, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import { AuthContexts } from "../../contexts/authContext";
+
 import * as requests from "../../services/server";
 import { Spinner } from "../Spinner/Spinner";
 import styles from "./Details.module.css";
@@ -13,12 +14,10 @@ const Details = () => {
   const [rating, setRating] = useState(0);
 
   let { id } = useParams();
-  //console.log(setAdmin);
   let key = useId();
 
   useEffect(() => {
     requests.getData(id).then((result) => {
-      //const user = JSON.parse(localStorage.getItem("user"));
       if (result !== undefined) {
         setComic(result);
         setCurrentData(true);
@@ -39,27 +38,44 @@ const Details = () => {
       setLike(true);
       setComic(like);
       setRating(num);
-    } catch (error) {
-      console.log(error, "like errr");
-    }
+    } catch (error) {}
   };
   return (
-    <>
-      <article className={styles["art"]}>
-        <h1>More details</h1>
-      </article>
+    <div className={styles["details__page"]}>
       {currentdata === false && <Spinner />}
+
       <div className={styles["container"]}>
+        <div className={styles["box-img"]}>
+          <img
+            src={comic.imageUrl}
+            className={styles["container img"]}
+            alt={comic.title}
+          />
+        </div>
+
         <div className={styles["product-details"]}>
           <h1>{comic.title}</h1>
 
-          <span className={styles["hint-star star"]}>
-            <i className={styles["fa fa-star"]} aria-hidden="true"></i>
-            <i className={styles["fa fa-star"]} aria-hidden="true"></i>
-            <i className={styles["fa fa-star"]} aria-hidden="true"></i>
-            <i className={styles["fa fa-star-half-o"]} aria-hidden="true"></i>
-            <i className={styles["fa fa-star-o"]} aria-hidden="true"></i>
-          </span>
+          <div className={styles["info"]}>
+            <h2>The Description</h2>
+            <ul className={styles["ul__box"]}>
+              <li key={key}>
+                Author: <span> {comic.author}</span>
+              </li>
+              <li key={`${key}-price`}>
+                Price:
+                <span> {comic.price}</span>
+              </li>
+              <li key={`${key}-date`}>
+                Release data:
+                <span> {comic.year}</span>
+              </li>
+              <li key={`${key}-raiting`}>
+                Rating:
+                <span> {rating}</span>
+              </li>
+            </ul>
+          </div>
 
           <p className={styles["information"]}>{comic.description}</p>
           {user.email ? (
@@ -90,40 +106,8 @@ const Details = () => {
             </div>
           )}
         </div>
-
-        <div className={styles["product-image"]}>
-          <div className={styles["box-img"]}>
-            <img
-              src={comic.imageUrl}
-              className={styles["container img"]}
-              alt={comic.title}
-            />
-          </div>
-
-          <div className={styles["info"]}>
-            <h2>The Description</h2>
-            <ul>
-              <li key={key}>
-                <strong>Author: </strong>
-                {comic.author}
-              </li>
-              <li key={`${key}-price`}>
-                <strong>Price: </strong>
-                {comic.price}
-              </li>
-              <li key={`${key}-date`}>
-                <strong>Release data: </strong>
-                {comic.year}
-              </li>
-              <li key={`${key}-raiting`}>
-                <strong>Rating: </strong>
-                {rating}
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Details;
