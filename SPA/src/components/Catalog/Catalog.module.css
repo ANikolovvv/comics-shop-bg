@@ -18,6 +18,7 @@
 }
 .box__title {
   margin-top: 10px;
+  margin-bottom: 0px;
 }
 
 .container {
@@ -26,7 +27,7 @@
   justify-content: center;
   width: 100%;
   min-height: 750px;
-  gap: 10px;
+  gap: 30px;
 }
 
 .span_error {
