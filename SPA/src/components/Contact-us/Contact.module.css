@@ -1,25 +1,29 @@
 .container {
-  margin: 0 auto;
+  min-height: 750px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 20px;
-  height: 750px;
+
 }
+
 .contact {
+  width: 80%;
+  height: 500px;
   display: flex;
-  margin: 0 auto;
+  flex-direction: row;
   justify-content: center;
+  text-align: center;
+  align-items: center;
   border-radius: 5px;
-  --tw-shadow: 0 10px 15px -5px rgba(255, 246, 246, 0.954),
-    0 8px 10px -6px rgba(0, 0, 0, 0.74);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
-    0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(190, 193, 197, 0.945)),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  border-radius: 5px;
+  gap: 10px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+
 }
+
 .contactSection {
   display: flex;
   flex-direction: row;
@@ -27,31 +31,27 @@
   background-repeat: no-repeat;
   color: white;
   box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0);
+  width: 100%;
   height: 100%;
 }
 
-.art h1 {
-  font-family: "Luckiest Guy", cursive;
-  font-size: 20px;
-  letter-spacing: 5px;
-  text-align: center;
-  color: #6a6868;
-}
-
 .info-form {
-  width: 30%;
-  padding: 0, 10px;
+  width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-
+  background-color: var(--c4);
+  color: var(--c3);
   border-right: 5px solid rgba(30, 30, 30, 0.8);
-  text-align: left;
+  text-align: center;
   font-weight: bolder;
 }
 .ul {
   text-decoration: none;
-  margin: 0;
+  margin: 10px 0px;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -61,27 +61,23 @@
   gap: 10px;
 }
 .li {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
   font-weight: bolder;
   font-size: 18px;
-  text-align: left;
-  color: #6a6868;
 }
 
-.icon {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.div-icon {
-  width: 30%;
+.li span {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: aqua;
 }
 .react-icons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   text-align: center;
   align-items: center;
-  margin: 18px 0px;
+  gap: 10px;
   padding-left: 5px;
   width: 100%;
 }
@@ -112,10 +108,7 @@
   .container {
     gap: 50px;
   }
-  .art h1 {
-    font-size: 18px;
-    font-weight: 300;
-  }
+
   .contact {
     width: 90%;
   }
@@ -137,16 +130,12 @@
   .contactSection {
     width: 100%;
   }
-  .div-icon {
-    display: none;
-  }
+
   .info-form {
     width: 100%;
     font-size: 16px;
   }
-  .art h1 {
-    font-size: 18px;
-  }
+
   .contact {
     width: 100%;
   }
@@ -164,9 +153,7 @@
     width: 80%;
     box-shadow: none;
   }
-  .div-icon {
-    display: none;
-  }
+
   .contactSection {
     width: 100%;
     display: flex;
@@ -178,9 +165,7 @@
     width: 100%;
     border-right: none;
   }
-  .art h1 {
-    font-size: 16px;
-  }
+
   .contact {
     width: 100%;
     height: 100%;
