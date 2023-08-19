@@ -36,9 +36,9 @@ export const Map = () => {
   return (
     <div id="map" className={styles["map"]}>
       <ul className={styles["sidebar"]}>
-        <li>Longitude: {lng} |</li>
-        <li>Latitude: {lat} |</li>
-        <li>Zoom: {zoom}</li>
+        <li>Longitude: <span>{lng}</span> </li>
+        <li>Latitude: <span>{lat}</span> </li>
+        <li>Zoom: <span>{zoom}</span></li>
       </ul>
       <div ref={mapContainer} className={styles["map-container"]} />
     </div>
