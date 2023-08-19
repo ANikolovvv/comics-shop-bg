@@ -1,55 +1,75 @@
 
 
 .searchForm {
-  max-width: 700px;
+  width: 40%;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
   gap: 10px;
-  background-image: linear-gradient(
-    45deg,
-    #009999 0%,
-    #03105e 51%,
-    #06001d 100%
-  );
+  background-color: var(--c4);
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
   border-radius: 10px;
+  border: 2px solid var(--c3);
+
+}
+.input__box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.input__box input{
+  margin: 0;
+  padding: 5px;
+  border: 2px solid var(--c3);
+  color: rgb(13, 12, 12);
+  border-radius: 5px;
 }
 
 .searchForm label {
   font-weight: bold;
-  margin-bottom: 5px;
-  color: aliceblue;
+  color: var(--c3);
 }
 
-.searchForm input[type="number"],
 .searchForm select {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
   appearance: none;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 2px solid #ccc;
+  border: 2px solid var(--c3);
   border-radius: 5px;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--c4);
+  color: var(--c3);
   cursor: pointer;
   transition: border-color 0.3s;
 }
 .searchForm select:hover {
-  border-color: #1BFFFF;
+  border-color: #f8f8f8;
 }
 .searchForm option:hover {
-  background-color: #1BFFFF;
-  color: #fff;
+  background-color: #ffffff;
+  color: black;
 }
-
+.btns__box{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
 .searchForm button {
   display: block;
-  width: 100%;
-  padding: 10px;
+  padding: 5px 10px;
+  background-color:white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.searchForm button:hover{
   background-image: linear-gradient(
     45deg,
     #005299 0%,
@@ -57,12 +77,7 @@
     #000000 100%
   );
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
 }
-
 .searchForm span {
   color: red;
   font-size: 12px;
