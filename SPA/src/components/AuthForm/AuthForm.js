@@ -12,7 +12,7 @@ import { onLogin, regUsers } from "../../services/server";
 const AuthForm = ({ title, to, pic }) => {
   const navigation = useNavigate();
   const isLogin = title.includes("Login");
-  console.log(isLogin);
+
   const { userLogin } = useContext(AuthContexts);
   const [errors, setErrors] = useState({});
   const [userErr, setUserErr] = useState([]);
@@ -79,57 +79,41 @@ const AuthForm = ({ title, to, pic }) => {
     }
   };
   return (
-    <div className={styles["signupSection"]}>
-      <div className={styles["image-box"]}>
-        <img className={styles["icon"]} src={pic} alt="..." />
-      </div>
-      <form
-        action="#"
-        method="POST"
-        className={styles["signupForm"]}
-        onSubmit={formHandler}
-      >
-        <div className={styles["title"]}>
-          <h1>{title}</h1>
+    <div className={styles["auth__box"]}>
+      <div className={styles["signupSection"]}>
+        <div className={styles["image-box"]}>
+          <img className={styles["icon"]} src={pic} alt="..." />
         </div>
-        <ul className={styles["box__li"]}>
-          <Li
-            type={"email"}
-            name="email"
-            value={value.email || ""}
-            message={[
-              errors.email,
-              "Email is not valid - valid email red@abv.bg!",
-              8,
-            ]}
-            minLength={minLength}
-            onChange={changeHendler}
-            icon={"fa-solid fa-envelope"}
-          >
-            Email
-          </Li>
+        <form
+          action="#"
+          method="POST"
+          className={styles["signupForm"]}
+          onSubmit={formHandler}
+        >
+          <div className={styles["title"]}>
+            <h1>{title}</h1>
+          </div>
+          <ul className={styles["box__li"]}>
+            <Li
+              type={"email"}
+              name="email"
+              value={value.email || ""}
+              message={[
+                errors.email,
+                "Email is not valid - valid email red@abv.bg!",
+                8,
+              ]}
+              minLength={minLength}
+              onChange={changeHendler}
+              icon={"fa-solid fa-envelope"}
+            >
+              Email
+            </Li>
 
-          <Li
-            type={"password"}
-            name="password"
-            value={value.password || ""}
-            message={[
-              errors.password,
-              "Password should be at least 4 characters long!",
-              4,
-            ]}
-            minLength={minLength}
-            onChange={changeHendler}
-            icon={"fa-solid fa-lock"}
-          >
-            Password
-          </Li>
-
-          {!isLogin && (
             <Li
               type={"password"}
               name="password"
-              value={value.rePass || ""}
+              value={value.password || ""}
               message={[
                 errors.password,
                 "Password should be at least 4 characters long!",
@@ -139,30 +123,48 @@ const AuthForm = ({ title, to, pic }) => {
               onChange={changeHendler}
               icon={"fa-solid fa-lock"}
             >
-              Confirm password
+              Password
             </Li>
-          )}
-          <div id="center-btn">
-            <button
-              type="submit"
-              className={styles["join-btn"]}
-              name="join"
-              alt=""
-            >
-              {title}
-            </button>
-            <div className={styles["box-h1"]}>
-              <h2 className={styles["click"]}>
+
+            {!isLogin && (
+              <Li
+                type={"password"}
+                name="rePass"
+                value={value.rePass || ""}
+                message={[
+                  errors.rePass,
+                  "Passwords don't match!",
+                  4,
+                ]}
+                minLength={minLength}
+                onChange={changeHendler}
+                icon={"fa-solid fa-lock"}
+              >
+                Confirm password
+              </Li>
+            )}
+            <div className={styles["box__submit"]}>
+              <button
+                type="submit"
+                className={styles["join-btn"]}
+                name="join"
+                alt=""
+              >
                 {title}
-                <Link className={styles["link-form"]} to={to}>
-                  click here!
-                </Link>
-              </h2>
+              </button>
+              <div className={styles["box-h1"]}>
+                <h2 className={styles["click"]}>
+                  {!isLogin ? "Login" : "Register"}
+                  <Link className={styles["link-form"]} to={to}>
+                    click here!
+                  </Link>
+                </h2>
+              </div>
             </div>
-          </div>
-        </ul>
-      </form>
-      {userErr.length > 0 && <Errors error={userErr}></Errors>}
+          </ul>
+        </form>
+        {userErr.length > 0 && <Errors error={userErr}></Errors>}
+      </div>
     </div>
   );
 };
