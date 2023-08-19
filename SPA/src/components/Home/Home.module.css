@@ -17,12 +17,16 @@
   width: 80%;
   border: 15px solid black;
   border-radius: 5px;
-  background-color:   #161A1D;
+  background-color: #161a1d;
   color: #ffffff;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+  transform: perspective(900px) rotateX(60deg) scale(0.7);
+  transition: 0.5s ease all;
 }
-
+.container:hover {
+  transform: rotate(0deg) scale(1) translateY(10px);
+}
 .left-page,
 .right-page {
   width: 50%;
@@ -49,7 +53,6 @@
   letter-spacing: 0.025em;
   text-align: center;
   color: black;
- 
 }
 .art h2 {
   letter-spacing: 0.025em;
@@ -57,7 +60,6 @@
   font-weight: 700;
   font-size: 18px;
   color: black;
-  
 }
 
 .art-info {
@@ -73,8 +75,6 @@
   font-size: 18px;
   font-weight: bold;
   color: #ffffff;
-  
-  
 }
 .art-info p {
   text-align: left;
