@@ -18,7 +18,7 @@
   background-color: var(--c4);
   border-radius: 10px;
   transform: perspective(75em) rotateX(18deg);
-  box-shadow: 4px 4px 8px 4px var(--c3);
+  box-shadow: 4px 4px var(--c3);
 }
 
 .product-details {
@@ -56,6 +56,7 @@
   width: 100%;
   height: 100%;
   object-fit: fill;
+  border-radius: 10px;
 }
 
 .info h2 {
