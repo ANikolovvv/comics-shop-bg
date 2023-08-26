@@ -36,44 +36,30 @@
 }
 
 .link {
-  margin: 0, auto;
-  color: aliceblue;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
-  font-family: "Luckiest Guy", cursive;
-  letter-spacing: 5px;
-  text-align: center;
-  text-decoration: none;
+  letter-spacing: 2px;
 }
 .click {
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   font-weight: bolder;
   text-decoration: none;
-  letter-spacing: 3px;
-  border-color: #000000;
+  letter-spacing: 2px;
+  border-color: var(--c3);
   border-style: solid;
-  color: rgb(247, 247, 247);
-  background-image: linear-gradient(
-    45deg,
-    #6bc6c6 0%,
-    #19f0a8 51%,
-    #93ff2f 100%
-  );
+  color: black;
   font-size: 18px;
-  padding: 15px;
+  padding: 5px 10px;
 }
 .click:hover {
-  color: #b00303;
-  background-image: linear-gradient(
-    45deg,
-    #a70d0d 0%,
-    #f0af19 51%,
-    #051e8e 100%
-  );
+  color: white;
+  background-color: var(--c3);
 }
+
 @media (max-width: 1024px) {
   .art h1 {
     font-size: 18px;
