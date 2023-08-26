@@ -9,13 +9,11 @@ import { images } from "../../helpers/images";
 import { getData } from "../../services/server";
 import Form from "../Form/Form";
 
-
 const Edit = ({ title, name }) => {
   const { user } = useContext(AuthContexts);
   const [comics, setComics] = useState({});
   const [value, setValue] = useState({});
   const [errors, setErrors] = useState({});
-  const [serverError, setServerErr] = useState([]);
 
   let { id } = useParams();
 
@@ -39,18 +37,6 @@ const Edit = ({ title, name }) => {
       });
     });
   }, [id, name]);
-
-  useEffect(() => {
-    if (serverError.length > 0) {
-      const timer = setTimeout(() => {
-        setServerErr([]);
-      }, 3000);
-
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [serverError]);
 
   const changeHendler = (e) => {
     setValue((state) => ({
@@ -97,22 +83,20 @@ const Edit = ({ title, name }) => {
 
       navigation("/my-orders");
     } catch (err) {
-      console.log(err);
-      setServerErr(err.message);
+      window.alert(err.message);
     }
   };
   return (
     <Form
-    title={title}
-    pic={images[1]}
-    formHandler={formHandler}
-    changeHendler={changeHendler}
-    minLength={minLength}
-    value={value}
-    errors={errors}
-    serverError={serverError}
-    isNumber={isNumber}
-  />
+      title={title}
+      pic={images[1]}
+      formHandler={formHandler}
+      changeHendler={changeHendler}
+      minLength={minLength}
+      value={value}
+      errors={errors}
+      isNumber={isNumber}
+    />
   );
 };
 export default Edit;
