@@ -1,37 +1,42 @@
-@import url("https://use.fontawesome.com/releases/v6.2.0/css/all.css");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap");
 * {
   font-family: "Playfair Display", serif;
 }
 
-h1 {
-  font-family: "Luckiest Guy", cursive;
-  font-size: 20px;
-  letter-spacing: 6px;
-  text-align: center;
-  color: #6a6868;
-  font-weight: 500;
+.form__container {
+  width: 100%;
+  min-height: 870px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .signupSection {
+  margin: 0 auto;
+  width: 60%;
+  height: 750px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;
-  align-items: center;
-  min-height: 750px;
-}
-.title {
-  color: #6a6868;
-  margin: 0;
-  padding: 0;
-  letter-spacing: 2px;
+  background-color: var(--c4);
+  border-radius: 10px;
+  transform: perspective(75em) rotateX(18deg);
+  box-shadow: 4px 4px 8px 4px var(--c3);
 }
 
+.title h1 {
+  color: var(--c3);
+  margin: 0;
+  padding: 0;
+  letter-spacing: 3px;
+}
 .image-box {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 740px;
+  height: 750px;
+  border-right: 4px solid var(--c3);
 }
 .icon {
   width: 100%;
@@ -39,85 +44,76 @@ h1 {
   object-fit: fill;
 }
 
-
-
 .signupForm {
-  height: 700px;
-  padding: 0px 0;
-  transition: 0.2s;
-  --tw-shadow: 0 10px 15px -5px rgba(255, 246, 246, 0.954),
-    0 8px 10px -6px rgba(205, 202, 202, 0.74);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
-    0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(190, 193, 197, 0.945)),
-    var(--tw-ring-shadow, 0 0 rgba(245, 239, 239, 0.487)), var(--tw-shadow);
-  border-radius: 5px;
-  align-items: center;
-  text-align: center;
-}
-
-.box__li {
+  height: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  gap: 20px;
-  padding: 0;
+  flex-direction: column;
+  gap: 5px;
 }
-.box__li li {
+.box__li {
+  height: 80%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+}
+.box__submit {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  list-style: none;
-  letter-spacing: 2px;
+  align-items: center;
   gap: 10px;
-  position: relative;
-}
-.link-form {
-  color: #6a6868;
-  font-weight: bold;
-}
-.btn {
-  margin: 5px;
-  color: #fff;
-  background: transparent;
-  font-size: 18px;
-  font-weight: 400;
-  text-transform: capitalize;
-  padding: 3px 15px;
-  border-radius: 15px;
-  border: 2px solid rgba(243, 240, 240, 0.799);
-  position: relative;
-  z-index: 1;
-  transition: all 0.3s ease 0.1s;
-  cursor: pointer;
-}
-.btn:hover {
-  background-image: linear-gradient(
-    45deg,
-    #6bc6c6 0%,
-    #19f0a8 51%,
-    #93ff2f 100%
-  );
-}
-.payment {
-  border-radius: 15px;
-  margin: 2px 0;
-  font-size: 18px;
-  padding: 7px 1;
-  border: 10px solid rgb(241, 243, 243);
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background-color: #6a6868;
-  color: white;
-  outline: none;
-  letter-spacing: 2px;
-  text-align: center;
 }
 
+.join-btn {
+  display: block;
+  font-size: 18px;
+  padding: 5px 15px;
+  border: 2px solid var(--c3);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.join-btn:hover {
+  background-image: linear-gradient(
+    45deg,
+    #005299 0%,
+    #0564c9 51%,
+    #000000 100%
+  );
+  color: white;
+}
+.link-form {
+  font-size: 18px;
+  letter-spacing: normal;
+  text-decoration: none;
+  color: rgb(200, 200, 200);
+  cursor: pointer;
+}
+.link-form:hover {
+  color: rgba(67, 65, 65, 0.8);
+}
+
+.box-h1 {
+  margin: 0;
+  padding: 0;
+}
+.box-h1 h2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: var(--c3);
+  font-size: 18px;
+  gap: 10px;
+}
+.box-h1 h2 a {
+  color: aqua;
+}
+::placeholder {
+  color: black;
+}
 .error-form {
   width: 100%;
   text-align: left;
@@ -129,9 +125,33 @@ h1 {
   font-size: 15px;
   text-align: center;
   padding: 5px 5px;
-  font-family: "Courier New", Courier, monospace;
 }
-
+.payment{
+  padding: 10px 20px;
+  border: 2px solid var(--c3);
+  border-radius: 5px;
+  background-color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+.payment:hover{
+  background-color: var(--c3);
+  color: white;
+}
+.btn{
+  font-size: 16px;
+  padding: 10px 15px;
+  border: 2px solid var(--c3);
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: black;
+}
+.btn:hover{
+  background-color: var(--c3);
+  color: white;
+}
 @media (max-width: 1382px) {
   .error-form {
     font-size: 12px;
@@ -139,16 +159,11 @@ h1 {
   }
 }
 @media (max-width: 1024px) {
-   h1 {
+  h1 {
     font-size: 18px;
   }
-  .box__li {
-    gap: 35px;
-  }
-  .inputFields {
-    font-size: 12px;
-  }
-   h2 {
+
+  h2 {
     font-size: 18px;
     letter-spacing: 2px;
   }
@@ -163,166 +178,87 @@ h1 {
   }
 }
 @media (max-width: 800px) {
-   h1 {
+  .icon {
+    object-fit: cover;
+  }
+  .click {
     font-size: 16px;
+    margin-top: 20px;
   }
-  .signupSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 800px;
-    gap: 10px;
+  .join-btn {
+    padding: 3px 7px;
+    font-size: 14px;
   }
-
-  .signupForm {
-    height: 780px;
+  .link-form {
+    font-size: 18px;
   }
-  .info-form {
-    width: 100%;
-    height: 20px;
-    border-right: none;
-    display: none;
-  }
-  .box__li {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0;
-    padding: 0;
-    gap: 0px;
-  }
-  .box__li li label {
-    max-height: 50px;
-  }
-  .box__li li {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 25px;
-  }
-  .box__li li input {
-    text-align: center;
-    font-size: 12px;
-    width: 70%;
-  }
-  .box__li li i {
-    margin-top: 40px;
-  }
-
   .error-form {
     top: 102%;
-    width: 70%;
+    width: 100%;
     font-size: 14px;
     padding: 2px 5px;
-  }
-  .payment {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 14px;
-  }
-  .btn {
-    margin: 0 auto;
-    font-size: 14px;
-    width: 60%;
   }
 }
 @media (max-width: 600px) {
-  .box__li li label {
-    font-size: 12px;
-  }
-  .box__li li input {
-    font-size: 12px;
-  }
-  .payment {
-    font-size: 12px;
-    width: 90%;
-  }
-  .error-form {
-    font-size: 10px;
-    top: 92%;
-    padding: 2px 5px;
-  }
-  .btn {
-    font-size: 12px;
-    width: 60%;
-  }
-  .box__li {
-    gap: 35px;
-  }
-}
-@media (max-width: 480px) {
-  .art h1 {
-    font-size: 16px;
-  }
   .signupSection {
-    height: 850px;
-  }
-
-  .error-form {
-    top: 115%;
-  }
-
-  .box__li {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 0;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    max-height: 700px;
   }
-  .box__li li {
-    height: 65px;
+  .click {
+    font-size: 14px;
+    margin-top: 20px;
   }
-  .box__li li input {
-    text-align: center;
-    font-size: 12px;
-    width: 90%;
+  .info-form {
+    width: 100%;
+    max-height: 350px;
   }
-  .btn {
-    padding: 2px 8px;
-    font-size: 12px;
-    width: 70%;
+  .link-form {
+    font-size: 14px;
+    border-right: none;
   }
-  .payment {
-    margin-left: 5px;
+  .signupForm {
+    width: 100%;
+  }
+  .error-form {
     font-size: 10px;
-    margin: 0;
+    padding: 2px 5px;
   }
 }
-@media (max-width: 320px) {
-  .art h1 {
+@media (max-width: 480px) {
+  .click {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .info-form {
+    max-height: 300px;
+    border-right: none;
+  }
+  .link-form {
     font-size: 12px;
   }
-  .box__li {
-    grid-template-columns: repeat(1, 1fr);
-    margin: 0;
-    padding: 0;
-    gap: 20px;
+  .signupForm {
+    width: 100%;
+    max-height: 300px;
   }
-  .box__li li {
-    height: 60px;
-    margin: 0;
-    padding: 0;
-  }
-  .box__li li input {
-    text-align: center;
-    font-size: 12px;
-    width: 80%;
-  }
-  .btn {
-    font-size: 12px;
-  }
-  .image-box {
-    display: none;
-  }
-  .payment {
-    margin: 0 auto;
-    width: 80%;
+  .join-btn {
+    margin-top: 10px;
     font-size: 12px;
   }
   .error-form {
-    font-size: 14px;
-    top: -1%;
+    top: 115%;
+  }
+}
+@media (max-width: 320px) {
+  .join-btn {
+    padding: 1px;
+    font-size: 10px;
+  }
+  .error-form {
+    font-size: 8px;
     padding: 2px 5px;
   }
 }
