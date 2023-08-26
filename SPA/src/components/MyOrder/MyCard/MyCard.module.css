@@ -1,51 +1,49 @@
-.wraper {
-  width: 450px;
+.card {
+  width: 300px;
   text-align: center;
-  padding: 10px;
-  height: 550px;
+  height: 350px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow:  4px 6px 4px var(--c3);
 }
 
-.card {
-  border-style: solid;
-  --tw-shadow: 0 10px 15px -5px rgba(255, 246, 246, 0.954),
-    0 8px 10px -6px rgba(205, 202, 202, 0.74);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
-    0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(190, 193, 197, 0.945)),
-    var(--tw-ring-shadow, 0 0 rgba(245, 239, 239, 0.487)), var(--tw-shadow);
-  border-radius: 5px;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  text-align: center;
-  font-size: 20px;
-  font-family: sans-serif;
-  float: left;
-  margin: 1px;
+.card:hover {
+  box-shadow: 4px 4px 6px 4px var(--c1);
 }
+
 .img {
+  padding: 10px;
   width: 100%;
   height: 50%;
 }
 .card-img-top {
+  border-radius: 10px;
+  border: 2px solid var(--c3);
   width: 100%;
   height: 100%;
   object-fit: fill;
-  border-radius: 5px;
 }
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
-}
+
 .card-body {
   font-size: 10px;
   padding: 0;
   width: 100%;
   height: 50%;
 }
+
 .card-title {
+  font-family: "Courier New", Courier, monospace;
   font-size: 16px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: rgb(207, 100, 39);
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: var(--c3);
+}
+.card-body p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: var(--c4);
 }
 .buttons {
   display: flex;
@@ -54,24 +52,26 @@
   margin-top: 30px;
 }
 .btn {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-decoration: none;
-  padding: 5px 25px;
-  font-weight: bolder;
-  text-align: center;
-  background-color: #eca55e;
-  border: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 2px solid var(--c3);
   border-radius: 5px;
-  color: #0b0a09;
+  cursor: pointer;
+  margin-bottom: 5px;
+  color: black;
+  background-color: white;
 }
 .btn:hover {
   background-image: linear-gradient(
     45deg,
-    #6bc6c6 0%,
-    #19f0a8 51%,
-    #93ff2f 100%
+    #005299 0%,
+    #0564c9 51%,
+    #000000 100%
   );
+  color: white;
 }
+
 @media (max-width: 1280px) {
   .wraper {
     height: 450px;
