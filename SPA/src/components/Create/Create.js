@@ -5,15 +5,15 @@ import { useState, useContext } from "react";
 import { ctxValidation } from "../../helpers/form-validate";
 import { createOrder } from "../../services/owner";
 
-import { useEffect } from "react";
 import { images } from "../../helpers/images";
 import Form from "../Form/Form";
+
 
 const Create = () => {
   const navigation = useNavigate();
   const { user } = useContext(AuthContexts);
   const [errors, setErrors] = useState({});
-  const [serverError, setServerErr] = useState([]);
+
 
   const [value, setValue] = useState({
     title: "",
@@ -25,17 +25,7 @@ const Create = () => {
     payment: "cash-delivery",
   });
 
-  useEffect(() => {
-    if (serverError.length > 0) {
-      const timer = setTimeout(() => {
-        setServerErr([]);
-      }, 3000);
 
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [serverError]);
 
   const changeHendler = (e) => {
     setValue((state) => ({
@@ -81,7 +71,7 @@ const Create = () => {
 
       navigation("/my-orders");
     } catch (err) {
-      setServerErr(err.message);
+      window.alert(err.message)
     }
   };
 
@@ -94,7 +84,6 @@ const Create = () => {
       minLength={minLength}
       value={value}
       errors={errors}
-      serverError={serverError}
       isNumber={isNumber}
     />
   );
