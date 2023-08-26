@@ -30,9 +30,10 @@ function Home({ comic }) {
         <h1>Welcome to comics-shop.bg</h1>
         <h2>Best Comics of 2022 </h2>
       </article>
+      {comics.length === 0 && <Spinner />}
       <div className={styles["container"]}>
         <div className={styles["right-page"]}>
-          {comics.length > 0 ? <Top info={comics[count]}></Top> : <Spinner />}
+          {comics.length > 0 && <Top info={comics[count]} />}
         </div>
         <div className={styles["left-page"]}>
           <div className={styles["art-info"]}>
