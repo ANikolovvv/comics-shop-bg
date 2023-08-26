@@ -1,70 +1,54 @@
-.art {
-  font-family: "Luckiest Guy", cursive;
-  font-size: 20px;
-  letter-spacing: 10px;
-  text-align: center;
-  color: #6a6868;
-  font-weight: 500;
-}
-.article {
-  margin: 0 auto;
-}
-.link {
-  position: absolute;
+.box__order {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-  left: 40%;
-  color: aliceblue;
+  min-height: 750px;
+
+}
+
+.article{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.link {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
   border-radius: 5px;
   font-family: "Luckiest Guy", cursive;
   letter-spacing: 5px;
   text-align: center;
   text-decoration: none;
+  color: black;
 }
 .click {
-  border-radius: 10px;
+  border-radius: 5px;
   font-weight: bolder;
   text-decoration: none;
   letter-spacing: 3px;
-  border-color: #000000;
+  border-color:var(--c3);
   border-style: solid;
-  color: rgb(247, 247, 247);
-  background-image: linear-gradient(
-    45deg,
-    #6bc6c6 0%,
-    #19f0a8 51%,
-    #93ff2f 100%
-  );
   font-size: 18px;
-  padding: 15px;
+  padding: 5px 10px;
 }
 .click:hover {
-  color: #b00303;
-  background-image: linear-gradient(
-    45deg,
-    #a70d0d 0%,
-    #f0af19 51%,
-    #051e8e 100%
-  );
+  background-color: aqua;
+  color: #000000;
 }
 
-.article {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  min-height: 700px;
-}
 @media (max-width: 800px) {
   .art {
     font-size: 18px;
   }
   .article {
     display: grid;
-   min-height: 800px;
+    min-height: 800px;
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
   }
