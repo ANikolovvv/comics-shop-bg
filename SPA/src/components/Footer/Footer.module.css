@@ -3,11 +3,11 @@
   left: 0;
   bottom: 0;
   width: 15%;
-
-  background: rgba(23, 16, 7, 0.8);
+  background: var(--c4);
   color: white;
   text-align: center;
 }
+
 @media (max-width: 1024px) {
   .footer {
     font-size: 18px;
