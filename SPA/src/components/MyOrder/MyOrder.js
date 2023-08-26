@@ -10,7 +10,7 @@ import { Spinner } from "../Spinner/Spinner";
 import styles from "./MyOrder.module.css";
 import { deleteOrder } from "../../services/owner";
 
- const MyOrder = () => {
+const MyOrder = () => {
   const { user } = useContext(AuthContexts);
   const [currentItems, setCurrentItems] = useState([]);
   const [currentdata, setCurrentData] = useState(false);
@@ -51,8 +51,8 @@ import { deleteOrder } from "../../services/owner";
   };
 
   return (
-    <>
-      <h1 className={styles["art"]}>My orders</h1>
+    <div className={styles["box__order"]}>
+      <h1 >My orders</h1>
       {currentdata === false && <Spinner />}
       <div className={styles["article"]}>
         {currentItems.length > 0 &&
@@ -74,7 +74,7 @@ import { deleteOrder } from "../../services/owner";
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
-export default MyOrder
+export default MyOrder;
