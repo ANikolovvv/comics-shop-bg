@@ -1,9 +1,8 @@
 import styles from "../AuthForm/AuthForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
-import { Errors } from "../Erorrs/Errors";
 import Li from "../UI/Li/Li";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import { AuthContexts } from "../../contexts/authContext";
 import { errorWrapeer, matchEmail } from "../../helpers/form-validate";
@@ -15,25 +14,12 @@ const AuthForm = ({ title, to, pic }) => {
 
   const { userLogin } = useContext(AuthContexts);
   const [errors, setErrors] = useState({});
-  const [userErr, setUserErr] = useState([]);
   const [value, setValue] = useState({
     email: "",
     password: "",
     rePass: "",
   });
   let user;
-
-  useEffect(() => {
-    if (userErr.length > 0) {
-      const timer = setTimeout(() => {
-        setUserErr([]);
-      }, 3000);
-
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [userErr]);
 
   const changeHendler = (e) => {
     setValue((state) => ({
@@ -74,7 +60,7 @@ const AuthForm = ({ title, to, pic }) => {
       userLogin(user);
       navigation("/catalog");
     } catch (error) {
-      setUserErr(error.message);
+      window.alert(error.message);
       e.target.reset();
     }
   };
@@ -131,11 +117,7 @@ const AuthForm = ({ title, to, pic }) => {
                 type={"password"}
                 name="rePass"
                 value={value.rePass || ""}
-                message={[
-                  errors.rePass,
-                  "Passwords don't match!",
-                  4,
-                ]}
+                message={[errors.rePass, "Passwords don't match!", 4]}
                 minLength={minLength}
                 onChange={changeHendler}
                 icon={"fa-solid fa-lock"}
@@ -163,7 +145,6 @@ const AuthForm = ({ title, to, pic }) => {
             </div>
           </ul>
         </form>
-        {userErr.length > 0 && <Errors error={userErr}></Errors>}
       </div>
     </div>
   );
