@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
 
 .page {
   margin: 20px;
@@ -9,6 +8,7 @@
   align-items: center;
   gap: 10px;
 }
+
 .container {
   position: relative;
   display: flex;
@@ -24,9 +24,11 @@
   transform: perspective(900px) rotateX(60deg) scale(0.7);
   transition: 0.5s ease all;
 }
+
 .container:hover {
   transform: rotate(0deg) scale(1) translateY(10px);
 }
+
 .left-page,
 .right-page {
   width: 50%;
@@ -35,12 +37,14 @@
   align-items: center;
   justify-content: center;
 }
+
 .right-page {
   display: flex;
   justify-content: center;
   order: 2;
   border-left: 4px solid rgb(0, 0, 0);
 }
+
 .left-page {
   display: flex;
   flex-direction: column;
@@ -54,6 +58,7 @@
   text-align: center;
   color: black;
 }
+
 .art h2 {
   letter-spacing: 0.025em;
   text-align: center;
@@ -71,20 +76,23 @@
   color: #ffffff;
   gap: 10px;
 }
+
 .art-info > i {
   font-size: 18px;
   font-weight: bold;
   color: #ffffff;
 }
+
 .art-info p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-align: left;
   font-size: 22px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   padding: 15px;
   font-weight: 500;
 }
-@media (max-width: 1382px) {
-}
+
 @media (max-width: 1024px) {
   .art-info p {
     font-size: 18px;
@@ -93,56 +101,61 @@
 }
 @media (max-width: 992px) {
   .art-info p {
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px;
   }
-}
-@media (max-width: 768px) {
-  .art-info {
-    gap: 0px;
+  .container {
+    width: 100%;
   }
+}
+
+@media (max-width: 768px) {
   .art-info > i {
     margin-top: 20px;
     font-size: 16px;
   }
-  .art-info p {
-    font-size: 18px;
-  }
 }
+
 @media (max-width: 600px) {
   .container {
+    margin: 0;
+    padding: 0;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
   }
   .art-info > i {
     font-size: 14px;
   }
-  .art-info p {
-    font-size: 12px;
-    font-weight: 500;
-  }
+
   .info {
     width: 100%;
   }
   .left-page {
     width: 100%;
+    min-height: auto;
+    border-right: none;
   }
-  .art h1 {
-    font-size: 14px;
-    letter-spacing: 5px;
-  }
-  .art p {
-    font-size: 10px;
-    letter-spacing: 4px;
+  .right-page {
+    width: 100%;
+    border-left: none;
+    min-height: auto;
   }
 }
+
 @media (max-width: 480px) {
+  .container{
+    gap: 30px;
+  }
   .art-info > i {
     font-size: 12px;
   }
   .art-info p {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
+
 @media (max-width: 320px) {
   .art h1 {
     font-size: 12px;
