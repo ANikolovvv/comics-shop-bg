@@ -20,7 +20,7 @@
 }
 @media (max-width: 600px) {
   .footer {
-    font-size: 12px;
+    width: 30%;
   }
 }
 @media (max-width: 480px) {
