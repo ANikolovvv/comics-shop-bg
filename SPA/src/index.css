@@ -105,9 +105,7 @@ label {
 @media (max-width: 1200px) {
 }
 @media (max-width: 1024px) {
-  h1 {
-    font-size: 18px;
-  }
+  
   .error-form {
     top: 83%;
     font-size: 12px;
