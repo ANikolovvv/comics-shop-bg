@@ -2,16 +2,16 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 75%;
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   opacity: 0.8;
-  padding: 2rem;
   height: screen;
   animation: nav-link 500ms ease-in;
 }
 @keyframes nav-link {
   0% {
-    transform: translateX(-100%)
+    transform: translateX(-100%);
   }
 
   100% {
@@ -30,19 +30,20 @@
   list-style: none;
   text-align: left;
 }
-.links .box__ul  .box__links  li {
+.links .box__ul .box__links li {
   display: flex;
   justify-content: left;
   text-align: center;
   align-items: center;
   padding: 16px 7px;
-  font-size: 0.875rem /* 14px */;
-  line-height: 1.25rem /* 20px */;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   text-transform: uppercase;
   font-weight: 800;
 }
 .links .box__links .link {
-  color: #6a6868;
+  color: var(--c3);
+  letter-spacing: 2px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -55,25 +56,16 @@
 .react-icons {
   display: flex;
   justify-content: space-around;
-  text-align: center;
-  align-items: center;
-  margin: 16px 0px;
+  margin: 16px 10px;
   padding-left: 5px;
   width: 100%;
 }
 .icon {
   display: flex;
-
+  background-color: #fff;
   border-radius: 5px;
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
-    0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   padding: 6px;
-  --tw-shadow-color: #070808;
-  --tw-shadow: var(--tw-shadow-colored);
+  box-shadow: 4px 4px 4px var(--c3);
 }
 .icon:hover {
   border-color: #9ca3af;
@@ -82,29 +74,21 @@
   animation: ease-in 300ms;
 }
 
-@media (max-width: 768px) {
-  .links {
-    width: 45%;
-  }
-}
 @media (max-width: 640px) {
   .links .box__links .link {
     font-size: 14px;
   }
-  .links {
-    width: 60%;
-  }
+
   .react-icons {
     width: 80%;
   }
 }
+
 @media (max-width: 480px) {
   .icon {
     margin-left: 20px;
   }
-  .links {
-    width: 50%;
-  }
+
   .links .box__links .link {
     font-size: 12px;
   }
@@ -112,11 +96,13 @@
     margin-left: 10px;
   }
 }
+
 @media (max-width: 414px) {
   .react-icons {
     margin-left: 20px;
   }
 }
+
 @media (max-width: 320px) {
   .react-icons {
     margin-left: 35px;
