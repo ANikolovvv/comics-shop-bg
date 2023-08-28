@@ -17,7 +17,6 @@ const Catalog = ({ comics }) => {
   const [searchError, setSearchError] = useState("");
   const [searchData, setSearch] = useState(false);
   const [selectedAuthors, setSelectedAuthors] = useState([]);
-  console.log(searchData);
 
   let data = [];
 
@@ -68,53 +67,51 @@ const Catalog = ({ comics }) => {
       <div className={styles["box__title"]}>
         <h1>Catalog</h1>
       </div>
-
+      {comics.length === 0 && <Spinner />}
       <div className={styles["div_error"]}>
         {searchError && (
           <span className={styles.span_error}>{searchError}</span>
         )}
       </div>
-
-      <div className={styles["container"]}>
-        {currentdata === false && <Spinner />}
-
-        <Search
-          onSubmit={searchHendler}
-          comics={comics}
-          error={searchError}
-          updateParentState={updateParentState}
-          setSearch={setSearch}
-          authors={setSelectedAuthors}
-          selectedAuthors={selectedAuthors}
-        />
-
-        {searchData && currentItems.length === 0 && (
-          <div className={styles["div_error"]}>
-            <span className={styles.span_error}>
-              Comics not found with this filters!
-            </span>
-          </div>
-        )}
-        {currentItems.length > 0 && (
-          <div className="cards">
-            <Paginate data={currentItems}></Paginate>
-          </div>
-        )}
-        {currentItems.length === 0 && currentdata === true && user.email && (
-          <div className={styles["link"]}>
-            <h1>Make your first order !</h1>
-            {user.email ? (
-              <Link to={"/create"} className={styles["click"]}>
-                Click here!
-              </Link>
-            ) : (
-              <Link to={"/login"} className={styles["click"]}>
-                Click to login !
-              </Link>
-            )}
-          </div>
-        )}
-      </div>
+      <Search
+        onSubmit={searchHendler}
+        comics={comics}
+        error={searchError}
+        updateParentState={updateParentState}
+        setSearch={setSearch}
+        authors={setSelectedAuthors}
+        selectedAuthors={selectedAuthors}
+      />
+      {comics.length !== 0 && (
+        <div className={styles["container"]}>
+          {searchData && currentItems.length === 0 && (
+            <div className={styles["div_error"]}>
+              <span className={styles.span_error}>
+                Comics not found with this filters!
+              </span>
+            </div>
+          )}
+          {currentItems.length > 0 && (
+            <div className="cards">
+              <Paginate data={currentItems}></Paginate>
+            </div>
+          )}
+          {currentItems.length === 0 && currentdata === true && user.email && (
+            <div className={styles["link"]}>
+              <h1>Make your first order !</h1>
+              {user.email ? (
+                <Link to={"/create"} className={styles["click"]}>
+                  Click here!
+                </Link>
+              ) : (
+                <Link to={"/login"} className={styles["click"]}>
+                  Click to login !
+                </Link>
+              )}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };
