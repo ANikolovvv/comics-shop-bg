@@ -176,7 +176,17 @@
     flex-direction: row;
     gap: 2px;
   }
+  .nav-small{
+    justify-content: flex-end;
+  }
   .nav-box {
     display: none;
   }
+  
+}
+@media (max-width: 480px) {
+  .nav-box {
+    display: none;
+  }
+
 }
