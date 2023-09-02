@@ -137,14 +137,7 @@ label {
   h1 {
     font-size: 18px;
   }
-  .error-form {
-    top: 83%;
-    font-size: 12px;
-    background-color: white;
-    text-align: center;
-    border-radius: 15px;
-    padding: 5px 5px;
-  }
+
   input {
     font-size: 14px;
     border-radius: 15px;
@@ -165,13 +158,7 @@ label {
 @media (max-width: 768px) {
 }
 @media (max-width: 600px) {
-  .art h1 {
-    font-size: 16px;
-  }
-  .error-form {
-    top: 83%;
-    font-size: 10px;
-  }
+
   input {
     font-size: 12px;
   }
@@ -179,31 +166,13 @@ label {
   i {
     font-size: 12px;
   }
-  label {
-    font-size: 14px;
-  }
+
 }
 @media (max-width: 480px) {
   body {
     background-image: none;
   }
-  .art h1 {
-    font-size: 14px;
-  }
-  .error-form {
-    top: 83%;
-    font-size: 4px;
-  }
-  input {
-    font-size: 10px;
-  }
 
-  i {
-    font-size: 10px;
-  }
-  label {
-    font-size: 10px;
-  }
 }
 @media (max-width: 320px) {
 }
