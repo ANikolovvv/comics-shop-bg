@@ -63,42 +63,5 @@
   .center {
     font-size: 18px;
   }
-  .wave {
-    width: 10px;
-    height: 80px;
-    background: linear-gradient(45deg, rgb(255, 115, 0), #fff);
-    margin: 5px;
-    animation: wave 1s linear infinite;
-    border-radius: 20px;
-  }
-}
-@media (max-width: 800px) {
-  .center {
-    font-size: 16px;
-  }
-  .wave {
-    width: 8px;
-    height: 5px;
-    margin: 3px;
-  }
-}
-@media (max-width: 600px) {
-  .center {
-    font-size: 14px;
-  }
-  .wave {
-    width: 8px;
-    height: 5px;
-    margin: 3px;
-  }
-}
-@media (max-width: 400px) {
-  .center {
-    font-size: 12px;
-  }
-  .wave {
-    width: 8px;
-    height: 5px;
-    margin: 3px;
-  }
+
 }
