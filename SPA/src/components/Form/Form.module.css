@@ -16,8 +16,7 @@
   width: 60%;
   height: 750px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
+  grid-template-columns: 40% 1fr;
   background-color: var(--c4);
   border-radius: 10px;
   transform: perspective(75em) rotateX(18deg);
@@ -29,6 +28,7 @@
   margin: 0;
   padding: 0;
   letter-spacing: 3px;
+  font-size: 24px;
 }
 .image-box {
   display: flex;
@@ -57,8 +57,7 @@
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-
+  gap: 30px;
 }
 .box__submit {
   display: flex;
@@ -68,116 +67,55 @@
   gap: 10px;
 }
 
-.join-btn {
-  display: block;
-  font-size: 18px;
-  padding: 5px 15px;
-  border: 2px solid var(--c3);
-  border-radius: 5px;
-  cursor: pointer;
-}
-.join-btn:hover {
-  background-image: linear-gradient(
-    45deg,
-    #005299 0%,
-    #0564c9 51%,
-    #000000 100%
-  );
-  color: white;
-}
-.link-form {
-  font-size: 18px;
-  letter-spacing: normal;
-  text-decoration: none;
-  color: rgb(200, 200, 200);
-  cursor: pointer;
-}
-.link-form:hover {
-  color: rgba(67, 65, 65, 0.8);
-}
 
-.box-h1 {
-  margin: 0;
-  padding: 0;
-}
-.box-h1 h2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  color: var(--c3);
-  font-size: 18px;
-  gap: 10px;
-}
-.box-h1 h2 a {
-  color: aqua;
-}
-::placeholder {
-  color: black;
-}
-.error-form {
-  width: 100%;
-  text-align: left;
-  position: absolute;
-  top: 110%;
-  letter-spacing: 2px;
-  font-weight: bolder;
-  color: rgb(247, 5, 5);
-  font-size: 15px;
-  text-align: center;
-  padding: 5px 5px;
-}
-.payment{
+
+
+.payment {
   padding: 10px 20px;
   border: 2px solid var(--c3);
   border-radius: 5px;
   background-color: white;
   font-weight: 600;
   letter-spacing: 1px;
-  font-size: 16px;
+  font-size: 14px;
 }
-.payment:hover{
+.payment:hover {
   background-color: var(--c3);
   color: white;
 }
-.btn{
-  font-size: 16px;
-  padding: 10px 15px;
+.btn {
+  font-size: 22px;
+  padding:  5px 12px ;
   border: 2px solid var(--c3);
   border-radius: 5px;
   letter-spacing: 1px;
   font-weight: 600;
   color: black;
 }
-.btn:hover{
+.btn:hover {
   background-color: var(--c3);
   color: white;
 }
 @media (max-width: 1382px) {
-  .error-form {
-    font-size: 12px;
-    padding: 5px 5px;
+  .signupSection {
+    width: 80%;
+    grid-template-columns: 40% 1fr;
   }
 }
 @media (max-width: 1024px) {
-  h1 {
-    font-size: 18px;
+  .payment {
+    font-size: 12px;
+    padding: 5px;
   }
 
-  h2 {
-    font-size: 18px;
-    letter-spacing: 2px;
-  }
-  .error-form {
-    top: 100%;
-    font-size: 12px;
-    text-align: center;
-    padding: 5px 5px;
-  }
-  .click {
+  .btn{
     font-size: 18px;
   }
 }
 @media (max-width: 800px) {
+  .box__li{
+    gap: 5px;
+  }
   .icon {
     object-fit: cover;
   }
@@ -185,18 +123,12 @@
     font-size: 16px;
     margin-top: 20px;
   }
-  .join-btn {
-    padding: 3px 7px;
-    font-size: 14px;
+ 
+  .signupSection {
+    grid-template-columns: 1fr;
   }
-  .link-form {
-    font-size: 18px;
-  }
-  .error-form {
-    top: 102%;
-    width: 100%;
-    font-size: 14px;
-    padding: 2px 5px;
+  .image-box {
+    display: none;
   }
 }
 @media (max-width: 600px) {
@@ -208,57 +140,14 @@
     background-repeat: no-repeat;
     max-height: 700px;
   }
-  .click {
-    font-size: 14px;
-    margin-top: 20px;
-  }
-  .info-form {
-    width: 100%;
-    max-height: 350px;
-  }
-  .link-form {
-    font-size: 14px;
-    border-right: none;
-  }
-  .signupForm {
-    width: 100%;
-  }
-  .error-form {
-    font-size: 10px;
-    padding: 2px 5px;
+  .btn{
+    font-size: 16px;
   }
 }
 @media (max-width: 480px) {
-  .click {
-    font-size: 12px;
-    margin-top: 10px;
-  }
-  .info-form {
-    max-height: 300px;
-    border-right: none;
-  }
-  .link-form {
-    font-size: 12px;
-  }
-  .signupForm {
-    width: 100%;
-    max-height: 300px;
-  }
-  .join-btn {
-    margin-top: 10px;
-    font-size: 12px;
-  }
-  .error-form {
-    top: 115%;
-  }
-}
-@media (max-width: 320px) {
-  .join-btn {
-    padding: 1px;
-    font-size: 10px;
-  }
-  .error-form {
-    font-size: 8px;
-    padding: 2px 5px;
+  .box__li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 }
