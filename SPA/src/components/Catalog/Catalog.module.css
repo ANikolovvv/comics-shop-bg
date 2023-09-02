@@ -1,6 +1,5 @@
 .box {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +24,6 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  min-height: 750px;
   gap: 30px;
 }
 
