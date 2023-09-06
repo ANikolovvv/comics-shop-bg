@@ -131,15 +131,14 @@ label {
     font-size: 16px;
   }
 }
-@media (max-width: 996px) {
-}
+
 @media (max-width: 800px) {
   h1 {
     font-size: 18px;
   }
 
   input {
-    font-size: 14px;
+    font-weight: 400;
     border-radius: 15px;
     border: 1px white;
     color: #000000;
@@ -155,24 +154,11 @@ label {
     font-size: 16px;
   }
 }
-@media (max-width: 768px) {
-}
-@media (max-width: 600px) {
 
-  input {
-    font-size: 12px;
-  }
 
-  i {
-    font-size: 12px;
-  }
-
-}
 @media (max-width: 480px) {
   body {
     background-image: none;
   }
 
-}
-@media (max-width: 320px) {
 }
