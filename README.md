@@ -41,7 +41,7 @@ The repo includes the "<i>back-end</i>" and the "<i>front-end</i>" of the app.
 - <i><b>-</b></i>
 - <i><b>-Unit testing for some components(catalog,details,search) </b></i>
 - <i><b>others (images placeholders when loading, funny 404 page, etc.)</b></i>
-- <i><b>Deploy <a> https://fir-comics-3273e.web.app/</a></b></i>
+
 
 <hr/>
 Dependencies, (besides Create-React-App deps):
