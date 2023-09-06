@@ -1,16 +1,13 @@
-import { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-import { AuthContexts } from "../../contexts/authContext";
+import { useState, useEffect } from "react";
+import styles from "./Catalog.module.css";
 
 import Paginate from "./Pagination/Paginate";
 import { Spinner } from "../Spinner/Spinner";
 
-import styles from "./Catalog.module.css";
 import { Search } from "./Search/Search";
 import { filteredData } from "../../helpers/filter";
 
 const Catalog = ({ comics }) => {
-  const { user } = useContext(AuthContexts);
   const [currentItems, setCurrentItems] = useState([]);
   const [currentdata, setCurrentData] = useState(false);
 
@@ -63,50 +60,42 @@ const Catalog = ({ comics }) => {
     }
   };
   return (
-    <div className={styles["box"]}>
-      <div className={styles["box__title"]}>
-        <h1>Catalog</h1>
-      </div>
-      {comics.length === 0 && <Spinner />}
-      <div className={styles["div_error"]}>
-        {searchError && (
-          <span className={styles.span_error}>{searchError}</span>
-        )}
-      </div>
-      <Search
-        onSubmit={searchHendler}
-        comics={comics}
-        error={searchError}
-        updateParentState={updateParentState}
-        setSearch={setSearch}
-        authors={setSelectedAuthors}
-        selectedAuthors={selectedAuthors}
-      />
-      {comics.length !== 0 && (
-        <div className={styles["container"]}>
-          {searchData && currentItems.length === 0 && (
-            <div className={styles["div_error"]}>
-              <span className={styles.span_error}>
-                Comics not found with this filters!
-              </span>
-            </div>
-          )}
-          {currentItems.length > 0 && (
-            <div className="cards">
-              <Paginate data={currentItems}></Paginate>
-            </div>
-          )}
-          {currentItems.length === 0 && currentdata === true && user.email && (
-            <div className={styles["link"]}>
-              <h1>Make your first order !</h1>
-              {user.email ? (
-                <Link to={"/create"} className={styles["click"]}>
-                  Click here!
-                </Link>
-              ) : (
-                <Link to={"/login"} className={styles["click"]}>
-                  Click to login !
-                </Link>
+    <div>
+      {comics.length === 0 && currentdata === false && <Spinner />}
+
+      {currentdata === true && (
+        <div className={styles["box"]}>
+          <div className={styles["box__title"]}>
+            <h1>Catalog</h1>
+          </div>
+
+          <div className={styles["div_error"]}>
+            {searchError && (
+              <span className={styles.span_error}>{searchError}</span>
+            )}
+          </div>
+
+          <Search
+            onSubmit={searchHendler}
+            comics={comics}
+            error={searchError}
+            updateParentState={updateParentState}
+            setSearch={setSearch}
+            authors={setSelectedAuthors}
+            selectedAuthors={selectedAuthors}
+          />
+
+          {comics.length !== 0 && (
+            <div className={styles["container"]}>
+              {searchData && currentItems.length === 0 && (
+                <div className={styles["div_error"]}>
+                  <span className={styles.span_error}>
+                    Comics not found with this filters!
+                  </span>
+                </div>
+              )}
+              {currentItems.length > 0 && (
+                <Paginate data={currentItems}></Paginate>
               )}
             </div>
           )}
