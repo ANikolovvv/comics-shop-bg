@@ -5,12 +5,13 @@ label {
 .div {
   margin: 0;
   padding: 0;
-  border-style: solid;
   vertical-align: baseline;
   background: transparent;
   text-decoration: none;
-  color: rgba(255, 180, 82, 0.8);
-  min-height: 750px ;
+  color: var(--c3);
+  background-color: rgba(143, 231, 224, 0.77);
+  height: 100vh;
+ 
 }
 
 textarea {
@@ -28,6 +29,7 @@ textarea {
 
 .top-header:before {
   background-image: url(https://1.bp.blogspot.com/-gxsOcYWghHA/Xp_izTh4sFI/AAAAAAAAU8s/y637Fwg99qAuzW9na_NT_uApny8Vce95gCEwYBhgL/s1600/header-footer-gradient-bg.png);
+  
 }
 .top-header:before {
   content: "";
@@ -245,6 +247,7 @@ textarea {
 
 
 .error {
+
   min-height: 50vh;
   position: relative;
   padding: 240px 0;
@@ -447,7 +450,7 @@ textarea {
 .cable {
   width: 8px;
   height: 248px;
-  background-image: linear-gradient(rgba(242, 146, 57, 0.7), rgb(193 65 25)),
+  background-image: linear-gradient(var(--c3), black),
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
@@ -455,7 +458,7 @@ textarea {
 .cover {
   width: 200px;
   height: 80px;
-  background: #f3bc56;
+  background: var(--c3);
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
   position: relative;
@@ -467,7 +470,7 @@ textarea {
   max-width: 200px;
   height: 20px;
   border-radius: 100%;
-  background: #ff9c08;
+  background: var(--c3);
   position: absolute;
   left: 0px;
   right: 0px;
