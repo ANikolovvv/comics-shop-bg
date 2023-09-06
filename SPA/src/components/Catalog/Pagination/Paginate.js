@@ -26,7 +26,7 @@ const Paginate = (props) => {
   };
 
   return (
-    <>
+    <div className={styles["cards"]}>
       <div className={styles["cards-div"]}>
         {currentItems.map((item) => {
           return <Card key={item._id} data={item}></Card>;
@@ -47,7 +47,7 @@ const Paginate = (props) => {
         nextLinkClassName={styles["page"]}
         activeLinkClassName={styles["active"]}
       />
-    </>
+    </div>
   );
 };
 export default Paginate;
