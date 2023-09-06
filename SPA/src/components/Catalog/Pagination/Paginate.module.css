@@ -1,8 +1,8 @@
-.cards {
+.cards{
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  width: 100%;
+  align-items: center;
 }
 .cards-div {
   width: 100%;
@@ -59,14 +59,7 @@
   background-color: skyblue;
 }
 @media (max-width: 1024px) {
-  .cards-div {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
+
   .page {
     margin-top: 20px;
     padding: 4px 15px;
@@ -98,11 +91,17 @@
     gap: 2px;
   }
 }
+@media (max-width: 600px) {
+  
+  
+}
 @media (max-width: 480px) {
   .cards-div {
     margin: 0;
-    display: grid;
-    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+     justify-content: center;
+     align-items: center;
     gap: 10px;
   }
   .page {
@@ -118,17 +117,7 @@
     gap: 2px;
   }
 }
-@media (max-width: 600px) {
-  .cards-div {
-    display: grid;
-    align-items: center;
-    gap: 10px;
-  }
-  .pagination {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
+
 @media (max-width: 320px) {
   .cards-div {
     display: flex;
