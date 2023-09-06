@@ -57,7 +57,7 @@ const Details = () => {
           <h1>{comic.title}</h1>
 
           <div className={styles["info"]}>
-            <h2>The Description</h2>
+         
             <ul className={styles["ul__box"]}>
               <li key={key}>
                 Author: <span> {comic.author}</span>
@@ -79,7 +79,7 @@ const Details = () => {
 
           <p className={styles["information"]}>{comic.description}</p>
           {user.email ? (
-            <div className={["btn"]}>
+            <div className={styles["btns__box"]}>
               {like === true && <h1>You already like this comics!</h1>}
               <div className={styles["control"]}>
                 <Link to={`/catalog`} className={styles["link"]}>
