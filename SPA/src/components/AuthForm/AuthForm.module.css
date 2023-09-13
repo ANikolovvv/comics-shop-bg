@@ -110,8 +110,6 @@
   color: black;
 }
 
-@media (max-width: 1382px) {
-}
 @media (max-width: 1024px) {
   h1 {
     font-size: 18px;
@@ -121,8 +119,6 @@
     font-size: 18px;
     letter-spacing: 2px;
   }
-
-
 }
 @media (max-width: 800px) {
   .signupSection {
@@ -132,19 +128,21 @@
     margin: 0 auto;
     background-repeat: no-repeat;
     min-height: 700px;
-
   }
 
   .image-box {
     margin-bottom: 10px;
     padding: 0;
     height: 40%;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 4px solid var(--c3);
+    border-right: none;
     overflow: hidden;
   }
   .icon {
     object-fit: cover;
   }
-  .box__li{
+  .box__li {
     gap: 10px;
   }
   .join-btn {
@@ -159,15 +157,13 @@
   .signupForm {
     width: 100%;
   }
-
+  .signupSection {
+    transform: none;
+  }
   .box-h1 h2 {
     font-size: 16px;
   }
   .link-form {
     font-size: 16px;
   }
-}
-@media (max-width: 480px) {
-}
-@media (max-width: 320px) {
 }
