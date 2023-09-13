@@ -5,17 +5,25 @@
   align-items: center;
   gap: 20px;
   min-height: 750px;
-
 }
 
-.article{
+.box__order h1 {
+  font-family: "Luckiest Guy", cursive;
+  letter-spacing: 2px;
+  color: var(--c3);
+}
+
+.article {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 30px;
+  min-height: 750px;
+  margin-bottom: 30px;
 }
+
 .link {
   display: flex;
   flex-direction: row;
@@ -27,16 +35,18 @@
   text-decoration: none;
   color: black;
 }
+
 .click {
   border-radius: 5px;
   font-weight: bolder;
   text-decoration: none;
   letter-spacing: 3px;
-  border-color:var(--c3);
+  border-color: var(--c3);
   border-style: solid;
   font-size: 18px;
   padding: 5px 10px;
 }
+
 .click:hover {
   background-color: aqua;
   color: #000000;
@@ -46,26 +56,12 @@
   .art {
     font-size: 18px;
   }
-  .article {
-    display: grid;
-    min-height: 800px;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
-  }
 }
-@media (max-width: 600px) {
-  .art {
-    font-size: 16px;
-  }
-}
+
 @media (max-width: 480px) {
   .article {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
     gap: 15px;
     min-height: 800px;
-  }
-  .art {
-    font-size: 14px;
   }
 }
