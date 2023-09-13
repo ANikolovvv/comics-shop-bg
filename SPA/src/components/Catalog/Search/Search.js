@@ -72,7 +72,7 @@ export const Search = ({
               />
             </div>
             <div className={styles["input__box"]}>
-              <label>Authors:</label>
+              <label>Authors</label>
               <select
                 multiple
                 name="author"
