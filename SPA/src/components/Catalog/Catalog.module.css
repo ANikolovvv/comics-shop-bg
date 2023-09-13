@@ -60,7 +60,6 @@
 }
 
 @media (max-width: 1024px) {
-
   .link {
     display: flex;
     flex-direction: column;
@@ -79,7 +78,6 @@
   }
 }
 @media (max-width: 768px) {
-
   .link h1 {
     font-size: 16px;
   }
@@ -98,7 +96,6 @@
   }
 }
 @media (max-width: 600px) {
-
   .link {
     display: flex;
     flex-direction: column;
@@ -119,7 +116,6 @@
 }
 
 @media (max-width: 400px) {
-
   .link {
     gap: 10px;
   }
