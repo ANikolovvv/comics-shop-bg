@@ -125,6 +125,7 @@
   }
  
   .signupSection {
+    transform: none;
     grid-template-columns: 1fr;
   }
   .image-box {
