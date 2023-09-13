@@ -1,5 +1,3 @@
-
-
 .page {
   margin: 20px;
   display: flex;
@@ -114,6 +112,17 @@
     margin-top: 20px;
     font-size: 16px;
   }
+  .container {
+    height: 850px;
+    transform: none;
+    transition: none;
+  }
+  .container:hover {
+    transform: none;
+  }
+  .left-page {
+    border-bottom: 4px solid var(--c3);
+  }
 }
 
 @media (max-width: 600px) {
@@ -145,7 +154,7 @@
 }
 
 @media (max-width: 480px) {
-  .container{
+  .container {
     gap: 30px;
   }
   .art-info > i {
