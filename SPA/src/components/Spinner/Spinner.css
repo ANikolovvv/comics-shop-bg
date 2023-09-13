@@ -1,8 +1,6 @@
 .center {
-  position: fixed;
-  top: 20%;
-  left: 40%;
   font-family: "Luckiest Guy", cursive;
+  margin: 10px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,6 +57,7 @@
     transform: scale(0);
   }
 }
+
 @media (max-width: 1024px) {
   .center {
     font-size: 18px;
