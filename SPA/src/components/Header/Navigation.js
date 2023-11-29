@@ -1,5 +1,5 @@
-import styles from "./Navigation.module.css";
-import { Link } from "react-router-dom";
+import styles from "./Navigation.module.scss";
+import { Link, NavLink } from "react-router-dom";
 
 import { AiOutlineClose } from "react-icons/ai";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
@@ -15,57 +15,55 @@ function Navigation(props) {
         </div>
       </div>
 
-      <div className={styles["box__ul"]}>
         <ul className={styles["box__links"]}>
-          <li>
-            <Link className={styles["link"]} to="/">
+          <li className={styles["link"]}>
+            <NavLink  to="/">
               Home
-            </Link>
+            </NavLink>
           </li>
-          <li>
-            <Link className={styles["link"]} to="/catalog">
+          <li className={styles["link"]}>
+            <NavLink  to="/catalog">
               Catalog
-            </Link>
+            </NavLink>
           </li>
-          <li>
-            <Link className={styles["link"]} to="/about">
+          <li className={styles["link"]}>
+            <NavLink  to="/about">
               Contact us
-            </Link>
+            </NavLink>
           </li>
           {!user.email ? (
             <>
-              <li>
-                <Link className={styles["link"]} to="/login">
+              <li className={styles["link"]}>
+                <NavLink to="/login">
                   Login
-                </Link>
+                </NavLink>
               </li>
-              <li>
-                <Link className={styles["link"]} to="/register">
+              <li className={styles["link"]}>
+                <NavLink  to="/register">
                   Register
-                </Link>
+                </NavLink>
               </li>
             </>
           ) : (
             <>
-              <li>
-                <Link className={styles["link"]} to="/create">
+              <li className={styles["link"]} >
+                <NavLink className={styles["link"]} to="/create">
                   Orders
-                </Link>
+                </NavLink>
               </li>
-              <li>
-                <Link className={styles["link"]} to="/my-orders">
+              <li className={styles["link"]}>
+                <Link  to="/my-orders">
                   My Orders
                 </Link>
               </li>
-              <li>
-                <Link className={styles["link"]} to="/logout">
+              <li className={styles["link"]}>
+                <Link  to="/logout">
                   Logout
                 </Link>
               </li>
             </>
           )}
         </ul>
-      </div>
       <div className={styles["react-icons"]}>
         <div className={styles["icon"]}>
           <FaFacebookF />
