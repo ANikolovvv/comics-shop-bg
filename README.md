@@ -14,7 +14,6 @@
 
 The repo includes the "<i>back-end</i>" and the "<i>front-end</i>" of the app.
 
-
 <p align="center">
   <img src="./home.png" width="350" title="hover text">
   <img src="./catalog.png" width="350" alt="accessibility text">
@@ -42,7 +41,6 @@ The repo includes the "<i>back-end</i>" and the "<i>front-end</i>" of the app.
 - <i><b>-Unit testing for some components(catalog,details,search) </b></i>
 - <i><b>others (images placeholders when loading, funny 404 page, etc.)</b></i>
 
-
 <hr/>
 Dependencies, (besides Create-React-App deps):
 
@@ -50,7 +48,8 @@ Dependencies, (besides Create-React-App deps):
 
 The REST API is written with Express JS
 
-<h2>Used: </h2>
+# Used
+
 - JSON Web Token for the auth,
 - Bcrypt for password hashing
 - Express Validator
