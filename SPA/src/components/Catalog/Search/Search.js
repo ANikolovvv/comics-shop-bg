@@ -2,7 +2,7 @@ import styles from "./Search.module.css";
 import { useState, useRef } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 
-export const Search = ({
+ const Search = ({
   onSubmit,
   comics,
   updateParentState,
@@ -116,3 +116,5 @@ export const Search = ({
     </>
   );
 };
+
+export default Search
