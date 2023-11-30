@@ -3,8 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import { AuthContexts } from "../../contexts/authContext";
 
 import * as requests from "../../services/server";
-import { Spinner } from "../Spinner/Spinner";
 import styles from "./Details.module.css";
+import Spinner from "../Spinner";
 
 const Details = () => {
   const { user } = useContext(AuthContexts);

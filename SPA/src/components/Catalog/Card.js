@@ -1,5 +1,5 @@
 import styles from "./Card.module.css";
-import Button from "../UI/Button/Button";
+import Button from "../../elements/Button";
 
 const Card = (props) => {
   return (

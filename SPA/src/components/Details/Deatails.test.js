@@ -3,13 +3,14 @@ import { cleanup, render, screen } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "../../contexts/authContext";
-import Details from "./Details";
+import Details from "../Details";
+
 
 test("If clink button works", () => {
   const { getByText } = render(
     <BrowserRouter>
       <AuthProvider>
-        <Details />
+        <Details/>
       </AuthProvider>
     </BrowserRouter>
   );

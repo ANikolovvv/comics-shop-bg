@@ -27,22 +27,7 @@ textarea {
   background: transparent;
 }
 
-.top-header:before {
-  background-image: url(https://1.bp.blogspot.com/-gxsOcYWghHA/Xp_izTh4sFI/AAAAAAAAU8s/y637Fwg99qAuzW9na_NT_uApny8Vce95gCEwYBhgL/s1600/header-footer-gradient-bg.png);
-  
-}
-.top-header:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 4px;
-  background-repeat: repeat-x;
-  background-size: contain;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.5;
-}
+
 
 .starsec {
   content: " ";

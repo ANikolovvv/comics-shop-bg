@@ -6,45 +6,6 @@
   align-items: center;
   text-align: center;
 
-  @media (max-width: 840px) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background-color: #151515;
-    animation: nav-link 500ms ease-in;
-    z-index: 9999;
-  
-    @keyframes nav-link {
-      0% {
-        transform: translateX(-100%);
-      }
-  
-      100% {
-        transform: translateX(0);
-      }
-    }
-  }
-
-  .box__ul {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-
-  }
-
-  .box__link {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-    padding: 0px 18px;
-  }
-
   .logo {
     width: 125px;
     height: 30px;
@@ -53,7 +14,7 @@
     animation-duration: 300ms;
 
     @media (max-width: 840px) {
-      flex: 2;
+      order: 2;
     }
 
     &__img {
@@ -69,7 +30,7 @@
     display: none;
 
     @media (max-width: 840px) {
-      flex: 2;
+      order: 1;
       display: flex;
       flex-direction: column;
       text-align: center;
@@ -80,7 +41,12 @@
       display: flex;
       text-align: center;
       align-items: center;
-      margin-right: 10px;
+
+      & > .icon {
+        margin-left: 18px;
+        z-index: 9999;
+        color: #fff;
+      }
     }
   }
 }
@@ -96,7 +62,6 @@
 }
 
 @media (max-width: 840px) {
-
   .container {
     justify-content: space-between;
   }
@@ -105,7 +70,6 @@
     width: 90px;
     height: 20px;
   }
-
 }
 
 @media (max-width: 600px) {

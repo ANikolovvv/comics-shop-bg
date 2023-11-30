@@ -8,7 +8,6 @@ const NotFound = () => {
       to="https://codepen.io/uiswarup/full/yLzypyY"
       target="_blank"
     >
-      <header className={styles["top-header"]}></header>
 
       <div className={styles["box__lamp"]}>
         <div className={styles["starsec"]}></div>

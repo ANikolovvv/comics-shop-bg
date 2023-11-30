@@ -1,4 +1,4 @@
-import Button from "../UI/Button/Button";
+import Button from "../../elements/Button";
 import styles from "./TopFive.module.css";
 
 export function Top(props) {

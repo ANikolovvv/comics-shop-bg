@@ -4,10 +4,11 @@
   left: 0;
   width: 50%;
   height: 100%;
+  padding: 10px 18px;
   background-color: #151515;
-  height: 100%; // Assuming you meant to use 100% of the viewport height
+  height: 100%; 
   animation: nav-link 500ms ease-in;
-  z-index: 9999;
+  z-index: 99;
 
   @keyframes nav-link {
     0% {
@@ -19,30 +20,15 @@
     }
   }
 
-  .box__links{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 20px;
-  }
-
-  .box__ul {
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-
-  }
-
-
   .react-icons {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    margin: 16px 10px;
-    padding-left: 5px;
-    width: 100%;
+    border-top: 1px solid #393939;
+    border-bottom: 1px solid #393939;
 
     .icon {
+      margin: 20px 0px;
       display: flex;
       background-color: #fff;
       border-radius: 5px;
@@ -51,45 +37,9 @@
 
       &:hover {
         border-color: #9ca3af;
-        cursor: pointer;
         transform: scale(1.2);
         animation: ease-in 300ms;
       }
-    }
-  }
-
-  @media (max-width: 640px) {
-    .box__links .link {
-      font-size: 14px;
-    }
-
-    .react-icons {
-      width: 80%;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .icon {
-      margin-left: 20px;
-    }
-
-    .box__links .link {
-      font-size: 12px;
-    }
-    .react-icons {
-      margin-left: 10px;
-    }
-  }
-
-  @media (max-width: 414px) {
-    .react-icons {
-      margin-left: 20px;
-    }
-  }
-
-  @media (max-width: 320px) {
-    .react-icons {
-      margin-left: 35px;
     }
   }
 }

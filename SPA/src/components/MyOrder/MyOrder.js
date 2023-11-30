@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import * as requests from "../../services/owner";
 
 import { MyCard } from "./MyCard/MyCard";
-import { Spinner } from "../Spinner/Spinner";
 
 import styles from "./MyOrder.module.css";
 import { deleteOrder } from "../../services/owner";
+import Spinner from "../Spinner";
 
 const MyOrder = () => {
   const { user } = useContext(AuthContexts);

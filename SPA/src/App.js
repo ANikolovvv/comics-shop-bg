@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./contexts/authContext";
 
 import Create from "./components/Create";
-import Details from "./components/Details/Details";
 import Home from "./components/Home/Home";
 
 import Footer from "./components/Footer";
@@ -19,40 +18,41 @@ import Register from "./components/users/Register";
 import Catalog from "./components/Catalog/Catalog";
 import { GuestGuard, UserGuard } from "./common/authGuard.js";
 import Header from "./components/header/Header";
-
-
+import Details from "./components/details/Details.js";
+import { routes } from "./helpers/routeConfig.js";
 
 function App() {
   const [comics] = useFetch([]);
 
   return (
     <AuthProvider>
-      <Header/>
-      <main className="main">
+      <Header />
+      <main>
         <Routes>
-          <Route path="/" element={<Home comic={comics} />}></Route>
+          <Route path={routes.home} element={<Home comic={comics} />} />
+          <Route path={routes.catalog} element={<Catalog comics={comics} />} />
 
-          <Route path="/catalog" element={<Catalog comics={comics} />}></Route>
           <Route element={<GuestGuard />}>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/register" element={<Register />}></Route>
+            <Route path={routes.login} element={<Login />} />
+            <Route path={routes.register} element={<Register />} />
           </Route>
 
-          <Route path="/details/:id" element={<Details />}></Route>
-          <Route element={<UserGuard/>}>
-            <Route path="/create" element={<Create />}></Route>
+          <Route path={routes.details} element={<Details />} />
+          <Route element={<UserGuard />}>
+            <Route path={routes.create} element={<Create />} />
             <Route
-              path="/buy-create/:id"
+              path={routes.buyCreate}
               element={<Edit title={"Order"} name={"buy"} />}
-            ></Route>
-            <Route path="/my-orders/" element={<MyOrder />}></Route>
+            />
+            <Route path={routes.myOrder} element={<MyOrder />} />
             <Route
-              path="/edit/:id"
+              path={routes.edit}
               element={<Edit title={"Change order"} name={"edit"} />}
-            ></Route>
+            />
           </Route>
-          <Route path="*" element={<NotFound />}></Route>
-          <Route path="/about" element={<Contact />}></Route>
+
+          <Route path={routes.notFound} element={<NotFound />} />
+          <Route path={routes.about} element={<Contact />} />
         </Routes>
       </main>
       <Footer />
