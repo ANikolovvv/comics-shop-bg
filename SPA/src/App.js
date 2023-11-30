@@ -18,7 +18,8 @@ import Register from "./components/users/Register";
 
 import Catalog from "./components/Catalog/Catalog";
 import { GuestGuard, UserGuard } from "./common/authGuard.js";
-import Header from "./components/Header/Header.js";
+import Header from "./components/header/Header";
+
 
 
 function App() {
