@@ -1,6 +1,6 @@
 import "./Spinner.css";
 
-export const Spinner = () => {
+ const Spinner = () => {
   return (
     <div className="center">
       Loading...
@@ -17,3 +17,5 @@ export const Spinner = () => {
     </div>
   );
 };
+
+export default Spinner
