@@ -21,7 +21,6 @@ dd {
   padding: 0;
 }
 
-
 *,
 *:before,
 *:after {
@@ -36,7 +35,7 @@ dd {
 }
 
 body {
-  font-family: 400 16px/1.3 Roboto,Trebuchet MS,Helvetica,Arial,sans-serif;
+  font-family: 400 16px/1.3 Roboto, Trebuchet MS, Helvetica, Arial, sans-serif;
   margin: 0 auto;
 
   header {
@@ -96,7 +95,16 @@ body {
   }
 
   footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
     background-color: $primary-color;
+    color: white;
+    height: 40px;
+    text-align: center;
+    align-items: center;
   }
 
   a {
@@ -113,7 +121,7 @@ body {
     cursor: pointer;
 
     &.active {
-      color:#6a6868;
+      color: #6a6868;
       border-color: #e62429;
     }
   }
