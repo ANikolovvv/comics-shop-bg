@@ -1,5 +1,5 @@
 import { AuthContexts, AuthProvider } from "../../../contexts/authContext";
-import Catalog from "../Catalog";
+import Catalog from "../catalog/Catalog";
 import { BrowserRouter } from "react-router-dom";
 
 import { cleanup, render, screen } from "@testing-library/react";

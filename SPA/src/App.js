@@ -2,24 +2,24 @@ import { Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./contexts/authContext";
 
 import Create from "./components/Create";
-import Home from "./components/Home/Home";
+import Home from "./components/home/Home.js";
 
 import Footer from "./components/Footer";
 import NotFound from "./components/404/404";
 import Edit from "./components/Edit";
 
-import Contact from "./components/Contact-us/Contact";
 import useFetch from "./hooks/useFetch";
 
-import MyOrder from "./components/MyOrder/MyOrder";
+import MyOrder from "./components/order/MyOrder";
 import Login from "./components/users/Login";
 import Register from "./components/users/Register";
 
-import Catalog from "./components/Catalog/Catalog";
+import Catalog from "./components/products/Catalog.js";
 import { GuestGuard, UserGuard } from "./common/authGuard.js";
 import Header from "./components/header/Header";
 import Details from "./components/details/Details.js";
 import { routes } from "./helpers/routeConfig.js";
+import About from "./components/about/About.js";
 
 function App() {
   const [comics] = useFetch([]);
@@ -52,7 +52,7 @@ function App() {
           </Route>
 
           <Route path={routes.notFound} element={<NotFound />} />
-          <Route path={routes.about} element={<Contact />} />
+          <Route path={routes.about} element={<About />} />
         </Routes>
       </main>
       <Footer />

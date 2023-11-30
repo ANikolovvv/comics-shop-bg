@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import styles from "../Home/Home.module.css";
+import styles from "./Home.module.css";
 import { Top } from "./TopFive";
 import Spinner from "../Spinner";
 

@@ -1,10 +1,10 @@
-import styles from "./Contact.module.css";
+import styles from "./About.module.css";
 import { Map } from "./Map/Map";
 
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 
-const Contact = () => {
+const About = () => {
   return (
     <div className={styles["container"]}>
       <div>
@@ -44,4 +44,4 @@ const Contact = () => {
     </div>
   );
 };
-export default Contact;
+export default About;
