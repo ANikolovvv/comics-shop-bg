@@ -25,6 +25,7 @@ const NavBar = ({ className, classNameLinkBox }) => {
     <ul className={styles[className]}>
       <li className={styles[classNameLinkBox]}>
         <NavLink to={routes.home}>Home</NavLink>
+    
       </li>
       <li className={styles[classNameLinkBox]}>
         <NavLink to={routes.catalog}>Catalog</NavLink>
