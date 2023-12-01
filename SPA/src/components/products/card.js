@@ -1,5 +1,6 @@
+import { routes } from "../../helpers/routeConfig";
 import styles from "./card.module.css";
-import Button from "../../elements/button";
+import { NavLink } from "react-router-dom";
 
 const Card = (props) => {
   return (
@@ -10,7 +11,9 @@ const Card = (props) => {
       <div className={styles["card-body"]}>
         <h2 className={styles["card-title"]}>{props.data.title}</h2>
         <div>
-          <Button to={`/details/${props.data._id}`}>Read More</Button>
+          <NavLink to={`${routes.details}/${props.data._id}`}>
+            Read More
+          </NavLink>
         </div>
       </div>
     </div>
