@@ -1,13 +1,13 @@
 import Button from "../../elements/button";
 import styles from "./topFive.module.scss";
 
-export function Top(props) {
+function TopFive(props) {
   const data = props.info;
 
   return (
     <div className={styles["home"]}>
       <h2 className={styles["title"]}>{data.title}</h2>
-      <div className={styles["box__img"]}>
+      <div>
         <img src={data.imageUrl} id="image" alt=".." />
       </div>
 
@@ -34,3 +34,4 @@ export function Top(props) {
     </div>
   );
 }
+export default TopFive;
