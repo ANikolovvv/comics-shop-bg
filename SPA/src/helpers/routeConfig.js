@@ -8,6 +8,6 @@ export const routes = {
   details: "/details/:id",
   edit: "/edit/:id",
   create: "/create",
-  buyCreate: "/buy-create/:id",
+  buyCreate: "/buy-create/",
   notFound: "*",
 };
