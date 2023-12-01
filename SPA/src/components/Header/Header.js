@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav className={styles["container"]}>
+      <nav className={styles["nav"]}>
         <div className={styles["logo"]}>
           <img src={logo} className={styles["logo__img"]} alt="LOGO"></img>
         </div>
