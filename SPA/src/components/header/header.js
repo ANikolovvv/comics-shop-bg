@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
-import logo from "../../logo.svg";
 import styles from "./header.module.scss";
 import Navigation from "./navigation";
 
@@ -17,10 +16,7 @@ const Header = () => {
   return (
     <header>
       <nav className={styles["nav"]}>
-        <div className={styles["logo"]}>
-          <img src={logo} className={styles["logo__img"]} alt="LOGO"></img>
-        </div>
-
+      <i className="fa-solid fa-book"> comics-shop.bg</i>
         <div className={styles["nav__small"]} onClick={navigationHandler}>
           {toggle ? (
             <div className={styles["small"]}>
