@@ -1,0 +1,45 @@
+.links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  padding: 10px 18px;
+  background-color: #151515;
+  height: 100%; 
+  animation: nav-link 500ms ease-in;
+  z-index: 99;
+
+  @keyframes nav-link {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .react-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 1px solid #393939;
+    border-bottom: 1px solid #393939;
+
+    .icon {
+      margin: 20px 0px;
+      display: flex;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 6px;
+      box-shadow: 4px 4px 4px var(--c3);
+
+      &:hover {
+        border-color: #9ca3af;
+        transform: scale(1.2);
+        animation: ease-in 300ms;
+      }
+    }
+  }
+}
