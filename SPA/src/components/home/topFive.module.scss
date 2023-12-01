@@ -1,150 +1,107 @@
-@import url("https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif");
 @import url("https://use.fontawesome.com/releases/v6.2.0/css/all.css");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap");
 
-.home {
+.box__top {
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-   
-  & > div{
+  border: 2px solid red;
+
+  & > .box__img {
     width: 100%;
     height: 600px;
   }
-}
 
-
-
-.star {
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  margin-bottom: 10px;
-  list-style: none;
-}
-
-.star li {
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.star li i {
-  color: var(--c3);
-}
-
-.title {
-  color: var(--c1);
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-
-@media (max-width: 1024px) {
-  .star li {
-    text-align: center;
-    font-size: 18px;
-  }
-
-  .title {
-    font-size: 16px;
-  }
-}
-@media (max-width: 996px) {
-  .box__img {
-    height: 400px;
-    width: 300px;
-  }
-}
-
-@media (max-width: 800px) {
-  .box__img {
-    margin:0 auto;
-    height: 350px;
-    width: 90%;
-  }
-
-  .star {
+  & > .box__info {
+    position: absolute;
+    top: 50%;
+    left: 10%;
     display: flex;
-    flex-direction: row;
-    padding: 0;
-    gap: 5px;
-  }
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-  .star li {
-    font-size: 18px;
-  }
-  .btn {
-    padding: 3px 12px;
-    font-weight: 500;
-    font-size: 14px;
+    & > .title {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    & > .link {
+      position: relative;
+      display: inline-block;
+      padding: 15px 40px;
+      background-color: red;
+      text-decoration: none;
+      overflow: hidden;
+      border-radius: 10px;
+
+      &:after {
+        content: 'Read More'; // Adjust the text as needed
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+        text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+        clip-path: inset(50% 50% 50% 50%);
+      }
+
+      &:hover:after {
+        animation: glitch 1s steps(2, end);
+        animation-timing-function: steps(2, end);
+      }
+    }
   }
 }
-@media (max-width: 600px) {
- 
-  .star {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    gap: 5px;
-  }
-  .star li {
-    text-align: center;
-    font-size: 12px;
-  }
-  .title {
-    font-size: 14px;
-  }
-}
-@media (max-width: 480px) {
-  .home {
-    width: 100%;
-    height: 400px;
-  }
 
-  .star {
-    display: flex;
-    flex-direction: row;
-
-    padding: 0;
-    gap: 5px;
+@keyframes glitch {
+  0% {
+    clip-path: inset(80% -6px 0 0);
+    transform: translate(-20px, -10px);
   }
-  .star li {
-    font-size: 8px;
-
+  10% {
+    clip-path: inset(10% -6px 85% 0);
+    transform: translate(10px, 10px);
   }
-  .title {
-    font-size: 12px;
-    text-transform: uppercase;
+  20% {
+    clip-path: inset(80% -6px 5% 0);
+    transform: translate(-10px, 10px);
   }
-}
-@media (max-width: 380px) {
-  .home {
-    width: 100%;
-    max-height: 400px;
+  30% {
+    clip-path: inset(50% -6px 30% 0);
+    transform: translate(0px, 5px);
   }
-
-  .star {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    gap: 5px;
+  40% {
+    clip-path: inset(10% -6px 85% 0);
+    transform: translate(-5px, 0px);
   }
-  .star li {
-    text-align: center;
-    font-size: 8px;
-    color: rgb(211, 187, 50);
+  50% {
+    clip-path: inset(50% -6px 30% 0);
+    transform: translate(5px, 0px);
   }
-
-  .date-title {
-    font-size: 10px;
+  60% {
+    clip-path: inset(40% -6px 43% 0);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: inset(10% -6px 85% 0);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: inset(80% -6px 0 0);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: inset(80% -6px 0 0);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: inset(50% 50% 50% 50%);
+    transform: translate(0);
   }
 }
