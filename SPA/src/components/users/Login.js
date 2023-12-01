@@ -1,5 +1,5 @@
 import { images } from "../../helpers/images";
-import AuthForm from "./AuthForm";
+import AuthForm from "./authForm";
 
 
 const Login = () => {

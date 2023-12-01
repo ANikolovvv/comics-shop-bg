@@ -1,7 +1,7 @@
-import styles from "./AuthForm.module.css";
+import styles from "./authForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
-import Li from "../../elements/Li";
+import Li from "../../elements/li";
 import { useContext, useState } from "react";
 
 import { AuthContexts } from "../../contexts/authContext";

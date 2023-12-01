@@ -2,7 +2,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
 
@@ -58,37 +58,5 @@
 
   100% {
     transform: translateX(0);
-  }
-}
-
-@media (max-width: 840px) {
-  .container {
-    justify-content: space-between;
-  }
-
-  .logo {
-    width: 90px;
-    height: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    flex-direction: row;
-    gap: 2px;
-  }
-
-  .nav__small {
-    justify-content: flex-end;
-  }
-
-  .nav__box {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav__box {
-    display: none;
   }
 }

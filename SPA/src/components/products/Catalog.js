@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import styles from "./Catalog.module.css";
+import styles from "./catalog.module.css";
 
-import Paginate from "./Paginate";
+import Paginate from "./paginate";
 
 import { filteredData } from "../../helpers/filter";
-import Search from "./search/Search";
-import Spinner from "../Spinner";
+import Search from "./search/search";
+import Spinner from "../spinner";
 
 const Catalog = ({ comics }) => {
   const [currentItems, setCurrentItems] = useState([]);

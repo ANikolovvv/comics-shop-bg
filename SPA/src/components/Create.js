@@ -6,7 +6,7 @@ import { ctxValidation } from "../helpers/form-validate";
 import { createOrder } from "../services/owner";
 
 import { images } from "../helpers/images";
-import Form from "./Form";
+import Form from "./form";
 
 
 const Create = () => {

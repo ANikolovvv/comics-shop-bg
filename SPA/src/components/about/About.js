@@ -1,5 +1,5 @@
-import styles from "./About.module.css";
-import { Map } from "./Map/Map";
+import styles from "./about.module.css";
+import { Map } from "./map/map";
 
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";

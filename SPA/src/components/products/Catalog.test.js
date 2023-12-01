@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { cleanup, render, screen } from "@testing-library/react";
-import Catalog from "./Catalog";
+import Catalog from "./catalog";
 
 import { AuthProvider } from "../../contexts/authContext";
 

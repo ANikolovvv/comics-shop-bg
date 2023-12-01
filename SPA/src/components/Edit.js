@@ -7,7 +7,7 @@ import { getOwnerData, updateOrder } from "../services/owner";
 import { images } from "../helpers/images";
 
 import { getData } from "../services/server";
-import Form from "./Form";
+import Form from "./form";
 
 const Edit = ({ title, name }) => {
   const { user } = useContext(AuthContexts);

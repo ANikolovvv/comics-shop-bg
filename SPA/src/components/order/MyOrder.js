@@ -4,11 +4,12 @@ import { AuthContexts } from "../../contexts/authContext";
 import { Link } from "react-router-dom";
 import * as requests from "../../services/owner";
 
-import { MyCard } from "./MyCard/MyCard";
 
-import styles from "./MyOrder.module.css";
+import styles from "./myOrder.module.css";
 import { deleteOrder } from "../../services/owner";
-import Spinner from "../Spinner";
+import Spinner from "../spinner";
+import MyCard from "./myCard/myCard";
+
 
 const MyOrder = () => {
   const { user } = useContext(AuthContexts);

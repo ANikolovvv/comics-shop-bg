@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./Button.module.css";
+import styles from "./button.module.scss";
 
 const Button = ({ children, to }) => {
   return (

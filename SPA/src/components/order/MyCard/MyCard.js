@@ -1,7 +1,7 @@
-import styles from "./MyCard.module.css";
+import styles from "./myCard.module.css";
 import { Link } from "react-router-dom";
 
-export const MyCard = (props) => {
+ const MyCard = (props) => {
   return (
     <div key={props.data._id} className={styles["card"]}>
       <div className={styles["img"]}>
@@ -26,3 +26,4 @@ export const MyCard = (props) => {
     </div>
   );
 };
+export default MyCard

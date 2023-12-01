@@ -1,8 +1,8 @@
-import styles from "./Navigation.module.scss";
+import styles from "./navigation.module.scss";
 
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
-import NavBar from "./NavBar";
+import NavBar from "./navBar";
 
 function Navigation() {
   return (

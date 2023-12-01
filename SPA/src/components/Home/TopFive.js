@@ -1,5 +1,5 @@
-import Button from "../../elements/Button";
-import styles from "./TopFive.module.css";
+import Button from "../../elements/button";
+import styles from "./topFive.module.scss";
 
 export function Top(props) {
   const data = props.info;

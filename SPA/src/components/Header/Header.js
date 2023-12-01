@@ -2,10 +2,10 @@ import { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 import logo from "../../logo.svg";
-import styles from "./Header.module.scss";
-import Navigation from "./Navigation";
+import styles from "./header.module.scss";
+import Navigation from "./navigation";
 
-import NavBar from "./NavBar";
+import NavBar from "./navBar";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <header className={styles["header"]}>
+    <header>
       <nav className={styles["container"]}>
         <div className={styles["logo"]}>
           <img src={logo} className={styles["logo__img"]} alt="LOGO"></img>

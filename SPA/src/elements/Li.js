@@ -1,4 +1,4 @@
-import styles from "./Li.module.css";
+import styles from "./li.module.scss";
 
 const Li = ({
   children,

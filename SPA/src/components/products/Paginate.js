@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 import ReactPaginate from "react-paginate";
-import Card from "./Card";
-import styles from "./Paginate.module.css";
+import styles from "./paginate.module.css";
+import Card from "./card";
 
 const Paginate = (props) => {
   const { data } = props;

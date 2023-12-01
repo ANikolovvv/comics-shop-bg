@@ -1,4 +1,4 @@
-import styles from "./Search.module.css";
+import styles from "./search.module.css";
 import { useState, useRef } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 

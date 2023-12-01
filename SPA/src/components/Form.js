@@ -1,5 +1,5 @@
-import styles from "./Form.module.css";
-import Li from "../elements/Li";
+import styles from "./form.module.scss";
+import Li from "../elements/li";
 
 const Form = ({
   title,

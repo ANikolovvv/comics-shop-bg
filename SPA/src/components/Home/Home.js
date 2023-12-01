@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import styles from "./Home.module.css";
-import { Top } from "./TopFive";
-import Spinner from "../Spinner";
+import styles from "./home.module.scss";
+import { Top } from "./topFive";
+import Spinner from "../spinner";
 
 function Home({ comic }) {
   const [comics, setComics] = useState([]);
@@ -26,15 +26,12 @@ function Home({ comic }) {
 
   return (
     <div className={styles["page"]}>
-      <article className={styles["art"]}>
-        <h1>Welcome to comics-shop.bg</h1>
-        <h2>Best Comics of 2022 </h2>
-      </article>
+      <h1 className={styles["art"]}>
+        Discover the Best Comics of 2023 at comics-shop.bg
+      </h1>
       {comics.length === 0 && <Spinner />}
       <div className={styles["container"]}>
-        <div className={styles["right-page"]}>
           {comics.length > 0 && <Top info={comics[count]} />}
-        </div>
         <div className={styles["left-page"]}>
           <div className={styles["art-info"]}>
             <i className="fa-solid fa-book"> comics-shop.bg</i>
