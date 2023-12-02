@@ -4,7 +4,7 @@ import { AuthContexts } from "../../contexts/authContext";
 
 import * as requests from "../../services/server";
 import styles from "./details.module.css";
-import Spinner from "../spinner";
+import Spinner from "../../elements/spinner";
 
 const Details = () => {
   const { user } = useContext(AuthContexts);
@@ -57,7 +57,6 @@ const Details = () => {
           <h1>{comic.title}</h1>
 
           <div className={styles["info"]}>
-         
             <ul className={styles["ul__box"]}>
               <li key={key}>
                 Author: <span> {comic.author}</span>
