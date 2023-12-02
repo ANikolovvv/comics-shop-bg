@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
 import ReactPaginate from "react-paginate";
-import styles from "./paginate.module.css";
+import styles from "./paginate.module.scss";
 import Card from "./card";
+import Spinner from "../../elements/spinner";
 
 const Paginate = (props) => {
   const { data } = props;
@@ -27,26 +28,32 @@ const Paginate = (props) => {
 
   return (
     <div className={styles["cards"]}>
-      <div className={styles["cards-div"]}>
-        {currentItems.map((item) => {
-          return <Card key={item._id} data={item}></Card>;
-        })}
-      </div>
+      {currentItems ? (
+        <>
+          <div className={styles["cards-div"]}>
+            {currentItems.map((item) => {
+              return <Card key={item._id} data={item}></Card>;
+            })}
+          </div>
 
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel=" Next"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={10}
-        pageCount={pageCount}
-        previousLabel="Previous "
-        renderOnZeroPageCount={null}
-        containerClassName={styles["pagination"]}
-        pageLinkClassName={styles["page"]}
-        previousLinkClassName={styles["page"]}
-        nextLinkClassName={styles["page"]}
-        activeLinkClassName={styles["active"]}
-      />
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel=" Next"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={10}
+            pageCount={pageCount}
+            previousLabel="Previous "
+            renderOnZeroPageCount={null}
+            containerClassName={styles["pagination"]}
+            pageLinkClassName={styles["page"]}
+            previousLinkClassName={styles["page"]}
+            nextLinkClassName={styles["page"]}
+            activeLinkClassName={styles["active"]}
+          />
+        </>
+      ) : (
+        <Spinner />
+      )}
     </div>
   );
 };
