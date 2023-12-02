@@ -1,0 +1,110 @@
+.search__container{
+  .searchForm {
+    width: 100%;
+    height: 180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+    background-color: black;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+      rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    border-radius: 10px;
+    border: 2px solid var(--c3);
+  
+  }
+  
+  .search__title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+   
+  }
+  
+  .input__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .input__box input {
+    margin: 0;
+    height: 25px;
+    padding: 5px;
+    border: 2px solid var(--c3);
+    color: rgb(13, 12, 12);
+    border-radius: 5px;
+  }
+  
+  .searchForm label {
+    font-weight: bold;
+    color: var(--c3);
+  }
+  
+  .searchForm select {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    appearance: none;
+    border: 2px solid var(--c3);
+    border-radius: 5px;
+    background-color: var(--c4);
+    color: var(--c3);
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  ::-webkit-scrollbar-thumb:active {
+    background-color: wheat;
+  }
+  .searchForm select:hover {
+    border-color: #f8f8f8;
+  }
+  .searchForm option:hover {
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: black;
+  }
+  .btns__box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  .searchForm button {
+    display: block;
+    padding: 5px 10px;
+    background-color: rgb(127, 214, 255);
+    border: 2px solid var(--c3);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .searchForm button:hover {
+    background-image: linear-gradient(
+      45deg,
+      #005299 0%,
+      #0564c9 51%,
+      #000000 100%
+    );
+    color: white;
+  }
+}
+
+

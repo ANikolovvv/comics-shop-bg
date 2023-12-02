@@ -1,8 +1,8 @@
-import styles from "./search.module.css";
+import styles from "./search.module.scss";
 import { useState, useRef } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 
- const Search = ({
+const Search = ({
   onSubmit,
   comics,
   updateParentState,
@@ -40,9 +40,9 @@ import { AiOutlineDown } from "react-icons/ai";
   };
 
   return (
-    <>
-      <h1 className={styles["open__search"]} onClick={handleToggleSearch}>
-        Search <AiOutlineDown size={18} color="blue" />{" "}
+    <div className={styles["search__container"]}>
+      <h1 className={styles["search__title"]} onClick={handleToggleSearch}>
+        Search <AiOutlineDown size={22} color="white" />{" "}
       </h1>
       {toggleSearch && (
         <div className={styles["formBox"]}>
@@ -113,8 +113,8 @@ import { AiOutlineDown } from "react-icons/ai";
           </form>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
-export default Search
+export default Search;
