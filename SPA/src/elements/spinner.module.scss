@@ -1,0 +1,40 @@
+$hourglass-size: 31px;
+$hourglass-border-width: 10px;
+$hourglass-color: #fff;
+
+.hourglass {
+  display: inline-block;
+  position: relative;
+  width: $hourglass-size;
+  height: $hourglass-size;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  box-sizing: border-box;
+  border: $hourglass-border-width solid $hourglass-color;
+  border-color: $hourglass-color transparent $hourglass-color transparent;
+  animation: hourglass 1.2s infinite;
+}
+
+@keyframes hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  100% {
+    transform: rotate(1800deg);
+  }
+}
