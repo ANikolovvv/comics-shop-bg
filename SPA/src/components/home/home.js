@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
 import styles from "./home.module.scss";
-import Spinner from "../spinner";
 import TopFive from "./topFive";
+import Spinner from "../../elements/spinner";
+import Page from "../../elements/page";
 
 function Home({ comic }) {
   const [comics, setComics] = useState([]);
@@ -25,12 +26,17 @@ function Home({ comic }) {
   }, 2000);
 
   return (
-    <div className={styles["page"]}>
-      <h1 className={styles["art"]}>
+    <Page className={styles["page"]}>
+      <h1 >
         Discover the Best Comics of 2023 at comics-shop.bg
       </h1>
-      {comics.length === 0 && <Spinner />}
-      {comics.length > 0 && <TopFive info={comics[count]} />}
+      {comics.length !== 0 ? (
+        <TopFive info={comics[count]} />
+      ) : (
+        <div className={styles["spinner__box"]}>
+          <Spinner />
+        </div>
+      )}
 
       <div className={styles["art__info"]}>
         <p>
@@ -43,7 +49,7 @@ function Home({ comic }) {
           days after placing it, ensuring your satisfaction is our priority."
         </p>
       </div>
-    </div>
+    </Page>
   );
 }
 export default Home;
