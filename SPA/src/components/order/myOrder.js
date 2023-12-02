@@ -7,8 +7,8 @@ import * as requests from "../../services/owner";
 
 import styles from "./myOrder.module.css";
 import { deleteOrder } from "../../services/owner";
-import Spinner from "../spinner";
 import MyCard from "./myCard/myCard";
+import Spinner from "../../elements/spinner";
 
 
 const MyOrder = () => {
@@ -54,8 +54,8 @@ const MyOrder = () => {
   return (
     <div className={styles["box__order"]}>
       <h1 >My orders</h1>
-      {currentdata === false && <Spinner />}
       <div className={styles["article"]}>
+      {currentdata === false && <Spinner />}
         {currentItems.length > 0 &&
           currentdata === true &&
           currentItems.map((x) => (
