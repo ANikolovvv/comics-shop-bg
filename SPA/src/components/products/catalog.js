@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import styles from "./catalog.module.css";
+import styles from "./catalog.module.scss";
 
 import Paginate from "./paginate";
 
 import { filteredData } from "../../helpers/filter";
 import Search from "./search/search";
-import Spinner from "../spinner";
+import Spinner from "../../elements/spinner";
+import Page from "../../elements/page";
 
 const Catalog = ({ comics }) => {
   const [currentItems, setCurrentItems] = useState([]);
@@ -46,62 +47,29 @@ const Catalog = ({ comics }) => {
     const formData = new FormData(e.target);
     const search = Object.fromEntries(formData);
 
-    try {
-      if (!searchData) {
-        data = filteredData(currentItems, search, selectedAuthors);
-        setSearch(true);
-        setSelectedAuthors([]);
-      } else {
-        data = filteredData(comics, search, selectedAuthors);
-      }
-      setCurrentItems(data);
-    } catch (error) {
-      setSearchError(error.message);
+    if (!searchData) {
+      data = filteredData(currentItems, search, selectedAuthors);
+      setSearch(true);
+      setSelectedAuthors([]);
+    } else {
+      data = filteredData(comics, search, selectedAuthors);
     }
+    setCurrentItems(data);
   };
   return (
-    <div>
-      {comics.length === 0 && currentdata === false && <Spinner />}
+    <Page className={styles["calalog__page"]}>
+      <Search
+        onSubmit={searchHendler}
+        comics={comics}
+        error={searchError}
+        updateParentState={updateParentState}
+        setSearch={setSearch}
+        authors={setSelectedAuthors}
+        selectedAuthors={selectedAuthors}
+      />
 
-      {currentdata === true && (
-        <div className={styles["box"]}>
-          <div className={styles["box__title"]}>
-            <h1>Catalog</h1>
-          </div>
-
-          <div className={styles["div_error"]}>
-            {searchError && (
-              <span className={styles.span_error}>{searchError}</span>
-            )}
-          </div>
-
-          <Search
-            onSubmit={searchHendler}
-            comics={comics}
-            error={searchError}
-            updateParentState={updateParentState}
-            setSearch={setSearch}
-            authors={setSelectedAuthors}
-            selectedAuthors={selectedAuthors}
-          />
-
-          {comics.length !== 0 && (
-            <div className={styles["container"]}>
-              {searchData && currentItems.length === 0 && (
-                <div className={styles["div_error"]}>
-                  <span className={styles.span_error}>
-                    Comics not found with this filters!
-                  </span>
-                </div>
-              )}
-              {currentItems.length > 0 && (
-                <Paginate data={currentItems}></Paginate>
-              )}
-            </div>
-          )}
-        </div>
-      )}
-    </div>
+      {currentItems.length !== 0 && <Paginate data={currentItems} />}
+    </Page>
   );
 };
 
