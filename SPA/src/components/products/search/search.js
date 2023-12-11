@@ -1,119 +1,173 @@
-import styles from "./search.module.scss";
-import { useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
+import {
+  Button,
+  FormHelperText,
+  Input,
+  InputLabel,
+  FormControl,
+  Box,
+} from "@mui/material";
 import { AiOutlineDown } from "react-icons/ai";
+import { filteredData } from "../../../helpers/filtered";
+import {
+  buttonTitleStyles,
+  buttonsBoxStyles,
+  containerStyles,
+  errorTextStyles,
+  inputStyles,
+  pageSearchStyle,
+  submitButtonStyles,
+} from "./searchStyles";
 
-const Search = ({
-  onSubmit,
-  comics,
-  updateParentState,
-  setSearch,
-  authors,
-  selectedAuthors,
-}) => {
-  const [priceMin, setPriceMin] = useState("");
-  const [priceMax, setPriceMax] = useState("");
+const Search = ({ comics, updateParentState, setSearch }) => {
+  const [price, setPrice] = useState("");
+  const [year, setYear] = useState("");
+  const [toggleSearch, setToggleSearch] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [prices, setPrices] = useState([]);
+  const [years, setYears] = useState([]);
 
-  const [yearMin, setYearMin] = useState("");
-  const [yearMax, setYearMax] = useState("");
-  const [toggleSearch, setToggleSearch] = useState("");
+  useEffect(() => {
+    if (comics.length !== 0) {
+      const sortedPrices = [...comics].sort(
+        (a, b) => parseFloat(a.price) - parseFloat(b.price)
+      );
+      const sortedYears = [...comics].sort((a, b) => a.year - b.year);
 
-  const formRef = useRef(null);
-  const newAuthors = [...new Set(comics.map((comic) => comic.author))];
-
-  function resetForm() {
-    setPriceMin("");
-    setPriceMax("");
-    setYearMin("");
-    setYearMax("");
-    formRef.current.reset();
-    updateParentState(comics);
-    setSearch(false);
-  }
-  const handleAuthorChange = (event) => {
-    const selectedOptions = Array.from(event.target.selectedOptions);
-    const selectedValues = selectedOptions.map((option) => option.value);
-    authors(selectedValues);
-  };
+      setPrices(sortedPrices);
+      setYears(sortedYears);
+    }
+  }, [comics]);
 
   const handleToggleSearch = () => {
     setToggleSearch(!toggleSearch);
   };
 
+  const searchHendler = (e) => {
+    e.preventDefault();
+    if ((!price && !year) || errors.priceHaveError || errors.yearHaveError) {
+      alert(
+        "Please address the following issues before submitting: fill in the required information for the Price and Year fields, as they cannot be left empty. Additionally, you must fill in at least one of these fields"
+      );
+    } else {
+      setErrors({});
+      const data = filteredData(comics, price, year);
+      setPrice("");
+      setYear("");
+      setSearch(true);
+      updateParentState(data);
+    }
+  };
+
+  const handleReset = () => {
+    updateParentState(comics);
+  };
+
+  const handleBlur = (event, type) => {
+    const number = Number(event.target.value);
+
+    switch (type) {
+      case "Price":
+        setErrors((state) => ({
+          ...state,
+          priceHaveError:
+            number < prices[0].price ||
+            number > prices[prices.length - 1].price,
+        }));
+        break;
+
+      case "Year":
+        setErrors((state) => ({
+          ...state,
+          yearHaveError:
+            number < years[0].year || number > years[years.length - 1].year,
+        }));
+        break;
+
+      default:
+        setErrors({});
+        break;
+    }
+  };
+
   return (
-    <div className={styles["search__container"]}>
-      <h1 className={styles["search__title"]} onClick={handleToggleSearch}>
-        Search <AiOutlineDown size={22} color="white" />{" "}
-      </h1>
-      {toggleSearch && (
-        <div className={styles["formBox"]}>
-          <form
-            ref={formRef}
-            action="#"
-            method="POST"
-            className={styles["searchForm"]}
-            name="search"
-            onSubmit={onSubmit}
-          >
-            <div className={styles["input__box"]}>
-              <label>Price</label>
-              <input
-                name="minPrice"
-                type="number"
-                placeholder="Min prices 1$"
-                value={priceMin}
-                onChange={(e) => setPriceMin(e.target.value)}
-              />
-              <input
-                name="maxPrice"
-                type="number"
-                placeholder="Max price 50$"
-                value={priceMax}
-                onChange={(e) => setPriceMax(e.target.value)}
-              />
-            </div>
-            <div className={styles["input__box"]}>
-              <label>Authors</label>
-              <select
-                multiple
-                name="author"
-                className={styles["authors"]}
-                value={selectedAuthors}
-                onChange={handleAuthorChange}
-              >
-                {newAuthors.map((author) => (
-                  <option key={author} value={author}>
-                    {author}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className={styles["input__box"]}>
-              <label>Year</label>
-              <input
-                name="minYear"
-                type="number"
-                placeholder="Min Year 1941"
-                value={yearMin}
-                onChange={(e) => setYearMin(e.target.value)}
-              />
-              <input
-                name="maxYear"
-                type="number"
-                placeholder="Max Year 2005"
-                value={yearMax}
-                onChange={(e) => setYearMax(e.target.value)}
-              />
-            </div>
-            <div className={styles["btns__box"]}>
-              <button type="submit" value="Submit">
-                Search
-              </button>
-              <button onClick={resetForm}>Clear Filters</button>
-            </div>
-          </form>
-        </div>
+    <Box sx={pageSearchStyle}>
+      <Button size="small" sx={buttonTitleStyles} onClick={handleToggleSearch}>
+        Search
+        <AiOutlineDown size={18} style={{ margin: "5px" }} color="#1976d2" />
+      </Button>
+      {toggleSearch && comics.length !== 0 && (
+        <Box
+          method="POST"
+          component="form"
+          sx={containerStyles}
+          noValidate
+          autoComplete="off"
+          onSubmit={searchHendler}
+        >
+          <FormControl size="small" variant="standard" sx={{ color: "white" }}>
+            <InputLabel sx={{ color: "white" }} htmlFor="number">
+              Price
+            </InputLabel>
+            <Input
+              sx={inputStyles}
+              type="number"
+              placeholder={`Prices ${prices[0].price}$ to ${
+                prices[prices.length - 1].price
+              }$ `}
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              onBlur={(e) => handleBlur(e, "Price")}
+            />
+
+            <FormHelperText id="component-error-min-price" sx={errorTextStyles}>
+              {errors.priceHaveError
+                ? `Price must be between ${prices[0].price} and  ${
+                    prices[prices.length - 1].price
+                  }`
+                : ""}
+            </FormHelperText>
+          </FormControl>
+
+          <FormControl size="small" variant="standard" sx={{ color: "white" }}>
+            <InputLabel sx={{ color: "white" }} htmlFor="number">
+              Year
+            </InputLabel>
+            <Input
+              sx={inputStyles}
+              type="number"
+              placeholder={`Year ${years[0].year} and ${
+                years[years.length - 1].year
+              }`}
+              value={year}
+              onChange={(e) => setYear(e.target.value)}
+              onBlur={(e) => handleBlur(e, "Year")}
+            />
+
+            <FormHelperText id="component-error-min-year" sx={errorTextStyles}>
+              {errors.yearHaveError
+                ? `Year must be between ${years[0].year} and ${
+                    years[years.length - 1].year
+                  } `
+                : ""}
+            </FormHelperText>
+          </FormControl>
+          <Box sx={buttonsBoxStyles}>
+            <Button type="submit" size="small" sx={submitButtonStyles}>
+              Search
+            </Button>
+            <Button
+              type="button"
+              size="small"
+              sx={submitButtonStyles}
+              onClick={handleReset}
+            >
+              Reset
+            </Button>
+          </Box>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 
