@@ -1,74 +1,83 @@
 import { useState, useEffect } from "react";
 import styles from "./catalog.module.scss";
+import { AiOutlineUp } from "react-icons/ai";
 
 import Paginate from "./paginate";
-
-import { filteredData } from "../../helpers/filter";
 import Search from "./search/search";
-import Spinner from "../../elements/spinner";
+
 import Page from "../../elements/page";
+import Spinner from "../../elements/spinner";
 
 const Catalog = ({ comics }) => {
   const [currentItems, setCurrentItems] = useState([]);
-  const [currentdata, setCurrentData] = useState(false);
-
-  const [searchError, setSearchError] = useState("");
   const [searchData, setSearch] = useState(false);
-  const [selectedAuthors, setSelectedAuthors] = useState([]);
-
-  let data = [];
-
-  const updateParentState = (newValue) => {
-    setCurrentItems(newValue);
-  };
+  const [isVisible, setIsVisible] = useState(false);
+  const [isScrollingToTop, setIsScrollingToTop] = useState(false);
 
   useEffect(() => {
     if (comics !== undefined) {
       setCurrentItems(comics);
-      setCurrentData(true);
       setSearch(false);
     }
   }, [comics]);
 
-  useEffect(() => {
-    if (searchError.length > 0) {
-      const timer = setTimeout(() => {
-        setSearchError("");
-      }, 3000);
-
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [searchError]);
-
-  const searchHendler = async (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const search = Object.fromEntries(formData);
-
-    if (!searchData) {
-      data = filteredData(currentItems, search, selectedAuthors);
-      setSearch(true);
-      setSelectedAuthors([]);
-    } else {
-      data = filteredData(comics, search, selectedAuthors);
-    }
-    setCurrentItems(data);
+  const scrollToTop = () => {
+    setIsScrollingToTop(true);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsVisible(scrollTop > 300 && !isScrollingToTop);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isScrollingToTop]);
+
+  useEffect(() => {
+    const handleScrollToTopComplete = () => {
+      setIsScrollingToTop(false);
+    };
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsVisible(scrollTop > 300 && !isScrollingToTop);
+    };
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScrollToTopComplete);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScrollToTopComplete);
+    };
+  }, [isScrollingToTop]);
+
   return (
     <Page className={styles["calalog__page"]}>
+      <button
+        onClick={scrollToTop}
+        style={{ display: isVisible ? "flex" : "none" }}
+        className={styles["btn__up"]}
+      >
+        <AiOutlineUp />
+      </button>
       <Search
-        onSubmit={searchHendler}
         comics={comics}
-        error={searchError}
-        updateParentState={updateParentState}
+        updateParentState={setCurrentItems}
         setSearch={setSearch}
-        authors={setSelectedAuthors}
-        selectedAuthors={selectedAuthors}
       />
-
-      {currentItems.length !== 0 && <Paginate data={currentItems} />}
+      <div className={styles["cards"]}>
+        {currentItems.length !== 0 && <Paginate data={currentItems} />}
+        {currentItems.length === 0 && searchData && <h1>No comics found!</h1>}
+        {currentItems.length === 0 && !searchData && <Spinner />}
+      </div>
     </Page>
   );
 };

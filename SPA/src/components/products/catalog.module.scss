@@ -3,4 +3,34 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  & > .cards {
+    min-height: 750px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    background-color: #202020;
+  }
+
+  & > .btn__up {
+    position: fixed;
+    font-size: 18px;
+    padding: 10px;
+    margin: 0;
+    right: 5%;
+    bottom: 10%;
+    background-color: #202020;
+    border: 2px solid red;
+    border-radius: 5px;
+    z-index: 1000;
+    cursor: pointer;
+
+    &:hover{
+      border-color:#1976d2;
+    }
+  }
 }
