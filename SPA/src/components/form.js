@@ -1,5 +1,5 @@
 import styles from "./form.module.scss";
-import Li from "../elements/li";
+
 
 const Form = ({
   title,
@@ -27,7 +27,7 @@ const Form = ({
             <h1>{title}</h1>
           </div>
           <ul className={styles["box__li"]}>
-            <Li
+            <li
               type={"text"}
               name="title"
               value={value.title || ""}
@@ -41,9 +41,9 @@ const Form = ({
               icon={"fa-sharp fa-solid fa-t"}
             >
               Title
-            </Li>
+            </li>
 
-            <Li
+            <li
               type={"text"}
               name="author"
               value={value.author || ""}
@@ -57,8 +57,8 @@ const Form = ({
               icon={"fa-solid fa-font"}
             >
               Author
-            </Li>
-            <Li
+            </li>
+            <li
               type={"email"}
               name="email"
               value={value.email || ""}
@@ -72,9 +72,9 @@ const Form = ({
               icon={"fa-solid fa-envelope"}
             >
               Email
-            </Li>
+            </li>
 
-            <Li
+            <li
               type={"text"}
               name="address"
               value={value.address || ""}
@@ -88,9 +88,9 @@ const Form = ({
               icon={"fa-solid fa-font"}
             >
               Address
-            </Li>
+            </li>
 
-            <Li
+            <li
               type={"text"}
               name="courier"
               value={value.courier || ""}
@@ -100,9 +100,9 @@ const Form = ({
               icon={"fa-solid fa-truck"}
             >
               Courier
-            </Li>
+            </li>
 
-            <Li
+            <li
               type={"number"}
               name="number"
               value={value.number || ""}
@@ -114,7 +114,7 @@ const Form = ({
               isNumber={isNumber}
             >
               Number
-            </Li>
+            </li>
 
             <li>
               <select
