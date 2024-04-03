@@ -1,5 +1,5 @@
 import { routes } from "../../helpers/routeConfig";
-import styles from "./card.module.css";
+import styles from "./card.module.scss";
 import { NavLink } from "react-router-dom";
 
 const Card = (props) => {
