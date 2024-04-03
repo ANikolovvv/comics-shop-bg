@@ -1,11 +1,10 @@
 import styles from "./authForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
-import Li from "../../elements/li";
 import { useContext, useState } from "react";
 
 import { AuthContexts } from "../../contexts/authContext";
-import { errorWrapeer, matchEmail } from "../../helpers/form-validate";
+import { errorWrapeer, matchEmail } from "../../helpers/validate";
 import { onLogin, regUsers } from "../../services/server";
 
 const AuthForm = ({ title, to, pic }) => {
@@ -80,7 +79,7 @@ const AuthForm = ({ title, to, pic }) => {
             <h1>{title}</h1>
           </div>
           <ul className={styles["box__li"]}>
-            <Li
+            <li
               type={"email"}
               name="email"
               value={value.email || ""}
@@ -94,9 +93,9 @@ const AuthForm = ({ title, to, pic }) => {
               icon={"fa-solid fa-envelope"}
             >
               Email
-            </Li>
+            </li>
 
-            <Li
+            <li
               type={"password"}
               name="password"
               value={value.password || ""}
@@ -110,10 +109,10 @@ const AuthForm = ({ title, to, pic }) => {
               icon={"fa-solid fa-lock"}
             >
               Password
-            </Li>
+            </li>
 
             {!isLogin && (
-              <Li
+              <li
                 type={"password"}
                 name="rePass"
                 value={value.rePass || ""}
@@ -123,7 +122,7 @@ const AuthForm = ({ title, to, pic }) => {
                 icon={"fa-solid fa-lock"}
               >
                 Confirm password
-              </Li>
+              </li>
             )}
             <div className={styles["box__submit"]}>
               <button
