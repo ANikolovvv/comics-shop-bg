@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { AuthContexts } from "../contexts/authContext";
 
-import { ctxValidation } from "../helpers/form-validate";
+import { ctxValidation } from "../helpers/validate";
 import { getOwnerData, updateOrder } from "../services/owner";
 import { images } from "../helpers/images";
 
