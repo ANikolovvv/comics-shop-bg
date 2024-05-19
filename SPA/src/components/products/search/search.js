@@ -41,6 +41,7 @@ const Search = ({ comics, updateParentState, setSearch }) => {
 
   const handleToggleSearch = () => {
     setToggleSearch(!toggleSearch);
+    
   };
 
   const searchHendler = (e) => {
