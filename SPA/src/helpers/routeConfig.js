@@ -5,7 +5,7 @@ export const routes = {
   login: "/login",
   register: "/register",
   myOrder: "/my-orders",
-  details: "/details/:id",
+  details: "/details",
   edit: "/edit/:id",
   create: "/create",
   buyCreate: "/buy-create/",
