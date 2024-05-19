@@ -10,7 +10,7 @@ export const containerStyles = {
   m: 0,
   paddingBottom: "0px",
   position: "absolute",
-  top: "8.5%",
+  top: "12.7%",
   width: "50%",
   height: 60,
   display: "grid",
