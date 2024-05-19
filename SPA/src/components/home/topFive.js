@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 function TopFive(props) {
   const data = props.info;
   const path=routes.details.replace("/:id", "/");
+  console.log(data._id,"fff")
+  console.log(path)
 
   return (
     <div className={styles["box__top"]}>
@@ -17,7 +19,7 @@ function TopFive(props) {
       <h2 className={styles["title"]}>{data.title}</h2>
         <Link
           className={styles["link"]}
-          to={`${path}${data._id}`}
+          to={`${path}/${data._id}`}
         >
           Read more
         </Link>
