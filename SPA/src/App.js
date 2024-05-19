@@ -37,7 +37,7 @@ function App() {
             <Route path={routes.register} element={<Register />} />
           </Route>
 
-          <Route path={routes.details} element={<Details />} />
+          <Route path={"/details/:id "} element={<Details />} />
           <Route element={<UserGuard />}>
             <Route path={routes.create} element={<Create />} />
             <Route
